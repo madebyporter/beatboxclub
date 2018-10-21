@@ -1,0 +1,120 @@
+// _type.scss
+
+  // Paragraphs
+    p, ul, li, span {
+      color: $color-black-100;
+      font-weight: 500;
+      @include font-size(18);
+      line-height: 1.3;
+      margin: 0 0 $space-small 0;
+      @media (min-width: $mq-laptop) {
+        @include font-size(24);
+      }
+      &.content-large {
+        @include font-size(24);
+        @media (min-width: $mq-laptop) {
+          @include font-size(28);
+        }
+      }
+      &.content-small {
+        @include font-size(14);
+        @media (min-width: $mq-laptop) {
+          @include font-size(20);
+        }
+      }
+      &.content-disabled {
+        opacity: .3;
+      }
+    }
+
+    strong {
+      color: $color-white;
+      font-weight: 700;
+    }
+
+  // Headers
+    h1, h2, h3, h4, h5, h6 {
+      color: $color-white;
+      display: block;
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0 0 $space-small 0;
+    }
+
+    h1 {
+      @include font-size(32);
+      @media (min-width: $mq-laptop) {
+        @include font-size(64);
+      }
+      @media (min-width: $mq-wide) {
+        @include font-size(96);
+        margin: 0 0 $space-medium 0;
+      }
+    }
+
+    h2 {
+      @include font-size(24);
+      @media (min-width: $mq-laptop) {
+        @include font-size(48);
+      }
+    }
+
+    h3 {
+      @include font-size(18);
+      @media (min-width: $mq-laptop) {
+        @include font-size(32);
+      }
+    }
+
+    h4 {
+      @include font-size(14);
+      @media (min-width: $mq-laptop) {
+        @include font-size(24);
+      }
+    }
+
+    h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
+      margin-top: $space-small;
+    }
+
+  // Blockquotes
+    blockquote {
+      p {
+        // font-family: $font-secondary;
+        @include font-size(40);
+        font-style: italic;
+        font-weight: 700;
+      }
+    }
+
+  // Lists
+    ul {
+      list-style: disc;
+      margin: 0 0 20px 20px;
+      li {
+        // @include font-size(24);
+        margin-bottom: 10px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    .no-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li {
+        margin-bottom: 0;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+    }
+
+    .content-center {
+      display: inline-block;
+      text-align: center;
+      width: 100%;
+    }

@@ -1,0 +1,207 @@
+@charset "utf-8";
+@import "bootstrap-grid.min.css";
+@import "normalize";
+@import "variables";
+@import "mixins";
+@import "type";
+@import "buttons";
+@import "forms";
+
+// Universal
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+  html {
+    font-size: 62.5%;
+    height: 100%;
+    width: 100%;
+    // overflow: hidden;
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+  }
+  body {
+    background: url('../images/site-bg-rapper-4.jpg') no-repeat scroll center top $color-black;
+    background-size: cover;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    line-height: 1.5;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+// Masthead
+  .site-logo {
+    display: block;
+    height: 80px;
+    width: 80px;
+    @include flexbox;
+    img {
+      width: 100%;
+    }
+    .logo-text {
+      color: $color-white;
+      @include font-size(18);
+      font-weight: 700;
+      margin: .4rem 0 0 $space-small;
+    }
+  }
+
+  .site-wrapper {
+    width: 100%;
+  }
+
+  .block {
+    margin: 0 auto $space-medium;
+  }
+
+  .block-header {
+    // background: lighten($color-black-500,2%);
+    padding: $space-large 0 $space-medium;
+  }
+
+  .index {
+    position: relative;
+    &:before {
+
+    }
+    // @media (min-width: $mq-tablet) {
+    //   &:before {
+    //     background: url('../images/hero-laptop.jpg') no-repeat right top;
+    //     background-size: cover;
+    //     content: "";
+    //     position: absolute;
+    //     right: 0;
+    //     top: 0;
+    //     height: 60vh;
+    //     width: 50%;
+    //   }
+    // }
+    // @media (min-width: $mq-desktop) {
+    //   &:before {
+    //     height: 120vh;
+    //   }
+    // }
+  }
+
+  .persona-type {
+    height: 50vh;
+    margin: 0 auto $space-small;
+    overflow: hidden;
+    width: 100%;
+    @media (min-width: $mq-laptop) {
+      height: 100%;
+      margin: 0;
+      overflow: visible;
+      width: 100%;
+    }
+  }
+  .persona-type-header {
+    @include absolute-center;
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+    width: 80%;
+    @include font-size(24);
+    @media (min-width: $mq-laptop) {
+      position: relative;
+      text-align: left;
+      left: auto;
+      top: auto;
+      width: auto;
+      @include translate(-$space-x,-12rem);
+    }
+  }
+  .persona-type-image img {
+    opacity: .4;
+    width: 100%;
+    @media (min-width: $mq-laptop) {
+      opacity: 1;
+      width: 100%;
+    }
+  }
+
+  .value-prop {
+    height: 360px;
+    margin: 0 0 $space-medium 0;
+    // overflow: hidden;
+    position: relative;
+    @media (min-width: $mq-phonexl) {
+      height: 35vh;
+    }
+    @media (min-width: $mq-laptop) {
+      height: 85vh;
+      max-height: 720px;
+    }
+    @media (min-width: $mq-desktop) {
+      max-height: 720px;
+    }
+  }
+  .value-prop-title {
+    margin-top: $space-medium;
+    position: relative;
+    z-index: 2;
+    @media (min-width: $mq-tablet) {
+      margin-top: $space-large;
+    }
+    @media (min-width: $mq-laptop) {
+      text-align: right;
+      @include translate(-$space-large, 0);
+    }
+    @media (min-width: $mq-wide) {
+      text-align: left;
+      @include translate(0, 0);
+    }
+  }
+  .value-prop-content {
+    position: relative;
+    z-index: 2;
+  }
+  .value-prop-pad {
+    padding-top: $space-large;
+    @media (min-width: $mq-laptop) {
+      padding-top: $space-xl;
+    }
+  }
+  .value-prop-image {
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 95%;
+    z-index: 1;
+    opacity: .5;
+    @media (min-width: $mq-laptop) {
+      opacity: 1;
+    }
+    img {
+      float: right;
+      height: 100%;
+    }
+  }
+  .value-prop-paragraph {
+    color: $color-black-100;
+    font-weight: 700;
+    @media (max-width: $mq-laptop) {
+      @include font-size(18);
+    }
+  }
+
+  .block-footer {
+    background: lighten($color-black-500,2%);
+    box-shadow: -600px 0 0 lighten($color-black-500,2%), 600px 0 0 lighten($color-black-500,2%);
+    padding: $space-large 0;
+  }
+
+  .footer-header {
+    text-align: center;
+    @media (min-width: $mq-tablet) {
+      margin: 0;
+      text-align: left;
+    }
+  }
