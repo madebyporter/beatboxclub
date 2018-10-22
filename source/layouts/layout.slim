@@ -17,7 +17,36 @@ html
           .row
             .col-12
               = link_to "/", :class => "site-logo" do
-                = image_tag "tbbc-emblem.png"
-                span.logo-text
-                  | The Beatbox Club
+                .logo
+                  .logo-block
+                  .logo-block
+                  .logo-block
+                  .logo-block
+                  .logo-block
+                  .logo-block
+                  .logo-block
+                  .logo-block
+                  .logo-block
+                  .logo-block
+                  .logo-block
+                  .logo-block
+                  .logo-block
+                  .logo-block
+                  .logo-block
+                  .logo-block
+                .logo-text
+                  span.logo-text-word The
+                  span.logo-text-word Beatbox
+                  span.logo-text-word Club
       == yield
+
+      footer.block.block-footer
+        .container
+          .row
+            .col-12.col-md-6.offset-md-3
+              nav.nav-footer
+                = link_to "FAQ", "faq.html", :class => "nav-footer-link"
+                = link_to "Privacy Policy", "privacy.html", :class => "nav-footer-link"
+                = link_to "Terms of Service", "terms.html", :class => "nav-footer-link"
+    script src="https://js.stripe.com/v3/"
+    script src="https://checkout.stripe.com/checkout.js"

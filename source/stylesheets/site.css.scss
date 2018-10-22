@@ -6,6 +6,7 @@
 @import "type";
 @import "buttons";
 @import "forms";
+@import "animations";
 
 // Universal
   * {
@@ -38,16 +39,96 @@
   .site-logo {
     display: block;
     height: 80px;
-    width: 80px;
+    width: auto;
     @include flexbox;
+    @include flex-wrap(nowrap);
+    text-decoration: none;
+    .logo {
+      @include flexbox;
+      @include flex-wrap(wrap);
+      height: 100%;
+      width: 80px;
+      &:hover {
+        .logo-block {
+          &:nth-child(1), &:nth-child(16){
+            animation: pulse 600ms alternate infinite;
+          }
+          &:nth-child(2), &:nth-child(15){
+            animation: pulse2 600ms ease 200ms alternate infinite;
+          }
+          &:nth-child(3), &:nth-child(14){
+            animation: pulse3 600ms ease 300ms alternate infinite;
+          }
+          &:nth-child(4), &:nth-child(13){
+            animation: pulse4 600ms ease 400ms alternate infinite;
+          }
+          &:nth-child(5), &:nth-child(12){
+            animation: pulse6 600ms ease 500ms alternate infinite;
+          }
+          &:nth-child(6), &:nth-child(11){
+            animation: pulse8 600ms ease 600ms alternate infinite;
+          }
+          &:nth-child(7), &:nth-child(10){
+            animation: pulse8 600ms ease 700ms alternate infinite;
+          }
+          &:nth-child(8), &:nth-child(9){
+            animation: pulse6 600ms ease 800ms alternate infinite;
+          }
+        }
+      }
+    }
+    .logo-block {
+      background: #222;
+      box-shadow: 0 0 0 rgba(0,0,0,0.2);
+      flex: 0 1 25%;
+      height: 25% 25vh;
+      &:nth-child(1), &:nth-child(16){
+        background: #E52800;
+        z-index: 1;
+      }
+      &:nth-child(2), &:nth-child(15){
+        background: #E64D01;
+        z-index: 2;
+      }
+      &:nth-child(3), &:nth-child(14){
+        background: #E67300;
+        z-index: 3;
+      }
+      &:nth-child(4), &:nth-child(13){
+        background: #E79901;
+        z-index: 4;
+      }
+      &:nth-child(5), &:nth-child(12){
+        background: #E63917;
+        z-index: 5;
+      }
+      &:nth-child(6), &:nth-child(11){
+        background: #E76B2F;
+        z-index: 6;
+      }
+      &:nth-child(7), &:nth-child(10){
+        background: #E69544;
+        z-index: 7;
+      }
+      &:nth-child(8), &:nth-child(9){
+        background: #E6B75B;
+        z-index: 6;
+      }
+    }
     img {
       width: 100%;
     }
     .logo-text {
+      display: block;
+      margin: .4rem 0 0 $space-small;
+      width: 80px;
+    }
+    .logo-text-word {
       color: $color-white;
       @include font-size(18);
       font-weight: 700;
-      margin: .4rem 0 0 $space-small;
+      display: inline-block;
+      margin: 0;
     }
   }
 
@@ -192,16 +273,37 @@
     }
   }
 
-  .block-footer {
+  .block-cta {
     background: lighten($color-black-500,2%);
     box-shadow: -600px 0 0 lighten($color-black-500,2%), 600px 0 0 lighten($color-black-500,2%);
+    margin-bottom: 0;
     padding: $space-large 0;
   }
 
-  .footer-header {
+  .cta-header {
     text-align: center;
     @media (min-width: $mq-tablet) {
       margin: 0;
       text-align: left;
+    }
+  }
+  .block-footer {
+    background: lighten($color-black-500,2%);
+    margin-bottom: 0;
+    padding: $space-medium 0;
+  }
+  .nav-footer {
+    @include flexbox;
+    text-align: center;
+    justify-content: center;
+  }
+  .nav-footer-link {
+    color: $color-gray;
+    font-weight: 700;
+    @include font-size(18);
+    margin: 0 $space-x;
+    text-decoration: none;
+    &:hover {
+      color: $color-white;
     }
   }
