@@ -15,10 +15,10 @@
   }
   .btn-primary {
     background: $color-red-400;
-    color: darken($color-red-900,5%);
+    color: $color-red-100;
     &:hover {
       background: $color-red-500;
-      color: darken($color-red-900,15%);
+      color: $color-red-50;
     }
   }
   .btn-center-tablet {
