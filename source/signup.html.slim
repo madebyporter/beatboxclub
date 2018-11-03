@@ -42,5 +42,7 @@ section.block.block-section
                   form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
                     input name="cmd" type="hidden" value="_s-xclick"
                     input name="hosted_button_id" type="hidden" value="#{subs.paypal}"
+                    fieldset.form-fieldset
+                      input.form-input type="text" name="os0" maxlength="200" placeholder="Email"
                     input.subs-submit.form-submit.btn.btn-primary type="submit" border="0" name="submit" value="Subscribe"
                     img alt="" border="0" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"
