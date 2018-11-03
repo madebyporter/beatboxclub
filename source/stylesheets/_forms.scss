@@ -2,18 +2,25 @@
 
   .form-fieldset {
     border: 0;
-    margin: 0 0 $space-x;
+    margin: 0 0 $space-small;
+    padding: 0;
     position: relative;
     width: 100%;
   }
   .form-input {
     background: lighten($color-black-500,5%);
     border: 0;
-    color: $color-white;
+    border-radius: 2px;
+    color: $color-black-50;
     @include font-size(24);
     font-weight: 700;
+    outline: 0;
     padding: $space-small;
     width: 100%;
+    &:focus {
+      background: lighten($color-black-400,0%);
+      color: $color-black-0;
+    }
   }
   .form-select {
     -webkit-appearance: none;
@@ -33,4 +40,19 @@
   }
   .form-submit {
     width: 100%;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    border: 0px solid transparent;
+    -webkit-text-fill-color: $color-black-50;
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    transition: background-color 5000s ease-in-out 0s;
   }

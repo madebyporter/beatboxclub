@@ -1,0 +1,21 @@
+{
+  "scripts": {
+    "lambda-serve": "netlify-lambda serve lambda-src",
+    "start": "NODE_ENV=development ./node_modules/webpack/bin/webpack.js --watch -d --color",
+    "build": "NODE_ENV=production webpack && netlify-lambda build lambda-src",
+    "dev": "NODE_ENV=development concurrently \"webpack-dev-server --content-base src/\" \"yarn run lambda-serve\"",
+    "test": "echo 'No tests are currently configured.'"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "netlify-lambda": "^1.0.2",
+    "webpack": "^4.23.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "dependencies": {
+    "dotenv": "^6.1.0",
+    "stripe": "^6.13.0",
+    "uuid": "^3.3.2"
+  }
+}

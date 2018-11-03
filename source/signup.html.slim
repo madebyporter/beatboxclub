@@ -1,51 +1,46 @@
 ---
 title: Try the Beatbox Club - Beats for Music and Video
+subs:
+  - id: loops
+    name: Loop Box
+    price: $5/mo
+    desc: Inside you'll find ~1 min loopable beats in 320kbps MP3 format. Best for IG, Youtube, ads &amp; artist demos.
+    stripe: 5000
+    paypal: WNTAUEZ2UZMJ6
+  - id: tracks
+    name: Track Box
+    price: $20/mo
+    desc: Inside you'll find full length beats in 320kbps MP3 format. Best for music artists &amp; filmmakers.
+    stripe: 20000
+    paypal: KMEXEAVXZERL2
+  # - id: stems
+  #   name: Stem Box
+  #   price: $50/mo
+  #   desc: Inside you'll find full length beats with their stems in MP3 & WAVformat. Best for anyone who wants to customize shit.
+  #   stripe: 50000
 ---
 section.block.block-section
   .container
     .row
       .col-12
         h1
-          | Join The Beatbox Club and get exclusive beats in your inbox.
-        p.content-large
-          | MP3 Loop Subscribers get their first 30 days free
+          | Join the Beatbox Club today to get access to hiphop beats for your music, videos, ads or life.
 section.block.block-section
   .container
     .row
-      .col-12.col-lg-5
-        p
-          strong Free Access - $0/mo:<br />
-          | Sign up to get free beats in your email.
-
-        p
-          strong MP3 Loops Access - $5/mo:<br />
-          | Get unlimited access to my full mp3 database of beats? 128kbps quality beats in one spot for $5/mo.
-
-        span.content-small
-          strong Coming Soon
-
-        p.content-disabled
-          strong Stem Access - $20/mo:<br />
-          | Get unlimited access to my stem files for all my beats. All the stems are in WAV/AIFF format, zipped up.
-
-      .col-12.col-lg-6.offset-lg-1
-        div id="mc_embed_signup"
-          form action="https://thebeatboxclub.us19.list-manage.com/subscribe/post?u=904cbe53fd98d721cd0f6af6b&amp;id=8f73f35139" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate"
-            fieldset.form-fieldset
-              input.form-input type="text" placeholder="First Name" name="FNAME" id="mce-FNAME"
-            fieldset.form-fieldset
-              input.form-input type="text" placeholder="Last Name" name="LNAME" id="mce-LNAME"
-            fieldset.form-fieldset
-              input.form-input type="email" placeholder="Email" name="EMAIL" id="mce-EMAIL"
-            fieldset.form-fieldset
-              select.form-select name="MMERGE3" id="mce-MMERGE3"
-                option selected="selected" Subscription Type
-                option value="Free Access" Free Access
-                option value="MP3 Loops Access" MP3 Access - $5.00 USD
-            div id="mce-responses" class="clear"
-              div class="response" id="mce-error-response" style="display:none"
-              div class="response" id="mce-success-response" style="display:none"
-            div style="position: absolute; left: -5000px;" aria-hidden="true"
-              input type="text" name="b_904cbe53fd98d721cd0f6af6b_8f73f35139" tabindex="-1" value=""
-            fieldset.form-fieldset
-              input.form-submit.btn.btn-primary type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe"
+      .col-12
+        .row
+          - current_page.data.subs.each do |subs|
+            .col-12.col-lg-6
+              #plan.card-plan data-amount="#{subs.stripe}" data-name="#{subs.name}" data-desc="#{subs.desc}" data-id="#{subs.id}"
+                .card-plan-inner.card-plan-content
+                  h3 = subs.name
+                  p = subs.price
+                  p.content-small = subs.desc
+                .card-plan-inner.card-plan-cta
+                  / button.subs-submit.form-submit.btn.btn-primary value="Subscribe" name="subscribe" id="#{subs.id}" Subscribe
+                  form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
+                    input name="cmd" type="hidden" value="_s-xclick"
+                    input name="hosted_button_id" type="hidden" value="#{subs.paypal}"
+                    input.subs-submit.form-submit.btn.btn-primary type="submit" border="0" name="submit" value="Subscribe"
+                    img alt="" border="0" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"

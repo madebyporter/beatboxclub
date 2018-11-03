@@ -21,6 +21,14 @@
       color: $color-red-50;
     }
   }
+  .btn-secondary {
+    background: $color-black-400;
+    color: $color-black-100;
+    &:hover {
+      background: $color-black-200;
+      color: $color-black-0;
+    }
+  }
   .btn-center-tablet {
     @media (min-width: $mq-tablet) {
       @include absolute-center;

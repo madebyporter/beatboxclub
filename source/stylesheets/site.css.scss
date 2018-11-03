@@ -24,8 +24,6 @@
     -moz-osx-font-smoothing: auto;
   }
   body {
-    background: url('../images/site-bg-rapper-4.jpg') no-repeat scroll center top $color-black;
-    background-size: cover;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1em;
     line-height: 1.5;
@@ -33,6 +31,14 @@
     overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    &.index {
+      background: url('../images/site-bg-rapper-4.jpg') no-repeat scroll center top $color-black;
+      background-size: cover;
+    }
+    &.signup {
+      background: url('../images/site-bg-video.jpg') no-repeat scroll center 30% $color-black;
+      background-size: cover;
+    }
   }
 
 // Masthead
@@ -211,23 +217,24 @@
     margin: 0 0 $space-medium 0;
     // overflow: hidden;
     position: relative;
-    @media (min-width: $mq-phonexl) {
-      height: 35vh;
+    @media (min-width: $mq-tablet) {
+      height: 460px;
     }
     @media (min-width: $mq-laptop) {
-      height: 85vh;
-      max-height: 720px;
+      height: 600px;
     }
     @media (min-width: $mq-desktop) {
-      max-height: 720px;
+      // height: 720px;
     }
   }
   .value-prop-title {
-    margin-top: $space-medium;
+    margin-top: $space-small;
+    margin-bottom: $space-small;
     position: relative;
     z-index: 2;
     @media (min-width: $mq-tablet) {
-      margin-top: $space-large;
+      margin-top: $space-small;
+      margin-bottom: $space-medium;
     }
     @media (min-width: $mq-laptop) {
       text-align: right;
@@ -306,4 +313,23 @@
     &:hover {
       color: $color-white;
     }
+  }
+  .newsletter {
+    border-bottom: 1px solid $color-black-400;
+    margin: 0 0 $space-medium 0;
+    padding: 0 0 $space-small 0;
+  }
+  .card-plan {
+    background: $color-black-500;
+    border: 1px solid lighten($color-black-500,8%);
+    margin: 0 0 $space-medium 0;
+  }
+  .card-plan-inner {
+    padding: $space-medium;
+  }
+  .card-plan-cta {
+    padding-top: $space-x;
+  }
+  .card-plan-content {
+    padding-bottom: 0;
   }
