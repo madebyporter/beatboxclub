@@ -12,11 +12,14 @@
     border: 0;
     border-radius: 2px;
     color: $color-black-50;
-    @include font-size(24);
+    @include font-size(18);
     font-weight: 700;
     outline: 0;
     padding: $space-small;
     width: 100%;
+    @media (min-width: $mq-tablet) {
+      @include font-size(24);
+    }
     &:focus {
       background: lighten($color-black-400,0%);
       color: $color-black-0;

@@ -301,15 +301,25 @@
   }
   .nav-footer {
     @include flexbox;
+    @include flex-wrap(wrap);
     text-align: center;
     justify-content: center;
+    @media (min-width: $mq-tablet) {
+      @include flex-wrap(nowrap);
+    }
   }
   .nav-footer-link {
     color: $color-gray;
     font-weight: 700;
     @include font-size(18);
     margin: 0 $space-x;
+    padding: $space-small 0;
     text-decoration: none;
+    width: 100%;
+    @media (min-width: $mq-tablet) {
+      padding: 0 0;
+      width: auto;
+    }
     &:hover {
       color: $color-white;
     }
