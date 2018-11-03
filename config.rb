@@ -34,11 +34,11 @@ page '/*.txt', layout: false
 #   end
 # end
 
-activate :external_pipeline,
-           name: :webpack,
-           command: build? ? "yarn run build" : "yarn run start",
-           source: ".tmp/dist",
-           latency: 1
+# activate :external_pipeline,
+#            name: :webpack,
+#            command: build? ? "yarn run build" : "yarn run start",
+#            source: ".tmp/dist",
+#            latency: 1
 
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
@@ -47,8 +47,8 @@ set :images_dir, 'images'
 # Build-specific configuration
 configure :build do
   # Minify CSS on build
-  # activate :minify_css
+  activate :minify_css
 
   # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_javascript
 end
