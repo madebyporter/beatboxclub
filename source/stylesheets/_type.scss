@@ -1,5 +1,16 @@
 // _type.scss
 
+  // Links
+    a {
+      color: $color-red;
+      font-weight: 700;
+      text-decoration: none;
+      &:hover {
+        color: $color-yellow;
+        text-decoration: none;
+      }
+    }
+
   // Paragraphs
     p, ul, li, span {
       color: $color-black-100;

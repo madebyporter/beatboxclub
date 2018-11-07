@@ -152,29 +152,8 @@
     // background: lighten($color-black-500,2%);
     padding: $space-large 0 $space-medium;
   }
-
-  .index {
-    position: relative;
-    &:before {
-
-    }
-    // @media (min-width: $mq-tablet) {
-    //   &:before {
-    //     background: url('../images/hero-laptop.jpg') no-repeat right top;
-    //     background-size: cover;
-    //     content: "";
-    //     position: absolute;
-    //     right: 0;
-    //     top: 0;
-    //     height: 60vh;
-    //     width: 50%;
-    //   }
-    // }
-    // @media (min-width: $mq-desktop) {
-    //   &:before {
-    //     height: 120vh;
-    //   }
-    // }
+  .block-content {
+    margin-bottom: $space-large;
   }
 
   .persona-type {
