@@ -7,6 +7,7 @@
 @import "buttons";
 @import "forms";
 @import "animations";
+@import "modal";
 
 // Universal
   * {
@@ -24,6 +25,7 @@
     -moz-osx-font-smoothing: auto;
   }
   body {
+    background: $color-black;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1em;
     line-height: 1.5;

@@ -65,8 +65,10 @@ html
           .row
             .col-12.col-md-6.offset-md-3
               nav.nav-footer
-                = link_to "FAQ", "faq.html", :class => "nav-footer-link"
-                = link_to "Privacy Policy", "privacy.html", :class => "nav-footer-link"
-                = link_to "Terms of Service", "terms.html", :class => "nav-footer-link"
+                = link_to "FAQ", "faq", :class => "nav-footer-link modal-link"
+                = link_to "Privacy Policy", "privacy", :class => "nav-footer-link modal-link"
+                = link_to "Terms of Service", "terms", :class => "nav-footer-link modal-link"
+                = link_to "Unsubscribe", "https://www.paypal.com/cgi-bin/webscr?cmd=_subscr-find&alias=K79CK99P7N5DA", :class => "nav-footer-link modal-link"
+
     / script src="https://checkout.stripe.com/checkout.js"
     / script src="javascripts/bundle.js"
