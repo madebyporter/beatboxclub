@@ -70,5 +70,14 @@ html
                 = link_to "Terms of Service", "terms", :class => "nav-footer-link modal-link"
                 = link_to "Unsubscribe", "https://www.paypal.com/cgi-bin/webscr?cmd=_subscr-find&alias=K79CK99P7N5DA", :class => "nav-footer-link modal-link"
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    script async src="https://www.googletagmanager.com/gtag/js?id=UA-59805983-1"
+    javascript:
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-59805983-1');
+
     / script src="https://checkout.stripe.com/checkout.js"
     / script src="javascripts/bundle.js"
