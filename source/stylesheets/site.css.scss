@@ -266,6 +266,7 @@
     box-shadow: -600px 0 0 lighten($color-black-500,2%), 600px 0 0 lighten($color-black-500,2%);
     margin-bottom: 0;
     padding: $space-large 0;
+    border-bottom: 1px solid $color-black-400;
   }
 
   .cta-header {
