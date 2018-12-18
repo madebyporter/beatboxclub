@@ -202,7 +202,7 @@
       height: 460px;
     }
     @media (min-width: $mq-laptop) {
-      height: 600px;
+      // height: 660px;
     }
     @media (min-width: $mq-desktop) {
       // height: 720px;
@@ -215,11 +215,13 @@
     z-index: 2;
     @media (min-width: $mq-tablet) {
       margin-top: $space-small;
-      margin-bottom: $space-medium;
+      margin-bottom: $space-small;
     }
     @media (min-width: $mq-laptop) {
-      text-align: right;
-      @include translate(-$space-large, 0);
+      text-align: left;
+      // @include translate(-$space-large, 0);
+      @include font-size(64);
+      padding: $space-medium 0 0 0;
     }
     @media (min-width: $mq-wide) {
       text-align: left;
@@ -233,7 +235,7 @@
   .value-prop-pad {
     padding-top: $space-large;
     @media (min-width: $mq-laptop) {
-      padding-top: $space-xl;
+      padding-top: $space-large;
     }
   }
   .value-prop-image {
@@ -249,8 +251,8 @@
       opacity: 1;
     }
     img {
-      float: right;
-      height: 100%;
+      width: 100%;
+      @include absolute-center;
     }
   }
   .value-prop-paragraph {
