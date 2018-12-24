@@ -1,0 +1,14 @@
+== wrap_layout :layout do
+  section.block.block-section.block-hero
+    .container
+      .row
+        .col-12
+          .row
+            .col-md-12.col-lg-10
+              h1.bottom-margin-small
+                = current_article.title
+  section.block.block-section
+    .container
+      .row
+        .col-12
+          = current_article.body

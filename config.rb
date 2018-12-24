@@ -11,6 +11,10 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
+set :css_dir, 'stylesheets'
+set :js_dir, 'javascripts'
+set :images_dir, 'images'
+
 # With alternative layout
 # page '/path/to/file.html', layout: :otherlayout
 
@@ -40,9 +44,13 @@ page '/*.txt', layout: false
 #            source: ".tmp/dist",
 #            latency: 1
 
-set :css_dir, 'stylesheets'
-set :js_dir, 'javascripts'
-set :images_dir, 'images'
+activate :blog do |blog|
+  blog.prefix = "blog"
+  blog.permalink = "{title}.html"
+  blog.layout = "blog_layout"
+end
+
+activate :directory_indexes
 
 # Build-specific configuration
 configure :build do

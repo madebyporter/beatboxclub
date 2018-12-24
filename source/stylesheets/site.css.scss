@@ -8,6 +8,7 @@
 @import "forms";
 @import "animations";
 @import "modal";
+@import "blog";
 
 // Universal
   * {
@@ -39,6 +40,10 @@
     }
     &.signup {
       background: url('../images/site-bg-video.jpg') no-repeat scroll center 30% $color-black;
+      background-size: cover;
+    }
+    &.heyfacebooker {
+      background: url('../images/site-bg-mic.jpg') no-repeat scroll right top $color-black;
       background-size: cover;
     }
   }
@@ -326,4 +331,60 @@
   }
   .card-plan-content {
     padding-bottom: 0;
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+  .table {
+    width: 100%;
+    tr:hover td {
+      background: $color-black-500;
+      .table-link {
+        color: $color-yellow;
+      }
+    }
+    th, td {
+      border-bottom: 1px solid $color-black-500;
+      color: $color-white;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    th {
+      background: rgba(33,33,33,0.7);
+      @include font-size(14);
+      padding: $space-small $space-small $space-x;
+      text-align: left;
+    }
+    td {
+      background: rgba(51,51,51,0.7);
+      @include font-size(18);
+      padding: $space-x $space-small;
+      border-right: 1px solid $color-black-500;
+      &:last-child {
+        border-right: 0;
+      }
+    }
+    td.table-logo {
+      border-right: 0;
+      padding-right: 0;
+      width: 60px;
+    }
+    .table-logo-img {
+      width: 40px;
+      vertical-align: middle;
+    }
+    .table-link {
+      color: $color-white;
+    }
+    .table-os-img {
+      display: inline-block;
+      margin: 0 $space-x;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+    .table-free-img {
+      margin-top: 5px;
+    }
   }
