@@ -358,14 +358,14 @@
     }
     td {
       background: rgba(51,51,51,0.7);
+      border-right: 1px solid $color-black-500;
       @include font-size(18);
       padding: $space-x $space-small;
-      border-right: 1px solid $color-black-500;
       &:last-child {
         border-right: 0;
       }
     }
-    td.table-logo {
+    .table-logo {
       border-right: 0;
       padding-right: 0;
       width: 60px;
@@ -386,5 +386,11 @@
     }
     .table-free-img {
       margin-top: 5px;
+    }
+    .table-cell-center {
+      text-align: center;
+    }
+    .table-text-small {
+      @include font-size(14);
     }
   }

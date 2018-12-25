@@ -73,8 +73,9 @@ html
                         input.form-submit.btn.btn-secondary type="submit" value="Sign Up" name="subscribe" id="mc-embedded-subscribe"
 
           .row
-            .col-12.col-md-8.offset-md-2
+            .col-12
               nav.nav-footer
+                = link_to "Join The Beatbox Club", "signup", :class => "nav-footer-link modal-link"
                 = link_to "FAQ", "faq", :class => "nav-footer-link modal-link"
                 = link_to "Privacy Policy", "privacy", :class => "nav-footer-link modal-link"
                 = link_to "Terms of Service", "terms", :class => "nav-footer-link modal-link"

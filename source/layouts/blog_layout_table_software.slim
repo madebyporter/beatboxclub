@@ -1,0 +1,43 @@
+== wrap_layout :layout do
+  section.block.block-section.block-hero
+    .container
+      .row
+        .col-12
+          .row
+            .col-md-12.col-lg-10
+              h1.bottom-margin-small
+                = current_article.title
+  section.block.block-section
+    .container
+      .row
+        .col-12
+          = current_article.body
+      .row
+        .col-12
+          .table-container
+            table.table
+              thead
+                tr
+                  - current_article.data.thead.each do |h|
+                    th colspan="#{h.cols}" = h.name
+
+              tbody
+                - current_article.data.tdata.each do |d|
+                  tr
+                    td.table-logo
+                      = link_to "#{d.link}", :class => "table-link" do
+                        = image_tag "blog/software/img-software-#{d.slug}.svg", :alt => "#{d.name}", :class => "table-logo-img"
+                    td 
+                      = link_to "#{d.name}", "#{d.link}", :class => "table-link"
+                    td
+                      - d.platforms.each do |p|
+                        = image_tag "blog/software/img-software-os-#{p.platform}.svg", :alt => "#{p.platform}", :class => "table-os-img"
+                    td
+                      = d.level
+                    td.table-cell-center.table-text-small
+                      - if ! locals[d.free]
+                        = d.free
+                    td 
+                      = d.subscription
+                    td 
+                      = d.purchase

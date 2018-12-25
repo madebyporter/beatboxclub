@@ -16,7 +16,7 @@
       color: $color-black-100;
       font-weight: 500;
       @include font-size(18);
-      line-height: 1.3;
+      line-height: 1.4;
       margin: 0 0 $space-x 0;
       @media (min-width: $mq-tablet) {
         @include font-size(24);
