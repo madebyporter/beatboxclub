@@ -42,7 +42,11 @@
       background: url('../images/site-bg-video.jpg') no-repeat scroll center 30% $color-black;
       background-size: cover;
     }
-    &.heyfacebooker {
+    &.beats-for-facebook {
+      background: url('../images/site-bg-mic.jpg') no-repeat scroll right top $color-black;
+      background-size: cover;
+    }
+    &.beats-for-instagram {
       background: url('../images/site-bg-mic.jpg') no-repeat scroll right top $color-black;
       background-size: cover;
     }
