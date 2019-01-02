@@ -297,7 +297,7 @@
     @include flex-wrap(wrap);
     text-align: center;
     justify-content: center;
-    @media (min-width: $mq-tablet) {
+    @media (min-width: $mq-laptop) {
       @include flex-wrap(nowrap);
     }
   }
@@ -309,7 +309,7 @@
     padding: $space-small 0;
     text-decoration: none;
     width: 100%;
-    @media (min-width: $mq-tablet) {
+    @media (min-width: $mq-laptop) {
       padding: 0 0;
       width: auto;
     }

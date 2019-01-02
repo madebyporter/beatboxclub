@@ -37,7 +37,7 @@ html
           g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
           g.clearUserCookie=function(){};
       })(window,document,window['_fs_namespace'],'script','user');
-      
+
   body class="#{page_classes}"
     main.site-wrapper
       header.block.block-header
@@ -88,7 +88,7 @@ html
                         input.form-input type="email" placeholder="Email" name="EMAIL" id="mce-EMAIL"
                     .col-lg-3
                       fieldset.form-fieldset
-                        input.form-submit.btn.btn-secondary type="submit" value="Sign Up" name="subscribe" id="mc-embedded-subscribe"
+                        input.form-submit.btn.btn-secondary type="submit" value="Sign Up" name="subscribe" id="mc-embedded-subscribe" onclick="ga('send', 'event', 'Subscribe', 'click', 'Free Box', '0');"
 
           .row
             .col-12
