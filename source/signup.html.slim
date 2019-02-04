@@ -5,27 +5,32 @@ subs:
   - id: loops
     name: Loop Box
     price: $5/mo
-    desc: Inside you'll find ~1 min loopable beats in 320kbps MP3 format. Best for IG, Youtube, ads &amp; artist demos.
+    benefits:
+      - benefit: 'Great for Influencers'
+      - benefit: '1-2 minute tracks'
+      - benefit: 'Consistent, looping beats'
     stripe: 5000
     paypal: RJCYCGVTVCY9E
+    button: secondary
   - id: tracks
     name: Track Box
-    price: $20/mo
-    desc: Inside you'll find full length beats in 320kbps MP3 format. Best for music artists &amp; filmmakers.
-    stripe: 20000
+    price: $10/mo
+    benefits:
+      - benefit: 'Great for Musicians'
+      - benefit: '3-10 minute tracks'
+      - benefit: 'Variations in beats'
+    stripe: 10000
     paypal: EZ4HJGTZF6LUS
-  # - id: stems
-  #   name: Stem Box
-  #   price: $50/mo
-  #   desc: Inside you'll find full length beats with their stems in MP3 & WAVformat. Best for anyone who wants to customize shit.
-  #   stripe: 50000
+    button: primary
 ---
 section.block.block-section
   .container
     .row
-      .col-12
+      .col-12.col-lg-8
         h1
-          | Join to get access to instrumental songs and rap beats under the Creative Commons.
+          | Pick the right beat without the risk.
+        p
+          | Our beats can be used for commercial or personal projects. Unlimited MP3 Downloads. Billed Monthly. Cancel Anytime.
 section.block.block-section
   .container
     .row
@@ -34,16 +39,21 @@ section.block.block-section
           - current_page.data.subs.each do |subs|
             .col-12.col-lg-6
               #plan.card-plan data-amount="#{subs.stripe}" data-name="#{subs.name}" data-desc="#{subs.desc}" data-id="#{subs.id}"
-                .card-plan-inner.card-plan-content
-                  h3 = subs.name
-                  p = subs.price
-                  p.content-small = subs.desc
-                .card-plan-inner.card-plan-cta
+                .card-plan-inner
+                  .row
+                    .col-lg-7
+                      h3.card-plan-header.card-plan-content = subs.name
+                    .col-lg-5
+                      p.card-plan-price.card-plan-content = subs.price
+                  ul.no-list.card-plan-list
+                    - subs.benefits.each do |benefit|
+                      li.card-plan-list-ele.content-small = benefit.benefit
+                .card-plan-inner.card-plan-cta.card-plan-content
                   / button.subs-submit.form-submit.btn.btn-primary value="Subscribe" name="subscribe" id="#{subs.id}" Subscribe
                   form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
                     input name="cmd" type="hidden" value="_s-xclick"
                     input name="hosted_button_id" type="hidden" value="#{subs.paypal}"
                     fieldset.form-fieldset
-                      input.form-input type="text" name="os0" maxlength="200" placeholder="Email"
-                    input.subs-submit.form-submit.btn.btn-primary type="submit" border="0" name="submit" value="Subscribe" onclick="ga('send', 'event', 'Subscribe', 'click', '#{subs.name}', '#{subs.stripe}');"
+                      input.form-input type="text" name="os0" maxlength="200" placeholder="Dropbox Email"
+                    input.subs-submit.form-submit.btn class="btn-#{subs.button}" type="submit" border="0" name="submit" value="Subscribe" onclick="ga('send', 'event', 'Subscribe', 'click', '#{subs.name}', '#{subs.stripe}');"
                     img alt="" border="0" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"

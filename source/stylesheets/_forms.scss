@@ -10,7 +10,7 @@
   .form-input {
     background: lighten($color-black-500,5%);
     border: 0;
-    border-radius: 2px;
+    border-radius: 0;
     color: $color-black-50;
     @include font-size(18);
     font-weight: 700;
