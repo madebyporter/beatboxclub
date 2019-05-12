@@ -50,6 +50,74 @@
       background: url('../images/site-bg-mic.jpg') no-repeat scroll right top $color-black;
       background-size: cover;
     }
+    &.sensory {
+      background: url('../images/site-bg-sensory-mobile.jpg') no-repeat scroll right top #111427;
+      background-size: 100% auto;
+      @media (min-width: $mq-tablet) {
+        background: url('../images/site-bg-sensory-desktop.jpg') no-repeat scroll right top #111427;
+        background-size: cover;
+      }
+      .block-cta, .block-footer, .newsletter {
+        background: #0F1021;
+        border-bottom: 1px solid #282A57;
+      }
+      p {
+        color: $color-white;
+      }
+      .sub-title {
+        color: #8D91D9;
+      }
+      ::placeholder {
+        -webkit-text-fill-color: lighten(#0F1021, 45%);
+      }
+      ::-ms-input-placeholder {
+        -webkit-text-fill-color: lighten(#0F1021, 45%);
+      }
+      .form-input {
+        background: lighten(#0F1021, 5%);
+        color: lighten(#0F1021, 75%);
+        &:focus, &:hover {
+          background: lighten(#0F1021, 15%);
+        }
+      }
+      .nav-footer a {
+        color: lighten(#0F1021, 35%);
+        &:hover {
+          color: lighten(#0F1021, 45%);
+        }
+      }
+      .btn-secondary {
+        background: lighten(#0F1021, 35%);
+        color: lighten(#0F1021, 75%);
+        &:hover {
+          background: lighten(#0F1021, 40%);
+          color: $color-white;
+        }
+      }
+       .block-logo {
+        border: 1px solid #282A57;
+        height: 206px;
+        margin: 0 0 $space-small 0;
+        width: 100%;
+        &:hover {
+          border: 1px solid #4B4FA3;
+          .block-logo-img {
+            @include scale(1.05);    
+          }
+        }
+      }
+      .block-logo-link {
+        align-items: center;
+        @include flexbox;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+      }
+      .block-logo-img {
+        width: 120px;
+        @include scale(1);
+      }
+    }
   }
 
 // Masthead
@@ -151,15 +219,23 @@
 
   .site-wrapper {
     width: 100%;
+
   }
 
   .block {
     margin: 0 auto $space-medium;
+    padding: 0 $space-x;
+    @media (min-width: $mq-tablet) {
+      padding: 0;
+    }
   }
 
   .block-header {
     // background: lighten($color-black-500,2%);
-    padding: $space-large 0 $space-medium;
+    padding: $space-large $space-x $space-medium;
+    @media (min-width: $mq-tablet) {
+      padding: $space-large 0 $space-medium;
+    }
   }
   .block-content {
     margin-bottom: $space-large;
@@ -274,14 +350,16 @@
 
   .block-cta {
     background: lighten($color-black-500,2%);
+    border-bottom: 1px solid $color-black-400;
     box-shadow: -600px 0 0 lighten($color-black-500,2%), 600px 0 0 lighten($color-black-500,2%);
     margin-bottom: 0;
-    padding: $space-large 0;
-    border-bottom: 1px solid $color-black-400;
+    padding: $space-large $space-x;
+    @media (min-width: $mq-tablet) {
+      padding: $space-large 0;
+    }
   }
 
   .cta-header {
-    text-align: center;
     @media (min-width: $mq-tablet) {
       margin: 0;
       text-align: left;
@@ -290,7 +368,10 @@
   .block-footer {
     background: lighten($color-black-500,2%);
     margin-bottom: 0;
-    padding: $space-medium 0;
+    padding: $space-medium $space-x;
+    @media (min-width: $mq-tablet) {
+      padding: $space-large 0;
+    }
   }
   .nav-footer {
     @include flexbox;
