@@ -139,6 +139,15 @@
         @include font-size(12);
       }
     }
+    .t-light {
+      font-weight: 300;
+    }
+    .t-book {
+      font-weight: 400;
+    }
+    .t-strong {
+      font-weight: 700;
+    }
 
   // Links
     a {

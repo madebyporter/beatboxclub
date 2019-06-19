@@ -5,6 +5,7 @@ var js = js || {},
 js.main = {
   init: function () {
     // this.modal();
+    this.microPlayer();
     this.externalLinks();
     this.externalLinkTracking();
   },
@@ -76,6 +77,49 @@ js.main = {
       }
     }
     externalLinks();
+  },
+  microPlayer: function() {
+    howlers = {}; 
+    var track = $('.box-song-player--controls');
+    $('.block-micro').find(track).each(function () {
+      $(this).on("click", function(){
+        var e = $(this);
+        var link = e.data("link");
+        var id = e.data("id");
+        
+        if (id in howlers){
+          if (e.hasClass('paused')){
+            e.removeClass('paused');
+            e.addClass('playing');
+            howlers[id].play();
+          } else if (e.hasClass('playing')){
+            e.removeClass('playing');
+            e.addClass('paused');
+            howlers[id].pause();
+          } else if (e.hasClass('unloaded')){
+             $('.block-micro').find(track).each(function () {
+              console.log('newtrack');
+              track.removeClass('playing');
+              track.removeClass('paused');
+              track.addClass('unloaded');
+            });
+            
+            e.removeClass('unloaded');
+            e.addClass('playing');
+            howlers[id].play();
+          }
+        } else {
+          howlers[id] = new Howl({
+            src: [link],
+            loop: true,
+          });
+
+          e.removeClass('unloaded');
+          e.addClass('playing');
+          howlers[id].play();
+        }
+      });
+    });
   },
   modal: function (e) {
     var bd = body;

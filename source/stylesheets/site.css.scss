@@ -554,120 +554,51 @@
       padding: 0 0 0 $space-x;
     }
   }
-  // .player {
-  //   background: $color-black;
-  //   position: fixed;
-  //   height: 80px;
-  //   width: 100%;
-  //   bottom: 0;
-  //   left: 0;
-  //   z-index: 10000;
-  //   overflow: hidden;
-  //   .sc-player {
-  //     @include flexbox;
-  //     align-items: center;
-  //     flex-wrap: nowrap;
-  //     height: 100%;
-  //     padding: $space-x;
-  //     justify-content: space-between;
-  //   }
-  //   .sc-artwork-list {
-  //     padding: 0;
-  //     margin: 0 $space-small 0 0;
-  //     height: 60px;
-  //     width: 60px;
-  //     order: 1;
-  //     img {
-  //       width: 100%;
-  //     }
-  //   }
-  //   .sc-trackslist, .sc-info-toggle {
-  //     display: none;
-  //   }
-  //   .sc-info {
-  //     order: 2;
-  //     p, .sc-download, .sc-info-close {
-  //       display: none;
-  //     }
-  //     h3 {
-  //       @extend .t-18;
-  //       margin: 0 0 .5rem 0;
-  //     }
-  //     h4 {
-  //       @extend .t-14;
-  //       margin: 0;
-  //     }
-  //   }
-  //   .sc-info {
-  //     width: 200px;
-  //   }
-  //   .sc-controls {
-  //     position: absolute;
-  //     height: 60px;
-  //     width: 60px;
-  //     @include flexbox;
-  //     align-items: center;
-  //     justify-content: center;
-  //     cursor: pointer;
-  //   }
-  //   .sc-play {
-  //     @include text-hide;
-  //     background: url('../images/icon-play.svg') no-repeat center;
-  //     background-size: 16px;
-  //     height: 24px;
-  //     width: 24px;
-  //   }
-  //   .sc-pause {
-  //     @include text-hide;
-  //     background: url('../images/icon-pause.svg') no-repeat center;
-  //     background-size: 16px;
-  //     height: 24px;
-  //     width: 24px;
-  //   }
-  //   .sc-scrubber {
-  //     order: 3;
-  //     width: 70%;
-  //     height: 60px;
-  //       .sc-time-span {
-  //         position: relative;
-  //       }
-  //       .sc-waveform-container {
-  //         height: 60px;
-  //         width: 100%;
-  //         img {
-  //           mix-blend-mode: luminosity;
-  //           background: $color-red;
-  //           height: 60px;
-  //           width: 100%;
-  //         }
-  //       }
-  //   }
-  //   .sc-time-indicators {
-  //     order: 4;
-  //     margin: 0 $space-small 0;
-  //     & > * {
-  //       color: $color-white;
-  //       font-weight: 700;
-  //       @extend .t-14;
-  //     }
-  //   } 
-  //   .player {
-  //     background: $color-white;
-  //   }
-  //   .sc-scrubber {
-  //     background: $color-white;
-  //     img {
-  //       // background-color: lighten(#0F1021,50%);
-  //     }
-  //     .sc-time-span {
-  //       // background-color:lighten(#0F1021,20%);
-  //     }
-  //       // .sc-buffer,
-  //     .sc-played {
-  //       background-color: $color-red;
-  //       position: absolute;
-  //       height: 60px;
-  //       // z-index: 100;
-  //     }
-  //   } 
-  // }
+
+  .box-song {
+    @include flexbox;
+    height: 160px;
+    margin: 0 0 $space-medium 0;
+    width: 100%;
+  }
+  .box-song-player {
+    background: url(../images/covers/cover-none.png) no-repeat center;
+    background-size: cover;
+    height: inherit;
+    position: relative;
+    width: 160px;
+  }
+  .box-song-player--artwork { 
+    width: 100%;
+  }
+  .box-song-player--controls {
+    $s: 24px;
+    @include absolute-center;
+    cursor: pointer;
+    height: $s;
+    width: $s;
+    @include text-hide;
+    &.playing {
+      background: url(../images/icon-pause.svg) no-repeat center;
+      background-size: contain;
+    }
+    &.paused, &.unloaded {
+      background: url(../images/icon-play.svg) no-repeat center;
+      background-size: contain;
+    }
+  }
+  .box-song-meta {
+    background: $color-black-400;
+    flex: 2 auto;
+    height: inherit;
+    padding: $space-small;
+    position: relative;
+  }
+  .box-song-meta--producer, .box-song-meta--mood {
+    display: block;
+    margin: 0 0 2px 0;
+  }
+  .box-song-meta--download {
+    position: absolute;
+    bottom: $space-small;
+  }
