@@ -50,7 +50,15 @@ activate :blog do |blog|
   blog.layout = "blog_layout"
 end
 
+activate :dotenv
+activate :contentful do |f|
+  f.space         = { site: ENV['CONTENTFUL_SPACE_ID'] }
+  f.access_token  = ENV['CONTENTFUL_ACCESS_TOKEN']
+  f.content_types = { micro: 'micro' }
+end
+
 activate :directory_indexes
+
 
 # Build-specific configuration
 configure :build do

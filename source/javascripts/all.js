@@ -89,34 +89,65 @@ js.main = {
         
         if (id in howlers){
           if (e.hasClass('paused')){
-            e.removeClass('paused');
-            e.addClass('playing');
-            howlers[id].play();
-          } else if (e.hasClass('playing')){
-            e.removeClass('playing');
-            e.addClass('paused');
-            howlers[id].pause();
-          } else if (e.hasClass('unloaded')){
-             $('.block-micro').find(track).each(function () {
-              console.log('newtrack');
+            Object.keys(howlers).forEach(function(key) {
+              howlers[key].unload();
+              howlers[key].load();
               track.removeClass('playing');
-              track.removeClass('paused');
               track.addClass('unloaded');
             });
-            
-            e.removeClass('unloaded');
-            e.addClass('playing');
+            e.removeClass('unloaded paused');
+
             howlers[id].play();
+            e.addClass('playing');
+            
+            console.log("track playing");
+          } else if (e.hasClass('playing')){
+            Object.keys(howlers).forEach(function(key) {
+              howlers[key].unload();
+              howlers[key].load();
+              track.removeClass('playing');
+              track.addClass('unloaded');
+            });
+            e.removeClass('unloaded playing');
+
+            howlers[id].pause();
+            e.addClass('paused');
+
+            console.log("track paused");
+          } else if (e.hasClass('unloaded')){
+            Object.keys(howlers).forEach(function(key) {
+              howlers[key].unload();
+              howlers[key].load();
+              track.removeClass('playing');
+              track.addClass('unloaded');
+            });
+
+            e.removeClass('unloaded');
+
+            howlers[id].play();
+            e.addClass('playing');
+
+            console.log("track started");
           }
         } else {
+          Object.keys(howlers).forEach(function(key) {
+            howlers[key].unload();
+            howlers[key].load();
+            track.removeClass('playing');
+            track.addClass('unloaded');
+          });
+
           howlers[id] = new Howl({
             src: [link],
             loop: true,
           });
-
+          
           e.removeClass('unloaded');
-          e.addClass('playing');
+
           howlers[id].play();
+          e.addClass('playing');
+          
+          console.log("track init");
         }
       });
     });

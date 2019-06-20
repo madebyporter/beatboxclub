@@ -1,0 +1,95 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/madebyporter/.nvm/versions/node/v0.12.18/bin/node',
+1 verbose cli   '/Users/madebyporter/.nvm/versions/node/v0.12.18/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'netlify-cli@next' ]
+2 info using npm@2.15.11
+3 info using node@v0.12.18
+4 verbose install initial load of /Users/madebyporter/.nvm/versions/node/v0.12.18/lib/package.json
+5 verbose readDependencies loading dependencies from /Users/madebyporter/.nvm/versions/node/v0.12.18/lib/package.json
+6 silly cache add args [ 'netlify-cli@next', null ]
+7 verbose cache add spec netlify-cli@next
+8 silly cache add parsed spec { raw: 'netlify-cli@next',
+8 silly cache add   scope: null,
+8 silly cache add   name: 'netlify-cli',
+8 silly cache add   rawSpec: 'next',
+8 silly cache add   spec: 'next',
+8 silly cache add   type: 'tag' }
+9 silly addNamed netlify-cli@next
+10 verbose addNamed "next" is being treated as a dist-tag for netlify-cli
+11 info addNameTag [ 'netlify-cli', 'next' ]
+12 silly mapToRegistry name netlify-cli
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry https://registry.npmjs.org/
+15 silly mapToRegistry data { raw: 'netlify-cli',
+15 silly mapToRegistry   scope: null,
+15 silly mapToRegistry   name: 'netlify-cli',
+15 silly mapToRegistry   rawSpec: '',
+15 silly mapToRegistry   spec: 'latest',
+15 silly mapToRegistry   type: 'tag' }
+16 silly mapToRegistry uri https://registry.npmjs.org/netlify-cli
+17 verbose addNameTag registry:https://registry.npmjs.org/netlify-cli not in flight; fetching
+18 verbose request uri https://registry.npmjs.org/netlify-cli
+19 verbose request no auth needed
+20 info attempt registry request try #1 at 11:40:55 PM
+21 verbose request id 0bff8b9354c420db
+22 verbose etag W/"b4238769295e8ddf35ebeda35b25be0d"
+23 verbose lastModified Mon, 17 Jun 2019 05:18:08 GMT
+24 http request GET https://registry.npmjs.org/netlify-cli
+25 http 304 https://registry.npmjs.org/netlify-cli
+26 verbose headers { date: 'Thu, 20 Jun 2019 06:40:56 GMT',
+26 verbose headers   connection: 'keep-alive',
+26 verbose headers   'set-cookie': [ '__cfduid=d61f8de1d15eb1250175690db7a9c3e981561012856; expires=Fri, 19-Jun-20 06:40:56 GMT; path=/; domain=.npmjs.org; HttpOnly' ],
+26 verbose headers   'cf-cache-status': 'HIT',
+26 verbose headers   'cache-control': 'max-age=300',
+26 verbose headers   'cf-ray': '4e9bc10e9e91999b-LAX',
+26 verbose headers   etag: '"b4238769295e8ddf35ebeda35b25be0d"',
+26 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+26 verbose headers   'last-modified': 'Mon, 17 Jun 2019 05:18:08 GMT',
+26 verbose headers   vary: 'accept-encoding, accept',
+26 verbose headers   'x-amz-meta-rev': '132-c6da55797f2eade40a0a7ddf93d4b28b',
+26 verbose headers   server: 'cloudflare' }
+27 silly get cb [ 304,
+27 silly get   { date: 'Thu, 20 Jun 2019 06:40:56 GMT',
+27 silly get     connection: 'keep-alive',
+27 silly get     'set-cookie': [ '__cfduid=d61f8de1d15eb1250175690db7a9c3e981561012856; expires=Fri, 19-Jun-20 06:40:56 GMT; path=/; domain=.npmjs.org; HttpOnly' ],
+27 silly get     'cf-cache-status': 'HIT',
+27 silly get     'cache-control': 'max-age=300',
+27 silly get     'cf-ray': '4e9bc10e9e91999b-LAX',
+27 silly get     etag: '"b4238769295e8ddf35ebeda35b25be0d"',
+27 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+27 silly get     'last-modified': 'Mon, 17 Jun 2019 05:18:08 GMT',
+27 silly get     vary: 'accept-encoding, accept',
+27 silly get     'x-amz-meta-rev': '132-c6da55797f2eade40a0a7ddf93d4b28b',
+27 silly get     server: 'cloudflare' } ]
+28 verbose etag https://registry.npmjs.org/netlify-cli from cache
+29 verbose get saving netlify-cli to /Users/madebyporter/.npm/registry.npmjs.org/netlify-cli/.cache.json
+30 verbose correctMkdir /Users/madebyporter/.npm correctMkdir not in flight; initializing
+31 silly addNameTag next cb for netlify-cli with tag next
+32 verbose stack Error: No compatible version found: netlify-cli@'next'
+32 verbose stack Valid install targets:
+32 verbose stack ["0.0.1","0.1.1","0.1.2","0.2.0","0.2.1","0.2.2","0.2.3","0.2.4","0.2.5","0.2.6","0.2.7","0.2.9","0.2.10","0.2.11","0.2.12","0.2.13","0.2.14","0.2.15","0.3.0","0.3.3","0.3.4","1.0.0","1.0.1","1.0.2","1.0.3","1.1.0","1.2.0","1.2.1","1.2.2","1.2.3","2.0.0-alpha.1","2.0.0-alpha.2","2.0.0-alpha.4","2.0.0-alpha.5","2.0.0-alpha.6","2.0.0-alpha.7","2.0.0-beta.2","2.0.0-beta.3","2.0.0-beta.4","2.0.0-beta.5","2.0.0-beta.6","2.0.0-beta.7","2.0.0-beta.8","2.0.0-beta.10","2.0.0","2.1.0-beta.1","2.1.0-beta.2","2.1.0","2.1.1","2.1.2","2.1.3","2.2.0","2.2.1","2.2.2","2.2.3","2.4.0","2.5.0","2.5.1","2.6.0","2.6.1","2.6.2","2.6.3","2.6.4","2.6.5","2.6.6","2.7.0","2.7.2","2.7.3","2.7.4","2.8.0","2.8.1","2.8.2","2.8.3","2.9.0","2.9.1","2.10.0-beta.1","2.10.0","2.10.1","2.11.0-beta.0","2.11.0","2.11.1","2.11.2","2.11.3","2.11.4","2.11.5","2.11.6","2.11.7","2.11.8","2.11.9","2.11.10","2.11.11","2.11.12","2.11.13","2.11.14","2.11.15","2.11.16","2.11.17","2.11.18","2.11.19","2.11.20","2.11.21","2.11.22","2.11.23"]
+32 verbose stack
+32 verbose stack     at installTargetsError (/Users/madebyporter/.nvm/versions/node/v0.12.18/lib/node_modules/npm/lib/cache/add-named.js:284:12)
+32 verbose stack     at next (/Users/madebyporter/.nvm/versions/node/v0.12.18/lib/node_modules/npm/lib/cache/add-named.js:94:10)
+32 verbose stack     at RES (/Users/madebyporter/.nvm/versions/node/v0.12.18/lib/node_modules/npm/node_modules/inflight/inflight.js:23:14)
+32 verbose stack     at f (/Users/madebyporter/.nvm/versions/node/v0.12.18/lib/node_modules/npm/node_modules/once/once.js:25:25)
+32 verbose stack     at fixName (/Users/madebyporter/.nvm/versions/node/v0.12.18/lib/node_modules/npm/lib/cache/add-named.js:29:5)
+32 verbose stack     at saved (/Users/madebyporter/.nvm/versions/node/v0.12.18/lib/node_modules/npm/lib/cache/caching-client.js:173:7)
+32 verbose stack     at /Users/madebyporter/.nvm/versions/node/v0.12.18/lib/node_modules/npm/node_modules/graceful-fs/polyfills.js:233:18
+32 verbose stack     at FSReqWrap.oncomplete (fs.js:95:15)
+33 verbose cwd /Users/madebyporter/Dropbox/MBP/Sites/bbx
+34 error Darwin 18.2.0
+35 error argv "/Users/madebyporter/.nvm/versions/node/v0.12.18/bin/node" "/Users/madebyporter/.nvm/versions/node/v0.12.18/bin/npm" "install" "-g" "netlify-cli@next"
+36 error node v0.12.18
+37 error npm  v2.15.11
+38 error code ETARGET
+39 error notarget No compatible version found: netlify-cli@'next'
+39 error notarget Valid install targets:
+39 error notarget ["0.0.1","0.1.1","0.1.2","0.2.0","0.2.1","0.2.2","0.2.3","0.2.4","0.2.5","0.2.6","0.2.7","0.2.9","0.2.10","0.2.11","0.2.12","0.2.13","0.2.14","0.2.15","0.3.0","0.3.3","0.3.4","1.0.0","1.0.1","1.0.2","1.0.3","1.1.0","1.2.0","1.2.1","1.2.2","1.2.3","2.0.0-alpha.1","2.0.0-alpha.2","2.0.0-alpha.4","2.0.0-alpha.5","2.0.0-alpha.6","2.0.0-alpha.7","2.0.0-beta.2","2.0.0-beta.3","2.0.0-beta.4","2.0.0-beta.5","2.0.0-beta.6","2.0.0-beta.7","2.0.0-beta.8","2.0.0-beta.10","2.0.0","2.1.0-beta.1","2.1.0-beta.2","2.1.0","2.1.1","2.1.2","2.1.3","2.2.0","2.2.1","2.2.2","2.2.3","2.4.0","2.5.0","2.5.1","2.6.0","2.6.1","2.6.2","2.6.3","2.6.4","2.6.5","2.6.6","2.7.0","2.7.2","2.7.3","2.7.4","2.8.0","2.8.1","2.8.2","2.8.3","2.9.0","2.9.1","2.10.0-beta.1","2.10.0","2.10.1","2.11.0-beta.0","2.11.0","2.11.1","2.11.2","2.11.3","2.11.4","2.11.5","2.11.6","2.11.7","2.11.8","2.11.9","2.11.10","2.11.11","2.11.12","2.11.13","2.11.14","2.11.15","2.11.16","2.11.17","2.11.18","2.11.19","2.11.20","2.11.21","2.11.22","2.11.23"]
+39 error notarget
+39 error notarget This is most likely not a problem with npm itself.
+39 error notarget In most cases you or one of your dependencies are requesting
+39 error notarget a package version that doesn't exist.
+40 verbose exit [ 1, true ]
