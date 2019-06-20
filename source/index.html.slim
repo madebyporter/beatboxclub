@@ -25,7 +25,7 @@ section.block.block-section.block-micro
             .box-song-player
               div.box-song-player--controls.unloaded data-id="#{micro.id}" data-link="https://dl.dropbox.com/s/#{micro.link}" Play
               - if micro.art
-                = image_tag "covers/#{micro.art}", :alt => "#{micro.title}", :class => "box-song-player--artwork"
+                = image_tag "#{micro.art.url}", :alt => "#{micro.title}", :class => "box-song-player--artwork"
             .box-song-meta
               h2.t-18.box-song-meta--title = micro.title
               span.t-14.t-strong.box-song-meta--producer = micro.producer
@@ -37,6 +37,6 @@ section.block.block-cta
     .row.block-cta-inner
       .col-12.col-sm-8.offset-sm-2.col-md-6.offset-md-0
         h2.cta-header.bottom-margin-small
-          | Start using music however you want.
+          | Get access to our library of full length beats.
       .col-12.col-sm-8.offset-sm-2.col-md-4.offset-md-1
-        = link_to "Subscribe Today", "signup.html", :class => "btn btn-primary btn-center-tablet"
+        = link_to "Join Now", "signup.html", :class => "btn btn-primary btn-center-tablet"
