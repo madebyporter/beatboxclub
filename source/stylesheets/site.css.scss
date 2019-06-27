@@ -556,17 +556,28 @@
   }
 
   .box-song {
+    align-items: center;
+    background: $color-black-400;
     @include flexbox;
-    height: 160px;
-    margin: 0 0 $space-medium 0;
+    margin: 0 0 $space-small 0;
+    padding: $space-x;
     width: 100%;
+    @include flex-wrap(wrap);
+    @media (min-width: $mq-laptop) {
+      padding: $space-small;
+
+    }
   }
   .box-song-player {
-    background: url(../images/covers/cover-none.png) no-repeat center;
+    background: url(../images/covers/cover-none.png) no-repeat center left;
     background-size: cover;
-    height: inherit;
+    height: 120px;
     position: relative;
-    width: 160px;
+    width: 120px;
+    @media (min-width: $mq-laptop) {
+      height: 160px;
+      width: 160px;
+    }
   }
   .box-song-player--artwork { 
     width: 100%;
@@ -588,17 +599,22 @@
     }
   }
   .box-song-meta {
-    background: $color-black-400;
-    flex: 2 auto;
+    flex: 1 1;
     height: inherit;
-    padding: $space-small;
+    padding: 0 $space-small;
     position: relative;
+    @media (min-width: $mq-laptop) {
+      // padding: 0 $space-medium;
+    }
   }
   .box-song-meta--producer, .box-song-meta--mood {
     display: block;
     margin: 0 0 2px 0;
   }
+  .box-song-meta--mood {
+    font-style: oblique;
+  }
   .box-song-meta--download {
-    position: absolute;
-    bottom: $space-small;
+    display: block;
+    margin: $space-small 0 0;
   }
