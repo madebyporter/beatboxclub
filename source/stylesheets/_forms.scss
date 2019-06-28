@@ -24,6 +24,10 @@
       background: lighten($color-black-400,0%);
       color: $color-black-0;
     }
+    &.fail {
+      background: $color-red;
+      color: $color-white;
+    }
   }
   .form-select {
     -webkit-appearance: none;

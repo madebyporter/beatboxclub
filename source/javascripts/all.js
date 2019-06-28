@@ -1,13 +1,14 @@
 var js = js || {},
-  body = document.getElementsByTagName('body')[0];
+  body = $('body');
 
 // Scripts
 js.main = {
   init: function () {
-    // this.modal();
+    this.modal();
     this.microPlayer();
     this.externalLinks();
     this.externalLinkTracking();
+    this.mailchimpAJAX();
   },
   externalLinkTracking: function() {
     //Track Outbound Link Clicks
@@ -77,6 +78,34 @@ js.main = {
       }
     }
     externalLinks();
+  },
+  mailchimpAJAX: function() {
+    $('.micro-download-form').each(function(){
+      var mEmail = $(this).children('.micro-download-email'),
+      mSubmit = $(this).children('.form-submit'),
+      mLink = mSubmit.attr("data-src"),
+      mName = mSubmit.attr("data-name");
+
+      function callbackFunction (resp) {
+        var win = window.open(mLink, '_blank');
+        if (resp.result === 'success') {
+          // window.location.href = mLink;
+          win.focus();
+          $('.modal').removeClass('active');
+          $('body').removeClass('modal-open');
+        } else {
+          // window.location.href = mLink;
+          win.focus();
+          $('.modal').removeClass('active');
+          $('body').removeClass('modal-open');
+        }
+      }
+
+      $(this).ajaxChimp({
+        url: 'https://thebeatboxclub.us19.list-manage.com/subscribe/post?u=904cbe53fd98d721cd0f6af6b&amp;id=8f73f35139&amp;SIGNUPLOC=Micro',
+        callback: callbackFunction,
+      });
+    });
   },
   microPlayer: function() {
     howlers = {}; 
@@ -153,29 +182,36 @@ js.main = {
     });
   },
   modal: function (e) {
-    var bd = body;
-    var modal_link = document.querySelectorAll('.modal-link');
-    var modal_close = document.querySelectorAll('.modal-close');
-    var modal_page = document.querySelectorAll('.modal-page');
+    var bd = $('body');
+    var modal_link = $('.modal-link');
+    var modal_close = $('.modal-close');
 
-
-    function modal_init(e) {
+    modal_link.on("click", function(e){
+      $(this).closest('.box-col').children('.modal').addClass('active');
+      bd.addClass('modal-open');
       e.preventDefault();
+    });
+    modal_close.on("click", function(){
+      $(this).closest('.modal').removeClass('active');
+      bd.removeClass('modal-open');
+    });
+    // function modal_init(e) {
+    //   e.preventDefault();
 
-      for(var i = 0, l=document.links.length; i<l; i++) {
-        var $href = this.modal_link.getAttribute('href');
-      }
+    //   for(var i = 0, l=document.links.length; i<l; i++) {
+    //     var $href = this.modal_link.getAttribute('href');
+    //   }
 
-      document.body.classList.add("modal-open");
-      document.getElementByID($href).classList.add("active");
-    };
-    function modal_remove() {
-      document.body.classList.remove("modal-open");
-      document.modal_page.classList.remove("active");
-    };
+    //   document.bd.classList.add("modal-open");
+    //   document.getElementByID($href).classList.add("active");
+    // };
+    // function modal_remove() {
+    //   document.bd.classList.remove("modal-open");
+    //   document.modal_page.classList.remove("active");
+    // };
 
-    modal_link[0].addEventListener("click", modal_init, false);
-    modal_close[0].addEventListener("click", modal_remove, false);
+    // modal_link[0].addEventListener("click", modal_init, false);
+    // modal_close[0].addEventListener("click", modal_remove, false);
   }
 };
 
