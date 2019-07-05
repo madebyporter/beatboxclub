@@ -195,23 +195,6 @@ js.main = {
       $(this).closest('.modal').removeClass('active');
       bd.removeClass('modal-open');
     });
-    // function modal_init(e) {
-    //   e.preventDefault();
-
-    //   for(var i = 0, l=document.links.length; i<l; i++) {
-    //     var $href = this.modal_link.getAttribute('href');
-    //   }
-
-    //   document.bd.classList.add("modal-open");
-    //   document.getElementByID($href).classList.add("active");
-    // };
-    // function modal_remove() {
-    //   document.bd.classList.remove("modal-open");
-    //   document.modal_page.classList.remove("active");
-    // };
-
-    // modal_link[0].addEventListener("click", modal_init, false);
-    // modal_close[0].addEventListener("click", modal_remove, false);
   }
 };
 
