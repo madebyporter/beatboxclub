@@ -6,6 +6,7 @@ js.main = {
   init: function () {
     this.modal();
     this.microPlayer();
+    this.microSort();
     this.externalLinks();
     this.externalLinkTracking();
     this.mailchimpAJAX();
@@ -178,6 +179,24 @@ js.main = {
           
           console.log("track init");
         }
+      });
+    });
+  },
+  microSort: function() {
+    $grid = $('.block-micro-grid');
+    $grid.each(function(index, el) {
+      $(this).isotope({
+        itemSelector : '.box-col',
+        // layoutMode : 'masonry',
+        // masonry: {
+        //     gutter: 20,
+        //     isFitWidth: true
+        // },
+        getSortData: {
+          date: '[data-date]'
+        },
+        sortBy : 'date',
+        sortAscending: false
       });
     });
   },

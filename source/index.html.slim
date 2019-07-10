@@ -3,6 +3,7 @@ title: Try the Beatbox Club - Beats for Music and Video
 shortname: Home
 ---
 script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js"
+script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"
 == javascript_include_tag  "jquery.ajaxchimp.min"
 
 section.block.block-section.block-hero
@@ -16,12 +17,12 @@ section.block.block-section.block-hero
         .row
           .col-md-12.col-lg-8
             p.content-large
-              | Free creative commons beats for commercials, social media, film, games or live streams.
+              | Free creative commons loops for music, advertising, social media, film, games or live streams.
 section.block.block-section.block-micro
   .container
-    .row
+    .row.block-micro-grid
       - data.site.micro.each do |id, micro|
-        .box-col.col-12.col-md-6.col-lg-6.col-xl-4
+        .box-col.col-12.col-md-6.col-lg-6.col-xl-4 data-date="#{micro._meta.updated_at}"
           .box-song
             .box-song-player
               div.box-song-player--controls.unloaded data-id="#{micro.id}" data-link="https://dl.dropbox.com/s/#{micro.link}" onclick="ga('send', 'event', {eventCategory: 'Plays', eventAction: 'click', eventLabel: 'Track - #{micro.title}', eventValue: 0});" Play
