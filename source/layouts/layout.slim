@@ -98,6 +98,22 @@ html
                     .col-lg-3
                       fieldset.form-fieldset
                         input.form-submit.btn.btn-secondary type="submit" value="Sign Up" name="subscribe" id="mc-embedded-subscribe" onclick="gtag('event', 'click', {'event_category' : 'Subscribe', 'event_label' : 'Micro', 'value' : 0});"
+          .row
+            .col-12
+              .partners
+                .row
+                  .col-12.col-lg-4
+                    h4 Our Partners
+                    p.content-small We work with other like-minded brands to help our influencers and producers.
+                  .col-12.col-lg-8
+                    .partners-list
+                      .partners-list-ele
+                        = link_to "https://www.voicetaggods.com", :class => "partners-list-link" do
+                          = image_tag "logos/partners-voicetaggods.png", :alt => "Voice Tag Gods", :class => "partners-list-logo"
+                      .partners-list-ele
+                        = link_to "mailto:connectbbx@gmail.com?subject=Partner with The Beatbox Club", :class => "partners-list-link" do
+                          .partners-list-add
+                            span.partners-list-icon &#43; 
 
           .row
             .col-12
@@ -109,3 +125,4 @@ html
                 = link_to "Terms of Service", "terms", :class => "nav-footer-link modal-link"
                 = link_to "Unsubscribe", "https://www.paypal.com/cgi-bin/webscr?cmd=_subscr-find&alias=K79CK99P7N5DA", :class => "nav-footer-link modal-link"
                 = link_to "Contact", "contact", :class => "nav-footer-link modal-link"
+          

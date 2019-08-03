@@ -382,6 +382,53 @@
     padding: 0 0 $space-small 0;
   }
 
+  .partners {
+    border-bottom: 1px solid $color-black-400;
+    margin: 0 0 $space-medium 0;
+    padding: 0 0 $space-small 0;
+  }
+  .partners-list {
+    @include flexbox;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .partners-list-ele {
+    margin: 0 $space-medium 0 0;
+  }
+  .partners-list-link {
+    display: block;
+  }
+  .partners-list-add {
+    align-items: center;
+    background: $color-black-500;
+    border: 1px solid $color-black-400;
+    @include flexbox;
+    @include font-size(24);
+    height: 50px;
+    justify-content: center;
+    line-height: 1;
+    @include transition;
+    width: 50px;
+    &:after {
+      content: "";
+      @extend .t-16;
+    }
+    &:hover {
+      border: 1px solid $color-black-300;
+      width: auto;
+      padding: $space-small;
+      &:after {
+        content: "Partner with Us";
+        margin-left: 5px;
+      }
+    }
+  }
+  .partners-list-icon {
+    position: static;
+    margin-top: 7px;
+  }
+
   .card-plan {
     background: rgba(30,30,30,0.4);
     border: 1px solid lighten($color-black-500,8%);
