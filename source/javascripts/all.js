@@ -176,8 +176,6 @@ js.main = {
 
           howlers[id].play();
           e.addClass('playing');
-          
-          console.log("track init");
         }
       });
     });
