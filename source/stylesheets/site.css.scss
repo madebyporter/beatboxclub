@@ -643,6 +643,25 @@
       height: $s2 - 3;
       width: $s2 - 3;
     }
+    &.playing {
+      background: $color-red;
+      .box-song-player--controls {
+        background: url(../images/icon-pause.svg) no-repeat center;
+        background-size: 12px auto;
+        &:hover {
+          background-size: 14px auto;
+        }
+      } 
+    }
+    &.paused, &.unloaded {
+      .box-song-player--controls {
+        background: url(../images/icon-play.svg) no-repeat center;
+        background-size: 12px auto;
+        &:hover {
+          background-size: 14px auto;
+        }
+      }
+    }
   }
   .box-song-player--controls {
     $s: 24px;
@@ -651,21 +670,7 @@
     cursor: pointer;
     height: $s2;
     width: $s2;
-    @include text-hide;
-    &.playing {
-      background: url(../images/icon-pause.svg) no-repeat center;
-      background-size: 12px auto;
-      &:hover {
-        background-size: 14px auto;
-      }
-    }
-    &.paused, &.unloaded {
-      background: url(../images/icon-play.svg) no-repeat center;
-      background-size: 12px auto;
-      &:hover {
-        background-size: 14px auto;
-      }
-    }
+    @include text-hide; 
   }
   .box-song-meta {
     flex: 1 1;

@@ -110,7 +110,7 @@ js.main = {
   },
   microPlayer: function() {
     howlers = {}; 
-    var track = $('.box-song-player--controls');
+    var track = $('.box-song-player--controls-wrapper');
     $('.block-micro').find(track).each(function () {
       $(this).on("click", function(){
         var e = $(this);
