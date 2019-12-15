@@ -1,0 +1,56 @@
+---
+title: Try the Beatbox Club - Beats for Music and Video
+shortname: Submit a Resource
+---
+
+section.block.block-section.block-hero.block-border-bottom
+  .container
+    .row
+      .col-12
+        .row
+          .col-lg-10
+            h1.bottom-margin-small
+              | Submit a Resource
+        .row
+          .col-lg-10
+            p.content-large
+              | Have a link to a new plugin, app, tutorial, or help docs? Submit your link here! PS, we're not accepting links to beats, ads, songs.
+section.block.block-section
+  .container
+    .row
+      .col-12
+        form.form-source-submit name="source-submit" method="POST" data-netlify="true" action="/source-submit-success"
+          .row
+            .col-12.col-md-6
+              h3 Your Information
+              fieldset.form-fieldset-hidden
+                input name="bot-field"
+              fieldset.form-fieldset
+                input.form-input type="text" placeholder="Your Name" name="author_name" id="author_name"
+              fieldset.form-fieldset
+                input.form-input type="email" placeholder="Your Email" name="author_email" id="author_email"
+              fieldset.form-fieldset
+                input.form-input type="text" placeholder="Your Website" name="author_website" id="author_website"
+            .col-12.col-md-6
+              h3 Your Resource
+              fieldset.form-fieldset
+                input.form-input type="text" placeholder="Link Title" name="link_title" id="link_title"
+              fieldset.form-fieldset
+                input.form-input type="text" placeholder="Link URL" name="link_url" id="link_url"
+              fieldset.form-fieldset
+                select.form-select name="link_owner" id="link_owner"
+                  option value="Created or Curated?" Created or Curated?
+                  option value="Created" Created
+                  option value="Curated" Curated
+            .col-12
+              fieldset.form-fieldset
+                input.form-submit.btn.btn-secondary type="submit" value="Submit" name="submit" id="submit" onclick="gtag('event', 'click', {'event_category' : 'Form Submission', 'event_label' : 'Source Submit', 'value' : 0});"
+    
+section.block.block-cta
+  .container
+    .row.block-cta-inner
+      .col-12.col-sm-12.col-md-6.offset-md-0
+        h2.cta-header.bottom-margin-small
+          | Need exclusive beats? Join our private vault for $20/mo.
+      .col-12.col-sm-12.col-md-4.offset-md-1
+        = link_to "Join Now", "signup.html", :class => "btn btn-primary btn-center-tablet"

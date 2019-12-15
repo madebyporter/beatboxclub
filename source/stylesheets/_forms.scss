@@ -7,6 +7,9 @@
     position: relative;
     width: 100%;
   }
+  .form-fieldset-hidden {
+    display: none;
+  }
   .form-input {
     background: lighten($color-black-500,5%);
     border: 0;
