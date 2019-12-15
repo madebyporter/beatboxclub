@@ -50,11 +50,4 @@ section.block.block-section.block-micro
                   input type="text" name="b_904cbe53fd98d721cd0f6af6b_8f73f35139" tabindex="-1" value=""
                 input.form-submit.btn.btn-primary type="submit" value="Subscribe &amp; Download" name="subscribe" id="mc-embedded-subscribe" class="button" data-name="#{micro.title}" data-src="#{micro.link}" onclick="gtag('event', 'click', {'event_category' : 'Subscribe', 'event_label' : 'Track - #{micro.title}', 'value' : 0});"
 
-section.block.block-cta
-  .container
-    .row.block-cta-inner
-      .col-12.col-sm-12.col-md-6.offset-md-0
-        h2.cta-header.bottom-margin-small
-          | Need exclusive beats? Join our private vault for $20/mo.
-      .col-12.col-sm-12.col-md-4.offset-md-1
-        = link_to "Join Now", "signup.html", :class => "btn btn-primary btn-center-tablet"
+= partial "partials/cta-privatevault"
