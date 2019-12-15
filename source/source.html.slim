@@ -1,0 +1,42 @@
+---
+title: Try the Beatbox Club - Beats for Music and Video
+shortname: Home
+---
+
+section.block.block-section.block-hero.block-border-bottom
+  .container
+    .row
+      .col-12
+        .row
+          .col-lg-10
+            h1.bottom-margin-small
+              | Beatbox Source
+        .row
+          .col-lg-10
+            p.content-large
+              | Music production resources.
+          .col-lg-2
+            = link_to "Submit a Source", "source-submit", :class => "source-submit"
+section.block.block-section.block-micro
+  .container
+    .row
+      .col-12
+        - data.sources.source_link.each do |source_link|
+          .box-list
+            .col-12
+              h5.box-title
+                = link_to "#{source_link.title}", "#{source_link.link}", :class => "source-link", :onclick => "gtag('event', 'click', {'event_category' : 'Link Click', 'event_label' : '#{source_link.title}', 'value' : 0});"
+              .box-meta
+                .box-meta-ele.source-author
+                  | Found by &nbsp;
+                  = link_to "#{source_link.author}", "#{source_link.author_link}", :class => "source-author-link", :onclick => "gtag('event', 'click', {'event_category' : 'Author Click', 'event_label' : '#{source_link.author}', 'value' : 0});"
+                .box-meta-ele.source-type = source_link.type
+    
+section.block.block-cta
+  .container
+    .row.block-cta-inner
+      .col-12.col-sm-12.col-md-6.offset-md-0
+        h2.cta-header.bottom-margin-small
+          | Need exclusive beats? Join our private vault for $20/mo.
+      .col-12.col-sm-12.col-md-4.offset-md-1
+        = link_to "Join Now", "signup.html", :class => "btn btn-primary btn-center-tablet"

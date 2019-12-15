@@ -151,11 +151,11 @@
 
   // Links
     a {
-      color: $color-red;
+      color: $color-yellow;
       font-weight: 700;
       text-decoration: none;
       &:hover {
-        color: $color-yellow;
+        color: $color-gold;
         text-decoration: none;
       }
     }
@@ -223,6 +223,10 @@
 
     h4 {
       @extend .t-24;
+    }
+
+    h5 {
+      @extend .t-18;
     }
 
     p + h1, p + h2, p + h3, p + h4, p + h5, p + h6 {

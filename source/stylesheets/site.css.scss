@@ -28,7 +28,7 @@
   body {
     background: $color-black;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1em;
+    @include font-size(16);
     line-height: 1.5;
     height: 100%;
     overflow-x: hidden;
@@ -217,6 +217,11 @@
   }
   .block-content {
     margin-bottom: $space-large;
+  }
+
+  .block-border-bottom {
+    padding-bottom: $space-x;
+    border-bottom: 10px solid lighten($color-black-500,1%);  
   }
 
   .persona-type {
@@ -693,7 +698,39 @@
     margin: $space-small 0 0;
   }
 
-// Micro Download
-  .modal-form-email {
-    
+// Box List Styles
+  .source-submit {
+    display: block;
+    margin-bottom: $space-small;
+    @media (min-width: $mq-laptop) {
+      float: right;
+      margin-bottom: 0;
+    }
+  }
+
+  .box-list {
+    background: lighten($color-black-500,2%);
+    box-shadow: inset $space-small 0 0 lighten($color-black-500,6%);
+    padding: $space-small;
+    padding-left: $space-medium;
+    &:nth-child(even){
+      background: lighten($color-black-500,3%);
+      box-shadow: inset $space-small 0 0 lighten($color-black-500,7%);
+    }
+    &:hover {
+      background: lighten($color-black-500,6%);
+      box-shadow: inset $space-small 0 0 lighten($color-black-500,10%);
+    }
+  }
+  .box-title {
+    margin-bottom: $space-x;
+  }
+  .box-meta {
+    @extend .t-14;
+    color: $color-black-200;
+    font-weight: 700;
+    @include flexbox;
+  }
+  .box-meta-ele {
+    margin-right: $space-small;
   }
