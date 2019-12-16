@@ -10,10 +10,12 @@ section.block.block-section.block-hero
         .row
           .col-lg-10
             h1.bottom-margin-small
-              | Source Submitted
+              | Resource Submitted
         .row
           .col-lg-10
             p.content-large
               | We appreciate your resouce submission. We'll email you if your resouce meets the requirements and its not a duplicate resource.
+            p.content-large
+              = link_to "Submit another resource", "source-submit", :class => "source-submit-link"
     
 = partial "partials/cta-privatevault"
