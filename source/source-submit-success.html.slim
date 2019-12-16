@@ -16,11 +16,4 @@ section.block.block-section.block-hero
             p.content-large
               | We appreciate your resouce submission. We'll email you if your resouce meets the requirements and its not a duplicate resource.
     
-section.block.block-cta
-  .container
-    .row.block-cta-inner
-      .col-12.col-sm-12.col-md-6.offset-md-0
-        h2.cta-header.bottom-margin-small
-          | Need exclusive beats? Join our private vault for $20/mo.
-      .col-12.col-sm-12.col-md-4.offset-md-1
-        = link_to "Join Now", "signup.html", :class => "btn btn-primary btn-center-tablet"
+= partial "partials/cta-privatevault"
