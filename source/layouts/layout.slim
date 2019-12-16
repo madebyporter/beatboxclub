@@ -60,7 +60,7 @@ html
       header.block.block-header
         .container
           .row
-            .col-12
+            .col-4.col-md-6
               = link_to "/", :class => "site-logo" do
                 .logo
                   .logo-block
@@ -83,6 +83,11 @@ html
                   span.logo-text-word The
                   span.logo-text-word Beatbox
                   span.logo-text-word Club
+            .col-8.col-md-6
+              nav.site-nav
+                = link_to "Micro", "/", :class => "site-nav-link"
+                = link_to "Source", "/source", :class => "site-nav-link"
+                = link_to "Vault", "/signup", :class => "site-nav-link"
       == yield
       footer.block.block-footer
         .container

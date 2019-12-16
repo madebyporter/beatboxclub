@@ -21,15 +21,15 @@ section.block.block-section.block-micro
   .container
     .row
       .col-12
-        - data.sources.source_link.each do |source_link|
+        - data.site.source.each do |id, source|
           .box-list
             .col-12
               h5.box-title
-                = link_to "#{source_link.title}", "#{source_link.link}", :class => "source-link", :onclick => "gtag('event', 'click', {'event_category' : 'Link Click', 'event_label' : '#{source_link.title}', 'value' : 0});"
+                = link_to "#{source.link_title}", "#{source.link_url}", :class => "source-link", :onclick => "gtag('event', 'click', {'event_category' : 'Link Click', 'event_label' : '#{source.link_title}', 'value' : 0});"
               .box-meta
                 .box-meta-ele.source-author
                   | Found by &nbsp;
-                  = link_to "#{source_link.author}", "#{source_link.author_link}", :class => "source-author-link", :onclick => "gtag('event', 'click', {'event_category' : 'Author Click', 'event_label' : '#{source_link.author}', 'value' : 0});"
-                .box-meta-ele.source-type = source_link.type
+                  = link_to "#{source.author_name}", "#{source.author_website}", :class => "source-author-link", :onclick => "gtag('event', 'click', {'event_category' : 'Author Click', 'event_label' : '#{source.author_name}', 'value' : 0});"
+                .box-meta-ele.source-type = source.link_type
     
 = partial "partials/cta-privatevault"

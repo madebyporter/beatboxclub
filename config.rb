@@ -54,8 +54,14 @@ activate :dotenv
 activate :contentful do |f|
   f.space         = { site: ENV['CONTENTFUL_SPACE_ID'] }
   f.access_token  = ENV['CONTENTFUL_ACCESS_TOKEN']
-  f.content_types = { micro: 'micro' }
+  f.content_types = { micro: 'micro', source: 'source' }
 end
+
+# activate :contentful do |f|
+#   g.space         = { site: ENV['CONTENTFUL_SPACE_ID'] }
+#   g.access_token  = ENV['CONTENTFUL_ACCESS_TOKEN']
+#   g.content_types = { source: 'source' }
+# end
 
 activate :directory_indexes
 

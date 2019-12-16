@@ -182,9 +182,12 @@
       width: 100%;
     }
     .logo-text {
-      display: block;
+      display: none;
       margin: .4rem 0 0 $space-small;
       width: 80px;
+      @media (min-width: $mq-laptop) {
+        display: block;
+      }
     }
     .logo-text-word {
       color: $color-white;
@@ -193,6 +196,22 @@
       display: inline-block;
       margin: 0;
     }
+  }
+  .site-nav {
+    height: 100%;
+    // margin: $space-small 0;
+    @include flexbox;
+    align-items: center;
+    justify-content: flex-end;
+    @media (min-width: $mq-laptop) {
+      float: right;
+      margin: 0;
+    }
+  }
+  .site-nav-link {
+    color: $color-white;
+    @extend .t-18;
+    margin-left: $space-small;
   }
 
   .site-wrapper {
