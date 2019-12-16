@@ -749,6 +749,9 @@
     color: $color-black-200;
     font-weight: 700;
     @include flexbox;
+    span {
+      @extend .t-14;
+    }
   }
   .box-meta-ele {
     margin-right: $space-small;
