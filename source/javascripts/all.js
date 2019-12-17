@@ -7,6 +7,7 @@ js.main = {
     this.modal();
     this.microPlayer();
     this.microSort();
+    this.resourceSort();
     this.externalLinks();
     this.externalLinkTracking();
     this.mailchimpAJAX();
@@ -185,6 +186,7 @@ js.main = {
     $grid.each(function(index, el) {
       $(this).isotope({
         itemSelector : '.box-col',
+        transitionDuration: 0,
         // layoutMode : 'masonry',
         // masonry: {
         //     gutter: 20,
@@ -211,6 +213,25 @@ js.main = {
     modal_close.on("click", function(){
       $(this).closest('.modal').removeClass('active');
       bd.removeClass('modal-open');
+    });
+  },
+  resourceSort: function() {
+    $grid = $('.block-resources-grid');
+    $grid.each(function(index, el) {
+      $(this).isotope({
+        itemSelector : '.box-list',
+        transitionDuration: 0,
+        // layoutMode : 'masonry',
+        // masonry: {
+        //     gutter: 20,
+        //     isFitWidth: true
+        // },
+        getSortData: {
+          date: '[data-date]'
+        },
+        sortBy : 'date',
+        sortAscending: false
+      });
     });
   }
 };
