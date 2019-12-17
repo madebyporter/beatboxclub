@@ -187,6 +187,7 @@ js.main = {
       $(this).isotope({
         itemSelector : '.box-col',
         transitionDuration: 0,
+        stamp: '.sticky',
         // layoutMode : 'masonry',
         // masonry: {
         //     gutter: 20,

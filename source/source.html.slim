@@ -26,7 +26,7 @@ section.block.block-section.block-resources
       .col-12
         .block-resources-grid
           - data.site.source.each do |id, source|
-            .box-list data-date="#{source._meta.updated_at}"
+            .box-list data-date="#{source._meta.updated_at}" class="#{source.link_featured}"
               .col-12
                 h5.box-title
                   = link_to "#{source.link_title}", "#{source.link_url}", :class => "source-link", :onclick => "gtag('event', 'click', {'event_category' : 'Link Click', 'event_label' : '#{source.link_title}', 'value' : 0});"

@@ -726,6 +726,11 @@
       margin-bottom: 0;
     }
   }
+  
+  .block-resources-grid {
+    @include flexbox;
+    @include flex-wrap(wrap);
+  }
 
   .box-list {
     background: lighten($color-black-500,2%);
@@ -737,6 +742,11 @@
     &:hover {
       background: lighten($color-black-500,6%);
       box-shadow: inset $space-small 0 0 lighten($color-black-500,10%);
+    }
+    &.featured {
+      // background: darken($color-yellow,35%);
+      box-shadow: inset $space-small 0 0 $color-yellow;
+      order: 1;
     }
   }
   .box-title {
