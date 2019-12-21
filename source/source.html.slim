@@ -25,11 +25,11 @@ section.block.block-section.block-resources
       .col-12
         .block-resources-controller
           .row
-            .col-12.col-lg-10
+            .col-12.col-sm-6
+              = link_to "Submit a Resource", "source-submit", :class => "source-submit-link"
+            .col-12.col-sm-6
               .block-resources-sortfilter onclick="gtag('event', 'click', {'event_category' : 'Feature Click', 'event_label' : 'Resource Filter Sort Click', 'value' : 0});"
                 | Sort & Filter coming soon
-            .col-12.col-lg-2
-              = link_to "Submit a Resource", "source-submit", :class => "source-submit-link"
     .row
       .col-12
         .block-resources-grid

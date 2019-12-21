@@ -721,8 +721,8 @@
   .source-submit-link {
     display: block;
     margin-bottom: $space-small;
-    @media (min-width: $mq-laptop) {
-      float: right;
+    @media (min-width: $mq-phonexl) {
+      float: left;
       margin-bottom: 0;
     }
   }
@@ -739,6 +739,9 @@
     @extend .t-18;
     @extend .t-strong;
     display: inline-block;
+    @media (min-width: $mq-phonexl) {
+      float: right;
+    }
     &:hover {
       color: $color-black-300;
     }
@@ -769,10 +772,23 @@
     color: $color-black-200;
     font-weight: 700;
     @include flexbox;
+    @include flex-wrap(wrap);
     span {
       @extend .t-14;
     }
   }
   .box-meta-ele {
     margin-right: $space-small;
+
+    @media (min-width: $mq-phonexl) {
+
+    }
+  }
+  .source-author {
+    margin-bottom: 5px;
+    width: 100%;
+    @media (min-width: $mq-phonexl) {
+      margin-bottom: 0;
+      width: auto;
+    }
   }
