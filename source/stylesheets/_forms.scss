@@ -66,3 +66,44 @@
     -webkit-box-shadow: 0 0 0px 1000px transparent inset;
     transition: background-color 5000s ease-in-out 0s;
   }
+
+  // Validation
+    .parsley-error {
+      color: $color-red;
+      &:focus {
+        color: $color-red;
+      }
+      &::-webkit-input-placeholder { /* Edge */
+        color: $color-red-200;
+      }
+
+      &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: $color-red-200;
+      }
+
+      &::placeholder {
+        color: $color-red-200;
+      }
+    }
+    .parsley-errors-list {
+      @include nolist;
+      display: none;
+    }
+    .parsley-required {
+      color: $color-red-300;
+      @extend .t-14;
+      padding-left: $space-small;
+      padding-top: 5px;
+    }
+    .bs-callout {
+      display: block;
+      font-weight: 700;
+      text-align: center;
+      padding: 0 0 $space-x 0;
+      &.bs-callout-warning {
+        color: $color-red-300;
+      }
+      &.hidden {
+        display: none;
+      }
+    }

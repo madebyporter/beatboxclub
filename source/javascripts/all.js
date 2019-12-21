@@ -11,6 +11,7 @@ js.main = {
     this.externalLinks();
     this.externalLinkTracking();
     this.mailchimpAJAX();
+    this.validateForm();
   },
   externalLinkTracking: function() {
     //Track Outbound Link Clicks
@@ -234,6 +235,16 @@ js.main = {
         sortAscending: false
       });
     });
+  },
+  validateForm: function() {
+    var form = document.getElementById("source_submit_form");
+    if(form){
+      $(form).parsley().on('field:validated', function() {
+        var ok = $('.parsley-error').length === 0;
+        // $('.bs-callout-info').toggleClass('hidden', !ok);
+        $('.bs-callout-warning').toggleClass('hidden', ok);
+      });
+    }
   }
 };
 

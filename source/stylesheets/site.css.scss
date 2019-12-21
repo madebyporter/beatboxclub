@@ -102,7 +102,7 @@
   .site-logo {
     display: block;
     height: 80px;
-    width: auto;
+    width: 160px;
     @include flexbox;
     @include flex-wrap(nowrap);
     text-decoration: none;
@@ -730,6 +730,18 @@
   .block-resources-grid {
     @include flexbox;
     @include flex-wrap(wrap);
+  }
+  .block-resources-controller {
+    margin: 0 0 $space-small 0;
+  }
+  .block-resources-sortfilter {
+    color: $color-black-400;
+    @extend .t-18;
+    @extend .t-strong;
+    display: inline-block;
+    &:hover {
+      color: $color-black-300;
+    }
   }
 
   .box-list {

@@ -4,7 +4,7 @@ shortname: Beatbox Source
 ---
 
 // Isotope for Grid Sorting
-script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"
+script src="javascripts/isotope.pkgd.min.js"
 
 section.block.block-section.block-hero.block-border-bottom
   .container
@@ -13,15 +13,23 @@ section.block.block-section.block-hero.block-border-bottom
         .row
           .col-lg-10
             h1.bottom-margin-small
-              | Beatbox Source
+              | Beatbox Resources
         .row
           .col-lg-10
             p.content-large
-              | Music production resources.
-          .col-lg-2
-            = link_to "Submit a Source", "source-submit", :class => "source-submit-link"
+              | Created &amp; curated music production resources. Help documentation, tutorials, sound kits, apps &amp; plugins. Great for producers, engineers, composers &amp; musicians.
+            
 section.block.block-section.block-resources
   .container
+    .row
+      .col-12
+        .block-resources-controller
+          .row
+            .col-12.col-lg-10
+              .block-resources-sortfilter onclick="gtag('event', 'click', {'event_category' : 'Feature Click', 'event_label' : 'Resource Filter Sort Click', 'value' : 0});"
+                | Sort & Filter coming soon
+            .col-12.col-lg-2
+              = link_to "Submit a Resource", "source-submit", :class => "source-submit-link"
     .row
       .col-12
         .block-resources-grid

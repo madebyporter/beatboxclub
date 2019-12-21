@@ -29,6 +29,14 @@
       color: $color-black-0;
     }
   }
+  .btn-tertiary {
+    background: $color-yellow-400;
+    color: $color-yellow-50;
+    &:hover {
+      background: $color-yellow-500;
+      color: $color-yellow-50;
+    }
+  }
   .btn-center-tablet {
     @media (min-width: $mq-tablet) {
       @include absolute-center;

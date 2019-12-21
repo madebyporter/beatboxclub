@@ -19,30 +19,31 @@ section.block.block-section
   .container
     .row
       .col-12
-        form.form-source-submit name="source-submit" method="POST" data-netlify="true" action="/source-submit-success"
+        form#source_submit_form.form-source-submit name="source-submit" method="POST" data-netlify="true" action="/source-submit-success"
           .row
             .col-12.col-md-6
               h3 Your Information
               fieldset.form-fieldset-hidden
                 input name="bot-field"
               fieldset.form-fieldset
-                input.form-input type="text" placeholder="Your Name" name="author_name" id="author_name"
+                input.form-input type="text" placeholder="Your Name" name="author_name" id="author_name" required="required"
               fieldset.form-fieldset
-                input.form-input type="email" placeholder="Your Email" name="author_email" id="author_email"
+                input.form-input type="email" placeholder="Your Email" name="author_email" id="author_email" required="required"
               fieldset.form-fieldset
-                input.form-input type="text" placeholder="Your Website" name="author_website" id="author_website"
+                input.form-input type="url" placeholder="Your Website" name="author_website" id="author_website"
             .col-12.col-md-6
               h3 Your Resource
               fieldset.form-fieldset
-                input.form-input type="text" placeholder="Link Title" name="link_title" id="link_title"
+                input.form-input type="text" placeholder="Resource Title" name="link_title" id="link_title" required="required"
               fieldset.form-fieldset
-                input.form-input type="text" placeholder="Link URL" name="link_url" id="link_url"
+                input.form-input type="url" placeholder="Resource Website" name="link_url" id="link_url" required="required"
               fieldset.form-fieldset
-                select.form-select name="link_owner[]" id="link_owner"
-                  option value="Created or Curated?" Resource created or curated by you?
-                  option value="Created by" I created this resource
-                  option value="Curated by" I curated this resource
+                select.form-select name="link_owner[]" id="link_owner" required="required"
+                  option value="" Created or Curated?
+                  option value="Created by" I created/wrote this
+                  option value="Curated by" I curated/found this
             .col-12
+              .bs-callout.bs-callout-warning.hidden Yeah, this ain't it chief. Fix the things in red.
               fieldset.form-fieldset
-                input.form-submit.btn.btn-secondary type="submit" value="Submit" name="submit" id="submit" onclick="gtag('event', 'click', {'event_category' : 'Form Submission', 'event_label' : 'Source Submit', 'value' : 0});"
+                input.form-submit.btn.btn-tertiary type="submit" value="Submit" name="submit" id="submit" onclick="gtag('event', 'click', {'event_category' : 'Form Submission', 'event_label' : 'Source Submit', 'value' : 0});"
 = partial "partials/cta-privatevault"

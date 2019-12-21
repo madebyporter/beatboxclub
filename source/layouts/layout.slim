@@ -19,8 +19,7 @@ html
     title = current_page.data.title || "The Beatbox Club"
 
     == stylesheet_link_tag :site
-    == javascript_include_tag  "jquery", "all"
-
+    == javascript_include_tag  "jquery", "parsley.min", "all"
     // Global site tag (gtag.js) - Google Analytics
     script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-59805983-1"
     javascript:
@@ -86,7 +85,7 @@ html
             .col-8.col-md-6
               nav.site-nav
                 = link_to "Micro", "/", :class => "site-nav-link"
-                = link_to "Source", "/source", :class => "site-nav-link"
+                = link_to "Resources", "/source", :class => "site-nav-link"
                 = link_to "Vault", "/signup", :class => "site-nav-link"
       == yield
       footer.block.block-footer
