@@ -11,6 +11,7 @@ js.main = {
     this.externalLinks();
     this.externalLinkTracking();
     this.mailchimpAJAX();
+    this.vaultPlayer();
     this.validateForm();
   },
   externalLinkTracking: function() {
@@ -245,7 +246,79 @@ js.main = {
         $('.bs-callout-warning').toggleClass('hidden', ok);
       });
     }
-  }
+  },
+  vaultPlayer: function() {
+    howlers = {}; 
+    var track = $('.box-song-player--controls-wrapper');
+    $('.block-resources-grid').find(track).each(function () {
+      $(this).on("click", function(){
+        var e = $(this);
+        var link = e.data("link");
+        var id = e.data("id");
+        
+        if (id in howlers){
+          if (e.hasClass('paused')){
+            Object.keys(howlers).forEach(function(key) {
+              howlers[key].unload();
+              howlers[key].load();
+              track.removeClass('playing');
+              track.addClass('unloaded');
+            });
+            e.removeClass('unloaded paused');
+
+            howlers[id].play();
+            e.addClass('playing');
+            
+            console.log("track playing");
+          } else if (e.hasClass('playing')){
+            Object.keys(howlers).forEach(function(key) {
+              howlers[key].unload();
+              howlers[key].load();
+              track.removeClass('playing');
+              track.addClass('unloaded');
+            });
+            e.removeClass('unloaded playing');
+
+            howlers[id].pause();
+            e.addClass('paused');
+
+            console.log("track paused");
+          } else if (e.hasClass('unloaded')){
+            Object.keys(howlers).forEach(function(key) {
+              howlers[key].unload();
+              howlers[key].load();
+              track.removeClass('playing');
+              track.addClass('unloaded');
+            });
+
+            e.removeClass('unloaded');
+
+            howlers[id].play();
+            e.addClass('playing');
+
+            console.log("track started");
+          }
+        } else {
+          Object.keys(howlers).forEach(function(key) {
+            howlers[key].unload();
+            howlers[key].load();
+            track.removeClass('playing');
+            track.addClass('unloaded');
+          });
+
+          howlers[id] = new Howl({
+            src: [link],
+            loop: true,
+          });
+          
+          e.removeClass('unloaded');
+
+          howlers[id].play();
+          e.addClass('playing');
+        }
+      });
+    });
+  },
 };
 
 document.addEventListener('DOMContentLoaded', function(){

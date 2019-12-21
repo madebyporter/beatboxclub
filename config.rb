@@ -54,7 +54,7 @@ activate :dotenv
 activate :contentful do |f|
   f.space         = { site: ENV['CONTENTFUL_SPACE_ID'] }
   f.access_token  = ENV['CONTENTFUL_ACCESS_TOKEN']
-  f.content_types = { micro: 'micro', source: 'source' }
+  f.content_types = { micro: 'micro', source: 'source', vault: 'vault' }
 end
 
 # Source Date
