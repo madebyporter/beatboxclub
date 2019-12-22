@@ -1,0 +1,56 @@
+---
+title: Made by Porter
+shortname: madebyporter
+---
+
+script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js"
+== javascript_include_tag  "isotope.pkgd.min"
+
+section.block.block-section.block-hero.block-border-bottom
+  .container
+    .row
+      .col-12
+        .row
+          .col-lg-12
+            h1.bottom-margin-small The Private Vault
+              
+        .row
+          .col-lg-10
+            p.content-large
+              | For 
+              = current_page.data.title
+section.block.block-section.block-resources
+  .container
+    .row
+      .col-12
+        .block-resources-controller
+          .row
+            .col-12.col-sm-6
+              = link_to "Submit a Vibe", "source-submit", :class => "source-submit-link"
+            .col-12.col-sm-6
+              .block-resources-sortfilter onclick="gtag('event', 'click', {'event_category' : 'Feature Click', 'event_label' : 'Resource Filter Sort Click', 'value' : 0});"
+                | Sort & Filter coming soon
+    .row
+      .col-12
+        .block-resources-grid
+          - data.site.vault.each do |id, source|
+            .box-list.box-flex data-date="#{source._meta.updated_at}"
+              .box-col.box-player
+                .box-song style="background: url('#{source.track_album_art.url}') no-repeat center; background-size: cover"
+                  div.box-song-player--controls-wrapper.unloaded data-id="#{source.id}" data-link="#{source.track_media.url}" onclick="gtag('event', 'click', {'event_category' : 'Plays', 'event_label' : 'Track - #{source.track_media.title}', 'value' : 0});"
+                    div.box-song-player--controls Play
+            
+              .box-col.box-content
+                h5.box-title
+                  = source.track_media.title
+                .box-meta
+                  .box-meta-ele = link_to "Download", "#{source.track_media.url}", :class => "source-link", :onclick => "gtag('event', 'click', {'event_category' : 'Link Click', 'event_label' : '#{source.track_media.title}', 'value' : 0});", :download => "#{source.track_media.url}"
+                  .box-meta-ele
+                    = source.track_producers
+                  .box-meta-ele = source.track_genre
+                  .box-meta-ele = source.track_mood
+                  .box-meta-ele = source.track_length
+                  .box-meta-ele 
+                    = source.track_bpm
+                    | bpm
+                  .box-meta-ele.source-type = Date.parse(source._meta.created_at).strftime("%m/%d/%Y")

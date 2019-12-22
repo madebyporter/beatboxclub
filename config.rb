@@ -54,16 +54,16 @@ activate :dotenv
 activate :contentful do |f|
   f.space         = { site: ENV['CONTENTFUL_SPACE_ID'] }
   f.access_token  = ENV['CONTENTFUL_ACCESS_TOKEN']
-  f.content_types = { micro: 'micro', source: 'source' }
+  f.content_types = { micro: 'micro', source: 'source', vault: 'vault' }
 end
 
-# Source Date
-# helpers do
-#   def format_date(date_txt)
-#     date = Date.parse(date_txt)
-#     date.strftime("%B")
-#   end
-# end
+# activate the extenstion
+activate :gibberish do |gibberish|
+  # set the default password
+  gibberish.password = 'tunas-violate-arose-unpeeled-terse-quinn'
+  # encrypt a page with the default password
+  gibberish.encrypt 'vault/madebyporter/index.html'
+end
 
 # activate :contentful do |f|
 #   g.space         = { site: ENV['CONTENTFUL_SPACE_ID'] }
