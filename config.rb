@@ -27,22 +27,9 @@ set :images_dir, 'images'
 ###
 
 # Reload the browser automatically whenever files change
-# configure :development do
-#   activate :livereload
-# end
-
-# Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     'Helping'
-#   end
-# end
-
-# activate :external_pipeline,
-#            name: :webpack,
-#            command: build? ? "yarn run build" : "yarn run start",
-#            source: ".tmp/dist",
-#            latency: 1
+configure :development do
+  activate :livereload
+end
 
 activate :blog do |blog|
   blog.prefix = "blog"
