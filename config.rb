@@ -62,7 +62,7 @@ activate :gibberish do |gibberish|
   # set the default password
   gibberish.password = 'tunas-violate-arose-unpeeled-terse-quinn'
   # encrypt a page with the default password
-  gibberish.encrypt '/vault/madebyporter.html'
+  gibberish.encrypt '/vault/madebyporter/index.html'
 end
 
 # activate :contentful do |f|
