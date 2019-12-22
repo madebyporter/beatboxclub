@@ -45,7 +45,7 @@ section.block.block-section.block-resources
                 h5.box-title
                   = source.track_media.title
                 .box-meta
-                  .box-meta-ele = link_to "Download", "#{source.track_media.url}", :class => "source-link", :onclick => "gtag('event', 'click', {'event_category' : 'Link Click', 'event_label' : '#{source.track_media.title}', 'value' : 0});", :download => "#{source.track_media.url}"
+                  .box-meta-ele.box-meta-ele-full = link_to "Download", "#{source.track_media.url}", :class => "source-link", :onclick => "gtag('event', 'click', {'event_category' : 'Link Click', 'event_label' : '#{source.track_media.title}', 'value' : 0});", :download => "#{source.track_media.url}"
                   .box-meta-ele
                     = source.track_producers
                   .box-meta-ele = source.track_genre
