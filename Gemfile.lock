@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/madebyporter/middleman-gibberish.git
-  revision: 6c5c25ee575c798417ed44fd1f6353380c61ba4e
+  revision: aa0cb7d405e0014c5b224f3e0e27765e60f2cbbe
   specs:
     middleman-gibberish (0.7.0)
       gibberish (>= 1.3)
