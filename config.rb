@@ -57,13 +57,13 @@ activate :contentful do |f|
   f.content_types = { micro: 'micro', source: 'source', vault: 'vault' }
 end
 
-# Source Date
-# helpers do
-#   def format_date(date_txt)
-#     date = Date.parse(date_txt)
-#     date.strftime("%B")
-#   end
-# end
+# activate the extenstion
+activate :gibberish do |gibberish|
+  # set the default password
+  gibberish.password = 'tunas-violate-arose-unpeeled-terse-quinn'
+  # encrypt at set of pages with the default password
+  gibberish.encrypt 'vault/**/**'
+end
 
 # activate :contentful do |f|
 #   g.space         = { site: ENV['CONTENTFUL_SPACE_ID'] }
