@@ -17,4 +17,4 @@ gem 'middleman-livereload'
 gem "middleman-blog", "~> 4.0"
 gem 'contentful_middleman'
 gem 'middleman-dotenv'
-gem 'middleman-gibberish'
+gem 'middleman-gibberish', :git => 'https://github.com/ahoward/middleman-gibberish.git'
