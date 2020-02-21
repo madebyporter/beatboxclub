@@ -44,6 +44,9 @@ set :images_dir, 'images'
 #            source: ".tmp/dist",
 #            latency: 1
 
+ENV["snipcart-api-key"] = "OWVkMWFkNTctMDhjMy00NjYwLWJhOTItZGUwYzJjNWNmMDdmNjM3MTc4NDM1MzUyNzUzMTEz"
+ENV["base-url"] = "http://localhost:4567"
+
 activate :blog do |blog|
   blog.prefix = "blog"
   blog.permalink = "{title}.html"
@@ -55,6 +58,26 @@ activate :contentful do |f|
   f.space         = { site: ENV['CONTENTFUL_SPACE_ID'] }
   f.access_token  = ENV['CONTENTFUL_ACCESS_TOKEN']
   f.content_types = { micro: 'micro', source: 'source' }
+end
+
+helpers do
+  def snipcart_button (p, text)
+    args = {
+      :"class" => "subs-submit form-submit btn snipcart-add-item button is-primary is-medium",
+      :"data-item-id" => p.id,
+      :"data-item-price" => p.price,
+      :"data-item-name" => p.name,
+      :"data-item-max-quantity" => p.max_quantity,
+      :"data-item-url" => ENV["base-url"] + p.path,
+      :"data-item-image" => p.image,
+      :"data-item-payment-interval" => p.payment_interval,
+      :"item-payment-interval-count" => p.payment_interval_count
+    }
+
+    content_tag :button, args do
+      text
+    end
+  end
 end
 
 # Source Date
