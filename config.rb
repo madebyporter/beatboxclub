@@ -45,7 +45,7 @@ set :images_dir, 'images'
 #            latency: 1
 
 ENV["snipcart-api-key"] = "OWVkMWFkNTctMDhjMy00NjYwLWJhOTItZGUwYzJjNWNmMDdmNjM3MTc4NDM1MzUyNzUzMTEz"
-ENV["base-url"] = "http://localhost:4567"
+ENV["base-url"] = ""
 
 activate :blog do |blog|
   blog.prefix = "blog"
@@ -68,7 +68,7 @@ helpers do
       :"data-item-price" => p.price,
       :"data-item-name" => p.name,
       :"data-item-max-quantity" => p.max_quantity,
-      :"data-item-url" => ENV["base-url"] + p.path,
+      :"data-item-url" => p.path,
       :"data-item-image" => p.image,
       :"data-item-payment-interval" => p.payment_interval,
       :"item-payment-interval-count" => p.payment_interval_count
