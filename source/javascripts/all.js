@@ -11,6 +11,7 @@ js.main = {
     this.externalLinks();
     this.externalLinkTracking();
     this.mailchimpAJAX();
+    this.snipcartTY();
     this.validateForm();
   },
   externalLinkTracking: function() {
@@ -215,6 +216,12 @@ js.main = {
     modal_close.on("click", function(){
       $(this).closest('.modal').removeClass('active');
       bd.removeClass('modal-open');
+    });
+  },
+  snipcartTY: function() {
+    Snipcart.execute('bind', 'order.completed', function (order) {
+      var url = '/nextsteps?order=' + order.token;
+      window.location.href = url;
     });
   },
   resourceSort: function() {
