@@ -44,7 +44,7 @@ set :images_dir, 'images'
 #            source: ".tmp/dist",
 #            latency: 1
 
-ENV["snipcart-api-key"] = "OWVkMWFkNTctMDhjMy00NjYwLWJhOTItZGUwYzJjNWNmMDdmNjM3MTc4NDM1MzUyNzUzMTEz"
+ENV["snipcart-api-key"] = "MDFjMjRiNzEtMjM2Yi00MjcxLWE0ZmMtNzAyMGYyYTU2MmQwNjM3MTc4NDM1MzUyNzUzMTEz"
 ENV["base-url"] = "/"
 
 activate :blog do |blog|
