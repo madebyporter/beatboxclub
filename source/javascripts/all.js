@@ -173,6 +173,15 @@ js.main = {
           howlers[id] = new Howl({
             src: [link],
             loop: true,
+            onend: function() {
+              ga('send', {
+                hitType: 'event',
+                eventCategory: 'micro',
+                eventAction: 'loops',
+                eventLabel: id
+              });
+              console.log(id);
+            }
           });
           
           e.removeClass('unloaded');
@@ -219,10 +228,12 @@ js.main = {
     });
   },
   snipcartTY: function() {
-    Snipcart.execute('bind', 'order.completed', function (order) {
-      var url = '/nextsteps?order=' + order.token;
-      window.location.href = url;
-    });
+    if ($('body').hasClass('signup_index')) {
+      Snipcart.execute('bind', 'order.completed', function (order) {
+        var url = '/nextsteps?order=' + order.token;
+        window.location.href = url;
+      });
+    }
   },
   resourceSort: function() {
     $grid = $('.block-resources-grid');
