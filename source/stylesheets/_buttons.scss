@@ -37,6 +37,14 @@
       color: $color-yellow-50;
     }
   }
+  .btn-white-red {
+    background: $color-red-50;
+    color: $color-red;
+    &:hover {
+      background: $color-white;
+      color: $color-red-400;
+    }
+  }
   .btn-center-tablet {
     @media (min-width: $mq-tablet) {
       @include absolute-center;
