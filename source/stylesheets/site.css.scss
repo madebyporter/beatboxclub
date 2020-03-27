@@ -401,12 +401,6 @@
       color: $color-white;
     }
   }
-  .newsletter {
-    border-bottom: 1px solid $color-black-400;
-    margin: 0 0 $space-medium 0;
-    padding: 0 0 $space-small 0;
-  }
-
   .partners {
     border-bottom: 1px solid $color-black-400;
     margin: 0 0 $space-medium 0;
@@ -791,5 +785,24 @@
     @media (min-width: $mq-phonexl) {
       margin-bottom: 0;
       width: auto;
+    }
+  }
+// Newsleter Signup Block
+  .block-newsletter {
+    background: $color-red-400;
+    margin: 0;
+    padding: $space-medium 0;
+    .form-input {
+      background: $color-red-500;
+      color: $color-white;
+      &::-webkit-input-placeholder {
+        color: $color-red-200;
+      }
+      &:hover {
+        background: $color-red-300;
+      }
+      &:focus {
+        background: $color-red-300;
+      }
     }
   }

@@ -86,29 +86,15 @@ html
               nav.site-nav
                 = link_to "Micro", "/", :class => "site-nav-link"
                 = link_to "Resources", "/source", :class => "site-nav-link"
-                = link_to "Join", "/signup", :class => "site-nav-link"
+                / = link_to "Join", "/signup", :class => "site-nav-link"
       == yield
-      footer.block.block-footer
+      section.block.block-newsletter
         .container
           .row
             .col-12
-              div id="mc_embed_signup"
-                form.newsletter action="https://thebeatboxclub.us19.list-manage.com/subscribe/post?u=904cbe53fd98d721cd0f6af6b&amp;SIGNUPLOC=#{current_page.data.shortname}&amp;id=8f73f35139" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate"
-                  .row
-                    .col-lg-12
-                      h3.bottom-margin-small
-                        | Enter your email address to get occasional updates on special offers, products and events.
-                      input type="hidden" name="MMERGE3" id="mce-MMERGE3" value="Free"
-                  .row
-                    .col-lg-3
-                      fieldset.form-fieldset
-                        input.form-input type="text" placeholder="First Name" name="FNAME" id="mce-FNAME"
-                    .col-lg-6
-                      fieldset.form-fieldset
-                        input.form-input type="email" placeholder="Email" name="EMAIL" id="mce-EMAIL"
-                    .col-lg-3
-                      fieldset.form-fieldset
-                        input.form-submit.btn.btn-secondary type="submit" value="Sign Up" name="subscribe" id="mc-embedded-subscribe" onclick="gtag('event', 'click', {'event_category' : 'Subscribe', 'event_label' : 'Micro', 'value' : 0});"
+              = partial "partials/cta-newslettersignup"
+      footer.block.block-footer
+        .container
           .row
             .col-12
               .partners
