@@ -99,10 +99,10 @@
       }
     }
     &.intuition {
-      background: url('../images/site-bg-intuition-mobile.jpg') no-repeat scroll right top #111427;
+      background: url('../images/site-bg-intuition-mobile.jpg') no-repeat fixed right top #291943;
       background-size: 100% auto;
       @media (min-width: $mq-tablet) {
-        background: url('../images/site-bg-intuition-desktop.jpg') no-repeat fixed right top #111427;
+        background: url('../images/site-bg-intuition-desktop.jpg') no-repeat scroll right top #291943;
         background-size: cover;
       }
       .block-cta, .block-newsletter, .block-footer, .partners, .partners-list-add {
