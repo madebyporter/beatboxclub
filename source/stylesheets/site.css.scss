@@ -58,9 +58,10 @@
         background: url('../images/site-bg-sensory-desktop.jpg') no-repeat scroll right top #111427;
         background-size: cover;
       }
-      .block-cta, .block-footer, .newsletter {
-        background: #0F1021;
+      .block-cta, .block-footer, .block-newsletter, .partners, .partners-list-ad {
+        background: #304179;
         border-bottom: 1px solid #282A57;
+        border-color: #282A57;
       }
       p {
         color: rgba(255,255,255,0.7);
@@ -70,29 +71,76 @@
         color: #8D91D9;
       }
       ::placeholder {
-        -webkit-text-fill-color: lighten(#0F1021, 45%);
+        -webkit-text-fill-color: lighten(#304179, 45%);
       }
       ::-ms-input-placeholder {
-        -webkit-text-fill-color: lighten(#0F1021, 45%);
+        -webkit-text-fill-color: lighten(#304179, 45%);
       }
       .form-input {
-        background: lighten(#0F1021, 5%);
-        color: lighten(#0F1021, 75%);
+        background: lighten(#304179, 5%);
+        color: lighten(#304179, 75%);
         &:focus, &:hover {
-          background: lighten(#0F1021, 15%);
+          background: lighten(#304179, 15%);
         }
       }
       .nav-footer a {
-        color: lighten(#0F1021, 35%);
+        color: lighten(#304179, 35%);
         &:hover {
-          color: lighten(#0F1021, 45%);
+          color: lighten(#304179, 45%);
         }
       }
       .btn-secondary {
-        background: lighten(#0F1021, 35%);
-        color: lighten(#0F1021, 75%);
+        background: lighten(#304179, 35%);
+        color: lighten(#304179, 75%);
         &:hover {
-          background: lighten(#0F1021, 40%);
+          background: lighten(#304179, 40%);
+          color: $color-white;
+        }
+      }
+    }
+    &.intuition {
+      background: url('../images/site-bg-intuition-mobile.jpg') no-repeat scroll right top #111427;
+      background-size: 100% auto;
+      @media (min-width: $mq-tablet) {
+        background: url('../images/site-bg-intuition-desktop.jpg') no-repeat fixed right top #111427;
+        background-size: cover;
+      }
+      .block-cta, .block-newsletter, .block-footer, .partners, .partners-list-add {
+        background: #111427;
+        border-bottom: 1px solid #282A57;
+        border-color: #282A57;
+      }
+      p {
+        color: rgba(255,255,255,0.7);
+        font-weight: 400;
+      }
+      .sub-title {
+        color: #8D91D9;
+      }
+      ::placeholder {
+        -webkit-text-fill-color: lighten(#304179, 45%);
+      }
+      ::-ms-input-placeholder {
+        -webkit-text-fill-color: lighten(#304179, 45%);
+      }
+      .form-input {
+        background: lighten(#304179, 5%);
+        color: lighten(#304179, 75%);
+        &:focus, &:hover {
+          background: lighten(#304179, 15%);
+        }
+      }
+      .nav-footer a {
+        color: lighten(#304179, 35%);
+        &:hover {
+          color: lighten(#304179, 45%);
+        }
+      }
+      .btn-secondary {
+        background: lighten(#304179, 35%);
+        color: lighten(#304179, 75%);
+        &:hover {
+          background: lighten(#304179, 40%);
           color: $color-white;
         }
       }
