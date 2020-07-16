@@ -10,6 +10,7 @@
 @import "modal";
 @import "blog";
 @import "store";
+@import "catalogs";
 
 // Universal
   * {
@@ -42,60 +43,6 @@
     &.signup {
       background: url('../images/site-bg-video.jpg') no-repeat scroll center 30% $color-black;
       background-size: cover;
-    }
-    &.beats-for-facebook {
-      background: url('../images/site-bg-mic.jpg') no-repeat scroll right top $color-black;
-      background-size: cover;
-    }
-    &.beats-for-instagram {
-      background: url('../images/site-bg-mic.jpg') no-repeat scroll right top $color-black;
-      background-size: cover;
-    }
-    &.sensory {
-      background: url('../images/site-bg-sensory-mobile.jpg') no-repeat scroll right top #111427;
-      background-size: 100% auto;
-      @media (min-width: $mq-tablet) {
-        background: url('../images/site-bg-sensory-desktop.jpg') no-repeat scroll right top #111427;
-        background-size: cover;
-      }
-      .block-cta, .block-footer, .newsletter {
-        background: #0F1021;
-        border-bottom: 1px solid #282A57;
-      }
-      p {
-        color: rgba(255,255,255,0.7);
-        font-weight: 400;
-      }
-      .sub-title {
-        color: #8D91D9;
-      }
-      ::placeholder {
-        -webkit-text-fill-color: lighten(#0F1021, 45%);
-      }
-      ::-ms-input-placeholder {
-        -webkit-text-fill-color: lighten(#0F1021, 45%);
-      }
-      .form-input {
-        background: lighten(#0F1021, 5%);
-        color: lighten(#0F1021, 75%);
-        &:focus, &:hover {
-          background: lighten(#0F1021, 15%);
-        }
-      }
-      .nav-footer a {
-        color: lighten(#0F1021, 35%);
-        &:hover {
-          color: lighten(#0F1021, 45%);
-        }
-      }
-      .btn-secondary {
-        background: lighten(#0F1021, 35%);
-        color: lighten(#0F1021, 75%);
-        &:hover {
-          background: lighten(#0F1021, 40%);
-          color: $color-white;
-        }
-      }
     }
   }
 
@@ -214,10 +161,8 @@
     @extend .t-18;
     margin-left: $space-small;
   }
-
   .site-wrapper {
     width: 100%;
-
   }
 
   .block {
@@ -225,9 +170,9 @@
     padding: 0 $space-x;
     @media (min-width: $mq-tablet) {
       padding: 0;
+      margin: 0 auto $space-large;
     }
   }
-
   .block-header {
     // background: lighten($color-black-500,2%);
     padding: $space-large $space-x $space-medium;
@@ -238,119 +183,10 @@
   .block-content {
     margin-bottom: $space-large;
   }
-
   .block-border-bottom {
     padding-bottom: $space-x;
     border-bottom: 1px solid lighten($color-black-500,5%);  
   }
-
-  .persona-type {
-    height: 50vh;
-    margin: 0 auto $space-small;
-    overflow: hidden;
-    width: 100%;
-    @media (min-width: $mq-laptop) {
-      height: 100%;
-      margin: 0;
-      overflow: visible;
-      width: 100%;
-    }
-  }
-  .persona-type-header {
-    @include absolute-center;
-    margin: 0;
-    text-align: center;
-    white-space: nowrap;
-    width: 80%;
-    @include font-size(24);
-    @media (min-width: $mq-laptop) {
-      position: relative;
-      text-align: left;
-      left: auto;
-      top: auto;
-      width: auto;
-      @include translate(-$space-x,-12rem);
-    }
-  }
-  .persona-type-image img {
-    opacity: .4;
-    width: 100%;
-    @media (min-width: $mq-laptop) {
-      opacity: 1;
-      width: 100%;
-    }
-  }
-
-  .value-prop {
-    height: 360px;
-    margin: 0 0 $space-medium 0;
-    // overflow: hidden;
-    position: relative;
-    @media (min-width: $mq-tablet) {
-      height: 460px;
-    }
-    @media (min-width: $mq-laptop) {
-      // height: 660px;
-    }
-    @media (min-width: $mq-desktop) {
-      // height: 720px;
-    }
-  }
-  .value-prop-title {
-    margin-top: $space-small;
-    margin-bottom: $space-small;
-    position: relative;
-    z-index: 2;
-    @media (min-width: $mq-tablet) {
-      margin-top: $space-small;
-      margin-bottom: $space-small;
-    }
-    @media (min-width: $mq-laptop) {
-      text-align: left;
-      // @include translate(-$space-large, 0);
-      @include font-size(64);
-      padding: $space-medium 0 0 0;
-    }
-    @media (min-width: $mq-wide) {
-      text-align: left;
-      @include translate(0, 0);
-    }
-  }
-  .value-prop-content {
-    position: relative;
-    z-index: 2;
-  }
-  .value-prop-pad {
-    padding-top: $space-large;
-    @media (min-width: $mq-laptop) {
-      padding-top: $space-large;
-    }
-  }
-  .value-prop-image {
-    overflow: hidden;
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 95%;
-    z-index: 1;
-    opacity: .5;
-    @media (min-width: $mq-laptop) {
-      opacity: 1;
-    }
-    img {
-      width: 100%;
-      @include absolute-center;
-    }
-  }
-  .value-prop-paragraph {
-    color: $color-black-100;
-    font-weight: 700;
-    @media (max-width: $mq-laptop) {
-      @include font-size(18);
-    }
-  }
-
   .block-cta {
     background: lighten($color-black-500,2%);
     border-bottom: 1px solid $color-black-400;
@@ -721,7 +557,6 @@
       margin-bottom: 0;
     }
   }
-  
   .block-resources-grid {
     @include flexbox;
     @include flex-wrap(wrap);
@@ -787,6 +622,7 @@
       width: auto;
     }
   }
+
 // Newsleter Signup Block
   .block-newsletter {
     background: $color-red-400;
@@ -804,5 +640,22 @@
       &:focus {
         background: $color-red-300;
       }
+    }
+  }
+
+
+// Catalog Index
+  .catalog {
+    margin: 0 0 $space-medium 0;
+    .catalog-cover {
+      position: relative;
+    }
+    .catalog-cover-img {
+      width: 100%;
+    }
+    .catalog-title {
+      @extend .t-18;
+      color: $color-white;
+      display: block;
     }
   }
