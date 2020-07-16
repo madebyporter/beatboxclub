@@ -1,0 +1,53 @@
+---
+title: Try the Beatbox Club - Beats for Music and Video
+shortname: Home
+---
+script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js"
+script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"
+== javascript_include_tag  "jquery.ajaxchimp.min"
+
+section.block.block-section.block-hero
+  .container
+    .row
+      .col-12
+        .row
+          .col-md-12.col-lg-10
+            h1.bottom-margin-small
+              | Beatbox Micro
+        .row
+          .col-md-12.col-lg-8
+            p.content-large
+              | Free creative commons loops for music, advertising, social media, film, games or live streams.
+section.block.block-section.block-micro
+  .container
+    .row.block-micro-grid
+      - data.site.micro.each do |id, micro|
+        .box-col.col-12.col-md-6.col-lg-6.col-xl-4 data-date="#{micro._meta.updated_at}"
+          .box-song
+            .box-song-player
+              div.box-song-player--controls-wrapper.unloaded data-id="#{micro.id}" data-link="#{micro.link}" onclick="gtag('event', 'click', {'event_category' : 'Plays', 'event_label' : 'Track - #{micro.title}', 'value' : 0});"
+                div.box-song-player--controls Play
+              - if micro.art
+                = image_tag "#{micro.art.url}", :alt => "#{micro.title}", :class => "box-song-player--artwork"
+            .box-song-meta
+              h2.t-16.box-song-meta--title = micro.title
+              span.t-14.t-strong.box-song-meta--producer = micro.producer
+              span.t-12.t-strong.box-song-meta--mood = micro.mood
+              a.t-14.box-song-meta--download.modal-link href="#" onclick="gtag('event', 'click', {'event_category' : 'Download', 'event_label' : 'Track - #{micro.title}', 'value' : 0});" Download
+          .micro-download.modal
+            .modal-close
+              | &times;
+            .micro-download-inner.modal-inner
+              form.micro-download-form.modal-form method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate"
+                h3 To download #{micro.title} by #{micro.producer}, please enter your email address to subscribe to Beatbox Micro updates and receive your track!
+                p 
+                input type="hidden" name="MMERGE3" id="mce-MMERGE3" value="Free"
+                input.form-input.micro-download-email.modal-form-email.required.email type="email" value="" name="EMAIL" id="mce-EMAIL" placeholder="Enter your Email Address"
+                div id="mce-responses" class="clear"
+                  div class="response" id="mce-error-response" style="display:none"
+                  div class="response" id="mce-success-response" style="display:none"
+                div style="position: absolute; left: -5000px;" aria-hidden="true"
+                  input type="text" name="b_904cbe53fd98d721cd0f6af6b_8f73f35139" tabindex="-1" value=""
+                input.form-submit.btn.btn-primary type="submit" value="Subscribe &amp; Download" name="subscribe" id="mc-embedded-subscribe" class="button" data-name="#{micro.title}" data-src="#{micro.link}" onclick="gtag('event', 'click', {'event_category' : 'Subscribe', 'event_label' : 'Track - #{micro.title}', 'value' : 0});"
+
+/ = partial "partials/cta-privatevault"
