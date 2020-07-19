@@ -1,9 +1,9 @@
 body {
   &.sensory {
-    background: url('../images/site-bg-sensory-mobile.jpg') no-repeat scroll right top #111427;
+    background: url('../images/catalogs/site-bg-sensory-mobile.jpg') no-repeat scroll right top #111427;
     background-size: 100% auto;
     @media (min-width: $mq-tablet) {
-      background: url('../images/site-bg-sensory-desktop.jpg') no-repeat scroll right top #111427;
+      background: url('../images/catalogs/site-bg-sensory-desktop.jpg') no-repeat scroll right top #111427;
       background-size: cover;
     }
     .block-cta, .block-footer, .block-newsletter, .partners, .partners-list-ad {
@@ -47,10 +47,10 @@ body {
     }
   }
   &.intuition {
-    background: url('../images/site-bg-intuition-mobile.jpg') no-repeat fixed right top #291943;
+    background: url('../images/catalogs/site-bg-intuition-mobile.jpg') no-repeat fixed right top #291943;
     background-size: 100% auto;
     @media (min-width: $mq-tablet) {
-      background: url('../images/site-bg-intuition-desktop.jpg') no-repeat scroll right top #291943;
+      background: url('../images/catalogs/site-bg-intuition-desktop.jpg') no-repeat scroll right top #291943;
       background-size: cover;
     }
     .block-cta, .block-newsletter, .block-footer, .partners, .partners-list-add {
@@ -94,10 +94,11 @@ body {
     }
   }
   &.noise {
-    background: url('../images/site-bg-noise-mobile.jpg') no-repeat fixed right top #111427;
+    background: url('../images/catalogs/site-bg-noise-mobile.jpg') no-repeat fixed right top #111427;
+    background-attachment: initial;
     background-size: 100% auto;
     @media (min-width: $mq-tablet) {
-      background: url('../images/site-bg-noise-desktop.jpg') no-repeat scroll right top #111427;
+      background: url('../images/catalogs/site-bg-noise-desktop.jpg') no-repeat scroll right top #111427;
       background-size: cover;
     }
     .block-cta, .block-newsletter, .block-footer, .partners, .partners-list-add {
