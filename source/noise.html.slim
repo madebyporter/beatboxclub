@@ -34,41 +34,41 @@ section.block.block-section
               | Stream via
           .col-6.col-md-6
             .block-logo
-              = link_to "https://open.spotify.com/album/47ab5l6XCezQDf26wC1lGs", :class => "block-logo-link" do
+              = link_to "https://open.spotify.com/album/47ab5l6XCezQDf26wC1lGs", :class => "block-logo-link", :onclick => "gtag('event', 'click', {'event_category' : 'noise_platform', 'event_label' : out_spotify, 'value' : 0});" do
                 = image_tag "logos/logo-spotify.png", :alt => "Spotify", :class => "block-logo-img"
           .col-6.col-md-6
             .block-logo
-              = link_to "https://music.apple.com/us/album/noise/1522230835?uo=4&app=music&at=1001lry3&ct=dashboard", :class => "block-logo-link" do
+              = link_to "https://music.apple.com/us/album/noise/1522230835?uo=4&app=music&at=1001lry3&ct=dashboard", :class => "block-logo-link", :onclick => "gtag('event', 'click', {'event_category' : 'noise_platform', 'event_label' : out_applemusic, 'value' : 0});" do
                 = image_tag "logos/logo-applemusic.png", :alt => "Apple Music", :class => "block-logo-img"
           .col-6.col-md-4
             .block-logo.block-logo-small
-              = link_to "https://tidal.com/browse/album/147604675", :class => "block-logo-link" do
+              = link_to "https://tidal.com/browse/album/147604675", :class => "block-logo-link", :onclick => "gtag('event', 'click', {'event_category' : 'noise_platform', 'event_label' : out_tidal, 'value' : 0});" do
                 = image_tag "logos/logo-tidal.png", :alt => "Tidal", :class => "block-logo-img"
           / .col-6.col-md-4
           /   .block-logo.block-logo-small
-          /     = link_to "https://www.youtube.com/playlist?list=OLAK5uy_ng2GefnHsmsOQ60WhVCXRaiGyTip_kKaw", :class => "block-logo-link" do
+          /     = link_to "https://www.youtube.com/playlist?list=OLAK5uy_ng2GefnHsmsOQ60WhVCXRaiGyTip_kKaw", :class => "block-logo-link", :onclick => "gtag('event', 'click', {'event_category' : 'noise_platform', 'event_label' : out_youtube, 'value' : 0});" do
           /       = image_tag "logos/logo-youtube.png", :alt => "Youtube", :class => "block-logo-img"
           / .col-6.col-md-4
           /   .block-logo.block-logo-small
-          /     = link_to "http://www.amazon.com/gp/product/B087N84HMF", :class => "block-logo-link" do
+          /     = link_to "http://www.amazon.com/gp/product/B087N84HMF", :class => "block-logo-link", :onclick => "gtag('event', 'click', {'event_category' : 'noise_platform', 'event_label' : out_amazon, 'value' : 0});" do
           /       = image_tag "logos/logo-amazon.png", :alt => "Amazon", :class => "block-logo-img"
           .col-6.col-md-4
             .block-logo.block-logo-small
-              = link_to "https://soundcloud.com/madebyporter/sets/noise", :class => "block-logo-link" do
+              = link_to "https://soundcloud.com/madebyporter/sets/noise", :class => "block-logo-link", :onclick => "gtag('event', 'click', {'event_category' : 'noise_platform', 'event_label' : out_soundcloud, 'value' : 0});" do
                 = image_tag "logos/logo-soundcloud.png", :alt => "Soundcloud", :class => "block-logo-img"
           / .col-6.col-md-4
           /   .block-logo.block-logo-small
-          /     = link_to "https://madebyporter.bandcamp.com/album/sensory", :class => "block-logo-link" do
+          /     = link_to "https://madebyporter.bandcamp.com/album/sensory", :class => "block-logo-link", :onclick => "gtag('event', 'click', {'event_category' : 'noise_platform', 'event_label' : out_bandcamp, 'value' : 0});" do
           /       = image_tag "logos/logo-bandcamp.png", :alt => "Bandcamp", :class => "block-logo-img"
           .col-6.col-md-4
             .block-logo.block-logo-small
-              = link_to "https://www.deezer.com/album/158885902", :class => "block-logo-link" do
+              = link_to "https://www.deezer.com/album/158885902", :class => "block-logo-link", :onclick => "gtag('event', 'click', {'event_category' : 'noise_platform', 'event_deezer' : out_tidal, 'value' : 0});" do
                 = image_tag "logos/logo-deezer.png", :alt => "Deezer", :class => "block-logo-img"
           .col-6.col-md-4
             .block-logo.block-logo-small
-              = link_to "https://play.google.com/store/music/album?id=Bs67jtatezx25rluqcnkm2fmrga&tid=song-Tuxticmcx4rvuee3khyzv7xz5be", :class => "block-logo-link" do
+              = link_to "https://play.google.com/store/music/album?id=Bs67jtatezx25rluqcnkm2fmrga&tid=song-Tuxticmcx4rvuee3khyzv7xz5be", :class => "block-logo-link", :onclick => "gtag('event', 'click', {'event_category' : 'noise_platform', 'event_label' : out_googleplay, 'value' : 0});" do
                 = image_tag "logos/logo-googleplay.png", :alt => "Google Play", :class => "block-logo-img"
           .col-6.col-md-4
             .block-logo.block-logo-small
-              = link_to "https://music.apple.com/us/album/noise/1522230835?uo=4&app=itunes&at=1001lry3&ct=dashboard", :class => "block-logo-link" do
+              = link_to "https://music.apple.com/us/album/noise/1522230835?uo=4&app=itunes&at=1001lry3&ct=dashboard", :class => "block-logo-link", :onclick => "gtag('event', 'click', {'event_category' : 'noise_platform', 'event_label' : out_itunes, 'value' : 0});" do
                 = image_tag "logos/logo-itunes.png", :alt => "iTunes", :class => "block-logo-img"
