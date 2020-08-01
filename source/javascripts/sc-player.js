@@ -648,15 +648,17 @@ function SoundCloudAPI() {
 	function createPlayerDOM(len, hash) {
 		var div = document.createElement('div');
 			div.className = 'sc-player loading';
-			div.innerHTML = '<ol class="sc-artwork-list"></ol>\n'+
-				'<div class="sc-info"><h3></h3><h4></h4><p></p><a class="sc-download">&raquo; Download &laquo;</a>\n'+
+			div.innerHTML =
+				'<ol class="sc-trackslist">'+ _li(hash, len) +'</ol>\n'+
+				'<ol class="sc-artwork-list"></ol>\n'+
+				'<div class="sc-info"><h3></h3><h4></h4><p class="sc-desc"></p><a class="sc-download">&raquo; Download &laquo;</a>\n'+
 				'	<div class="sc-info-close">X</div>\n'+
 				'</div>\n'+
 				'<div class="sc-controls">\n'+
 				'	<div class="sc-play">Play</div>\n'+
 				'</div>\n'+
-				'<ol class="sc-trackslist">'+ _li(hash, len) +'</ol>\n'+
-				'<div class="sc-info-toggle">Info</div>\n'+
+				
+				// '<div class="sc-info-toggle">Info</div>\n'+
 				'<div class="sc-time-indicators">\n'+
 				'	<span class="sc-position"></span>&nbsp;|&nbsp;<span class="sc-duration"></span>\n'+
 				'</div>\n'+

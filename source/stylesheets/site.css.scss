@@ -37,8 +37,17 @@
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     &.index {
-      background: url('../images/site-bg-rapper-4.jpg') no-repeat scroll center top $color-black;
-      background-size: cover;
+      background: url('../images/catalogs/site-bg-noise-mobile.jpg') no-repeat scroll right top #111427;
+      background-size: 100% auto;
+      @media (min-width: $mq-tablet) {
+        background: url('../images/catalogs/site-bg-noise-desktop.jpg') no-repeat scroll right top #111427;
+        background-size: cover;
+      }
+      .block-cta, .block-footer, .partners, .partners-list-add {
+        background: #111427;
+        border-bottom: 1px solid #282A57;
+        border-color: #282A57;
+      }
     }
     &.signup {
       background: url('../images/site-bg-video.jpg') no-repeat scroll center 30% $color-black;
@@ -46,6 +55,10 @@
     }
   }
 
+  .site-wrapper {
+    width: 100%;
+  }
+  
 // Masthead
   .site-logo {
     display: block;
@@ -161,23 +174,24 @@
     @extend .t-18;
     margin-left: $space-small;
   }
-  .site-wrapper {
-    width: 100%;
-  }
+  
 
   .block {
     margin: 0 auto $space-medium;
-    padding: 0 $space-x;
+    padding: 0 $space-small;
     @media (min-width: $mq-tablet) {
-      padding: 0;
+      padding: 0 $space-x;
       margin: 0 auto $space-large;
+    }
+    @media (min-width: $mq-laptop) {
+      padding: 0 $space-medium;
     }
   }
   .block-header {
     // background: lighten($color-black-500,2%);
     padding: $space-large $space-x $space-medium;
     @media (min-width: $mq-tablet) {
-      padding: $space-large 0 $space-medium;
+      padding: $space-large $space-medium $space-medium;
     }
   }
   .block-content {
@@ -207,9 +221,11 @@
   .block-footer {
     background: lighten($color-black-500,2%);
     margin-bottom: 0;
-    padding: $space-medium $space-x;
-    @media (min-width: $mq-tablet) {
-      padding: $space-large 0;
+    padding-top: $space-medium;
+    padding-bottom: $space-medium;
+    @media (min-width: $mq-laptop) {
+      padding-top: $space-large;
+      padding-bottom: $space-large;
     }
   }
   .nav-footer {
@@ -406,48 +422,116 @@
 
   .player {
     margin: 0 0 $space-medium;
-    .sc-artwork-list, .sc-info, .sc-scrubber, .sc-time-indicators, .sc-info, .sc-info-toggle {
+    .sc-artwork-list, .sc-scrubber, .sc-time-indicators, .sc-info, .sc-info-toggle, .sc-download, .sc-desc, .sc-info-close {
       display: none;
     }
     .sc-controls {
-      background: $color-gold;
+      background: $color-yellow;
+      bottom: 0;
+      height: 80px;
+      width: 80px;
+      left: 0;
       position: fixed;
-      height: 40px;
-      width: 40px;
+      z-index: 1000;
+
       @include flexbox;
       align-items: center;
       justify-content: center;
+
       cursor: pointer;
-      bottom: $space-x;
-      left: $space-x;
+      &:hover {
+        background: $color-gold;
+      }
+    }
+    .sc-info {
+      background: $color-white;
+      bottom: 0;
+      height: 80px;
+      left: 80px;
+      padding: $space-small;
+      position: fixed;
+      width: auto;
       z-index: 1000;
+
+      @include flexbox;
+      flex-wrap: wrap;
+      align-items: center;
+      align-content: center;
+      h3 {
+        margin: 0 0 5px 0;
+        @extend .t-18;
+        width: 100%;
+      }
+      h3 a {
+        font-weight: 400;
+      }
+      h4 {
+        color: $color-black;
+        @extend .t-12;
+        display: inline;
+        font-weight: 400;
+        margin: 0 5px 0 0;
+      }
+      h4 a {
+        font-weight: 400;
+      }
     }
     .sc-play {
       @include text-hide;
       background: url('../images/icon-play.svg') no-repeat center;
-      background-size: 10px;
-      height: 24px;
-      width: 24px;
+      background-size: 16px;
+      height: 100%;
+      width: 100%;
     }
     .sc-pause {
       @include text-hide;
       background: url('../images/icon-pause.svg') no-repeat center;
-      background-size: 10px;
+      background-size: 16px;
       height: 24px;
       width: 24px;
     }
     .sc-trackslist {
+      list-style: none;
       margin: 0;
+      padding: 0;
+      width: auto;
       .sc-track {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         cursor: pointer;
+        margin: 0;
+        position: relative;
+        &:before {
+          background: url('../images/icon-play.svg') no-repeat center;
+          background-size: 10px;
+          content: "";
+          height: 100%;
+          width: 10px;
+          margin-left: 0;
+          position: absolute;
+        }
         &:hover {
           .sc-track-title {
-            color: $color-yellow;
+            color: $color-gold-500;
           }
         }
+        .sc-track-title {
+          display: inline-block;
+          padding: 20px 0 20px 30px;
+        }
       }
-      .sc-track.active .sc-track-title {
-        color: $color-yellow;
+      .sc-track.active {
+        &:before {
+          background: url('../images/icon-pause.svg') no-repeat center;
+          background-size: 10px;
+          content: "";
+          height: 100%;
+          width: 10px;
+          margin-left: 0;
+          position: absolute;
+        }
+        .sc-track-title {
+          color: $color-gold-500;
+        }
       }
     }
     .sc-track-duration {
@@ -627,7 +711,8 @@
   .block-newsletter {
     background: $color-red-400;
     margin: 0;
-    padding: $space-medium 0;
+    padding-top: $space-medium;
+    padding-bottom: $space-medium;
     .form-input {
       background: $color-red-500;
       color: $color-white;
@@ -655,7 +740,9 @@
     }
     .catalog-title {
       @extend .t-18;
-      color: $color-white;
       display: block;
+    }
+    .catalog-year {
+      @extend .t-16;
     }
   }

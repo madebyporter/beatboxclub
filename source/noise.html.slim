@@ -9,25 +9,23 @@ section.block.block-section.block-hero
     .row
       .col-12
         .row
-          .col-md-12.col-lg-7
+          .col-md-12.col-md-9.col-lg-8.col-xl-7
             h1.headline-large
               | Noise
             h3
-              | Psychedelic Hiphop &amp; Afrobeats 
-        .row
-          .col-md-12.col-lg-7
+              | Psychedelic Hiphop &amp; Afrobeats
             p.content
               | Noise is the 2020 beat tape project by <a href="https://www.madebyporter.com">Chris Porter</a>. Choose from one of the streaming providers below to get the experience the way you want:
 section.block.block-section
   .container
-    .row
-      .col-12.col-lg-6
+    .row.d-flex
+      .col-12.col-lg-6.order-1.order-lg-0.mb-4
         .player
           h4
             | Listen now
           .sc-player
             a href="https://soundcloud.com/madebyporter/sets/noise" Intuition
-      .col-12.col-lg-6
+      .col-12.col-lg-6.order-0.order-lg-1.mb-4
         .row
           .col-12
             h4
@@ -44,6 +42,10 @@ section.block.block-section
             .block-logo.block-logo-small
               = link_to "https://tidal.com/browse/album/147604675", :class => "block-logo-link", :onclick => "gtag('event', 'click', {'event_category' : 'noise_platform', 'event_label' : out_tidal, 'value' : 0});" do
                 = image_tag "logos/logo-tidal.png", :alt => "Tidal", :class => "block-logo-img"
+          .col-6.col-md-4
+            .block-logo.block-logo-small
+              = link_to "https://www.youtube.com/playlist?list=OLAK5uy_ng2GefnHsmsOQ60WhVCXRaiGyTip_kKaw", :class => "block-logo-link", :onclick => "gtag('event', 'click', {'event_category' : 'noise_platform', 'event_label' : out_youtube, 'value' : 0});" do
+                = image_tag "logos/logo-youtube.png", :alt => "Youtube", :class => "block-logo-img"
           / .col-6.col-md-4
           /   .block-logo.block-logo-small
           /     = link_to "https://www.youtube.com/playlist?list=OLAK5uy_ng2GefnHsmsOQ60WhVCXRaiGyTip_kKaw", :class => "block-logo-link", :onclick => "gtag('event', 'click', {'event_category' : 'noise_platform', 'event_label' : out_youtube, 'value' : 0});" do
@@ -62,7 +64,7 @@ section.block.block-section
           /       = image_tag "logos/logo-bandcamp.png", :alt => "Bandcamp", :class => "block-logo-img"
           .col-6.col-md-4
             .block-logo.block-logo-small
-              = link_to "https://www.deezer.com/album/158885902", :class => "block-logo-link", :onclick => "gtag('event', 'click', {'event_category' : 'noise_platform', 'event_deezer' : out_tidal, 'value' : 0});" do
+              = link_to "https://www.deezer.com/album/158885902", :class => "block-logo-link", :onclick => "gtag('event', 'click', {'event_category' : 'noise_platform', 'event_label' : out_deezer, 'value' : 0});" do
                 = image_tag "logos/logo-deezer.png", :alt => "Deezer", :class => "block-logo-img"
           .col-6.col-md-4
             .block-logo.block-logo-small

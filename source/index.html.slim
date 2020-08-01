@@ -9,36 +9,44 @@ script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"
 section.block.block-section.block-hero
   .container
     .row
-      .col-12
+      .col-12.col-md-7.col-lg-8.d-flex.align-items-center
         .row
           .col-md-12.col-lg-10
             h1.bottom-margin-small
-              | Listen to beat tapes and connect with producers
-        .row
-          .col-md-12.col-lg-8
+              | Stream the psychedelic afrobeat project, Noise.
             p.content-large
-              | Check out catalogs of instrumental albums and beat tapes. Connect with producers looking to work on projects, create albums, and tell stories.
+              | Noise is one of the latest instrumental albums from Made by Porter. It's a psychedelic hiphop soundtrack for work, exercise, or to smoke to.<br /><br />
+              == link_to 'Listen Now', 'noise', class: ""
+            
+      .col-12.col-md-5.col-lg-4
+        .row
+          .col-12
+            .catalog
+              .catalog-cover
+                == link_to 'noise', class: "catalog-cover-link" do
+                  = image_tag "catalogs/porter-2020-noise.jpg", :alt => "Noise", :class => "catalog-cover-img"
+              == link_to 'Noise', 'noise', class: "catalog-title"
+              span.catalog-year 2020
 section.block.block-section
-  .container
+  .container-fluid
     .row
-      .col-12.col-md-4
-        .catalog
-          .catalog-cover
-            == link_to 'noise', class: "catalog-cover-link" do
-              = image_tag "catalogs/porter-2020-noise.jpg", :alt => "Noise", :class => "catalog-cover-img"
-          == link_to 'Noise', 'noise', class: "catalog-title"
-          == link_to 'Porter', 'mailto:general@madebyporter.com', class: "catalog-producer"
-      .col-12.col-md-4
-        .catalog
-          .catalog-cover
-            == link_to 'intuition', class: "catalog-cover-link" do
-              = image_tag "catalogs/porter-2020-intuition.png", :alt => "Intuition", :class => "catalog-cover-img"
-          == link_to 'Intuition', 'intuition', class: "catalog-title"
-          == link_to 'Porter', 'mailto:general@madebyporter.com', class: "catalog-producer"
-      .col-12.col-md-4
-        .catalog
-          .catalog-cover
-            == link_to 'sensory', class: "catalog-cover-link" do
-              = image_tag "catalogs/porter-2019-sensory.jpg", :alt => "Sensory", :class => "catalog-cover-img"
-          == link_to 'Sensory', 'sensory', class: "catalog-title"
-          == link_to 'Porter', 'mailto:general@madebyporter.com', class: "catalog-producer"
+      .col-12.col-md-3
+        .row
+          .col-12
+            h2 More instrumental albums
+      .col-12.col-md-8.offset-md-1
+        .row.d-flex.justify-content-end
+          .col-12.col-md-6
+            .catalog
+              .catalog-cover
+                == link_to 'intuition', class: "catalog-cover-link" do
+                  = image_tag "catalogs/porter-2020-intuition.png", :alt => "Intuition", :class => "catalog-cover-img"
+              == link_to 'Intuition', 'intuition', class: "catalog-title"
+              span.catalog-year 2020
+          .col-12.col-md-6
+            .catalog
+              .catalog-cover
+                == link_to 'sensory', class: "catalog-cover-link" do
+                  = image_tag "catalogs/porter-2019-sensory.jpg", :alt => "Sensory", :class => "catalog-cover-img"
+              == link_to 'Sensory', 'sensory', class: "catalog-title"
+              span.catalog-year 2019
