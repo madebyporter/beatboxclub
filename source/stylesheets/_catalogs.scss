@@ -105,6 +105,13 @@ body {
       border-bottom: 1px solid #282A57;
       border-color: #282A57;
     }
+    .block-logo {
+      background: rgba(40,42,87,0.1);
+      border: 0;
+      &:hover {
+        background: rgba(40,42,87,0.3);
+      }
+    }
     .block-newsletter {
       border-top: 1px solid #282A57;
     }

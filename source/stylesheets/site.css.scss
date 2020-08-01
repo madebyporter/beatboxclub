@@ -422,28 +422,76 @@
 
   .player {
     margin: 0 0 $space-medium;
-    .sc-artwork-list, .sc-info, .sc-scrubber, .sc-time-indicators, .sc-info, .sc-info-toggle {
+    .sc-artwork-list, .sc-scrubber, .sc-time-indicators, .sc-info, .sc-info-toggle, .sc-download, .sc-desc, .sc-info-close {
       display: none;
     }
-    .sc-controls {
-      background: $color-gold;
+    .sc-fixed {
+      background: $color-black;
+      bottom: 0;
+      height: 80px;
+      left: 0;
       position: fixed;
-      height: 40px;
-      width: 40px;
+      width: 100%;
+      z-index: 1000;
+      @include flexbox;
+      flex-wrap: wrap;
+    }
+    .sc-controls {
+      background: darken($color-black,1%);
+      bottom: 0;
+      height: 80px;
+      width: 80px;
+      left: 0;
+      position: fixed;
+      z-index: 1000;
+
       @include flexbox;
       align-items: center;
       justify-content: center;
+
       cursor: pointer;
-      bottom: $space-x;
-      left: $space-x;
+      &:hover {
+        background: darken($color-black,2%);
+      }
+    }
+    .sc-info {
+      background: $color-black;
+      bottom: 0;
+      height: 80px;
+      left: 80px;
+      padding: $space-small;
+      position: fixed;
+      width: 100%;
       z-index: 1000;
+
+      @include flexbox;
+      flex-wrap: wrap;
+      align-items: center;
+      align-content: center;
+      h3 {
+        margin: 0 0 5px 0;
+        @extend .t-18;
+        width: 100%;
+      }
+      h3 a {
+        font-weight: 400;
+      }
+      h4 {
+        @extend .t-12;
+        display: inline;
+        font-weight: 400;
+        margin: 0 5px 0 0;
+      }
+      h4 a {
+        font-weight: 400;
+      }
     }
     .sc-play {
       @include text-hide;
       background: url('../images/icon-play.svg') no-repeat center;
       background-size: 10px;
-      height: 24px;
-      width: 24px;
+      height: 100%;
+      width: 100%;
     }
     .sc-pause {
       @include text-hide;
@@ -454,16 +502,17 @@
     }
     .sc-trackslist {
       margin: 0;
+      width: auto;
       .sc-track {
         cursor: pointer;
         &:hover {
           .sc-track-title {
-            color: $color-yellow;
+            color: $color-gold-500;
           }
         }
       }
       .sc-track.active .sc-track-title {
-        color: $color-yellow;
+        color: $color-gold-500;
       }
     }
     .sc-track-duration {
