@@ -46,6 +46,10 @@
     }
   }
 
+  .site-wrapper {
+    width: 100%;
+  }
+  
 // Masthead
   .site-logo {
     display: block;
@@ -161,23 +165,24 @@
     @extend .t-18;
     margin-left: $space-small;
   }
-  .site-wrapper {
-    width: 100%;
-  }
+  
 
   .block {
     margin: 0 auto $space-medium;
-    padding: 0 $space-x;
+    padding: 0 $space-small;
     @media (min-width: $mq-tablet) {
-      padding: 0;
+      padding: 0 $space-x;
       margin: 0 auto $space-large;
+    }
+    @media (min-width: $mq-laptop) {
+      padding: 0 $space-medium;
     }
   }
   .block-header {
     // background: lighten($color-black-500,2%);
     padding: $space-large $space-x $space-medium;
     @media (min-width: $mq-tablet) {
-      padding: $space-large 0 $space-medium;
+      padding: $space-large $space-medium $space-medium;
     }
   }
   .block-content {
@@ -207,9 +212,11 @@
   .block-footer {
     background: lighten($color-black-500,2%);
     margin-bottom: 0;
-    padding: $space-medium $space-x;
-    @media (min-width: $mq-tablet) {
-      padding: $space-large 0;
+    padding-top: $space-medium;
+    padding-bottom: $space-medium;
+    @media (min-width: $mq-laptop) {
+      padding-top: $space-large;
+      padding-bottom: $space-large;
     }
   }
   .nav-footer {
@@ -627,7 +634,8 @@
   .block-newsletter {
     background: $color-red-400;
     margin: 0;
-    padding: $space-medium 0;
+    padding-top: $space-medium;
+    padding-bottom: $space-medium;
     .form-input {
       background: $color-red-500;
       color: $color-white;
@@ -655,7 +663,9 @@
     }
     .catalog-title {
       @extend .t-18;
-      color: $color-white;
       display: block;
+    }
+    .catalog-year {
+      @extend .t-16;
     }
   }

@@ -57,7 +57,7 @@ html
   body class="#{page_classes}"
     main.site-wrapper
       header.block.block-header
-        .container
+        .container-fluid
           .row
             .col-4.col-md-6
               = link_to "/", :class => "site-logo" do
@@ -88,12 +88,12 @@ html
                 = link_to "Resources", "/source", :class => "site-nav-link"
       == yield
       section.block.block-newsletter
-        .container
+        .container-fluid
           .row
             .col-12
               = partial "partials/cta-newslettersignup"
       footer.block.block-footer
-        .container
+        .container-fluid
           .row
             .col-12
               .partners

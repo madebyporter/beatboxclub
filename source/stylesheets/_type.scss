@@ -210,15 +210,15 @@
     }
 
     h1 {
-      @extend .t-64;
-    }
-
-    h2 {
       @extend .t-48;
     }
 
-    h3 {
+    h2 {
       @extend .t-36;
+    }
+
+    h3 {
+      @extend .t-28;
     }
 
     h4 {
