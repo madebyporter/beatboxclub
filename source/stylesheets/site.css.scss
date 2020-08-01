@@ -425,19 +425,8 @@
     .sc-artwork-list, .sc-scrubber, .sc-time-indicators, .sc-info, .sc-info-toggle, .sc-download, .sc-desc, .sc-info-close {
       display: none;
     }
-    .sc-fixed {
-      background: $color-black;
-      bottom: 0;
-      height: 80px;
-      left: 0;
-      position: fixed;
-      width: 100%;
-      z-index: 1000;
-      @include flexbox;
-      flex-wrap: wrap;
-    }
     .sc-controls {
-      background: darken($color-black,1%);
+      background: $color-yellow;
       bottom: 0;
       height: 80px;
       width: 80px;
@@ -451,17 +440,17 @@
 
       cursor: pointer;
       &:hover {
-        background: darken($color-black,2%);
+        background: $color-gold;
       }
     }
     .sc-info {
-      background: $color-black;
+      background: $color-white;
       bottom: 0;
       height: 80px;
       left: 80px;
       padding: $space-small;
       position: fixed;
-      width: 100%;
+      width: auto;
       z-index: 1000;
 
       @include flexbox;
@@ -477,6 +466,7 @@
         font-weight: 400;
       }
       h4 {
+        color: $color-black;
         @extend .t-12;
         display: inline;
         font-weight: 400;
@@ -489,30 +479,59 @@
     .sc-play {
       @include text-hide;
       background: url('../images/icon-play.svg') no-repeat center;
-      background-size: 10px;
+      background-size: 16px;
       height: 100%;
       width: 100%;
     }
     .sc-pause {
       @include text-hide;
       background: url('../images/icon-pause.svg') no-repeat center;
-      background-size: 10px;
+      background-size: 16px;
       height: 24px;
       width: 24px;
     }
     .sc-trackslist {
+      list-style: none;
       margin: 0;
+      padding: 0;
       width: auto;
       .sc-track {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         cursor: pointer;
+        margin: 0;
+        position: relative;
+        &:before {
+          background: url('../images/icon-play.svg') no-repeat center;
+          background-size: 10px;
+          content: "";
+          height: 100%;
+          width: 10px;
+          margin-left: 0;
+          position: absolute;
+        }
         &:hover {
           .sc-track-title {
             color: $color-gold-500;
           }
         }
+        .sc-track-title {
+          display: inline-block;
+          padding: 20px 0 20px 30px;
+        }
       }
-      .sc-track.active .sc-track-title {
-        color: $color-gold-500;
+      .sc-track.active {
+        &:before {
+          background: url('../images/icon-pause.svg') no-repeat center;
+          background-size: 10px;
+          content: "";
+          height: 100%;
+          width: 10px;
+          margin-left: 0;
+          position: absolute;
+        }
+        .sc-track-title {
+          color: $color-gold-500;
+        }
       }
     }
     .sc-track-duration {
