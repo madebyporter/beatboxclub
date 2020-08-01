@@ -37,8 +37,17 @@
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     &.index {
-      background: url('../images/site-bg-rapper-4.jpg') no-repeat scroll center top $color-black;
-      background-size: cover;
+      background: url('../images/site-bg-noise-mobile.jpg') no-repeat scroll right top #111427;
+      background-size: 100% auto;
+      @media (min-width: $mq-tablet) {
+        background: url('../images/site-bg-noise-desktop.jpg') no-repeat scroll right top #111427;
+        background-size: cover;
+      }
+      .block-cta, .block-footer, .partners, .partners-list-add {
+        background: #111427;
+        border-bottom: 1px solid #282A57;
+        border-color: #282A57;
+      }
     }
     &.signup {
       background: url('../images/site-bg-video.jpg') no-repeat scroll center 30% $color-black;
