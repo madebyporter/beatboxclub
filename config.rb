@@ -53,12 +53,12 @@ activate :blog do |blog|
   blog.layout = "blog_layout"
 end
 
-activate :dotenv
-activate :contentful do |f|
-  f.space         = { site: ENV['CONTENTFUL_SPACE_ID'] }
-  f.access_token  = ENV['CONTENTFUL_ACCESS_TOKEN']
-  f.content_types = { micro: 'micro', source: 'source' }
-end
+# activate :dotenv
+# activate :contentful do |f|
+#   f.space         = { site: ENV['CONTENTFUL_SPACE_ID'] }
+#   f.access_token  = ENV['CONTENTFUL_ACCESS_TOKEN']
+#   f.content_types = { micro: 'micro', source: 'source' }
+# end
 
 helpers do
   def snipcart_button (p, text)
@@ -80,19 +80,19 @@ helpers do
   end
 end
 
-# Source Date
-# helpers do
-#   def format_date(date_txt)
-#     date = Date.parse(date_txt)
-#     date.strftime("%B")
-#   end
-# end
+Source Date
+helpers do
+  def format_date(date_txt)
+    date = Date.parse(date_txt)
+    date.strftime("%B")
+  end
+end
 
-# activate :contentful do |f|
-#   g.space         = { site: ENV['CONTENTFUL_SPACE_ID'] }
-#   g.access_token  = ENV['CONTENTFUL_ACCESS_TOKEN']
-#   g.content_types = { source: 'source' }
-# end
+activate :contentful do |f|
+  g.space         = { site: ENV['CONTENTFUL_SPACE_ID'] }
+  g.access_token  = ENV['CONTENTFUL_ACCESS_TOKEN']
+  g.content_types = { source: 'source' }
+end
 
 activate :directory_indexes
 
