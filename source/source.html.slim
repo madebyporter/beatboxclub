@@ -34,7 +34,7 @@ section.block.block-section.block-resources
       .col-12
         .block-resources-grid
           - data.site.source.each do |id, source|
-            .box-list data-date="#{source._meta.updated_at}" class="#{source.link_featured}"
+            .box-list data-date="#{source._meta.created_at}" data-weight="#{source.link_featured}" class="#{source.link_featured}"
               .col-12
                 h5.box-title
                   = link_to "#{source.link_title}", "#{source.link_url}", :class => "source-link", :onclick => "gtag('event', 'click', {'event_category' : 'Link Click', 'event_label' : '#{source.link_title}', 'value' : 0});"
@@ -44,5 +44,3 @@ section.block.block-section.block-resources
                     = link_to "#{source.author_name}", "#{source.author_website}", :class => "source-author-link", :onclick => "gtag('event', 'click', {'event_category' : 'Author Click', 'event_label' : '#{source.author_name}', 'value' : 0});"
                   .box-meta-ele.source-type = source.link_type
                   .box-meta-ele.source-type = Date.parse(source._meta.created_at).strftime("%m/%d/%Y")
-    
-/ = partial "partials/cta-privatevault"
