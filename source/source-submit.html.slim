@@ -38,6 +38,12 @@ section.block.block-section
               fieldset.form-fieldset
                 input.form-input type="url" placeholder="Resource Website" name="link_url" id="link_url" required="required"
               fieldset.form-fieldset
+                select.form-select name="link_type[]" id="link_owner" required="required"
+                  option value="" Link Type
+                  option value="Education" Education
+                  option value="Hardware" Hardware
+                  option value="Software" Software
+              fieldset.form-fieldset
                 select.form-select name="link_owner[]" id="link_owner" required="required"
                   option value="" Created or Curated?
                   option value="Created by" I created/wrote this
