@@ -40,7 +40,7 @@ section.block.block-section.block-resources
                   = link_to "#{source.link_title}", "#{source.link_url}", :class => "source-link", :onclick => "gtag('event', 'click', {'event_category' : 'Link Click', 'event_label' : '#{source.link_title}', 'value' : 0});"
                 .box-meta
                   .box-meta-ele.source-author
-                    span.source-link-owner #{source.link_owner} &nbsp;
+                    span.box-meta-author #{source.link_owner} &nbsp;
                     = link_to "#{source.author_name}", "#{source.author_website}", :class => "source-author-link", :onclick => "gtag('event', 'click', {'event_category' : 'Author Click', 'event_label' : '#{source.author_name}', 'value' : 0});"
                   .box-meta-ele.source-type = source.link_type
                   .box-meta-ele.source-type = Date.parse(source._meta.created_at).strftime("%m/%d/%Y")

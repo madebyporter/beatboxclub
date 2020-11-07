@@ -1,11 +1,13 @@
 // _buttons.scss
 
   .btn {
+    align-items: center;
     background: $color-gray;
     border: 0;
     border-radius: 0;
     color: $color-white;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
     @extend .t-24;
     font-weight: 700;
     padding: $space-small;
@@ -49,4 +51,11 @@
     @media (min-width: $mq-tablet) {
       @include absolute-center;
     }
+  }
+  .btn-small {
+    @extend .t-16;
+    height: 100%;
+    line-height: 1;
+    padding: $space-x $space-small;
+    align-items: center;
   }

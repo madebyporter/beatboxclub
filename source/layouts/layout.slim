@@ -20,14 +20,19 @@ html
 
     == stylesheet_link_tag :site
     == javascript_include_tag  "jquery", "parsley.min", "all"
+
     // Global site tag (gtag.js) - Google Analytics
     script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-59805983-1"
+
     javascript:
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       gtag('config', 'UA-59805983-1');
+
+    // Font Awesome
+    script src="https://kit.fontawesome.com/c2696167d3.js" crossorigin="anonymous"
 
     // FullStory
     javascript:
