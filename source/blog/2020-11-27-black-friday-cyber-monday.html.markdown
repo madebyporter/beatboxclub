@@ -1,0 +1,59 @@
+---
+layout: blog_layout_table_links
+
+title: "2020 Black Friday & Cyber Monday Deals for Music Producers"
+date: 2020-11-27 03:05 UTC
+tags:
+hero: 
+intro:
+
+thead:
+  - name: 'Name'
+    cols: '1'
+
+tdata:
+  - slug: 'pluginboutique'
+    name: 'Plugin Boutique'
+    deal: 'An assortment of plugin deals from Izotope to Fabfilter'
+    link: 'https://www.pluginboutique.com/deals'
+  - slug: 'cdbaby'
+    name: 'CD Baby'
+    deal: '25% off ALL album distribution'
+    link: 'https://cdbaby.com/promo.aspx'
+  - slug: 'lfoaudio'
+    name: 'LFOAudio'
+    deal: '50% off your entire order of plugins'
+    link: 'https://lfoaudio.com/'
+  - slug: 'slatedigital'
+    name: 'Slate Digital'
+    deal: 'Deals on plugins such as FG2A, Fresh Air, sample packs and more.'
+    link: 'https://slatedigital.com/'
+  - slug: 'arturia'
+    name: 'Arturia'
+    deal: '50% off flagship software titles'
+    link: 'https://www.arturia.com/black-friday-20'
+  - slug: 'soundmagic'
+    name: 'Sound Magic'
+    deal: 'Deals on plugins such as Cadenza Solo Strings & Electric Guitar T'
+    link: 'https://neovst.com/'
+  - slug: 'soundtoys'
+    name: 'Sound Toys'
+    deal: 'Over 70% off plug-ins such as Soundtoys 5 & Effect Rack'
+    link: 'https://www.soundtoys.com/'
+  - slug: 'aberrantdsp'
+    name: 'Aberrant DSP'
+    deal: 'Deals on their plugins such as Color & Character Bundle and Sketch Cassette II'
+    link: 'https://aberrantdsp.com/'
+  - slug: 'output'
+    name: 'Output'
+    deal: 'Plugin deals such as Output Bundle, Signal & Analog Strings'
+    link: 'https://output.com/products'
+  - slug: 'uad'
+    name: 'Universal Audio'
+    deal: 'Deals on UAD plugins like Anteres Auto-Tune & Capitol Chambers'
+    link: 'https://output.com/products'
+  - slug: 'paragonkits'
+    name: 'Paragon Kits'
+    deal: '40% off Kits'
+    link: 'https://shop.mickschultz.com/'
+---

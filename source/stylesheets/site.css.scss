@@ -327,10 +327,11 @@
   .table-container {
     overflow-x: auto;
   }
+
   .table {
     width: 100%;
     tr:hover td {
-      background: $color-black-500;
+      background: $color-black-400;
       .table-link {
         color: $color-yellow;
       }
@@ -384,6 +385,10 @@
     .table-text-small {
       @include font-size(14);
     }
+  }
+
+  .table-comfy td {
+    padding: $space-medium $space-small;
   }
 
   .block-logo {

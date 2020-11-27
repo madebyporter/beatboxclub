@@ -1,0 +1,29 @@
+== wrap_layout :layout do
+  section.block.block-section.block-hero
+    .container
+      .row
+        .col-12
+          .row
+            .col-md-12.col-lg-10
+              h1.bottom-margin-small
+                = current_article.title
+  section.block.block-section
+    .container
+      .row
+        .col-12
+          = current_article.body
+      .row
+        .col-12
+          .table-container
+            table.table.table-comfy
+              thead
+                tr
+                  - current_article.data.thead.each do |h|
+                    th colspan="#{h.cols}" = h.name
+
+              tbody
+                - current_article.data.tdata.each do |d|
+                  tr
+                    td 
+                      = link_to "#{d.name}", "#{d.link}", :class => "table-link", :onclick => "gtag('event', 'click', {'event_category' : 'links_blackfriday', 'event_label' : #{d.slug}, 'value' : 0});"
+                      p.content-small style="margin-bottom: 0;" = d.deal
