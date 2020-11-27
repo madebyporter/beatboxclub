@@ -4,13 +4,8 @@
 @import "variables";
 @import "mixins";
 @import "type";
-@import "buttons";
-@import "forms";
-@import "animations";
-@import "modal";
-@import "blog";
-@import "store";
-@import "catalogs";
+@import "components";
+
 
 // Universal
   * {
@@ -332,10 +327,11 @@
   .table-container {
     overflow-x: auto;
   }
+
   .table {
     width: 100%;
     tr:hover td {
-      background: $color-black-500;
+      background: $color-black-400;
       .table-link {
         color: $color-yellow;
       }
@@ -389,6 +385,10 @@
     .table-text-small {
       @include font-size(14);
     }
+  }
+
+  .table-comfy td {
+    padding: $space-medium $space-small;
   }
 
   .block-logo {
@@ -569,172 +569,6 @@
     }
   }
 
-  .box-song {
-    align-items: center;
-    background: $color-black-400;
-    @include flexbox;
-    margin: 0 0 $space-small 0;
-    padding: $space-x;
-    width: 100%;
-    @include flex-wrap(wrap);
-    @media (min-width: $mq-laptop) {
-      padding: $space-small;
-
-    }
-  }
-  .box-song-player {
-    background: url(../images/covers/cover-none.png) no-repeat center left;
-    background-size: cover;
-    height: 120px;
-    position: relative;
-    width: 120px;
-    @media (min-width: $mq-laptop) {
-      height: 120px;
-      width: 120px;
-    }
-  }
-  .box-song-player--artwork { 
-    width: 100%;
-  }
-  .box-song-player--controls-wrapper {
-    $s: 24px;
-    $s2: $s * 2;
-    background: $color-black-200;
-    border-radius: $s2;
-    content: "";
-    height: $s2;
-    width: $s2;
-    @include absolute-center;
-    &:hover {
-      background: $color-gold;
-      height: $s2 - 3;
-      width: $s2 - 3;
-    }
-    &.playing {
-      background: $color-red;
-      .box-song-player--controls {
-        background: url(../images/icon-pause.svg) no-repeat center;
-        background-size: 12px auto;
-        &:hover {
-          background-size: 14px auto;
-        }
-      } 
-    }
-    &.paused, &.unloaded {
-      .box-song-player--controls {
-        background: url(../images/icon-play.svg) no-repeat center;
-        background-size: 12px auto;
-        &:hover {
-          background-size: 14px auto;
-        }
-      }
-    }
-  }
-  .box-song-player--controls {
-    $s: 24px;
-    $s2: $s * 2;
-    @include absolute-center;
-    cursor: pointer;
-    height: $s2;
-    width: $s2;
-    @include text-hide; 
-  }
-  .box-song-meta {
-    flex: 1 1;
-    height: inherit;
-    padding: 0 $space-small;
-    position: relative;
-    @media (min-width: $mq-laptop) {
-      // padding: 0 $space-medium;
-    }
-  }
-  .box-song-meta--producer, .box-song-meta--mood {
-    display: block;
-    margin: 0 0 2px 0;
-  }
-  .box-song-meta--mood {
-    font-style: oblique;
-  }
-  .box-song-meta--download {
-    display: block;
-    margin: $space-small 0 0;
-  }
-
-// Box List Styles
-  .source-submit-link {
-    display: block;
-    margin-bottom: $space-small;
-    @media (min-width: $mq-phonexl) {
-      float: left;
-      margin-bottom: 0;
-    }
-  }
-  .block-resources-grid {
-    @include flexbox;
-    @include flex-wrap(wrap);
-  }
-  .block-resources-controller {
-    margin: 0 0 $space-small 0;
-  }
-  .block-resources-sortfilter {
-    color: $color-black-400;
-    @extend .t-18;
-    @extend .t-strong;
-    display: inline-block;
-    @media (min-width: $mq-phonexl) {
-      float: right;
-    }
-    &:hover {
-      color: $color-black-300;
-    }
-  }
-
-  .box-list {
-    background: lighten($color-black-500,2%);
-    box-shadow: inset $space-small 0 0 lighten($color-black-500,6%);
-    margin: 0 0 1px 0;
-    padding: $space-small;
-    padding-left: $space-medium;
-    width: 100%;
-    &:hover {
-      background: lighten($color-black-500,6%);
-      box-shadow: inset $space-small 0 0 lighten($color-black-500,10%);
-    }
-    &.featured {
-      // background: darken($color-yellow,35%);
-      box-shadow: inset $space-small 0 0 $color-yellow;
-      order: 1;
-    }
-  }
-  .box-title {
-    margin-bottom: $space-x;
-  }
-  .box-meta {
-    @extend .t-14;
-    color: $color-black-200;
-    font-weight: 700;
-    @include flexbox;
-    @include flex-wrap(wrap);
-    span {
-      @extend .t-14;
-    }
-  }
-  .box-meta-ele {
-    margin-right: $space-small;
-
-    @media (min-width: $mq-phonexl) {
-
-    }
-  }
-  .source-author {
-    margin-bottom: 5px;
-    width: 100%;
-    @media (min-width: $mq-phonexl) {
-      margin-bottom: 0;
-      width: auto;
-    }
-  }
-
 // Newsleter Signup Block
   .block-newsletter {
     background: $color-red-400;
@@ -773,4 +607,7 @@
     .catalog-year {
       @extend .t-16;
     }
+  }
+  .featured {
+    top: 0;
   }

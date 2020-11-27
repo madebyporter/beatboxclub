@@ -27,24 +27,10 @@ set :images_dir, 'images'
 ###
 
 # Reload the browser automatically whenever files change
-# configure :development do
-#   activate :livereload
-# end
+configure :development do
+  activate :livereload
+end
 
-# Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     'Helping'
-#   end
-# end
-
-# activate :external_pipeline,
-#            name: :webpack,
-#            command: build? ? "yarn run build" : "yarn run start",
-#            source: ".tmp/dist",
-#            latency: 1
-
-ENV["snipcart-api-key"] = "MDFjMjRiNzEtMjM2Yi00MjcxLWE0ZmMtNzAyMGYyYTU2MmQwNjM3MTc4NDM1MzUyNzUzMTEz"
 ENV["base-url"] = "/"
 
 activate :blog do |blog|
@@ -53,47 +39,22 @@ activate :blog do |blog|
   blog.layout = "blog_layout"
 end
 
-activate :dotenv
-activate :contentful do |f|
-  f.space         = { site: ENV['CONTENTFUL_SPACE_ID'] }
-  f.access_token  = ENV['CONTENTFUL_ACCESS_TOKEN']
-  f.content_types = { micro: 'micro', source: 'source' }
-end
+# Source Date
 
 helpers do
-  def snipcart_button (p, text)
-    args = {
-      :"class" => "subs-submit form-submit btn snipcart-add-item button is-primary is-medium",
-      :"data-item-id" => p.id,
-      :"data-item-price" => p.price,
-      :"data-item-name" => p.name,
-      :"data-item-max-quantity" => p.max_quantity,
-      :"data-item-url" => ENV["base-url"] + p.path,
-      :"data-item-image" => p.image,
-      :"data-item-payment-interval" => p.payment_interval,
-      :"item-payment-interval-count" => p.payment_interval_count
-    }
-
-    content_tag :button, args do
-      text
-    end
+  def format_date(date_txt)
+    date = Date.parse(date_txt)
+    date.strftime("%B")
   end
 end
 
-# Source Date
-# helpers do
-#   def format_date(date_txt)
-#     date = Date.parse(date_txt)
-#     date.strftime("%B")
-#   end
-# end
+activate :contentful do |f|
+  f.space         = { site: ENV['CONTENTFUL_SPACE_ID'] }
+  f.access_token  = ENV['CONTENTFUL_ACCESS_TOKEN']
+  f.content_types = { source: 'source' }
+end
 
-# activate :contentful do |f|
-#   g.space         = { site: ENV['CONTENTFUL_SPACE_ID'] }
-#   g.access_token  = ENV['CONTENTFUL_ACCESS_TOKEN']
-#   g.content_types = { source: 'source' }
-# end
-
+activate :dotenv
 activate :directory_indexes
 
 

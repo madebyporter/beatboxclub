@@ -11,7 +11,6 @@ js.main = {
     this.externalLinks();
     this.externalLinkTracking();
     this.mailchimpAJAX();
-    this.snipcartTY();
     this.validateForm();
   },
   externalLinkTracking: function() {
@@ -227,29 +226,18 @@ js.main = {
       bd.removeClass('modal-open');
     });
   },
-  snipcartTY: function() {
-    if ($('body').hasClass('signup_index')) {
-      Snipcart.execute('bind', 'order.completed', function (order) {
-        var url = '/nextsteps?order=' + order.token;
-        window.location.href = url;
-      });
-    }
-  },
   resourceSort: function() {
     $grid = $('.block-resources-grid');
     $grid.each(function(index, el) {
       $(this).isotope({
         itemSelector : '.box-list',
         transitionDuration: 0,
-        // layoutMode : 'masonry',
-        // masonry: {
-        //     gutter: 20,
-        //     isFitWidth: true
-        // },
+        stamp: '.featured',
         getSortData: {
-          date: '[data-date]'
+          date: '[data-date]',
+          weight: '[data-weight]'
         },
-        sortBy : 'date',
+        sortBy : ['weight', 'date'],
         sortAscending: false
       });
     });
