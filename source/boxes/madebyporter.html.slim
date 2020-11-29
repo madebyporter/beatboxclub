@@ -3,6 +3,8 @@ title: Find helpful resources on The Beatbox Source
 shortname: Beatbox Source
 ---
 
+script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js"
+script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"
 // Isotope for Grid Sorting
 == javascript_include_tag  "isotope.pkgd.min"
 
@@ -30,8 +32,8 @@ section.block.block-section.block-resources
                 | Sort & Filter coming soon
     .row
       .col-12
-        .block-resources-grid
-          .box-list data-date="" data-weight="" class=""
+        .box-tracks
+          .box-list data-date="" data-weight="" class="" data-id="how-it-is" data-link="https://bbxtracks.s3-us-west-1.amazonaws.com/How+It+Is.mp3"
             .row
               .col-12.col-md-8
                 .row.box-main
@@ -39,7 +41,36 @@ section.block.block-section.block-resources
                     .box-player
                       .box-player-play
                         i class="fas fa-play"
-                      .box-player-pause.hide
+                      .box-player-pause
+                        i class="fas fa-pause"
+                  .col-9.col-sm-10.col-md-10.col-lg-7
+                    h5.box-title How It Is
+                    .box-meta
+                      .box-meta-ele
+                        span.box-meta-author Made by Porter
+                      .box-meta-ele
+                        span.box-meta-genre R&amp;B
+                      .box-meta-ele
+                        span.box-meta-bpm BPM 100
+                      .box-meta-ele
+                        span.box-meta-tag Chill
+                        span.box-meta-tag Vibe
+              .col-12.col-md-4
+                .row.box-action
+                  .col-6
+                    = link_to "Beat", "https://www.toptal.com/designers/htmlarrows/punctuation/middle-dot/", :class => "btn btn-secondary btn-small box-cta", :onclick => "gtag('event', 'click', {'event_category' : 'Link Click', 'event_label' : '', 'value' : 0});"
+                  .col-6
+                    = link_to "Stems", "https://fontawesome.com/icons/play?style=solid", :class => "btn btn-secondary btn-small box-cta", :onclick => "gtag('event', 'click', {'event_category' : 'Link Click', 'event_label' : '', 'value' : 0});"
+          .box-list data-date="" data-weight="" class="" data-id="you-got-me" data-link="https://bbxtracks.s3-us-west-1.amazonaws.com/You+Got+Me.mp3"
+            .row
+              .col-12.col-md-8
+                .row.box-main
+                  .col-3.col-sm-2.col-md-2.col-lg-1
+                    .box-player
+                      .box-player-play
+                        i class="fas fa-play"
+                      .box-player-pause
+                        i class="fas fa-pause"
                   .col-9.col-sm-10.col-md-10.col-lg-7
                     h5.box-title You Got Me
                     .box-meta
@@ -58,3 +89,4 @@ section.block.block-section.block-resources
                     = link_to "Beat", "#", :class => "btn btn-secondary btn-small box-cta", :onclick => "gtag('event', 'click', {'event_category' : 'Link Click', 'event_label' : '', 'value' : 0});"
                   .col-6
                     = link_to "Stems", "#", :class => "btn btn-secondary btn-small box-cta", :onclick => "gtag('event', 'click', {'event_category' : 'Link Click', 'event_label' : '', 'value' : 0});"
+

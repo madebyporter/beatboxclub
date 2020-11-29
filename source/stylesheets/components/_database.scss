@@ -134,6 +134,22 @@
     box-shadow: inset $space-small 0 0 $color-yellow;
     order: 1;
   }
+  &.playing {
+    .box-player-play {
+      display: none;
+    }
+    .box-player-pause {
+      display: flex;
+    }
+  }
+  &.paused {
+    .box-player-pause {
+      display: none;
+    }
+    .box-player-play {
+      display: flex;
+    }
+  }
 }
 .box-main {
   margin-bottom: $space-x;
@@ -198,19 +214,22 @@
 
 .box-player {
   height: 100%;
-  .box-player-play {
+  & > * {
     align-items: center;
     display: flex;
     height: inherit;
     justify-content: center;
-    .fa-play {
+    & > * {
       color: $color-white;
       cursor: pointer;
-      @include font-size(24);
+      @include font-size(18);
       &:hover {
         color: $color-gold;
       }
-    }  
+    }
+  }
+  .box-player-pause {
+    display: none;
   }
 }
 

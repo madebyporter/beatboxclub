@@ -5,7 +5,7 @@ var js = js || {},
 js.main = {
   init: function () {
     this.modal();
-    this.microPlayer();
+    this.musicPlayer();
     this.microSort();
     this.resourceSort();
     this.externalLinks();
@@ -110,20 +110,19 @@ js.main = {
       });
     });
   },
-  microPlayer: function() {
+  musicPlayer: function() {
     howlers = {}; 
-    var track = $('.box-song-player--controls-wrapper');
-    $('.block-micro').find(track).each(function () {
-      $(this).on("click", function(){
-        var e = $(this);
+    var track = $('.box-list');
+    $('.box-tracks').find(track).each(function () {
+      var e = $(this);
+      var p = e.find('.box-player');
+      p.on("click", function(){
         var link = e.data("link");
         var id = e.data("id");
         
         if (id in howlers){
           if (e.hasClass('paused')){
             Object.keys(howlers).forEach(function(key) {
-              howlers[key].unload();
-              howlers[key].load();
               track.removeClass('playing');
               track.addClass('unloaded');
             });
@@ -135,8 +134,6 @@ js.main = {
             console.log("track playing");
           } else if (e.hasClass('playing')){
             Object.keys(howlers).forEach(function(key) {
-              howlers[key].unload();
-              howlers[key].load();
               track.removeClass('playing');
               track.addClass('unloaded');
             });
@@ -172,15 +169,14 @@ js.main = {
           howlers[id] = new Howl({
             src: [link],
             loop: true,
-            onend: function() {
-              ga('send', {
-                hitType: 'event',
-                eventCategory: 'micro',
-                eventAction: 'loops',
-                eventLabel: id
-              });
-              console.log(id);
-            }
+            // onend: function() {
+            //   ga('send', {
+            //     hitType: 'event',
+            //     eventCategory: 'micro',
+            //     eventAction: 'loops',
+            //     eventLabel: id
+            //   });
+            // }
           });
           
           e.removeClass('unloaded');
