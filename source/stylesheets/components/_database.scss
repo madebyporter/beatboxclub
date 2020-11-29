@@ -123,7 +123,7 @@
   box-shadow: inset $space-small 0 0 lighten($color-black-500,6%);
   margin: 0 0 1px 0;
   padding: $space-small;
-  padding-left: $space-medium;
+  padding-left: 6rem;
   width: 100%;
   &:hover {
     background: lighten($color-black-500,6%);
@@ -134,6 +134,17 @@
     box-shadow: inset $space-small 0 0 $color-yellow;
     order: 1;
   }
+}
+.box-main {
+  margin-bottom: $space-x;
+  @media (min-width: $mq-tablet) {
+    margin-bottom: 0;
+  }
+}
+.box-action {
+  align-items: center;
+  display: flex;
+  height: 100%;
 }
 .box-title {
   margin-bottom: $space-x;
@@ -149,8 +160,16 @@
   }
 }
 .box-meta-ele {
-  margin-right: $space-small;
-
+  margin-right: $space-x;
+  &:after {
+    content: "\00B7";
+    padding-left: $space-x;
+  }
+  &:last-child {
+    &:after {
+      display: none;
+    }
+  }
   @media (min-width: $mq-phonexl) {
 
   }
@@ -162,6 +181,7 @@
     padding-left: $space-x;
   }
   &:last-child {
+    margin-right: 0;
     &:after {
       display: none;
     }
@@ -183,7 +203,7 @@
     display: flex;
     height: inherit;
     justify-content: center;
-    .fad {
+    .fa-play {
       color: $color-white;
       cursor: pointer;
       @include font-size(24);

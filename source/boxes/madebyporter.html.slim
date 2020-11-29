@@ -25,9 +25,7 @@ section.block.block-section.block-resources
       .col-12
         .block-resources-controller
           .row
-            .col-12.col-sm-6
-              = link_to "Submit a Resource", "source-submit", :class => "source-submit-link"
-            .col-12.col-sm-6
+            .col-12.col-sm-6.offset-sm-6
               .block-resources-sortfilter onclick="gtag('event', 'click', {'event_category' : 'Feature Click', 'event_label' : 'Resource Filter Sort Click', 'value' : 0});"
                 | Sort & Filter coming soon
     .row
@@ -35,64 +33,28 @@ section.block.block-section.block-resources
         .block-resources-grid
           .box-list data-date="" data-weight="" class=""
             .row
-              .col-3.col-sm-2.col-md-1.col-lg-1
-                .box-player
-                  .box-player-play
-                    i class="fad fa-play"
-                  .box-player-pause.hide
-              .col-9.col-sm-6.col-md-8.col-lg-9
-                h5.box-title You Got Me
-                .box-meta
-                  .box-meta-ele
-                    span.box-meta-author Made by Porter
-                  .box-meta-ele
-                    span.box-meta-genre R&amp;B
-                  .box-meta-ele
-                    span.box-meta-bpm BPM 100
-                  .box-meta-ele
-                    span.box-meta-tag Chill
-                    span.box-meta-tag Vibe
-              .col-12.col-sm-4.col-md-3.col-lg-2
-                = link_to "Download", "#", :class => "btn btn-secondary btn-small box-cta", :onclick => "gtag('event', 'click', {'event_category' : 'Link Click', 'event_label' : '', 'value' : 0});"
-          .box-list data-date="" data-weight="" class=""
-            .row
-              .col-3.col-sm-2.col-md-1.col-lg-1
-                .box-player
-                  .box-player-play
-                    i class="fad fa-play"
-                  .box-player-pause.hide
-              .col-9.col-sm-6.col-md-8.col-lg-9
-                h5.box-title You Got Me
-                .box-meta
-                  .box-meta-ele
-                    span.box-meta-author Made by Porter
-                  .box-meta-ele
-                    span.box-meta-genre R&amp;B
-                  .box-meta-ele
-                    span.box-meta-bpm BPM 100
-                  .box-meta-ele
-                    span.box-meta-tag Chill
-                    span.box-meta-tag Vibe
-              .col-12.col-sm-4.col-md-3.col-lg-2
-                = link_to "Download", "#", :class => "btn btn-secondary btn-small box-cta", :onclick => "gtag('event', 'click', {'event_category' : 'Link Click', 'event_label' : '', 'value' : 0});"
-          .box-list data-date="" data-weight="" class=""
-            .row
-              .col-3.col-sm-2.col-md-1.col-lg-1
-                .box-player
-                  .box-player-play
-                    i class="fad fa-play"
-                  .box-player-pause.hide
-              .col-9.col-sm-6.col-md-8.col-lg-9
-                h5.box-title You Got Me
-                .box-meta
-                  .box-meta-ele
-                    span.box-meta-author Made by Porter
-                  .box-meta-ele
-                    span.box-meta-genre R&amp;B
-                  .box-meta-ele
-                    span.box-meta-bpm BPM 100
-                  .box-meta-ele
-                    span.box-meta-tag Chill
-                    span.box-meta-tag Vibe
-              .col-12.col-sm-4.col-md-3.col-lg-2
-                = link_to "Download", "#", :class => "btn btn-secondary btn-small box-cta", :onclick => "gtag('event', 'click', {'event_category' : 'Link Click', 'event_label' : '', 'value' : 0});"
+              .col-12.col-md-8
+                .row.box-main
+                  .col-3.col-sm-2.col-md-2.col-lg-1
+                    .box-player
+                      .box-player-play
+                        i class="fas fa-play"
+                      .box-player-pause.hide
+                  .col-9.col-sm-10.col-md-10.col-lg-7
+                    h5.box-title You Got Me
+                    .box-meta
+                      .box-meta-ele
+                        span.box-meta-author Made by Porter
+                      .box-meta-ele
+                        span.box-meta-genre R&amp;B
+                      .box-meta-ele
+                        span.box-meta-bpm BPM 100
+                      .box-meta-ele
+                        span.box-meta-tag Chill
+                        span.box-meta-tag Vibe
+              .col-12.col-md-4
+                .row.box-action
+                  .col-6
+                    = link_to "Beat", "#", :class => "btn btn-secondary btn-small box-cta", :onclick => "gtag('event', 'click', {'event_category' : 'Link Click', 'event_label' : '', 'value' : 0});"
+                  .col-6
+                    = link_to "Stems", "#", :class => "btn btn-secondary btn-small box-cta", :onclick => "gtag('event', 'click', {'event_category' : 'Link Click', 'event_label' : '', 'value' : 0});"
