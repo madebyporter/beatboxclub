@@ -124,6 +124,7 @@
   margin: 0 0 1px 0;
   padding: $space-small;
   padding-left: 6rem;
+  position: relative;
   width: 100%;
   &:hover {
     background: lighten($color-black-500,6%);
@@ -135,19 +136,27 @@
     order: 1;
   }
   &.playing {
+    padding-bottom: 90px;
     .box-player-play {
       display: none;
     }
     .box-player-pause {
       display: flex;
+    }
+    .box-progress {
+      display: block;
     }
   }
   &.paused {
+    padding-bottom: 90px;
     .box-player-pause {
       display: none;
     }
     .box-player-play {
       display: flex;
+    }
+    .box-progress {
+      display: block;
     }
   }
 }
@@ -238,4 +247,20 @@
   @media (min-width: $mq-phonexl) {
     margin-top: 0;
   }
+}
+
+.box-progress {
+  background: $color-black-900;
+  bottom: 0;
+  display: none;
+  height: 80px;
+  left: 0;
+  right: 0;
+  position: absolute;
+  width: 100%;
+}
+.box-progress-inner {
+  background: $color-yellow;
+  height: 100%;
+  width: 0%;
 }

@@ -112,14 +112,42 @@ js.main = {
   },
   musicPlayer: function() {
     howlers = {}; 
+    var playlist = $('.box-tracks');
     var track = $('.box-list');
-    $('.box-tracks').find(track).each(function () {
+
+    playlist.find(track).each(function () {
       var e = $(this);
       var p = e.find('.box-player');
+      var progress = e.find('.box-progress');
+
+      var link = e.data("link");
+      var id = e.data("id");
+
+      function step() {
+        Object.keys(howlers).forEach(function(key) {
+          var seek = howlers[id].seek() || 0;
+          var duration = howlers[id].duration();
+          // console.log(seek,duration);
+          progress.find('.box-progress-inner').css("width", (((seek / duration) * 100) || 0) + '%');
+          if (howlers[id].playing()) {
+            requestAnimationFrame(step.bind(this));
+          }   
+        });
+      }
+
+      function seek(per) {
+        Object.keys(howlers).forEach(function(key) {
+          var seek = howlers[id].seek() || 0;
+          var duration = howlers[id].duration();
+          // Convert the percent into a seek position.
+          if (howlers[id].playing()) {
+            howlers[id].seek(duration * per);
+          }
+        });
+      }
+
+      // Play and Pause Trigger
       p.on("click", function(){
-        var link = e.data("link");
-        var id = e.data("id");
-        
         if (id in howlers){
           if (e.hasClass('paused')){
             Object.keys(howlers).forEach(function(key) {
@@ -155,8 +183,6 @@ js.main = {
 
             howlers[id].play();
             e.addClass('playing');
-
-            console.log("track started");
           }
         } else {
           Object.keys(howlers).forEach(function(key) {
@@ -177,13 +203,34 @@ js.main = {
             //     eventLabel: id
             //   });
             // }
+            onplay: function() {
+              requestAnimationFrame(step.bind(this));
+            },
+            onseek: function () {
+              requestAnimationFrame(step.bind(this));
+            }
           });
           
           e.removeClass('unloaded');
-
           howlers[id].play();
           e.addClass('playing');
-        }
+          console.log("track started");
+        };
+      });
+
+      // Progress Trigger
+      progress.on("click", function(e){
+        var seek = howlers[id].seek() || 0;
+        var duration = howlers[id].duration();
+
+        var posX = $(this).offset().left
+        var c = e.pageX - posX;
+        var w = progress.width();
+        var clickpos = c / w;
+        var seekpos = duration * clickpos;
+        Object.keys(howlers).forEach(function(key) {
+          howlers[id].seek(seekpos);
+        });
       });
     });
   },
