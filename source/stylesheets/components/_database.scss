@@ -126,6 +126,9 @@
   padding-left: 6rem;
   position: relative;
   width: 100%;
+  .box-progress {
+    display: block;
+  }
   &:hover {
     background: lighten($color-black-500,6%);
     box-shadow: inset $space-small 0 0 lighten($color-black-500,10%);
@@ -136,7 +139,7 @@
     order: 1;
   }
   &.playing {
-    padding-bottom: 90px;
+    padding-bottom: 40px;
     .box-player-play {
       display: none;
     }
@@ -148,7 +151,7 @@
     }
   }
   &.paused {
-    padding-bottom: 90px;
+    padding-bottom: 40px;
     .box-player-pause {
       display: none;
     }
@@ -254,10 +257,12 @@
   bottom: 0;
   display: none;
   height: 80px;
-  left: 0;
+  left: 21px;
   right: 0;
   position: absolute;
-  width: 100%;
+  @media (min-width: $mq-tablet) {
+    height: 20px;
+  }
 }
 .box-progress-inner {
   background: $color-yellow;

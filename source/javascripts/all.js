@@ -127,11 +127,12 @@ js.main = {
         Object.keys(howlers).forEach(function(key) {
           var seek = howlers[id].seek() || 0;
           var duration = howlers[id].duration();
-          // console.log(seek,duration);
           progress.find('.box-progress-inner').css("width", (((seek / duration) * 100) || 0) + '%');
           if (howlers[id].playing()) {
-            requestAnimationFrame(step.bind(this));
-          }   
+            window.requestAnimationFrame(step.bind(this));
+          } else {
+            
+          }  
         });
       }
 
@@ -139,7 +140,6 @@ js.main = {
         Object.keys(howlers).forEach(function(key) {
           var seek = howlers[id].seek() || 0;
           var duration = howlers[id].duration();
-          // Convert the percent into a seek position.
           if (howlers[id].playing()) {
             howlers[id].seek(duration * per);
           }
@@ -165,8 +165,8 @@ js.main = {
               track.removeClass('playing');
               track.addClass('unloaded');
             });
-            e.removeClass('unloaded playing');
 
+            e.removeClass('unloaded playing');
             howlers[id].pause();
             e.addClass('paused');
 
@@ -188,6 +188,7 @@ js.main = {
           Object.keys(howlers).forEach(function(key) {
             howlers[key].unload();
             howlers[key].load();
+            window.cancelAnimationFrame(step);
             track.removeClass('playing');
             track.addClass('unloaded');
           });
@@ -204,10 +205,10 @@ js.main = {
             //   });
             // }
             onplay: function() {
-              requestAnimationFrame(step.bind(this));
+              window.requestAnimationFrame(step.bind(this));
             },
             onseek: function () {
-              requestAnimationFrame(step.bind(this));
+              window.requestAnimationFrame(step.bind(this));
             }
           });
           
