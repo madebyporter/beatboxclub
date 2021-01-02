@@ -5,7 +5,7 @@ var js = js || {},
 js.main = {
   init: function () {
     this.modal();
-    this.microPlayer();
+    this.musicPlayer();
     this.microSort();
     this.resourceSort();
     this.externalLinks();
@@ -110,20 +110,47 @@ js.main = {
       });
     });
   },
-  microPlayer: function() {
+  musicPlayer: function() {
     howlers = {}; 
-    var track = $('.box-song-player--controls-wrapper');
-    $('.block-micro').find(track).each(function () {
-      $(this).on("click", function(){
-        var e = $(this);
-        var link = e.data("link");
-        var id = e.data("id");
-        
+    var playlist = $('.box-tracks');
+    var track = $('.box-list');
+
+    playlist.find(track).each(function () {
+      var e = $(this);
+      var p = e.find('.box-player');
+      var progress = e.find('.box-progress');
+
+      var link = e.data("link");
+      var id = e.data("id");
+
+      function step() {
+        Object.keys(howlers).forEach(function(key) {
+          var seek = howlers[id].seek() || 0;
+          var duration = howlers[id].duration();
+          progress.find('.box-progress-inner').css("width", (((seek / duration) * 100) || 0) + '%');
+          if (howlers[id].playing()) {
+            window.requestAnimationFrame(step.bind(this));
+          } else {
+            
+          }  
+        });
+      }
+
+      function seek(per) {
+        Object.keys(howlers).forEach(function(key) {
+          var seek = howlers[id].seek() || 0;
+          var duration = howlers[id].duration();
+          if (howlers[id].playing()) {
+            howlers[id].seek(duration * per);
+          }
+        });
+      }
+
+      // Play and Pause Trigger
+      p.on("click", function(){
         if (id in howlers){
           if (e.hasClass('paused')){
             Object.keys(howlers).forEach(function(key) {
-              howlers[key].unload();
-              howlers[key].load();
               track.removeClass('playing');
               track.addClass('unloaded');
             });
@@ -135,13 +162,11 @@ js.main = {
             console.log("track playing");
           } else if (e.hasClass('playing')){
             Object.keys(howlers).forEach(function(key) {
-              howlers[key].unload();
-              howlers[key].load();
               track.removeClass('playing');
               track.addClass('unloaded');
             });
-            e.removeClass('unloaded playing');
 
+            e.removeClass('unloaded playing');
             howlers[id].pause();
             e.addClass('paused');
 
@@ -158,13 +183,12 @@ js.main = {
 
             howlers[id].play();
             e.addClass('playing');
-
-            console.log("track started");
           }
         } else {
           Object.keys(howlers).forEach(function(key) {
             howlers[key].unload();
             howlers[key].load();
+            window.cancelAnimationFrame(step);
             track.removeClass('playing');
             track.addClass('unloaded');
           });
@@ -172,22 +196,42 @@ js.main = {
           howlers[id] = new Howl({
             src: [link],
             loop: true,
-            onend: function() {
-              ga('send', {
-                hitType: 'event',
-                eventCategory: 'micro',
-                eventAction: 'loops',
-                eventLabel: id
-              });
-              console.log(id);
+            // onend: function() {
+            //   ga('send', {
+            //     hitType: 'event',
+            //     eventCategory: 'micro',
+            //     eventAction: 'loops',
+            //     eventLabel: id
+            //   });
+            // }
+            onplay: function() {
+              window.requestAnimationFrame(step.bind(this));
+            },
+            onseek: function () {
+              window.requestAnimationFrame(step.bind(this));
             }
           });
           
           e.removeClass('unloaded');
-
           howlers[id].play();
           e.addClass('playing');
-        }
+          console.log("track started");
+        };
+      });
+
+      // Progress Trigger
+      progress.on("click", function(e){
+        var seek = howlers[id].seek() || 0;
+        var duration = howlers[id].duration();
+
+        var posX = $(this).offset().left
+        var c = e.pageX - posX;
+        var w = progress.width();
+        var clickpos = c / w;
+        var seekpos = duration * clickpos;
+        Object.keys(howlers).forEach(function(key) {
+          howlers[id].seek(seekpos);
+        });
       });
     });
   },
