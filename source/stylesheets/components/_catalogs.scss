@@ -154,4 +154,65 @@ body {
       }
     }
   }
+  &.darkwinter {
+    background: url('../images/catalogs/site-bg-darkwinter-mobile.jpg') no-repeat fixed right top #1F1D23;
+    background-attachment: initial;
+    background-size: 100% auto;
+    @media (min-width: $mq-tablet) {
+      background: url('../images/catalogs/site-bg-darkwinter-desktop.jpg') no-repeat scroll right top #1F1D23;
+      background-size: cover;
+    }
+    // .block-cta, .block-newsletter, .block-footer, .partners, .partners-list-add {
+    //   background: #111427;
+    //   border-bottom: 1px solid #282A57;
+    //   border-color: #282A57;
+    // }
+    .block-logo {
+      background: rgba(40,42,87,0.1);
+      border: 0;
+      &:hover {
+        background: rgba(40,42,87,0.3);
+      }
+    }
+    .sc-trackslist .sc-track {
+      border-bottom: 1px solid rgba(40,42,87,0.6);
+    }
+    .block-newsletter {
+      border-top: 1px solid #282A57;
+    }
+    p {
+      color: rgba(255,255,255,0.7);
+      font-weight: 400;
+    }
+    .sub-title {
+      color: #8D91D9;
+    }
+    // ::placeholder {
+    //   -webkit-text-fill-color: lighten(#304179, 45%);
+    // }
+    // ::-ms-input-placeholder {
+    //   -webkit-text-fill-color: lighten(#304179, 45%);
+    // }
+    // .form-input {
+    //   background: lighten(#304179, 5%);
+    //   color: lighten(#304179, 75%);
+    //   &:focus, &:hover {
+    //     background: lighten(#304179, 15%);
+    //   }
+    // }
+    // .nav-footer a {
+    //   color: lighten(#304179, 35%);
+    //   &:hover {
+    //     color: lighten(#304179, 45%);
+    //   }
+    // }
+    .btn-secondary {
+      background: lighten(#304179, 35%);
+      color: lighten(#304179, 75%);
+      &:hover {
+        background: lighten(#304179, 40%);
+        color: $color-white;
+      }
+    }
+  }
 }

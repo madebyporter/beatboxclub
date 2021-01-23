@@ -13,37 +13,44 @@ section.block.block-section.block-hero
         .row
           .col-md-12.col-lg-10
             h1.bottom-margin-small
-              | Stream the psychedelic afrobeat project, Noise.
+              | Stream the synthwave hiphop &amp; r&b project, Dark Winter
             p.content-large
-              | Noise is one of the latest instrumental albums from Made by Porter. It's a psychedelic hiphop soundtrack for work, exercise, or to smoke to.<br /><br />
-              == link_to 'Listen Now', 'noise', class: ""
+              | Dark Winter is one of the latest instrumental albums from Made by Porter. It's a laid back vibe type soundtrack to work, exercise, or smoke to.<br /><br />
+              == link_to 'Listen Now', 'darkwinter', class: ""
             
       .col-12.col-md-5.col-lg-4
         .row
           .col-12
             .catalog
               .catalog-cover
+                == link_to 'darkwinter', class: "catalog-cover-link" do
+                  = image_tag "catalogs/porter-2021-darkwinter.jpg", :alt => "Noise", :class => "catalog-cover-img"
+              == link_to 'Dark Winter', 'darkwinter', class: "catalog-title"
+              span.catalog-year 2021
+section.block.block-section
+  .container-fluid
+    .row
+      .col-12
+        .row
+          .col-12
+            h2 More instrumental albums
+      .col-12
+        .row.d-flex.justify-content-end
+          .col-12.col-md-4
+            .catalog
+              .catalog-cover
                 == link_to 'noise', class: "catalog-cover-link" do
                   = image_tag "catalogs/porter-2020-noise.jpg", :alt => "Noise", :class => "catalog-cover-img"
               == link_to 'Noise', 'noise', class: "catalog-title"
               span.catalog-year 2020
-section.block.block-section
-  .container-fluid
-    .row
-      .col-12.col-md-3
-        .row
-          .col-12
-            h2 More instrumental albums
-      .col-12.col-md-8.offset-md-1
-        .row.d-flex.justify-content-end
-          .col-12.col-md-6
+          .col-12.col-md-4
             .catalog
               .catalog-cover
                 == link_to 'intuition', class: "catalog-cover-link" do
                   = image_tag "catalogs/porter-2020-intuition.png", :alt => "Intuition", :class => "catalog-cover-img"
               == link_to 'Intuition', 'intuition', class: "catalog-title"
               span.catalog-year 2020
-          .col-12.col-md-6
+          .col-12.col-md-4
             .catalog
               .catalog-cover
                 == link_to 'sensory', class: "catalog-cover-link" do
