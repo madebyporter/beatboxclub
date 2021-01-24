@@ -139,27 +139,37 @@
     order: 1;
   }
   &.playing {
-    padding-bottom: 40px;
+    background: lighten($color-black-500,6%);
+    box-shadow: inset $space-small 0 0 $color-gold;
     .box-player-play {
       display: none;
     }
     .box-player-pause {
       display: flex;
+      & > * {
+        color: $color-gold;
+      }
     }
-    .box-progress {
-      display: block;
+    .box-cta {
+      background: $color-gold;
+      color: $color-white;
     }
   }
   &.paused {
-    padding-bottom: 40px;
+    background: lighten($color-black-500,6%);
+    box-shadow: inset $space-small 0 0 $color-gold;
     .box-player-pause {
       display: none;
     }
     .box-player-play {
       display: flex;
+      & > * {
+        color: $color-gold;
+      }
     }
-    .box-progress {
-      display: block;
+    .box-cta {
+      background: $color-gold;
+      color: $color-white;
     }
   }
 }
@@ -188,6 +198,8 @@
   }
 }
 .box-meta-ele {
+  @include flexbox();
+  flex-wrap: wrap;
   margin-right: $space-x;
   &:after {
     content: "\00B7";
@@ -198,11 +210,12 @@
       display: none;
     }
   }
-  @media (min-width: $mq-phonexl) {
-
+  & > * {
+    margin-bottom: 5px;
   }
 }
 .box-meta-tag {
+  text-transform: capitalize;
   margin-right: $space-x;
   &:after {
     content: "/";
