@@ -261,10 +261,10 @@ js.main = {
     });
   },
   microSort: function() {
-    $grid = $('.block-micro-grid');
+    $grid = $('.box-tracks');
     $grid.each(function(index, el) {
       $(this).isotope({
-        itemSelector : '.box-col',
+        itemSelector : '.box-list',
         transitionDuration: 0,
         stamp: '.sticky',
         // layoutMode : 'masonry',
