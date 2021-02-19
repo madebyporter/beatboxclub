@@ -158,6 +158,7 @@ js.main = {
           fixedPlayer.empty();
           e.clone().appendTo(fixedPlayer);
           fixedPlayer.find('.box-player-container').hide();
+          fixedPlayer.find('.box-list').css('top','0px');
         });
       }
 
