@@ -4,23 +4,25 @@ async function getPosts() {
   return new Promise((resolve, reject) => {
     const query = `
     query {
-      post {
-        post_tracks {
-          name 
-          genre
-        }
-        post_sources {
-          link_title
-          link_url
-        }
-        post_updates {
-          content {
-            content {
-              content {
-                content {
-                  value
-                }
-              }
+      sourcePostCollection {
+        items {
+          postTracksCollection(limit: 5) {
+            items {
+              name
+              author
+              genre
+              bpm
+            }
+          }
+          postSourcesCollection(limit: 5) {
+            items {
+              linkTitle
+              linkUrl
+              linkType
+              linkOwner
+              authorName
+              authorWebsite
+              linkFeatured
             }
           }
         }
@@ -48,7 +50,7 @@ async function getPosts() {
 
       res.on("end", () => {
         const parsedPosts = JSON.parse(posts);
-        resolve(parsedPosts.data.post.items);
+        resolve(parsedPosts.data.sourcePostCollection.items);
       });
     });
 
@@ -66,23 +68,16 @@ function buildRssItems(items) {
 
   return items
     .map((item) => {
-      const hasText = item.text;
-      const hasLink = item.link;
-      const titleMaybeTruncated = hasText && item.text.length > truncateLength ? "..." : "";
-      const title = hasText
-        ? `${item.text.slice(0, truncateLength)}${titleMaybeTruncated}`
-        : "New post";
-      const maybeLink = hasLink ? ` - ${item.link}` : "";
-      const description = hasText ? `${item.text}${maybeLink}` : "";
-
       return `
         <item>
-          <name>${name}</name>
-          <genre>${genre}</genre>
-          <linktitle>${link_title}</linktitle>
-          <linkurl>${link_url}</linkurl>
-          <postupdates>${post_updates}</postupdates>
-          <value>${value}</value>
+          <item>
+            <name>${item.postTracksCollection.items.name}</name>
+            <genre>${item.postTracksCollection.items.genre}</genre>
+          </item>
+          <item>
+            <linktitle>${item.postSourcesCollection.linkTitle}</linktitle>
+            <linkurl>${item.postSourcesCollection.linkUrl}</linkurl>
+          </item>
         </item>
         `;
     })
