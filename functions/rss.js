@@ -4,27 +4,13 @@ async function getPosts() {
   return new Promise((resolve, reject) => {
     const query = `
     query {
-      sourcePostCollection {
+      trackCollection(limit:10) {
         items {
-          postTracksCollection(limit: 5) {
-            items {
-              name
-              author
-              genre
-              bpm
-            }
-          }
-          postSourcesCollection(limit: 5) {
-            items {
-              linkTitle
-              linkUrl
-              linkType
-              linkOwner
-              authorName
-              authorWebsite
-              linkFeatured
-            }
-          }
+          name
+          author
+          genre
+          bpm
+          vibe
         }
       }
     }
@@ -50,8 +36,9 @@ async function getPosts() {
 
       res.on("end", () => {
         const parsedPosts = JSON.parse(posts);
-        resolve(parsedPosts.data.sourcePostCollection.items);
+        resolve(parsedPosts.data.trackCollection.items);
       });
+      
     });
 
     req.on("error", (e) => {
@@ -65,19 +52,13 @@ async function getPosts() {
 
 function buildRssItems(items) {
   const truncateLength = 44;
-
-  return items
-    .map((item) => {
+  
+  return items.map((item) => {
       return `
         <item>
-          <item>
-            <name>${item.postTracksCollection.items.name}</name>
-            <genre>${item.postTracksCollection.items.genre}</genre>
-          </item>
-          <item>
-            <linktitle>${item.postSourcesCollection.linkTitle}</linktitle>
-            <linkurl>${item.postSourcesCollection.linkUrl}</linkurl>
-          </item>
+          <name>${item.name}</name>
+          <bpm>${item.bpm}</bpm>
+          <vibe>${item.vibe}</vibe>
         </item>
         `;
     })
