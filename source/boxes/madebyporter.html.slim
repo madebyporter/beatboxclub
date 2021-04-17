@@ -4,64 +4,86 @@ shortname: madebyporter
 ---
 
 script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js"
-script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"
 // Isotope for Grid Sorting
-== javascript_include_tag  "isotope.pkgd.min"
+== javascript_include_tag "isotope.pkgd.min"
+== javascript_include_tag "userbase"
+== javascript_include_tag "userbase-app"
 
-section.block.block-section.block-hero.block-border-bottom
-  .container
-    .row
-      .col-12
-        .row
-          .col-lg-10
-            h1.bottom-margin-small
-              | Made by Porter
-        .row
-          .col-lg-10
-            p.content-large
-              | Founder of Beatbox, Designer, Developer &amp; Music Producer. I produce cinematic music tracks for musicians, film &amp; advertising.
-            
-section.block.block-section.block-resources
-  .container
-    .row
-      .col-12
-        .block-resources-controller
+#db-view
+  section.block.block-section.block-hero.block-border-bottom
+    .container
+      .row
+        .col-12
           .row
-            .col-12.col-sm-6.offset-sm-6
-              .block-resources-sortfilter onclick="gtag('event', 'click', {'event_category' : 'Feature Click', 'event_label' : 'Resource Filter Sort Click', 'value' : 0});"
-                | Sort & Filter coming soon
-    .row
-      .col-12
-        .box-tracks
-          - data.site.track.each do |id, track|
-            .box-list id="#{track.name}" data-date="#{track._meta.created_at}" data-id="#{track.name}" data-link="#{track.beat.url}"
-              .row
-                .col-12.col-md-10
-                  .row.box-main
-                    .col-3.col-sm-2.col-md-2.col-lg-1.box-player-container
-                      .box-player
-                        .box-player-play
-                          i class="fas fa-play"
-                        .box-player-pause
-                          i class="fas fa-pause"
-                    .col-9.col-sm-10.col-md-10.col-lg-9.box-meta-container
-                      h5.box-title #{track.name}
-                      .box-meta
-                        .box-meta-ele
-                          span.box-meta-author #{track.author}
-                        .box-meta-ele
-                          span.box-meta-bpm BPM #{track.bpm}
-                        .box-meta-ele
-                          span.box-meta-genre #{track.genre}
-                        .box-meta-ele
-                          - track.vibe.each do |v|
-                            span.box-meta-tag #{v}
-                        
-                .col-12.col-md-2
-                  .row.box-action
-                    .col-12
-                      - if track.beat_zip.url
-                        = link_to "Download", "https:#{track.beat_zip.url}", :class => "btn btn-secondary btn-small box-cta", :onclick => "gtag('event', 'click', {'event_category' : 'Beat Download', 'event_label' : '#{track.name}', 'value' : 0});", :download => "download"
-                    / .col-6
-                    /   = link_to "Kit", "#{track.beat.url}", :class => "btn btn-secondary btn-small box-cta", :onclick => "gtag('event', 'click', {'event_category' : 'Link Click', 'event_label' : '', 'value' : 0});"
-aside#bbxmusicplayer.bbx-musicplayer.closed
+            .col-lg-10
+              h1.bottom-margin-small
+                | Made by Porter
+          .row
+            .col-lg-10
+              p.content-large
+                | Founder of Beatbox, Designer, Developer &amp; Music Producer. I produce cinematic music tracks for musicians, film &amp; advertising.
+              
+  section.block.block-section.block-resources
+    .container
+      .row
+        .col-12
+          .block-resources-controller
+            .row
+              .col-12.col-sm-6.offset-sm-6
+                .block-resources-sortfilter onclick="gtag('event', 'click', {'event_category' : 'Feature Click', 'event_label' : 'Resource Filter Sort Click', 'value' : 0});"
+                  | Sort & Filter coming soon
+      .row
+        .col-12
+          .box-tracks
+            - data.site.track.each do |id, track|
+              .box-list id="#{track.name}" data-date="#{track._meta.created_at}" data-id="#{track.name}" data-link="#{track.beat.url}"
+                .row
+                  .col-12.col-md-10
+                    .row.box-main
+                      .col-3.col-sm-2.col-md-2.col-lg-1.box-player-container
+                        .box-player
+                          .box-player-play
+                            i class="fas fa-play"
+                          .box-player-pause
+                            i class="fas fa-pause"
+                      .col-9.col-sm-10.col-md-10.col-lg-9.box-meta-container
+                        h5.box-title #{track.name}
+                        .box-meta
+                          .box-meta-ele
+                            span.box-meta-author #{track.author}
+                          .box-meta-ele
+                            span.box-meta-bpm BPM #{track.bpm}
+                          .box-meta-ele
+                            span.box-meta-genre #{track.genre}
+                          .box-meta-ele
+                            - track.vibe.each do |v|
+                              span.box-meta-tag #{v}
+                          
+                  .col-12.col-md-2
+                    .row.box-action
+                      .col-12
+                        - if track.beat_zip.url
+                          = link_to "Download", "https:#{track.beat_zip.url}", :class => "btn btn-secondary btn-small box-cta", :onclick => "gtag('event', 'click', {'event_category' : 'Beat Download', 'event_label' : '#{track.name}', 'value' : 0});", :download => "download"
+                      / .col-6
+                      /   = link_to "Kit", "#{track.beat.url}", :class => "btn btn-secondary btn-small box-cta", :onclick => "gtag('event', 'click', {'event_category' : 'Link Click', 'event_label' : '', 'value' : 0});"
+  aside#bbxmusicplayer.bbx-musicplayer.closed
+
+#db-loading Loading DB
+#db-error
+
+#auth-view
+  h1 Login
+  form#login-form
+    input#login-username placeholder="Username" required="" type="text" /
+    input#login-password placeholder="Password" required="" type="password" /
+    input type="submit" value=("Sign in") /
+  #login-error
+
+  h1 Create an account
+  form#signup-form
+    input#signup-username placeholder="Username" required="" type="text"
+    input#signup-password placeholder="Password" required="" type="password"
+    input type="submit" value=("Create an account")
+  #signup-error
+
+
