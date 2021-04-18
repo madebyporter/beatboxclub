@@ -10,6 +10,10 @@ script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.
 == javascript_include_tag "userbase-app"
 
 #db-view
+  #username
+  input type="button" value="Logout" id="logout-button"
+  #logout-error
+
   section.block.block-section.block-hero.block-border-bottom
     .container
       .row
@@ -68,9 +72,10 @@ script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.
                       /   = link_to "Kit", "#{track.beat.url}", :class => "btn btn-secondary btn-small box-cta", :onclick => "gtag('event', 'click', {'event_category' : 'Link Click', 'event_label' : '', 'value' : 0});"
   aside#bbxmusicplayer.bbx-musicplayer.closed
 
-#db-loading Loading DB
+/ #db-loading Loading DB
 #db-error
 
+#loading-view Loading...
 #auth-view
   h1 Login
   form#login-form
