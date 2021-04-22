@@ -3,8 +3,9 @@
   "devDependencies": {
     "concurrently": "^3.5.1",
     "netlify-lambda": "^1.6.3",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
