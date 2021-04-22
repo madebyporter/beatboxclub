@@ -7,10 +7,7 @@ async function getPosts() {
       trackCollection(limit:10) {
         items {
           name
-          author
           genre
-          bpm
-          vibe
         }
       }
     }
@@ -56,9 +53,8 @@ function buildRssItems(items) {
   return items.map((item) => {
       return `
         <item>
-          <name>${item.name}</name>
-          <bpm>${item.bpm}</bpm>
-          <vibe>${item.vibe}</vibe>
+          <title>${item.name}</title>
+          <description>${item.genre}</description>
         </item>
         `;
     })
@@ -69,7 +65,7 @@ exports.handler = async function (event, context) {
   const rssFeed = `<?xml version="1.0"?>
   <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>thebeatboxclub.com</title>
+    <title>The Beatbox Club</title>
     <atom:link href="https://thebeatboxclub.com/.netlify/functions/rss" rel="self" type="application/rss+xml" />
     <link>https://thebeatboxclub.com</link>
     <description>The Beatbox Club is a subscription based database of beats by producers.</description>
