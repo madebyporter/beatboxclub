@@ -1,6 +1,6 @@
 ---
-title: Find helpful resources on The Beatbox Source
-shortname: Beatbox Source
+title: Made by Porter on The Beatbox Club
+shortname: madebyporter
 ---
 
 script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js"
@@ -35,7 +35,7 @@ section.block.block-section.block-resources
       .col-12
         .box-tracks
           - data.site.track.each do |id, track|
-            .box-list data-date="#{track._meta.created_at}" data-id="#{track.name}" data-link="#{track.beat.url}"
+            .box-list id="#{track.name}" data-date="#{track._meta.created_at}" data-id="#{track.name}" data-link="#{track.beat.url}"
               .row
                 .col-12.col-md-10
                   .row.box-main

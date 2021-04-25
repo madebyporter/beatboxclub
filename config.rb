@@ -51,7 +51,7 @@ end
 activate :contentful do |f|
   f.space         = { site: ENV['CONTENTFUL_SPACE_ID'] }
   f.access_token  = ENV['CONTENTFUL_ACCESS_TOKEN']
-  f.content_types = { source: 'source', track: 'track', catalog: 'catalog'}
+  f.content_types = { source: 'source', track: 'track', catalog: 'catalog', post: 'sourcePost'}
 end
 
 activate :dotenv
