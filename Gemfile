@@ -17,3 +17,4 @@ gem 'middleman-livereload'
 gem "middleman-blog", "~> 4.0"
 gem 'contentful_middleman'
 gem 'middleman-dotenv'
+gem 'stripe'
