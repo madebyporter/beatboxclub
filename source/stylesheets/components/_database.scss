@@ -106,15 +106,30 @@
   margin: 0 0 $space-small 0;
 }
 .block-resources-sortfilter {
-  color: $color-black-400;
-  @extend .t-18;
-  @extend .t-strong;
-  display: inline-block;
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  float: right;
   @media (min-width: $mq-phonexl) {
-    float: right;
   }
-  &:hover {
+  li {
     color: $color-black-300;
+    cursor: pointer;
+    @extend .t-18;
+    @extend .t-strong;
+    flex-wrap: wrap;
+    margin-right: $space-small;
+    @media (min-width: $mq-phonexl) {
+      margin-bottom: 0;
+      margin-left: $space-small;
+    }
+    &:hover {
+      color: $color-black-200;
+    }
+    &.selected {
+      color: $color-gold;
+    }
   }
 }
 

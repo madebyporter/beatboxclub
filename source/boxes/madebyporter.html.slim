@@ -5,7 +5,10 @@ shortname: madebyporter
 
 script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js"
 script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"
-script async src="https://widget.trolley.link/cart.js" type="text/javascript"
+<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.1.0/default/snipcart.css" />
+<script async src="https://cdn.snipcart.com/themes/v3.1.0/default/snipcart.js"></script>
+<div id="snipcart" data-config-modal-style="side" data-api-key="ZTc4MDE3OGMtNDVlNS00OWU2LWFhODctNzFiMmFhOWIyMjRjNjM3MjMyNTA4MzAyNDUxODQ1" hidden></div>
+
 // Isotope for Grid Sorting
 == javascript_include_tag  "isotope.pkgd.min"
 
@@ -29,13 +32,15 @@ section.block.block-section.block-resources
         .block-resources-controller
           .row
             .col-12.col-sm-6.offset-sm-6
-              .block-resources-sortfilter onclick="gtag('event', 'click', {'event_category' : 'Feature Click', 'event_label' : 'Resource Filter Sort Click', 'value' : 0});"
-                | Sort & Filter coming soon
+              ul.block-resources-sortfilter
+                li.selected data-filter=".box-list" Latest
+                li data-filter=".Free" Free
+                li data-filter=".Non-Exclusive" Paid
     .row
       .col-12
         .box-tracks
           - data.site.track.each do |id, track|
-            .box-list id="#{track.name}" data-date="#{track._meta.created_at}" data-id="#{track.name}" data-link="#{track.beat.url}"
+            div class="box-list #{track.beat_type}" id="#{track.name}" data-date="#{track._meta.created_at}" data-id="#{track.name}" data-link="#{track.beat.url}"
               .row
                 .col-12.col-md-10
                   .row.box-main
@@ -49,8 +54,6 @@ section.block.block-section.block-resources
                       h5.box-title #{track.name}
                       .box-meta
                         .box-meta-ele
-                          span.box-meta-author #{track.author}
-                        .box-meta-ele
                           span.box-meta-bpm BPM #{track.bpm}
                         .box-meta-ele
                           span.box-meta-genre #{track.genre}
@@ -61,8 +64,8 @@ section.block.block-section.block-resources
                 .col-12.col-md-2
                   .row.box-action
                     .col-12
-                      - if track.beat_zip.url
-                        = link_to "Download", "https:#{track.beat_zip.url}", :class => "btn btn-secondary btn-small box-cta", :onclick => "gtag('event', 'click', {'event_category' : 'Beat Download', 'event_label' : '#{track.name}', 'value' : 0});", :download => "download"
-                    / .col-6
-                    /   = link_to "Kit", "#{track.beat.url}", :class => "btn btn-secondary btn-small box-cta", :onclick => "gtag('event', 'click', {'event_category' : 'Link Click', 'event_label' : '', 'value' : 0});"
+                      - if track.beat_type == 'Non-Exclusive'
+                        button.btn.btn-secondary.btn-small.btn-cta class="snipcart-add-item" data-item-id="#{track.name}" data-item-price="20.00" data-item-url="/boxes/madebyporter" data-item-description="Non-exclusive MP3 Beat" data-item-name="#{track.name}" data-item-file-guid="#{track.snipcart_guid}" $20
+                      - else
+                        = link_to "$0", "https:#{track.beat_zip.url}", :class => "btn btn-secondary btn-small box-cta", :onclick => "gtag('event', 'click', {'event_category' : 'Beat Download', 'event_label' : '#{track.name}', 'value' : 0});", :download => "download"
 aside#bbxmusicplayer.bbx-musicplayer.closed

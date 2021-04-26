@@ -262,24 +262,27 @@ js.main = {
     });
   },
   microSort: function() {
-    $grid = $('.box-tracks');
-    $grid.each(function(index, el) {
-      $(this).isotope({
-        itemSelector : '.box-list',
-        transitionDuration: 0,
-        stamp: '.sticky',
-        // layoutMode : 'masonry',
-        // masonry: {
-        //     gutter: 20,
-        //     isFitWidth: true
-        // },
-        getSortData: {
-          date: '[data-date]'
-        },
-        sortBy : 'date',
-        sortAscending: false
-      });
+    var $grid = $('.box-tracks').isotope({
+      // options
+      itemSelector : '.box-list',
+      transitionDuration: 0,
+      stamp: '.sticky',
+      getSortData: {
+        date: '[data-date]'
+      },
+      sortBy : 'date',
+      sortAscending: false
     });
+
+    $filter = $('.block-resources-sortfilter li');
+    $filter.on('click', function() {
+      var filterValue = $(this).attr('data-filter');
+      $filter.removeClass('selected');
+      $(this).addClass('selected');
+      console.log (filterValue);
+      $grid.isotope({ filter: filterValue });
+    });
+    
   },
   modal: function (e) {
     var bd = $('body');
