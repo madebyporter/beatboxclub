@@ -135,18 +135,22 @@
 
 .box-list {
   background: lighten($color-black-500,2%);
-  box-shadow: inset $space-small 0 0 lighten($color-black-500,6%);
   margin: 0 0 1px 0;
   padding: $space-small;
-  padding-left: 6rem;
   position: relative;
   width: 100%;
+  @media (min-width: $mq-tablet) {
+    padding-left: 6rem;
+    box-shadow: inset $space-small 0 0 lighten($color-black-500,6%);
+  }
   .box-progress {
     display: block;
   }
   &:hover {
     background: lighten($color-black-500,6%);
-    box-shadow: inset $space-small 0 0 lighten($color-black-500,10%);
+    @media (min-width: $mq-tablet) {
+      box-shadow: inset $space-small 0 0 lighten($color-black-500,10%);
+    }
   }
   &.featured {
     // background: darken($color-yellow,35%);
@@ -155,7 +159,9 @@
   }
   &.playing {
     background: lighten($color-black-500,6%);
-    box-shadow: inset $space-small 0 0 $color-gold;
+    @media (min-width: $mq-tablet) {
+      box-shadow: inset $space-small 0 0 $color-gold;
+    }
     .box-player-play {
       display: none;
     }
@@ -216,6 +222,14 @@
   @include flexbox();
   flex-wrap: wrap;
   margin-right: $space-x;
+  @media (max-width: $mq-tablet) {
+    &:nth-child(2), &:nth-child(3) {
+      display: none;
+    }
+    &:after {
+      display: none;
+    }
+  }
   &:after {
     content: "\00B7";
     padding-left: $space-x;
