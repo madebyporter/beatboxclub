@@ -60,7 +60,7 @@ end
 # ignore 'templates/*.html'
 if @app.data.try(:site).try(:beattapes)
   data.site.beattapes.each do |id, tapes|
-    proxy "/tapes/#{tapes['tape_id'].downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')}", "/tapes/template", 
+    proxy "/tapes/#{tapes['tape_id'].downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')}", "/tapes/template.html", 
     :locals => { :tapes => tapes, :tape_id => tapes.tape_id }, 
     :ignore => true
   end
