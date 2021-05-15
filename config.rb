@@ -33,17 +33,13 @@ end
 
 ENV["base-url"] = "/"
 
+activate :dotenv
+activate :directory_indexes
+
 activate :blog do |blog|
   blog.prefix = "blog"
   blog.permalink = "{title}.html"
   blog.layout = "blog_layout"
-end
-
-ignore 'templates/*.html'
-if @app.data.try(:site).try(:beattapes)
-  data.site.beattapes.each do |id, tapes|
-    proxy "/tapes/#{tapes['tape_id'].downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')}", "/tapes/template.html", :locals => { :tapes => tapes, :tapestitle => tapes.title }, :ignore => true
-  end
 end
 
 # Source Date
@@ -61,8 +57,13 @@ activate :contentful do |f|
   f.content_types = { source: 'source', track: 'track', beattapes: 'beattapes', producer: 'producer'}
 end
 
-activate :dotenv
-activate :directory_indexes
+# ignore 'templates/*.html'
+if @app.data.try(:site).try(:beattapes)
+  data.site.beattapes.each do |id, tapes|
+    proxy "/tapes/#{tapes['tape_id'].downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')}", "/tapes/template.html", :locals => { :tapes => tapes, :tape_id => tapes.tape_id }, :ignore => true
+  end
+end
+
 
 
 # Build-specific configuration
