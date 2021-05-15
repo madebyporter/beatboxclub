@@ -58,7 +58,7 @@ end
 
 # ignore 'templates/*.html'
 if @app.data.try(:site).try(:beattapes)
-  data.site.beattapes.each do |id, tapes|
+  data.site.beattapes.sort_by{ |id, s| s._meta.created_at }.each do |id, tapes|
     proxy "/tapes/#{tapes['tape_id'].downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')}/index.html", "/tapes/template.html", :locals => { :tapes => tapes, :tape_id => tapes.tape_id, :tape_title => tapes.title }, :ignore => true
   end
 end
