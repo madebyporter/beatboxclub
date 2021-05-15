@@ -1,7 +1,4 @@
----
-title: Made by Porter on The Beatbox Club
-shortname: madebyporter
----
+- set_meta_tags :title => "Made by Porter"
 
 script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js"
 script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"
@@ -19,11 +16,11 @@ section.block.block-section.block-hero.block-border-bottom
         .row
           .col-lg-10
             h1.bottom-margin-small
-              | Made by Porter
+              | Latest Beats from Made by Porter
         .row
           .col-lg-10
-            p.content-large
-              | Founder of Beatbox, Designer, Developer &amp; Music Producer. I produce cinematic music tracks for musicians, film &amp; advertising.
+            p.content Below are the latest beats for download or to buy. Free beats & $20 non-Exclusive licenses includes unlimited plays, views, usage, etc. 
+            p.content-small You can use all the beats on your Youtube or Twitch streams; for songs on streaming platforms, or for your physical locations. Beats are rotated out every month to ensure beats are not played-out.
             
 section.block.block-section.block-resources
   .container
@@ -54,9 +51,11 @@ section.block.block-section.block-resources
                       h5.box-title #{track.name}
                       .box-meta
                         .box-meta-ele
-                          span.box-meta-bpm BPM #{track.bpm}
+                          span.box-meta-author by #{track.author}
                         .box-meta-ele
-                          span.box-meta-genre #{track.genre}
+                          span.box-meta-bpm BPM #{track.bpm}
+                        / .box-meta-ele
+                        /   span.box-meta-genre #{track.genre}
                         .box-meta-ele
                           - track.vibe.each do |v|
                             span.box-meta-tag #{v}
@@ -65,7 +64,7 @@ section.block.block-section.block-resources
                   .row.box-action
                     .col-12
                       - if track.beat_type == 'Non-Exclusive'
-                        button.btn.btn-secondary.btn-small.btn-cta class="snipcart-add-item" data-item-id="#{track.name}" data-item-price="20.00" data-item-url="/boxes/madebyporter" data-item-description="Non-exclusive MP3 Beat" data-item-name="#{track.name}" data-item-file-guid="#{track.snipcart_guid}" $20
+                        button.btn.btn-secondary.btn-small.box-cta class="snipcart-add-item" data-item-id="#{track.name}" data-item-price="20.00" data-item-url="/boxes/madebyporter" data-item-description="Non-exclusive MP3 Beat" data-item-name="#{track.name}" data-item-file-guid="#{track.snipcart_guid}" $20
                       - else
                         = link_to "$0", "https:#{track.beat_zip.url}", :class => "btn btn-secondary btn-small box-cta", :onclick => "gtag('event', 'click', {'event_category' : 'Beat Download', 'event_label' : '#{track.name}', 'value' : 0});", :download => "download"
 aside#bbxmusicplayer.bbx-musicplayer.closed

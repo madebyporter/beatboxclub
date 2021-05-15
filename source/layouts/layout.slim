@@ -16,7 +16,7 @@ html
     meta[name="msapplication-config" content="/images/favicons/browserconfig.xml"]
     meta[name="theme-color" content="#ffffff"]
 
-    title = current_page.data.title || "The Beatbox Club"
+    = display_meta_tags site: 'The Beatbox Club'
 
     == stylesheet_link_tag :site
     == javascript_include_tag  "jquery", "parsley.min", "all"
@@ -82,8 +82,7 @@ html
                   span.logo-text-word Club
             .col-8.col-md-6
               nav.site-nav
-                = link_to "Beats", "/", :class => "site-nav-link"
-                = link_to "Tapes", "/tapes", :class => "site-nav-link"
+                = link_to "Producer Tapes", "/", :class => "site-nav-link"
                 / = link_to "Resources", "/source", :class => "site-nav-link d-none d-sm-block"
       == yield
       section.block.block-newsletter
@@ -113,8 +112,7 @@ html
           .row
             .col-12
               nav.nav-footer
-                = link_to "Beats", "/", :class => "nav-footer-link"
-                = link_to "Tapes", "/beattapes", :class => "nav-footer-link"
+                = link_to "Producer Tapes", "/", :class => "nav-footer-link"
                 = link_to "Resources", "/source", :class => "nav-footer-link"
                 = link_to "Privacy Policy", "privacy", :class => "nav-footer-link"
                 = link_to "Terms of Service", "terms", :class => "nav-footer-link"
