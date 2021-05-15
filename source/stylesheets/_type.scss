@@ -181,7 +181,14 @@
         @include font-size(14);
         line-height: 1.4;
         @media (min-width: $mq-tablet) {
-          @include font-size(18);
+          @include font-size(16);
+        }
+      }
+      &.content-tiny {
+        @include font-size(10);
+        line-height: 1.4;
+        @media (min-width: $mq-tablet) {
+          @include font-size(12);
         }
       }
       &.content-disabled {

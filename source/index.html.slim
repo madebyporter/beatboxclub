@@ -1,59 +1,73 @@
 ---
-title: The Beatbox Club - Hiphop Soundtracks
-shortname: Home
+title: Made by Porter on The Beatbox Club
+shortname: madebyporter
 ---
+
 script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js"
 script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"
-== javascript_include_tag  "jquery.ajaxchimp.min"
+<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.1.0/default/snipcart.css" />
+<script async src="https://cdn.snipcart.com/themes/v3.1.0/default/snipcart.js"></script>
+<div id="snipcart" data-config-modal-style="side" data-api-key="ZTc4MDE3OGMtNDVlNS00OWU2LWFhODctNzFiMmFhOWIyMjRjNjM3MjMyNTA4MzAyNDUxODQ1" hidden></div>
 
-section.block.block-section.block-hero
+// Isotope for Grid Sorting
+== javascript_include_tag  "isotope.pkgd.min"
+
+section.block.block-section.block-hero.block-border-bottom
   .container
     .row
-      .col-12.col-md-7.col-lg-8.d-flex.align-items-center
+      .col-12
         .row
-          .col-md-12.col-lg-10
+          .col-lg-10
             h1.bottom-margin-small
-              | Stream the synthwave hiphop &amp; r&b project, Dark Winter
-            p.content-large
-              | Dark Winter is one of the latest instrumental albums from Made by Porter. It's a laid back vibe type soundtrack to work, exercise, or smoke to.<br /><br />
-              == link_to 'Listen Now', 'darkwinter', class: ""
-            
-      .col-12.col-md-5.col-lg-4
+              | Latest Beats
         .row
-          .col-12
-            .catalog
-              .catalog-cover
-                == link_to 'darkwinter', class: "catalog-cover-link" do
-                  = image_tag "catalogs/porter-2021-darkwinter.jpg", :alt => "Noise", :class => "catalog-cover-img"
-              == link_to 'Dark Winter', 'darkwinter', class: "catalog-title"
-              span.catalog-year 2021
-section.block.block-section
-  .container-fluid
+          .col-lg-10
+            p.content Below are the latest beats for download or to buy. Free beats & $20 non-Exclusive licenses includes unlimited plays, views, usage, etc. 
+            p.content-small You can use all the beats on your Youtube or Twitch streams; for songs on streaming platforms, or for your physical locations. Beats are rotated out every month to ensure beats are not played-out.
+            
+section.block.block-section.block-resources
+  .container
     .row
       .col-12
-        .row
-          .col-12
-            h2 More instrumental albums
+        .block-resources-controller
+          .row
+            .col-12.col-sm-6.offset-sm-6
+              ul.block-resources-sortfilter
+                li.selected data-filter=".box-list" Latest
+                li data-filter=".Free" Free
+                li data-filter=".Non-Exclusive" Paid
+    .row
       .col-12
-        .row.d-flex.justify-content-end
-          .col-12.col-md-4
-            .catalog
-              .catalog-cover
-                == link_to 'noise', class: "catalog-cover-link" do
-                  = image_tag "catalogs/porter-2020-noise.jpg", :alt => "Noise", :class => "catalog-cover-img"
-              == link_to 'Noise', 'noise', class: "catalog-title"
-              span.catalog-year 2020
-          .col-12.col-md-4
-            .catalog
-              .catalog-cover
-                == link_to 'intuition', class: "catalog-cover-link" do
-                  = image_tag "catalogs/porter-2020-intuition.png", :alt => "Intuition", :class => "catalog-cover-img"
-              == link_to 'Intuition', 'intuition', class: "catalog-title"
-              span.catalog-year 2020
-          .col-12.col-md-4
-            .catalog
-              .catalog-cover
-                == link_to 'sensory', class: "catalog-cover-link" do
-                  = image_tag "catalogs/porter-2019-sensory.jpg", :alt => "Sensory", :class => "catalog-cover-img"
-              == link_to 'Sensory', 'sensory', class: "catalog-title"
-              span.catalog-year 2019
+        .box-tracks
+          - data.site.track.each do |id, track|
+            div class="box-list #{track.beat_type}" id="#{track.name}" data-date="#{track._meta.created_at}" data-id="#{track.name}" data-link="#{track.beat.url}"
+              .row
+                .col-12.col-md-10
+                  .row.box-main
+                    .col-3.col-sm-2.col-md-2.col-lg-1.box-player-container
+                      .box-player
+                        .box-player-play
+                          i class="fas fa-play"
+                        .box-player-pause
+                          i class="fas fa-pause"
+                    .col-9.col-sm-10.col-md-10.col-lg-9.box-meta-container
+                      h5.box-title #{track.name}
+                      .box-meta
+                        .box-meta-ele
+                          span.box-meta-author by #{track.author}
+                        .box-meta-ele
+                          span.box-meta-bpm BPM #{track.bpm}
+                        / .box-meta-ele
+                        /   span.box-meta-genre #{track.genre}
+                        .box-meta-ele
+                          - track.vibe.each do |v|
+                            span.box-meta-tag #{v}
+                        
+                .col-12.col-md-2
+                  .row.box-action
+                    .col-12
+                      - if track.beat_type == 'Non-Exclusive'
+                        button.btn.btn-secondary.btn-small.box-cta class="snipcart-add-item" data-item-id="#{track.name}" data-item-price="20.00" data-item-url="/boxes/madebyporter" data-item-description="Non-exclusive MP3 Beat" data-item-name="#{track.name}" data-item-file-guid="#{track.snipcart_guid}" $20
+                      - else
+                        = link_to "$0", "https:#{track.beat_zip.url}", :class => "btn btn-secondary btn-small box-cta", :onclick => "gtag('event', 'click', {'event_category' : 'Beat Download', 'event_label' : '#{track.name}', 'value' : 0});", :download => "download"
+aside#bbxmusicplayer.bbx-musicplayer.closed

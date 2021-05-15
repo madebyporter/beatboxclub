@@ -39,6 +39,13 @@ activate :blog do |blog|
   blog.layout = "blog_layout"
 end
 
+ignore 'templates/*.html'
+if @app.data.try(:site).try(:beattapes)
+  data.site.beattapes.each do |id, tapes|
+    proxy "/tapes/#{tapes['tape_id'].downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')}", "/tapes/template.html", :locals => { :tapes => tapes, :tapestitle => tapes.title }, :ignore => true
+  end
+end
+
 # Source Date
 
 helpers do
@@ -51,7 +58,7 @@ end
 activate :contentful do |f|
   f.space         = { site: ENV['CONTENTFUL_SPACE_ID'] }
   f.access_token  = ENV['CONTENTFUL_ACCESS_TOKEN']
-  f.content_types = { source: 'source', track: 'track', catalog: 'catalog', post: 'sourcePost'}
+  f.content_types = { source: 'source', track: 'track', beattapes: 'beattapes', producer: 'producer'}
 end
 
 activate :dotenv

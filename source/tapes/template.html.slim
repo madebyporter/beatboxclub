@@ -1,0 +1,68 @@
+== wrap_layout :layout do
+  script type="text/javascript" src="/javascripts/sc-player.js"
+  .catalog-bg style="background-image: url(#{tapes.background_art.url}); background-size: cover;"
+  section.block.block-section.block-hero
+    .container
+      .row.d-flex.align-items-center
+        .col-12.col-lg-8.order-1.order-lg-0
+          .row
+            .col-md-10
+              .header.mb-5
+                h1.headline-large.mb-2 = tapes.title
+                h5
+                  | by&nbsp;
+                  = link_to "#{tapes.producer.producer}","#{tapes.producer.producer_url}", :class => "", :onclick => "gtag('event', 'click', {'event_category' : '#{tapes.producer.producer}', 'event_label' : out_producer, 'value' : 0});"
+              h4 = tapes.tagline
+              p.content = tapes.description
+        .col-12.col-lg-4.order-0.order-lg-1.mb-4
+          = image_tag "#{tapes.cover_art.url}", :alt => "#{tapes.title}", :class => "catalog-cover-img"
+          
+  section.block.block-section
+    .container
+      .row.d-flex
+        .col-12.col-lg-8.order-1.order-lg-0.mb-4
+          .player
+            h4
+              | Listen now
+            .sc-player
+              a href="#{tapes.soundcloud}" #{tapes.title}
+        .col-12.col-lg-4.order-0.order-lg-1.mb-4
+          .row
+            .col-12
+              h4
+                | Stream via
+            - if tapes.spotify
+              .col-6.col-md-6
+                .block-logo.block-logo-small
+                  = link_to "#{tapes.spotify}", :class => "block-logo-link", :onclick => "gtag('event', 'click', {'event_category' : '#{tapes.title}', 'event_label' : out_spotify, 'value' : 0});" do
+                    = image_tag "logos/logo-spotify.png", :alt => "Spotify", :class => "block-logo-img"
+            - if tapes.tidal
+              .col-6.col-md-6
+                .block-logo.block-logo-small
+                  = link_to "#{tapes.tidal}", :class => "block-logo-link", :onclick => "gtag('event', 'click', {'event_category' : '#{tapes.title}', 'event_label' : out_tidal, 'value' : 0});" do
+                    = image_tag "logos/logo-tidal.png", :alt => "Tidal", :class => "block-logo-img"
+            - if tapes.apple
+              .col-6.col-md-6
+                .block-logo.block-logo-small
+                  = link_to "#{tapes.apple}", :class => "block-logo-link", :onclick => "gtag('event', 'click', {'event_category' : '#{tapes.title}', 'event_label' : out_applemusic, 'value' : 0});" do
+                    = image_tag "logos/logo-applemusic.png", :alt => "Apple Music", :class => "block-logo-img"
+            - if tapes.youtube
+              .col-6.col-md-6
+                .block-logo.block-logo-small
+                  = link_to "#{tapes.youtube}", :class => "block-logo-link", :onclick => "gtag('event', 'click', {'event_category' : '#{tapes.title}', 'event_label' : out_youtube, 'value' : 0});" do
+                    = image_tag "logos/logo-youtube.png", :alt => "Youtube", :class => "block-logo-img"
+            - if tapes.amazon
+              .col-6.col-md-6
+                .block-logo.block-logo-small
+                  = link_to "#{tapes.amazon}", :class => "block-logo-link", :onclick => "gtag('event', 'click', {'event_category' : '#{tapes.title}', 'event_label' : out_amazon, 'value' : 0});" do
+                    = image_tag "logos/logo-amazon.png", :alt => "Amazon", :class => "block-logo-img"
+            - if tapes.soundcloud
+              .col-6.col-md-6
+                .block-logo.block-logo-small
+                  = link_to "#{tapes.soundcloud}", :class => "block-logo-link", :onclick => "gtag('event', 'click', {'event_category' : '#{tapes.title}', 'event_label' : out_soundcloud, 'value' : 0});" do
+                    = image_tag "logos/logo-soundcloud.png", :alt => "Soundcloud", :class => "block-logo-img"
+            - if tapes.bandcamp
+              .col-6.col-md-6
+                .block-logo.block-logo-small
+                  = link_to "#{tapes.bandcamp}", :class => "block-logo-link", :onclick => "gtag('event', 'click', {'event_category' : '#{tapes.title}', 'event_label' : out_bandcamp, 'value' : 0});" do
+                    = image_tag "logos/logo-bandcamp.png", :alt => "Bandcamp", :class => "block-logo-img"

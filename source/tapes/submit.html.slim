@@ -1,0 +1,83 @@
+---
+title: Find helpful resources on The Beatbox Source
+shortname: Submit a Resource
+---
+
+section.block.block-section.block-hero.block-border-bottom
+  .container
+    .row
+      .col-12
+        .row
+          .col-lg-10
+            h1.bottom-margin-small
+              | Submit a Tape
+        .row
+          .col-lg-12
+            p.content-large
+              | Looking to get your beat/producer tape listed on The Beatbox Club? Fill out the form below and we'll get back to you if your tape is accepted!
+section.block.block-section
+  .container
+    .row
+      .col-12
+        form#tape_submit_form.form-tape-submit name="tape-submit" method="POST" data-netlify="true" action="/tapes/submit-success"
+          .row.mb-5
+            .col-12.col-md-6
+              h3 Producer Information
+              fieldset.form-fieldset-hidden
+                input name="bot-field"
+              fieldset.form-fieldset
+                label.form-label Producer Name
+                input.form-input type="text" placeholder="Your Name" name="producer_name" id="producer_name" required="required"
+              fieldset.form-fieldset
+                label.form-label Producer Email
+                input.form-input type="email" placeholder="Your Email" name="producer_email" id="producer_email" required="required"
+              fieldset.form-fieldset
+                label.form-label Producer Website
+                input.form-input type="url" placeholder="Your Website" name="producer_website" id="producer_website"
+          .row.mb-5
+            .col-12.col-md-6
+              h3 Tape Information
+              fieldset.form-fieldset
+                label.form-label Tape Title
+                input.form-input type="text" placeholder="Name of the project" name="tape_title" id="tape_title" required="required"
+              fieldset.form-fieldset
+                label.form-label Tape Tagline
+                input.form-input type="text" placeholder="What makes your music different?" name="tape_tagline" id="tape_tagline"
+              fieldset.form-fieldset
+                label.form-label Tape Description
+                textarea.form-textarea type="text" placeholder="Write a paragraph that describes what we will hear. Make it SEO friendly!" name="tape_desc" id="tape_desc"
+              fieldset.form-fieldset
+                label.form-label Cover Art
+                input.form-input type="file" placeholder="Cover Art" name="cover_art" id="cover_art"
+              fieldset.form-fieldset
+                label.form-label Background Art
+                input.form-input type="file" placeholder="Background Art" name="bg_art" id="bg_art"
+              fieldset.form-fieldset
+                label.form-label
+                  | Soundcloud Playlist Link &nbsp;
+                  span.content-tiny.color-danger 
+                    | (Required for music player)
+                input.form-input type="url" placeholder="Soundcloud Playlist Link" name="soundcloud" id="soundcloud" required="required"
+              fieldset.form-fieldset
+                label.form-label Spotify Link
+                input.form-input type="url" placeholder="Spotify Album Link" name="spotify" id="spotify"
+              fieldset.form-fieldset
+                label.form-label Apple Music Link
+                input.form-input type="url" placeholder="Apple Music Album Link" name="apple" id="apple"
+              fieldset.form-fieldset
+                label.form-label Tidal Link
+                input.form-input type="url" placeholder="Tidal Album Link" name="tidal" id="tidal"
+              fieldset.form-fieldset
+                label.form-label Youtube Link
+                input.form-input type="url" placeholder="Youtube Link" name="youtube" id="youtube"
+              fieldset.form-fieldset
+                label.form-label Amazon Link
+                input.form-input type="url" placeholder="Amazon Album Link" name="amazon" id="amazon"
+              fieldset.form-fieldset
+                label.form-label Bandcamp Link
+                input.form-input type="url" placeholder="Bandcamp Album Link" name="bandcamp" id="bandcamp"
+          .row
+            .col-12.col-md-6
+              .bs-callout.bs-callout-warning.hidden Yeah, this ain't it chief. Fix the things in red.
+              fieldset.form-fieldset
+                input.form-submit.btn.btn-tertiary type="submit" value="Submit" name="submit" id="submit" onclick="gtag('event', 'click', {'event_category' : 'Form Submission', 'event_label' : 'Source Submit', 'value' : 0});"

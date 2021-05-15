@@ -4,11 +4,11 @@ var js = js || {},
 // Scripts
 js.main = {
   init: function () {
+    this.externalLinks();
     this.modal();
     this.musicPlayer();
     this.microSort();
     this.resourceSort();
-    this.externalLinks();
     this.externalLinkTracking();
     this.mailchimpAJAX();
     this.validateForm();
@@ -117,6 +117,7 @@ js.main = {
     var fixedPlayer = $('#bbxmusicplayer');
     var fpPause = fixedPlayer.find('.box-player-pause');
     var fpPlay = fixedPlayer.find('.box-player-play');
+    var wrapper = $('.site-wrapper');
 
     playlist.find(track).each(function () {
       var e = $(this);
@@ -155,6 +156,8 @@ js.main = {
           fixedPlayer.addClass('open');
         }
         Object.keys(howlers).forEach(function(key) {
+
+          wrapper.addClass('player-on');
           fixedPlayer.empty();
           e.clone().appendTo(fixedPlayer);
           fixedPlayer.find('.box-player-container').hide();
@@ -212,7 +215,6 @@ js.main = {
             track.removeClass('paused');
             track.removeClass('playing');
             track.addClass('unloaded');
-
           });
 
           howlers[id] = new Howl({
