@@ -187,8 +187,9 @@
     margin-bottom: $space-large;
   }
   .block-border-bottom {
-    // padding-bottom: $space-x;
-    border-bottom: 1px solid lighten($color-black-500,5%);  
+    padding-bottom: $space-medium;
+    margin-bottom: $space-large;
+    border-bottom: 1px solid rgba(255,255,255,0.1);  
   }
   .block-cta {
     background: lighten($color-black-500,2%);

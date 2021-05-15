@@ -1,22 +1,25 @@
 - set_meta_tags :title => "#{tapes.title} by #{tapes.producer}"
 
 script type="text/javascript" src="/javascripts/sc-player.js"
-.catalog-bg style="background-image: url(#{tapes.background_art.url}); background-size: cover;"
-section.block.block-section.block-hero
+
+- if tapes.background_art
+  .catalog-bg style="background-image: url(#{tapes.background_art.url}); background-size: cover;"
+  
+section.block.block-section.block-hero.block-border-bottom
   .container
-    .row.d-flex.align-items-center
-      .col-12.col-lg-8.order-1.order-lg-0
+    .row.d-flex.align-items-top
+      .col-12.col-lg-2.mb-4
+        = image_tag "#{tapes.cover_art.url}", :alt => "#{tapes.title}", :class => "catalog-cover-img"
+      .col-12.col-lg-6
         .row
-          .col-md-10
+          .col
             .header.mb-5
               h1.headline-large.mb-2 = tapes.title
               h5
                 | by&nbsp;
                 = link_to "#{tapes.producer}","#{tapes.producer_url}", :class => "", :onclick => "gtag('event', 'click', {'event_category' : '#{tapes.producer}', 'event_label' : out_producer, 'value' : 0});"
-            h4 = tapes.tagline
-            p.content = tapes.description
-      .col-12.col-lg-4.order-0.order-lg-1.mb-4
-        = image_tag "#{tapes.cover_art.url}", :alt => "#{tapes.title}", :class => "catalog-cover-img"
+            h5 = tapes.tagline
+            p.content-small = tapes.description
         
 section.block.block-section
   .container
