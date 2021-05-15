@@ -1,0 +1,35 @@
+---
+title: The Beatbox Club - Beat Tapes
+shortname: Instrumental Albums
+---
+script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js"
+script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"
+== javascript_include_tag  "jquery.ajaxchimp.min"
+
+section.block.block-section.block-hero.block-border-bottom
+  .container
+    .row
+      .col-12.col-md-7.col-lg-8.d-flex.align-items-center
+        .row
+          .col-md-12.col-lg-10
+            h1.bottom-margin-small
+              | Producer Tapes
+            p.content-large
+              | Curated beat & producer tapes from music producers all around the world.
+            p.content
+              = link_to "Submit Tape","/tapes/submit"
+section.block.block-section
+  .container
+    .row
+      .col-12
+        .row.d-flex.justify-content-start
+          - data.site.beattapes.each do |id, tapes|
+            .col-12.col-md-3
+              .catalog
+                .catalog-cover
+                  == link_to '/tapes/' + tapes.tape_id, class: "catalog-cover-link" do
+                    = image_tag "#{tapes.cover_art.url}", :alt => "#{tapes.title}", :class => "catalog-cover-img"
+                == link_to tapes.title, '/tapes/' + tapes.tape_id, class: "catalog-title"
+                p.catalog-producer
+                  | by&nbsp;
+                  = link_to "#{tapes.producer.producer}","#{tapes.producer.producer_url}", :class => "", :onclick => "gtag('event', 'click', {'event_category' : '#{tapes.producer.producer}', 'event_label' : out_producer, 'value' : 0});"

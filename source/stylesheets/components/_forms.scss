@@ -2,13 +2,20 @@
 
   .form-fieldset {
     border: 0;
-    margin: 0 0 $space-small;
+    margin: 0 0 $space-medium;
     padding: 0;
     position: relative;
     width: 100%;
   }
   .form-fieldset-hidden {
     display: none;
+  }
+  .form-label {
+    color: $color-black-200;
+    @extend .t-18;
+    display: block;
+    font-weight: 700;
+    margin-bottom: $space-x;
   }
   .form-input {
     background: lighten($color-black-500,5%);
@@ -17,6 +24,26 @@
     color: $color-black-50;
     @extend .t-24;
     font-weight: 700;
+    outline: 0;
+    padding: $space-small;
+    width: 100%;
+    &:focus {
+      background: lighten($color-black-400,0%);
+      color: $color-black-0;
+    }
+    &.fail {
+      background: $color-red;
+      color: $color-white;
+    }
+  }
+  .form-textarea {
+    background: lighten($color-black-500,5%);
+    border: 0;
+    border-radius: 0;
+    color: $color-black-50;
+    @extend .t-24;
+    font-weight: 700;
+    min-height: 300px;
     outline: 0;
     padding: $space-small;
     width: 100%;

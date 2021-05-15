@@ -31,14 +31,14 @@
     overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    &.beattapes {
-      background: url('../images/catalogs/site-bg-darkwinter-mobile.jpg') no-repeat scroll right top #1F1D23;
-      background-size: 100% auto;
-      @media (min-width: $mq-tablet) {
-        background: url('../images/catalogs/site-bg-darkwinter-desktop.jpg') no-repeat scroll right top #1F1D23;
-        background-size: cover;
-      }
-    }
+    // &.beattapes {
+    //   background: url('../images/catalogs/site-bg-darkwinter-mobile.jpg') no-repeat scroll right top #1F1D23;
+    //   background-size: 100% auto;
+    //   @media (min-width: $mq-tablet) {
+    //     background: url('../images/catalogs/site-bg-darkwinter-desktop.jpg') no-repeat scroll right top #1F1D23;
+    //     background-size: cover;
+    //   }
+    // }
     &.signup {
       background: url('../images/site-bg-video.jpg') no-repeat scroll center 30% $color-black;
       background-size: cover;
@@ -386,15 +386,13 @@
   }
 
   .block-logo {
-    border: 1px solid #282A57;
+    background: rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0);
     height: 160px;
     margin: 0 0 $space-small 0;
     width: 100%;
     &:hover {
-      border: 1px solid #4B4FA3;
-      .block-logo-img {
-        @include scale(1.05);    
-      }
+      border: 1px solid $color-gold;
     }
   }
   .block-logo-small {
@@ -587,7 +585,7 @@
 
 // Catalog Index
   .catalog {
-    margin: 0 0 $space-medium 0;
+    margin: 0 0 $space-large 0;
     .catalog-cover {
       position: relative;
     }
@@ -598,8 +596,8 @@
       @extend .t-18;
       display: block;
     }
-    .catalog-year {
-      @extend .t-16;
+    .catalog-producer {
+      @extend .t-14;
     }
   }
   .featured {

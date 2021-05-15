@@ -54,6 +54,9 @@
     $color-gold:        $color-gold-500;
     $color-yellow:      $color-yellow-500;
 
+    .color-danger {color: $color-red-300}
+    .color-warning {color: $color-yellow-300}
+
   // Media Queries
     $mq-phonexl:        576px;
     $mq-tablet:         768px;

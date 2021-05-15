@@ -4,11 +4,11 @@ var js = js || {},
 // Scripts
 js.main = {
   init: function () {
+    this.externalLinks();
     this.modal();
     this.musicPlayer();
     this.microSort();
     this.resourceSort();
-    this.externalLinks();
     this.externalLinkTracking();
     this.mailchimpAJAX();
     this.validateForm();
