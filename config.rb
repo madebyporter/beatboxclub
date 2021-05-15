@@ -34,7 +34,6 @@ end
 ENV["base-url"] = "/"
 
 activate :dotenv
-activate :directory_indexes
 
 activate :blog do |blog|
   blog.prefix = "blog"
@@ -60,13 +59,11 @@ end
 # ignore 'templates/*.html'
 if @app.data.try(:site).try(:beattapes)
   data.site.beattapes.each do |id, tapes|
-    proxy "/tapes/#{tapes['tape_id'].downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')}", "/tapes/template.html", 
-    :locals => { :tapes => tapes, :tape_id => tapes.tape_id }, 
-    # :ignore => true
+    proxy "/tapes/#{tapes['tape_id'].downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')}/index.html", "/tapes/template.html", :locals => { :tapes => tapes, :tape_id => tapes.tape_id }, :ignore => true
   end
 end
 
-
+activate :directory_indexes
 
 # Build-specific configuration
 configure :build do
