@@ -1,4 +1,9 @@
 - set_meta_tags :title => "#{tapes.title} by #{tapes.producer}"
+- set_meta_tags :description => "#{tapes.description}"
+- set_meta_tags :thumbnail => "https:#{tapes.cover_art.url}"
+- set_meta_tags :keywords => "beattapes, beats, tapes, instrumentals, hiphop, rap, electronic"
+- set_meta_tags :twitter_card => "summary_large_image"
+- set_meta_tags :site => "https://www.thebeatboxclub.com#{current_page.url}"
 
 script type="text/javascript" src="/javascripts/sc-player.js"
 
