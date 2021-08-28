@@ -6,7 +6,7 @@ js.main = {
   init: function () {
     this.externalLinks();
     this.modal();
-    this.musicPlayer();
+    // this.musicPlayer();
     this.microSort();
     this.resourceSort();
     this.externalLinkTracking();
