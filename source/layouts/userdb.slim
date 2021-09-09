@@ -1,0 +1,118 @@
+== wrap_layout :layout do
+  script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js"
+  script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"
+
+  javascript:
+    var js = js || {};
+    js.main = {
+      init: function () {
+        this.musicPlayer();
+      },
+      musicPlayer: function() {
+        howlers = {}; 
+        var playlist = $('.box-tracks');
+        var track = $('.box-list');
+        var next = $('.box-list.playing').next();
+        var fixedPlayer = $('#bbxmusicplayer');
+        var fpPause = fixedPlayer.find('.box-player-pause');
+        var fpPlay = fixedPlayer.find('.box-player-play');
+        var wrapper = $('.site-wrapper');
+
+        playlist.find(track).each(function () {
+          var e = $(this);
+          var p = e.find('.box-player');
+          var progress = e.find('.box-progress');
+
+          var link = e.data("link");
+          var id = e.data("id");
+          var nid = next.data("id");
+
+          function fpLoad() {
+            if(fixedPlayer.hasClass('closed')){
+              fixedPlayer.removeClass('closed');
+              fixedPlayer.addClass('open');
+            }
+            Object.keys(howlers).forEach(function(key) {
+
+              wrapper.addClass('player-on');
+              fixedPlayer.empty();
+              e.clone().appendTo(fixedPlayer);
+              fixedPlayer.find('.box-player-container').hide();
+              fixedPlayer.find('.box-list').css('top','0px');
+            });
+          }
+
+          // Play and Pause Trigger
+          p.on("click", function(){
+            if (id in howlers){
+              if (e.hasClass('paused')){
+                Object.keys(howlers).forEach(function(key) {
+                  track.removeClass('playing');
+                  track.addClass('unloaded');
+                });
+                e.removeClass('unloaded paused');
+
+                howlers[id].play();
+                e.addClass('playing');
+                console.log("track playing");
+
+              } else if (e.hasClass('playing')){
+                Object.keys(howlers).forEach(function(key) {
+                  track.removeClass('playing');
+                  track.addClass('unloaded');
+                });
+
+                e.removeClass('unloaded playing');
+                howlers[id].pause();
+                e.addClass('paused');
+
+                console.log("track paused");
+
+              } else if (e.hasClass('unloaded')){
+                Object.keys(howlers).forEach(function(key) {
+                  howlers[key].unload();
+                  howlers[key].load();
+                  track.removeClass('paused');
+                  track.removeClass('playing');
+                  track.addClass('unloaded');
+                });
+
+                e.removeClass('unloaded');
+
+                howlers[id].play();
+                e.addClass('playing');
+
+                fpLoad();
+              }
+            } else {
+              Object.keys(howlers).forEach(function(key) {
+                howlers[key].unload();
+                howlers[key].load();
+                track.removeClass('paused');
+                track.removeClass('playing');
+                track.addClass('unloaded');
+              });
+
+              howlers[id] = new Howl({
+                src: [link],
+                //loop: true,
+                onend: function() {
+                  console.log("end");
+                  howlers[nid].play();
+                },
+              });
+              
+              e.removeClass('unloaded');
+              howlers[id].play();
+              e.addClass('playing');
+              console.log("track started");
+
+              fpLoad();
+            };
+          });
+        });
+      }
+    };
+    js.main.init();
+
+  == yield

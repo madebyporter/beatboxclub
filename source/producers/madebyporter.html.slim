@@ -1,174 +1,8 @@
+---
+layout: userdb
+---
+
 - set_meta_tags :title => "Made by Porter"
-
-
-/ <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.1.0/default/snipcart.css" />
-/ <script async src="https://cdn.snipcart.com/themes/v3.1.0/default/snipcart.js"></script>
-/ <div id="snipcart" data-config-modal-style="side" data-api-key="ZTc4MDE3OGMtNDVlNS00OWU2LWFhODctNzFiMmFhOWIyMjRjNjM3MjMyNTA4MzAyNDUxODQ1" hidden></div>
-
-// Isotope for Grid Sorting
-/ == javascript_include_tag  "isotope.pkgd.min"
-javascript:
-  var js = js || {};
-  js.main = {
-    init: function () {
-      this.musicPlayer();
-    },
-    musicPlayer: function() {
-      howlers = {}; 
-      var playlist = $('.box-tracks');
-      var track = $('.box-list');
-      var next = $('.box-list.playing').next();
-      var fixedPlayer = $('#bbxmusicplayer');
-      var fpPause = fixedPlayer.find('.box-player-pause');
-      var fpPlay = fixedPlayer.find('.box-player-play');
-      var wrapper = $('.site-wrapper');
-
-      playlist.find(track).each(function () {
-        var e = $(this);
-        var p = e.find('.box-player');
-        var progress = e.find('.box-progress');
-
-        var link = e.data("link");
-        var id = e.data("id");
-        var nid = next.data("id");
-
-        // function step() {
-        //   Object.keys(howlers).forEach(function(key) {
-        //     var seek = howlers[id].seek() || 0;
-        //     var duration = howlers[id].duration();
-        //     progress.find('.box-progress-inner').css("width", (((seek / duration) * 100) || 0) + '%');
-        //     if (howlers[id].playing()) {
-        //       window.requestAnimationFrame(step.bind(this));
-        //     } else {
-              
-        //     }  
-        //   });
-        // }
-
-        // function seek(per) {
-        //   Object.keys(howlers).forEach(function(key) {
-        //     var seek = howlers[id].seek() || 0;
-        //     var duration = howlers[id].duration();
-        //     if (howlers[id].playing()) {
-        //       howlers[id].seek(duration * per);
-        //     }
-        //   });
-        // }
-
-        function fpLoad() {
-          if(fixedPlayer.hasClass('closed')){
-            fixedPlayer.removeClass('closed');
-            fixedPlayer.addClass('open');
-          }
-          Object.keys(howlers).forEach(function(key) {
-
-            wrapper.addClass('player-on');
-            fixedPlayer.empty();
-            e.clone().appendTo(fixedPlayer);
-            fixedPlayer.find('.box-player-container').hide();
-            fixedPlayer.find('.box-list').css('top','0px');
-          });
-        }
-
-        // Play and Pause Trigger
-        p.on("click", function(){
-          if (id in howlers){
-            if (e.hasClass('paused')){
-              Object.keys(howlers).forEach(function(key) {
-                track.removeClass('playing');
-                track.addClass('unloaded');
-              });
-              e.removeClass('unloaded paused');
-
-              howlers[id].play();
-              e.addClass('playing');
-              console.log("track playing");
-
-            } else if (e.hasClass('playing')){
-              Object.keys(howlers).forEach(function(key) {
-                track.removeClass('playing');
-                track.addClass('unloaded');
-              });
-
-              e.removeClass('unloaded playing');
-              howlers[id].pause();
-              e.addClass('paused');
-
-              console.log("track paused");
-
-            } else if (e.hasClass('unloaded')){
-              Object.keys(howlers).forEach(function(key) {
-                howlers[key].unload();
-                howlers[key].load();
-                track.removeClass('paused');
-                track.removeClass('playing');
-                track.addClass('unloaded');
-              });
-
-              e.removeClass('unloaded');
-
-              howlers[id].play();
-              e.addClass('playing');
-
-              fpLoad();
-            }
-          } else {
-            Object.keys(howlers).forEach(function(key) {
-              howlers[key].unload();
-              howlers[key].load();
-              // window.cancelAnimationFrame(step);
-              track.removeClass('paused');
-              track.removeClass('playing');
-              track.addClass('unloaded');
-            });
-
-            howlers[id] = new Howl({
-              src: [link],
-              //loop: true,
-              onend: function() {
-                console.log("end");
-                howlers[nid].play();
-              },
-              // onplay: function() {
-              //   window.requestAnimationFrame(step.bind(this));
-              // },
-              // onseek: function () {
-              //   window.requestAnimationFrame(step.bind(this));
-              // }
-            });
-            
-            e.removeClass('unloaded');
-            howlers[id].play();
-            e.addClass('playing');
-            console.log("track started");
-
-            fpLoad();
-          };
-        });
-
-        
-
-        // Progress Trigger
-        // progress.on("click", function(e){
-        //   var seek = howlers[id].seek() || 0;
-        //   var duration = howlers[id].duration();
-
-        //   var posX = $(this).offset().left
-        //   var c = e.pageX - posX;
-        //   var w = progress.width();
-        //   var clickpos = c / w;
-        //   var seekpos = duration * clickpos;
-        //   Object.keys(howlers).forEach(function(key) {
-        //     howlers[id].seek(seekpos);
-        //   });
-        // });
-      });
-    }
-  };
-  js.main.init();
-
-script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js"
-script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"
 
 section.block.block-section.block-hero.block-border-bottom
   .container
@@ -179,21 +13,11 @@ section.block.block-section.block-hero.block-border-bottom
             h1.bottom-margin-small
               | Latest Beats from Made by Porter
         .row
-          .col-lg-10
-            p.content Below are the latest beats for download or to buy. Free beats & $20 non-Exclusive licenses includes unlimited plays, views, usage, etc. 
-            p.content-small You can use all the beats on your Youtube or Twitch streams; for songs on streaming platforms, or for your physical locations. Beats are rotated out every month to ensure beats are not played-out.
+          .col-lg-8
+            p.content Below are my latest beats for streaming purposes. Beats play on loop for now. If you're interested in using any of these beats for songs, commercials, etc, please <a href="mailto: general@madebyporter.com">email me</a>.
             
 section.block.block-section.block-resources
   .container
-    .row
-      .col-12
-        .block-resources-controller
-          .row
-            .col-12.col-sm-6.offset-sm-6
-              ul.block-resources-sortfilter
-                li.selected data-filter=".box-list" Latest
-                li data-filter=".Free" Free
-                li data-filter=".Non-Exclusive" Paid
     .row
       .col-12
         .box-tracks
@@ -215,17 +39,7 @@ section.block.block-section.block-resources
                           span.box-meta-author by #{track.author}
                         .box-meta-ele
                           span.box-meta-bpm BPM #{track.bpm}
-                        / .box-meta-ele
-                        /   span.box-meta-genre #{track.genre}
                         .box-meta-ele
                           - track.vibe.each do |v|
                             span.box-meta-tag #{v}
-                        
-                / .col-12.col-md-2
-                /   .row.box-action
-                /     .col-12
-                /       - if track.beat_type == 'Non-Exclusive'
-                /         button.btn.btn-secondary.btn-small.box-cta class="snipcart-add-item" data-item-id="#{track.name}" data-item-price="20.00" data-item-url="/boxes/madebyporter" data-item-description="Non-exclusive MP3 Beat" data-item-name="#{track.name}" data-item-file-guid="#{track.snipcart_guid}" $20
-                /       - else
-                /         = link_to "$0", "https:#{track.beat_zip.url}", :class => "btn btn-secondary btn-small box-cta", :onclick => "gtag('event', 'click', {'event_category' : 'Beat Download', 'event_label' : '#{track.name}', 'value' : 0});", :download => "download"
 aside#bbxmusicplayer.bbx-musicplayer.closed
