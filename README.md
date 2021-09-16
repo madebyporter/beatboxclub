@@ -13,5 +13,11 @@ bundle install
 ## Start development server
 
 ```
-middleman server
+bundle exec middleman server
+```
+
+## Build for production
+
+```
+bundle exec middleman build
 ```
