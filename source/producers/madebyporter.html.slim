@@ -15,31 +15,51 @@ section.block.block-section.block-hero.block-border-bottom
         .row
           .col-lg-8
             p.content Below are my latest beats for streaming purposes. Beats play on loop for now. If you're interested in using any of these beats for songs, commercials, etc, please <a href="mailto: general@madebyporter.com">email me</a>.
-            
-section.block.block-section.block-resources
-  .container
-    .row
-      .col-12
-        .box-tracks
-          - data.site.track.each do |id, track|
-            div class="box-list #{track.beat_type}" id="#{track.name}" data-date="#{track._meta.created_at}" data-id="#{track.name}" data-link="#{track.beat.url}"
-              .row
-                .col-12.col-md-10
-                  .row.box-main
-                    .col-3.col-sm-2.col-md-2.col-lg-1.box-player-container
-                      .box-player
-                        .box-player-play
-                          i class="fas fa-play"
-                        .box-player-pause
-                          i class="fas fa-pause"
-                    .col-9.col-sm-10.col-md-10.col-lg-9.box-meta-container
-                      h5.box-title #{track.name}
-                      .box-meta
-                        .box-meta-ele
-                          span.box-meta-author by #{track.author}
-                        .box-meta-ele
-                          span.box-meta-bpm BPM #{track.bpm}
-                        .box-meta-ele
-                          - track.vibe.each do |v|
-                            span.box-meta-tag #{v}
+
+script type="text/javascript"
+  | const tracks = [
+  - data.site.track.each do |id, track|
+    | {
+    |   id: "#{id}",
+    |   name: "#{track.name}",
+    |   beatType: "#{track.beat_type}",
+    |   createdAt: "#{track._meta.created_at}",
+    |   producer: "#{track.author}",
+    |   bpm: "#{track.bpm}",
+    |   vibe: #{track.vibe.to_json},
+    |   url: "#{track.beat.url}",
+    | },
+  | ];
+
+div#react-player
+
+/ TODO: Remove comment below after implementing React playlist
+
+/ section.block.block-section.block-resources
+/   .container
+/     .row
+/       .col-12
+/         .box-tracks
+/           - data.site.track.each do |id, track|
+/             div class="box-list #{track.beat_type}" id="#{track.name}" data-date="#{track._meta.created_at}" data-id="#{track.name}" data-link="#{track.beat.url}"
+/               .row
+/                 .col-12.col-md-10
+/                   .row.box-main
+/                     .col-3.col-sm-2.col-md-2.col-lg-1.box-player-container
+/                       .box-player
+/                         .box-player-play
+/                           i class="fas fa-play"
+/                         .box-player-pause
+/                           i class="fas fa-pause"
+/                     .col-9.col-sm-10.col-md-10.col-lg-9.box-meta-container
+/                       h5.box-title #{track.name}
+/                       .box-meta
+/                         .box-meta-ele
+/                           span.box-meta-author by #{track.author}
+/                         .box-meta-ele
+/                           span.box-meta-bpm BPM #{track.bpm}
+/                         .box-meta-ele
+/                           - track.vibe.each do |v|
+/                             span.box-meta-tag #{v}
+
 aside#bbxmusicplayer.bbx-musicplayer.closed
