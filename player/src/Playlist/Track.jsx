@@ -1,8 +1,5 @@
 import React from "react";
 
-// TODO: This is what every row looked like before, find out what the data attributes were for:
-// div class="box-list #{track.beat_type}" id="#{track.name}" data-date="#{track._meta.created_at}" data-id="#{track.name}" data-link="#{track.beat.url}"
-
 const Track = ({ track }) => (
   <div className={`box-list ${track.beatType}`} id={track.name}>
     <div className="row">
