@@ -1,13 +1,13 @@
 import React from "react";
 
-const Track = ({ track }) => (
+const Track = ({ track, onPlay }) => (
   <div className={`box-list ${track.beatType}`} id={track.name}>
     <div className="row">
       <div className="col-12 col-md-10">
         <div className="row box-main">
           <div className="col-3 col-sm-2 col-md-2 col-lg-1 box-player-container">
             <div className="box-player">
-              <div className="box-player-play">
+              <div className="box-player-play" onClick={onPlay}>
                 <i className="fas fa-play" />
               </div>
               <div className="box-player-pause">

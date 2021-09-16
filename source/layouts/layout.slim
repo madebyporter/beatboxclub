@@ -116,4 +116,10 @@ html
                 = link_to "Privacy Policy", "privacy", :class => "nav-footer-link"
                 = link_to "Terms of Service", "terms", :class => "nav-footer-link"
                 = link_to "Contact", "contact", :class => "nav-footer-link"
-          
+
+    - if current_page.data.include_react_player
+      #react-player
+      - if environment == :development
+        script type="text/javascript" src="#{ENV['WEBPACK_DEVELOPMENT_SERVER_URL']}/react-player.bundle.js"
+      - else
+        script type="text/javascript" src="/javascripts/react-player/react-player.bundle.js"

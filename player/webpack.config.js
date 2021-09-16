@@ -1,7 +1,5 @@
 const path = require("path");
 
-// TODO: Set up production build flow (incl. minify + uglify)
-
 module.exports = {
   entry: "./src/index.jsx",
   output: {
@@ -26,4 +24,7 @@ module.exports = {
     allowedHosts: "all",
     port: 8081,
   },
+  ...(process.env.NODE_ENV === "development"
+    ? { devtool: "eval-source-map" }
+    : {}),
 };

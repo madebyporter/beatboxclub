@@ -6,7 +6,7 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server --hot --mode development",
+    "start": "NODE_ENV=development webpack-dev-server --hot --mode development",
     "build": "webpack --mode production"
   },
   "dependencies": {

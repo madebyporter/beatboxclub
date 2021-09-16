@@ -9,7 +9,7 @@ const trackComparisonFunction = (track1, track2) => {
     : 1;
 };
 
-const Playlist = ({ tracks }) => {
+const Playlist = ({ tracks, onPlay }) => {
   const sortedTracks = [...tracks].sort(trackComparisonFunction);
 
   return (
@@ -19,7 +19,7 @@ const Playlist = ({ tracks }) => {
           <div className="col-12">
             <div className="box-tracks">
               {sortedTracks.map((track) => (
-                <Track key={track.id} track={track} />
+                <Track key={track.id} track={track} onPlay={onPlay} />
               ))}
             </div>
           </div>
