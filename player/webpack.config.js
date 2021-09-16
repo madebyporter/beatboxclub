@@ -5,8 +5,8 @@ const path = require("path");
 module.exports = {
   entry: "./src/index.jsx",
   output: {
-    path: path.resolve(__dirname, "build"),
-    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist"),
+    filename: "react-player.bundle.js",
     chunkFilename: "[id].js",
     publicPath: "",
   },
@@ -21,5 +21,9 @@ module.exports = {
         exclude: /node_modules/,
       },
     ],
+  },
+  devServer: {
+    allowedHosts: "all",
+    port: 8081,
   },
 };

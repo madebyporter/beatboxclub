@@ -34,4 +34,7 @@ script type="text/javascript"
     | },
   | ];
 
-script type="text/javascript" src="http://localhost:8081/bundle.js"
+- if environment == :development
+  script type="text/javascript" src="#{ENV['WEBPACK_DEVELOPMENT_SERVER_URL']}/react-player.bundle.js"
+- else
+  script type="text/javascript" src="/javascripts/react-player/react-player.bundle.js"

@@ -1,44 +1,34 @@
 # The Beatbox Club
 
-## Installing dependencies
+## Setting up the development environment
 
 Install Ruby + RubyGems.
+Install Node + Node.js.
 
 Then:
 
 ```
 bundle install
+npm install
+cd player && npm install
 ```
 
-## Development
+Copy the file `.env_sample` to `.env` and fill in the details.
 
-### Start Middleman development server
+If you want the React parts of the site to work when you open the site on other devices than your development machine (e.g. on your phone), edit your `.env` file and replace `localhost` in the `WEBPACK_DEVELOPMENT_SERVER_URL` with the ip address of your development computer. (Your ip address is shown to you when you start the Middleman server.)
+
+## Start Middleman development server
 
 ```
 bundle exec middleman server
 ```
 
-### Start React player development server
-
-TODO: Possibly integrate this into Middleman build script \
-NOTE: For this to work, the Middleman site currently needs to be opened at http://localhost:PORT/, not via another hostname
-
-```
-cd player && npm start
-```
+This automatically starts the Webpack development server, too.
 
 ## Build for production
-
-### Build Middleman site
 
 ```
 bundle exec middleman build
 ```
 
-### Build React player JS
-
-TODO: Possibly integrate this into Middleman build script
-
-```
-cd player && npm build
-```
+This automatically builds the Webpack JS bundle, too.

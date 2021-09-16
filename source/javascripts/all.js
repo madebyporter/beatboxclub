@@ -6,7 +6,6 @@ js.main = {
   init: function () {
     this.externalLinks();
     this.modal();
-    this.microSort();
     this.resourceSort();
     this.externalLinkTracking();
     this.mailchimpAJAX();
@@ -108,29 +107,6 @@ js.main = {
         callback: callbackFunction,
       });
     });
-  },
-  microSort: function() {
-    var $grid = $('.box-tracks').isotope({
-      // options
-      itemSelector : '.box-list',
-      transitionDuration: 0,
-      stamp: '.sticky',
-      getSortData: {
-        date: '[data-date]'
-      },
-      sortBy : 'date',
-      sortAscending: false
-    });
-
-    $filter = $('.block-resources-sortfilter li');
-    $filter.on('click', function() {
-      var filterValue = $(this).attr('data-filter');
-      $filter.removeClass('selected');
-      $(this).addClass('selected');
-      console.log (filterValue);
-      $grid.isotope({ filter: filterValue });
-    });
-    
   },
   modal: function (e) {
     var bd = $('body');

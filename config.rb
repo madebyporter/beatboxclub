@@ -74,3 +74,18 @@ configure :build do
   # Minify Javascript on build
   activate :minify_javascript
 end
+
+# Webpack
+activate :external_pipeline,
+  name: :webpack,
+  command: build? ? 'cd player && npm run build' : 'cd player && npm start',
+  source: 'invalid-directory', # we don't want our JS to be processed by Middleman, so we import it manually below
+  latency: 1
+
+configure :build do
+  PLAYER_DIST_DIR = "player/dist"
+
+  Dir.entries(PLAYER_DIST_DIR).select { |f| File.file? File.join(PLAYER_DIST_DIR, f) }.each do |filename|
+    import_file File.join(PLAYER_DIST_DIR, filename), File.join("javascripts", "react-player", filename)
+  end
+end
