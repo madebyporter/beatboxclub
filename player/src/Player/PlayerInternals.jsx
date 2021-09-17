@@ -2,7 +2,17 @@ import React from "react";
 import ReactPlayer from "react-player";
 
 const PlayerInternals = React.forwardRef(
-  ({ currentTrack, isPlaying, isLooping, onPlayNext }, ref) => (
+  (
+    {
+      currentTrack,
+      isPlaying,
+      isLooping,
+      onPlayNext,
+      onDurationChanged,
+      onProgressChanged,
+    },
+    ref
+  ) => (
     <ReactPlayer
       width={0}
       height={0}
@@ -11,6 +21,11 @@ const PlayerInternals = React.forwardRef(
       playing={isPlaying}
       loop={isLooping}
       onEnded={onPlayNext}
+      onDuration={onDurationChanged}
+      progressInterval={200}
+      onProgress={(progressInfo) =>
+        onProgressChanged(progressInfo.playedSeconds)
+      }
     />
   )
 );

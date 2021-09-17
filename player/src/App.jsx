@@ -4,6 +4,7 @@ import Playlist from "./Playlist/Playlist";
 import PlayerPortal from "./Player/PlayerPortal";
 import Player from "./Player/Player";
 import PlayerInternals from "./Player/PlayerInternals";
+import useSeekInfo from "./hooks/useSeekInfo";
 
 const App = ({ tracks: unsortedTracks }) => {
   const playerRef = useRef();
@@ -22,6 +23,9 @@ const App = ({ tracks: unsortedTracks }) => {
     onStepForward,
   } = usePlaylistFunctionality(unsortedTracks, playerRef);
 
+  const { duration, progress, onDurationChanged, onProgressChanged } =
+    useSeekInfo(currentTrack);
+
   return (
     <>
       <Playlist
@@ -34,6 +38,8 @@ const App = ({ tracks: unsortedTracks }) => {
       <PlayerPortal>
         <Player
           track={currentTrack}
+          duration={duration}
+          progress={progress}
           isPlaying={isPlaying}
           isLooping={isLooping}
           isShuffling={isShuffling}
@@ -52,6 +58,8 @@ const App = ({ tracks: unsortedTracks }) => {
           isPlaying={isPlaying}
           isLooping={isLooping}
           onPlayNext={onStepForward}
+          onDurationChanged={onDurationChanged}
+          onProgressChanged={onProgressChanged}
         />
       )}
     </>

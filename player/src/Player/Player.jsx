@@ -4,6 +4,8 @@ import PlayerInner from "./PlayerInner";
 
 const Player = ({
   track,
+  duration,
+  progress,
   isPlaying,
   isLooping,
   isShuffling,
@@ -18,6 +20,8 @@ const Player = ({
     {!!track && (
       <PlayerInner
         track={track}
+        duration={duration}
+        progress={progress}
         isPlaying={isPlaying}
         isLooping={isLooping}
         isShuffling={isShuffling}
