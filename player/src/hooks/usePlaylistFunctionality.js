@@ -1,27 +1,39 @@
-import { useState } from "react";
 import usePlayingState from "./usePlayingState";
-import useTrackOrderFunctionality from "./useTrackOrderFunctionality";
+import usePlaybackOrderFunctionality from "./usePlaybackOrderFunctionality";
+import useSortedTracks from "./useSortedTracks";
+import useCurrentTrack from "./useCurrentTrack";
 
-const usePlaylistFunctionality = (tracks) => {
-  const [currentTrackId, setCurrentTrackId] = useState(undefined);
+const usePlaylistFunctionality = (unsortedTracks, playerRef) => {
+  const tracks = useSortedTracks(unsortedTracks);
+
+  const { currentTrack, setCurrentTrackId } = useCurrentTrack(tracks);
 
   const { isPlaying, onPlay, onPause } = usePlayingState(
-    currentTrackId,
+    currentTrack,
     setCurrentTrackId
   );
 
-  const { isShuffling, onToggleShuffling, onPlayPrevious, onPlayNext } =
-    useTrackOrderFunctionality(tracks, setCurrentTrackId);
+  const {
+    isLooping,
+    isShuffling,
+    onToggleIsLooping,
+    onToggleIsShuffling,
+    onStepBack,
+    onStepForward,
+  } = usePlaybackOrderFunctionality(tracks, setCurrentTrackId, playerRef);
 
   return {
-    currentTrackId,
+    tracks,
+    currentTrack,
     isPlaying,
+    isLooping,
     isShuffling,
     onPlay,
     onPause,
-    onPlayPrevious,
-    onPlayNext,
-    onToggleShuffling,
+    onToggleIsLooping,
+    onToggleIsShuffling,
+    onStepBack,
+    onStepForward,
   };
 };
 

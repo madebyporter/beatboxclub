@@ -1,53 +1,35 @@
 import React from "react";
-import ReactPlayer from "react-player";
 import BottomBar from "./BottomBar";
-import PlayerUI from "./PlayerUI";
-import usePlayerFunctionality from "./hooks/usePlayerFunctionality";
+import PlayerInner from "./PlayerInner";
 
 const Player = ({
   track,
   isPlaying,
+  isLooping,
   isShuffling,
-  onPlay,
-  onPause,
-  onPlayPrevious,
-  onPlayNext,
-  onTrackEnded,
-  onToggleShuffling,
-}) => {
-  const { playerRef, isLooping, toggleIsLooping, onBackClick } =
-    usePlayerFunctionality(onPlayPrevious);
-
-  return (
-    <BottomBar isOpen={!!track}>
-      {!!track && (
-        <>
-          <ReactPlayer
-            url={track.url}
-            playing={isPlaying}
-            loop={isLooping}
-            width={0}
-            height={0}
-            ref={playerRef}
-            onEnded={onTrackEnded}
-          />
-
-          <PlayerUI
-            track={track}
-            isPlaying={isPlaying}
-            isLooping={isLooping}
-            isShuffling={isShuffling}
-            onPlayClick={() => onPlay(track.id)}
-            onPauseClick={onPause}
-            onBackClick={onBackClick}
-            onNextClick={onPlayNext}
-            onToggleLoopingClick={toggleIsLooping}
-            onToggleShufflingClick={onToggleShuffling}
-          />
-        </>
-      )}
-    </BottomBar>
-  );
-};
+  onPlayClick,
+  onPauseClick,
+  onToggleLoopingClick,
+  onToggleShufflingClick,
+  onStepBackClick,
+  onStepForwardClick,
+}) => (
+  <BottomBar isOpen={!!track}>
+    {!!track && (
+      <PlayerInner
+        track={track}
+        isPlaying={isPlaying}
+        isLooping={isLooping}
+        isShuffling={isShuffling}
+        onPlayClick={onPlayClick}
+        onPauseClick={onPauseClick}
+        onToggleLoopingClick={onToggleLoopingClick}
+        onToggleShufflingClick={onToggleShufflingClick}
+        onStepBackClick={onStepBackClick}
+        onStepForwardClick={onStepForwardClick}
+      />
+    )}
+  </BottomBar>
+);
 
 export default Player;

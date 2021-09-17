@@ -1,49 +1,59 @@
-import React from "react";
+import React, { useRef } from "react";
+import usePlaylistFunctionality from "./hooks/usePlaylistFunctionality";
 import Playlist from "./Playlist/Playlist";
 import PlayerPortal from "./Player/PlayerPortal";
 import Player from "./Player/Player";
-import { getTrackWithId } from "./util";
-import usePlaylistFunctionality from "./hooks/usePlaylistFunctionality";
-import useSortedTracks from "./hooks/useSortedTracks";
+import PlayerInternals from "./Player/PlayerInternals";
 
 const App = ({ tracks: unsortedTracks }) => {
-  const tracks = useSortedTracks(unsortedTracks);
+  const playerRef = useRef();
 
   const {
-    currentTrackId,
+    tracks,
+    currentTrack,
     isPlaying,
+    isLooping,
     isShuffling,
     onPlay,
     onPause,
-    onPlayPrevious,
-    onPlayNext,
-    onToggleShuffling,
-  } = usePlaylistFunctionality(tracks);
+    onToggleIsLooping,
+    onToggleIsShuffling,
+    onStepBack,
+    onStepForward,
+  } = usePlaylistFunctionality(unsortedTracks, playerRef);
 
   return (
     <>
       <Playlist
         tracks={tracks}
-        currentTrackId={currentTrackId}
+        currentTrackId={currentTrack?.id}
         isPlaying={isPlaying}
         onPlay={onPlay}
         onPause={onPause}
       />
       <PlayerPortal>
         <Player
-          track={
-            currentTrackId ? getTrackWithId(tracks, currentTrackId) : undefined
-          }
+          track={currentTrack}
           isPlaying={isPlaying}
+          isLooping={isLooping}
           isShuffling={isShuffling}
-          onPlay={onPlay}
-          onPause={onPause}
-          onPlayPrevious={onPlayPrevious}
-          onPlayNext={onPlayNext}
-          onToggleShuffling={onToggleShuffling}
-          onTrackEnded={onPlayNext}
+          onPlayClick={() => onPlay(currentTrack.id)}
+          onPauseClick={onPause}
+          onToggleLoopingClick={onToggleIsLooping}
+          onToggleShufflingClick={onToggleIsShuffling}
+          onStepBackClick={onStepBack}
+          onStepForwardClick={onStepForward}
         />
       </PlayerPortal>
+      {!!currentTrack && (
+        <PlayerInternals
+          ref={playerRef}
+          currentTrack={currentTrack}
+          isPlaying={isPlaying}
+          isLooping={isLooping}
+          onPlayNext={onStepForward}
+        />
+      )}
     </>
   );
 };

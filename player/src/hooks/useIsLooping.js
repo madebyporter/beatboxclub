@@ -6,9 +6,9 @@ import { useState } from "react";
 const useIsLooping = () => {
   const [isLooping, setIsLooping] = useState(false);
 
-  const toggleIsLooping = () => setIsLooping((value) => !value);
+  const onToggleIsLooping = () => setIsLooping((value) => !value);
 
-  return { isLooping, toggleIsLooping };
+  return { isLooping, onToggleIsLooping };
 };
 
 export default useIsLooping;

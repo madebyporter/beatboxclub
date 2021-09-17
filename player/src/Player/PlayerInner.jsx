@@ -1,16 +1,16 @@
 import React from "react";
 
-const PlayerUI = ({
+const PlayerInner = ({
   track,
   isPlaying,
   isLooping,
   isShuffling,
   onPlayClick,
   onPauseClick,
-  onBackClick,
-  onNextClick,
   onToggleLoopingClick,
   onToggleShufflingClick,
+  onStepBackClick,
+  onStepForwardClick,
 }) => (
   <div
     className={`box-list ${track.beatType} ${isPlaying ? "playing" : "paused"}`}
@@ -20,7 +20,7 @@ const PlayerUI = ({
         <div className="row box-main">
           <div className="col-4 col-sm-3 col-md-3 col-lg-2 box-player-container">
             <div className="box-player">
-              <div onClick={onBackClick}>
+              <div onClick={onStepBackClick}>
                 <i className="fas fa-backward" />
               </div>
               <div className="box-player-play" onClick={onPlayClick}>
@@ -29,7 +29,7 @@ const PlayerUI = ({
               <div className="box-player-pause" onClick={onPauseClick}>
                 <i className="fas fa-pause" />
               </div>
-              <div onClick={onNextClick}>
+              <div onClick={onStepForwardClick}>
                 <i className="fas fa-forward" />
               </div>
               <div
@@ -70,4 +70,4 @@ const PlayerUI = ({
   </div>
 );
 
-export default PlayerUI;
+export default PlayerInner;
