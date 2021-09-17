@@ -33,6 +33,11 @@
     flex-direction: row;
     justify-content: space-between;
   }
+  .box-player-loop.looping {
+    & > * {
+      color: $color-gold;
+    }
+  }
   .box-meta-ele > * {
     @media (min-width: $mq-phonexl) {
       margin-bottom: 0;

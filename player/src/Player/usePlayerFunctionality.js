@@ -1,16 +1,19 @@
 import { useRef } from "react";
+import useIsLooping from "./useIsLooping";
+import useOnBackClick from "./useOnBackClick";
 
 const usePlayerFunctionality = (onPlayPrevious) => {
   const playerRef = useRef();
 
-  const onBackClick = () => {
-    const player = playerRef.current;
+  const { isLooping, toggleIsLooping } = useIsLooping();
+  const onBackClick = useOnBackClick(playerRef, onPlayPrevious);
 
-    if (player && player.getCurrentTime() > 3) player.seekTo(0);
-    else onPlayPrevious();
+  return {
+    playerRef,
+    isLooping,
+    toggleIsLooping,
+    onBackClick,
   };
-
-  return { playerRef, onBackClick };
 };
 
 export default usePlayerFunctionality;

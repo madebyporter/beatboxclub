@@ -13,7 +13,8 @@ const Player = ({
   onPlayNext,
   onTrackEnded,
 }) => {
-  const { playerRef, onBackClick } = usePlayerFunctionality(onPlayPrevious);
+  const { playerRef, isLooping, toggleIsLooping, onBackClick } =
+    usePlayerFunctionality(onPlayPrevious);
 
   return (
     <BottomBar isOpen={!!track}>
@@ -22,6 +23,7 @@ const Player = ({
           <ReactPlayer
             url={track.url}
             playing={isPlaying}
+            loop={isLooping}
             width={0}
             height={0}
             ref={playerRef}
@@ -31,10 +33,12 @@ const Player = ({
           <PlayerUI
             track={track}
             isPlaying={isPlaying}
+            isLooping={isLooping}
             onPlayClick={onPlay}
             onPauseClick={onPause}
             onBackClick={onBackClick}
             onNextClick={onPlayNext}
+            onToggleLoopingClick={toggleIsLooping}
           />
         </>
       )}
