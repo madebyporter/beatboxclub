@@ -4,11 +4,13 @@ const PlayerUI = ({
   track,
   isPlaying,
   isLooping,
+  isShuffling,
   onPlayClick,
   onPauseClick,
   onBackClick,
   onNextClick,
   onToggleLoopingClick,
+  onToggleShufflingClick,
 }) => (
   <div
     className={`box-list ${track.beatType} ${isPlaying ? "playing" : "paused"}`}
@@ -31,10 +33,16 @@ const PlayerUI = ({
                 <i className="fas fa-forward" />
               </div>
               <div
-                className={`box-player-loop ${isLooping ? "looping" : ""}`}
+                className={`box-player-loop ${isLooping ? "active" : ""}`}
                 onClick={onToggleLoopingClick}
               >
                 <i className="fas fa-redo" />
+              </div>
+              <div
+                className={`box-player-shuffle ${isShuffling ? "active" : ""}`}
+                onClick={onToggleShufflingClick}
+              >
+                <i className="fas fa-random" />
               </div>
             </div>
           </div>

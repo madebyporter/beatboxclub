@@ -7,11 +7,13 @@ import usePlayerFunctionality from "./usePlayerFunctionality";
 const Player = ({
   track,
   isPlaying,
+  isShuffling,
   onPlay,
   onPause,
   onPlayPrevious,
   onPlayNext,
   onTrackEnded,
+  onToggleShuffling,
 }) => {
   const { playerRef, isLooping, toggleIsLooping, onBackClick } =
     usePlayerFunctionality(onPlayPrevious);
@@ -34,11 +36,13 @@ const Player = ({
             track={track}
             isPlaying={isPlaying}
             isLooping={isLooping}
-            onPlayClick={onPlay}
+            isShuffling={isShuffling}
+            onPlayClick={() => onPlay(track.id)}
             onPauseClick={onPause}
             onBackClick={onBackClick}
             onNextClick={onPlayNext}
             onToggleLoopingClick={toggleIsLooping}
+            onToggleShufflingClick={onToggleShuffling}
           />
         </>
       )}

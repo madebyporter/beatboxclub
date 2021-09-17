@@ -3,8 +3,8 @@ import Playlist from "./Playlist/Playlist";
 import PlayerPortal from "./Player/PlayerPortal";
 import Player from "./Player/Player";
 import { getTrackWithId } from "./util";
-import usePlaylistFunctionality from "./usePlaylistFunctionality";
-import useSortedTracks from "./useSortedTracks";
+import usePlaylistFunctionality from "./hooks/usePlaylistFunctionality";
+import useSortedTracks from "./hooks/useSortedTracks";
 
 const App = ({ tracks: unsortedTracks }) => {
   const tracks = useSortedTracks(unsortedTracks);
@@ -12,10 +12,12 @@ const App = ({ tracks: unsortedTracks }) => {
   const {
     currentTrackId,
     isPlaying,
+    isShuffling,
     onPlay,
     onPause,
     onPlayPrevious,
     onPlayNext,
+    onToggleShuffling,
   } = usePlaylistFunctionality(tracks);
 
   return (
@@ -33,10 +35,12 @@ const App = ({ tracks: unsortedTracks }) => {
             currentTrackId ? getTrackWithId(tracks, currentTrackId) : undefined
           }
           isPlaying={isPlaying}
+          isShuffling={isShuffling}
           onPlay={onPlay}
           onPause={onPause}
           onPlayPrevious={onPlayPrevious}
           onPlayNext={onPlayNext}
+          onToggleShuffling={onToggleShuffling}
           onTrackEnded={onPlayNext}
         />
       </PlayerPortal>
