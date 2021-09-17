@@ -19,13 +19,13 @@ const PlayerUI = ({
               <div onClick={onBackClick}>
                 <i className="fas fa-backward" />
               </div>
-              <div className="box-player-play" onClick={onPlay}>
+              <div className="box-player-play" onClick={onPlayClick}>
                 <i className="fas fa-play" />
               </div>
-              <div className="box-player-pause" onClick={onPause}>
+              <div className="box-player-pause" onClick={onPauseClick}>
                 <i className="fas fa-pause" />
               </div>
-              <div onClick={onPlayNext}>
+              <div onClick={onNextClick}>
                 <i className="fas fa-forward" />
               </div>
             </div>

@@ -16,7 +16,7 @@ const Player = ({
   const { playerRef, onBackClick } = usePlayerFunctionality(onPlayPrevious);
 
   return (
-    <BottomBar>
+    <BottomBar isOpen={!!track}>
       {!!track && (
         <>
           <ReactPlayer
