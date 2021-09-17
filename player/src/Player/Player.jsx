@@ -2,7 +2,9 @@ import React from "react";
 import ReactPlayer from "react-player";
 import useSiteWrapperPlayerOnClass from "./useSiteWrapperPlayerOnClass";
 
-const Player = ({ isOpen, isPlaying, track, onPlay, onPause }) => {
+const Player = ({ track, isPlaying, onPlay, onPause }) => {
+  const isOpen = !!track;
+
   useSiteWrapperPlayerOnClass(isOpen);
 
   return (
