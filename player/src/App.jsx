@@ -2,64 +2,26 @@ import React, { useState } from "react";
 import Playlist from "./Playlist/Playlist";
 import PlayerPortal from "./Player/PlayerPortal";
 import Player from "./Player/Player";
+import { getTrackWithId } from "./util";
+import usePlaylistFunctionality from "./usePlaylistFunctionality";
+import useSortedTracks from "./useSortedTracks";
 
-// TODO: Split this into multiple components
+const App = ({ tracks: unsortedTracks }) => {
+  const tracks = useSortedTracks(unsortedTracks);
 
-const trackComparisonFunction = (track1, track2) => {
-  return track1.createdAt === track2.createdAt
-    ? 0
-    : track1.createdAt > track2.createdAt
-    ? -1
-    : 1;
-};
-
-const App = ({ tracks }) => {
-  const sortedTracks = [...tracks].sort(trackComparisonFunction);
-
-  const [currentTrackId, setCurrentTrackId] = useState(undefined);
-  const [isPlaying, setIsPlaying] = useState(true);
-
-  const onPlay = (trackId) => {
-    if (typeof trackId === "string") setCurrentTrackId(trackId);
-    else if (!currentTrackId)
-      throw new Error("No trackId selected for playback");
-
-    setIsPlaying(true);
-  };
-
-  const onPause = () => setIsPlaying(false);
-
-  const getTrackIndexForTrackId = (trackId) =>
-    sortedTracks.findIndex(({ id }) => id === trackId);
-
-  const getTrackWithId = (trackId) =>
-    sortedTracks.find(({ id }) => id === trackId);
-
-  const onPlayPrevious = () => {
-    setCurrentTrackId((currentId) => {
-      const trackIndex = getTrackIndexForTrackId(currentId);
-      const previousIndex =
-        (sortedTracks.length + trackIndex - 1) % sortedTracks.length;
-      const previousTrackId = sortedTracks[previousIndex].id;
-
-      return previousTrackId;
-    });
-  };
-
-  const onPlayNext = () => {
-    setCurrentTrackId((currentId) => {
-      const trackIndex = getTrackIndexForTrackId(currentId);
-      const nextIndex = (trackIndex + 1) % sortedTracks.length;
-      const nextTrackId = sortedTracks[nextIndex].id;
-
-      return nextTrackId;
-    });
-  };
+  const {
+    currentTrackId,
+    isPlaying,
+    onPlay,
+    onPause,
+    onPlayPrevious,
+    onPlayNext,
+  } = usePlaylistFunctionality(tracks);
 
   return (
     <>
       <Playlist
-        tracks={sortedTracks}
+        tracks={tracks}
         currentTrackId={currentTrackId}
         isPlaying={isPlaying}
         onPlay={onPlay}
@@ -67,7 +29,9 @@ const App = ({ tracks }) => {
       />
       <PlayerPortal>
         <Player
-          track={currentTrackId ? getTrackWithId(currentTrackId) : undefined}
+          track={
+            currentTrackId ? getTrackWithId(tracks, currentTrackId) : undefined
+          }
           isPlaying={isPlaying}
           onPlay={onPlay}
           onPause={onPause}
