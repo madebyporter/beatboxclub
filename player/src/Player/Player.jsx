@@ -2,7 +2,7 @@ import React from "react";
 import ReactPlayer from "react-player";
 import BottomBar from "./BottomBar";
 import PlayerUI from "./PlayerUI";
-import usePlayerFunctionality from "./usePlayerFunctionality";
+import usePlayerFunctionality from "./hooks/usePlayerFunctionality";
 
 const Player = ({
   track,

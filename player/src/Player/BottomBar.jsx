@@ -1,5 +1,5 @@
 import React from "react";
-import useSiteWrapperPlayerOnClass from "./useSiteWrapperPlayerOnClass";
+import useSiteWrapperPlayerOnClass from "./hooks/useSiteWrapperPlayerOnClass";
 
 const BottomBar = ({ isOpen, children }) => {
   useSiteWrapperPlayerOnClass(isOpen);
