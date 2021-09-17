@@ -15,7 +15,15 @@ cd player && npm install
 
 Copy the file `.env_sample` to `.env` and fill in the details.
 
-If you want the React parts of the site to work when you open the site on other devices than your development machine (e.g. on your phone), edit your `.env` file and replace `localhost` in the `WEBPACK_DEVELOPMENT_SERVER_URL` with the ip address of your development computer. (Your ip address is shown to you when you start the Middleman server.)
+### Making React work when accessed from other devices
+
+If you want the React parts of the site to work when accessed from other devices (e.g. from your phone), change the `WEBPACK_DEVELOPMENT_SERVER_URL` in your `.env` file to look like this, where you replace `xx.xx.xx.xx` with the ip address of your development computer.
+
+```
+WEBPACK_DEVELOPMENT_SERVER_URL="http://xx.xx.xx.xx:8081"
+```
+
+Your ip address is shown to you when you start the Middleman server.
 
 ## Start Middleman development server
 
