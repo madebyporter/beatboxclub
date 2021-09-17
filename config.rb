@@ -86,6 +86,6 @@ configure :build do
   PLAYER_DIST_DIR = "player/dist"
 
   Dir.entries(PLAYER_DIST_DIR).select { |f| File.file? File.join(PLAYER_DIST_DIR, f) }.each do |filename|
-    import_file File.join(PLAYER_DIST_DIR, filename), File.join("javascripts", "react-player", filename)
+    import_file File.join(PLAYER_DIST_DIR, filename), File.join("javascripts", "beatbox-player", filename)
   end
 end

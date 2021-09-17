@@ -6,5 +6,5 @@ ReactDOM.render(
   <React.StrictMode>
     <App tracks={tracks} />
   </React.StrictMode>,
-  document.getElementById("react-playlist")
+  document.getElementById("beatbox-playlist")
 );

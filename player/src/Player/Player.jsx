@@ -9,7 +9,7 @@ const Player = ({ isOpen, track }) => {
     <aside className={`bbx-musicplayer ${isOpen ? "open" : "closed"}`}>
       {track.name}
     </aside>,
-    document.getElementById("react-player")
+    document.getElementById("beatbox-player")
   );
 };
 

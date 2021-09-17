@@ -4,7 +4,7 @@ module.exports = {
   entry: "./src/index.jsx",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "react-player.bundle.js",
+    filename: "beatbox-player.bundle.js",
     chunkFilename: "[id].js",
     publicPath: "",
   },
