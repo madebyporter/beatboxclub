@@ -27,7 +27,7 @@ const Track = ({ track, isCurrentTrack, isPlaying, onPlay, onPause }) => (
                 <span className="box-meta-author">by {track.author}</span>
               </div>
               <div className="box-meta-ele">
-                <span className="box-meta-bpm">by {track.bpm}</span>
+                <span className="box-meta-bpm">BPM {track.bpm}</span>
               </div>
               <div className="box-meta-ele">
                 {track.vibe.map((vibe) => (

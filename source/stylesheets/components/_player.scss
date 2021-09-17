@@ -28,6 +28,11 @@
       padding-left: 6rem;
     }
   }
+  .box-player {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
   .box-meta-ele > * {
     @media (min-width: $mq-phonexl) {
       margin-bottom: 0;

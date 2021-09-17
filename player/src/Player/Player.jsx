@@ -1,11 +1,29 @@
-import React from "react";
+import React, { useRef } from "react";
 import ReactPlayer from "react-player";
 import useSiteWrapperPlayerOnClass from "./useSiteWrapperPlayerOnClass";
 
-const Player = ({ track, isPlaying, onPlay, onPause }) => {
+// TODO: Split component
+
+const Player = ({
+  track,
+  isPlaying,
+  onPlay,
+  onPause,
+  onPlayPrevious,
+  onPlayNext,
+}) => {
   const isOpen = !!track;
 
   useSiteWrapperPlayerOnClass(isOpen);
+
+  const playerRef = useRef();
+
+  const onBackClick = () => {
+    const player = playerRef.current;
+
+    if (player && player.getCurrentTime() > 3) player.seekTo(0);
+    else onPlayPrevious();
+  };
 
   return (
     <aside className={`bbx-musicplayer ${isOpen ? "open" : "closed"}`}>
@@ -16,6 +34,7 @@ const Player = ({ track, isPlaying, onPlay, onPause }) => {
             playing={isPlaying}
             width={0}
             height={0}
+            ref={playerRef}
           />
 
           <div
@@ -28,11 +47,17 @@ const Player = ({ track, isPlaying, onPlay, onPause }) => {
                 <div className="row box-main">
                   <div className="col-3 col-sm-2 col-md-2 col-lg-1 box-player-container">
                     <div className="box-player">
+                      <div onClick={onBackClick}>
+                        <i className="fas fa-backward" />
+                      </div>
                       <div className="box-player-play" onClick={onPlay}>
                         <i className="fas fa-play" />
                       </div>
                       <div className="box-player-pause" onClick={onPause}>
                         <i className="fas fa-pause" />
+                      </div>
+                      <div onClick={onPlayNext}>
+                        <i className="fas fa-forward" />
                       </div>
                     </div>
                   </div>
@@ -45,7 +70,7 @@ const Player = ({ track, isPlaying, onPlay, onPause }) => {
                         </span>
                       </div>
                       <div className="box-meta-ele">
-                        <span className="box-meta-bpm">by {track.bpm}</span>
+                        <span className="box-meta-bpm">BPM {track.bpm}</span>
                       </div>
                       <div className="box-meta-ele">
                         {track.vibe.map((vibe) => (
