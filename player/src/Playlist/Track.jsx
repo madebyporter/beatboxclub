@@ -1,7 +1,12 @@
 import React from "react";
 
-const Track = ({ track, onPlay }) => (
-  <div className={`box-list ${track.beatType}`} id={track.name}>
+const Track = ({ track, isCurrentTrack, isPlaying, onPlay, onPause }) => (
+  <div
+    className={`box-list ${track.beatType} ${
+      isCurrentTrack ? (isPlaying ? "playing" : "paused") : ""
+    }`}
+    id={track.name}
+  >
     <div className="row">
       <div className="col-12 col-md-10">
         <div className="row box-main">
@@ -10,7 +15,7 @@ const Track = ({ track, onPlay }) => (
               <div className="box-player-play" onClick={onPlay}>
                 <i className="fas fa-play" />
               </div>
-              <div className="box-player-pause">
+              <div className="box-player-pause" onClick={onPause}>
                 <i className="fas fa-pause" />
               </div>
             </div>

@@ -9,7 +9,7 @@ const trackComparisonFunction = (track1, track2) => {
     : 1;
 };
 
-const Playlist = ({ tracks, onPlay }) => {
+const Playlist = ({ tracks, currentTrackId, isPlaying, onPlay, onPause }) => {
   const sortedTracks = [...tracks].sort(trackComparisonFunction);
 
   return (
@@ -18,9 +18,21 @@ const Playlist = ({ tracks, onPlay }) => {
         <div className="row">
           <div className="col-12">
             <div className="box-tracks">
-              {sortedTracks.map((track) => (
-                <Track key={track.id} track={track} onPlay={onPlay} />
-              ))}
+              {sortedTracks.map((track) => {
+                const isCurrentTrack = currentTrackId === track.id;
+                const isTrackPlaying = isCurrentTrack && isPlaying;
+
+                return (
+                  <Track
+                    key={track.id}
+                    track={track}
+                    isCurrentTrack={isCurrentTrack}
+                    isPlaying={isTrackPlaying}
+                    onPlay={() => onPlay(track.id)}
+                    onPause={onPause}
+                  />
+                );
+              })}
             </div>
           </div>
         </div>

@@ -1,15 +1,25 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactPlayer from "react-player";
 import useSiteWrapperPlayerOnClass from "./useSiteWrapperPlayerOnClass";
 
-const Player = ({ isOpen, track }) => {
+const Player = ({ isOpen, isPlaying, track, onPlay, onPause }) => {
   useSiteWrapperPlayerOnClass(isOpen);
 
-  return ReactDOM.createPortal(
+  return (
     <aside className={`bbx-musicplayer ${isOpen ? "open" : "closed"}`}>
-      {track.name}
-    </aside>,
-    document.getElementById("beatbox-player")
+      {!!track && (
+        <>
+          <ReactPlayer
+            url={track.url}
+            playing={isPlaying}
+            width={0}
+            height={0}
+          />
+
+          {track.name}
+        </>
+      )}
+    </aside>
   );
 };
 
