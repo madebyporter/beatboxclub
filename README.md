@@ -25,6 +25,15 @@ WEBPACK_DEVELOPMENT_SERVER_URL="http://xx.xx.xx.xx:8081"
 
 Your ip address is shown to you when you start the Middleman server.
 
+### React Code formatting
+
+The React code is formatted using [Prettier](https://prettier.io/). Activate Prettier support in your IDE:
+
+* VS Code: https://github.com/madskristensen/JavaScriptPrettier
+* WebStorm: https://prettier.io/docs/en/webstorm.html
+
+Prettier is already installed locally through npm, so you shouldn't have to install it again.
+
 ## Start Middleman development server
 
 ```
