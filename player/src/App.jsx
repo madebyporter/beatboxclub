@@ -73,6 +73,7 @@ const App = ({ tracks }) => {
           onPause={onPause}
           onPlayPrevious={onPlayPrevious}
           onPlayNext={onPlayNext}
+          onTrackEnded={onPlayNext}
         />
       </PlayerPortal>
     </>

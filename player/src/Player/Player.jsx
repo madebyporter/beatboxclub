@@ -11,6 +11,7 @@ const Player = ({
   onPause,
   onPlayPrevious,
   onPlayNext,
+  onTrackEnded,
 }) => {
   const isOpen = !!track;
 
@@ -35,6 +36,7 @@ const Player = ({
             width={0}
             height={0}
             ref={playerRef}
+            onEnded={onTrackEnded}
           />
 
           <div
