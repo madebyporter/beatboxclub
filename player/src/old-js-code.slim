@@ -28,18 +28,7 @@
           var nid = next.data("id");
 
           function fpLoad() {
-            if(fixedPlayer.hasClass('closed')){
-              fixedPlayer.removeClass('closed');
-              fixedPlayer.addClass('open');
-            }
-            Object.keys(howlers).forEach(function(key) {
-
-              wrapper.addClass('player-on');
-              fixedPlayer.empty();
-              e.clone().appendTo(fixedPlayer);
-              fixedPlayer.find('.box-player-container').hide();
-              fixedPlayer.find('.box-list').css('top','0px');
-            });
+            // moved to React completely
           }
 
           // Play and Pause Trigger

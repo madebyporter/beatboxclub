@@ -22,15 +22,11 @@
     @include translate(0,92px);
   }
   .box-list {
+    top: 0;
     padding-left: 4rem;
     @media (min-width: $mq-phonexl) {
       padding-left: 6rem;
     }
-  }
-  .box-meta-container {
-    flex: 0 0 100%;
-    width: 100%;
-    max-width: 100%;
   }
   .box-meta-ele > * {
     @media (min-width: $mq-phonexl) {

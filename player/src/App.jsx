@@ -8,7 +8,7 @@ const App = ({ tracks }) => {
   const [isPlaying, setIsPlaying] = useState(true);
 
   const onPlay = (trackId) => {
-    if (trackId) setCurrentTrackId(trackId);
+    if (typeof trackId === "string") setCurrentTrackId(trackId);
     else if (!currentTrackId)
       throw new Error("No trackId selected for playback");
 
