@@ -79,7 +79,7 @@ end
 activate :external_pipeline,
   name: :webpack,
   command: build? ? 'cd player && npm run build' : 'cd player && npm start',
-  source: 'invalid-directory', # we don't want our JS to be processed by Middleman, so we import it manually below
+  source: 'player/.dummy-directory', # we don't want our JS to be processed by Middleman, so we import it manually below
   latency: 1
 
 configure :build do
