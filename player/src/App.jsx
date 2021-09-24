@@ -15,8 +15,6 @@ const App = ({ tracks: unsortedTracks }) => {
     playbackOrder,
   } = usePlaylistFunctionality(unsortedTracks);
 
-  // TODO: Player instantiation is unnecessarily long
-
   return (
     <>
       <Playlist
@@ -27,20 +25,9 @@ const App = ({ tracks: unsortedTracks }) => {
       <PlayerPortal>
         <Player
           track={currentTrack}
-          isPlaying={playingState.isPlaying}
-          onPlayClick={() => playingState.onPlay(currentTrack.id)}
-          onPauseClick={playingState.onPause}
-          duration={playbackProgress.duration}
-          progress={playbackProgress.progress}
-          onSeekStart={playbackProgress.onSeekStart}
-          onSeek={playbackProgress.onSeek}
-          onSeekEnd={playbackProgress.onSeekEnd}
-          isLooping={playbackOrder.isLooping}
-          isShuffling={playbackOrder.isShuffling}
-          onToggleLoopingClick={playbackOrder.onToggleIsLooping}
-          onToggleShufflingClick={playbackOrder.onToggleIsShuffling}
-          onStepBackClick={playbackOrder.onStepBack}
-          onStepForwardClick={playbackOrder.onStepForward}
+          playingState={playingState}
+          playbackProgress={playbackProgress}
+          playbackOrder={playbackOrder}
         />
       </PlayerPortal>
       {!!currentTrack && (

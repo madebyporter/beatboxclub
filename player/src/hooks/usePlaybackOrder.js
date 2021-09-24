@@ -3,11 +3,7 @@ import useIsShuffling from "./useIsShuffling";
 import useTrackOrder from "./useTrackOrder";
 import useStepCallbacks from "./useStepCallbacks";
 
-const usePlaybackOrderFunctionality = (
-  tracks,
-  setCurrentTrackId,
-  playbackProgress
-) => {
+const usePlaybackOrder = (tracks, setCurrentTrackId, playbackProgress) => {
   const { isLooping, onToggleIsLooping } = useIsLooping();
   const { isShuffling, onToggleIsShuffling } = useIsShuffling();
 
@@ -29,4 +25,4 @@ const usePlaybackOrderFunctionality = (
   };
 };
 
-export default usePlaybackOrderFunctionality;
+export default usePlaybackOrder;

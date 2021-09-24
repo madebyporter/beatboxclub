@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import usePlayingState from "./usePlayingState";
-import usePlaybackOrderFunctionality from "./usePlaybackOrderFunctionality";
+import usePlaybackOrder from "./usePlaybackOrder";
 import useSortedTracks from "./useSortedTracks";
 import useCurrentTrack from "./useCurrentTrack";
 import usePlaybackProgress from "./usePlaybackProgress";
@@ -13,7 +13,7 @@ const usePlaylistFunctionality = (unsortedTracks) => {
 
   const playingState = usePlayingState(currentTrack, setCurrentTrackId);
   const playbackProgress = usePlaybackProgress(currentTrack, playerRef);
-  const playbackOrder = usePlaybackOrderFunctionality(
+  const playbackOrder = usePlaybackOrder(
     tracks,
     setCurrentTrackId,
     playbackProgress

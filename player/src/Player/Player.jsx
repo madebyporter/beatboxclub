@@ -4,39 +4,35 @@ import PlayerInner from "./PlayerInner";
 
 const Player = ({
   track,
-  duration,
-  progress,
-  isPlaying,
-  isLooping,
-  isShuffling,
-  onPlayClick,
-  onPauseClick,
-  onToggleLoopingClick,
-  onToggleShufflingClick,
-  onStepBackClick,
-  onStepForwardClick,
-  onSeekStart,
-  onSeek,
-  onSeekEnd,
+  playingState: { isPlaying, onPlay, onPause },
+  playbackProgress: { progress, duration, onSeekStart, onSeek, onSeekEnd },
+  playbackOrder: {
+    isLooping,
+    isShuffling,
+    onToggleIsLooping,
+    onToggleIsShuffling,
+    onStepBack,
+    onStepForward,
+  },
 }) => (
   <BottomBar isOpen={!!track}>
     {!!track && (
       <PlayerInner
         track={track}
-        duration={duration}
-        progress={progress}
         isPlaying={isPlaying}
-        isLooping={isLooping}
-        isShuffling={isShuffling}
-        onPlayClick={onPlayClick}
-        onPauseClick={onPauseClick}
-        onToggleLoopingClick={onToggleLoopingClick}
-        onToggleShufflingClick={onToggleShufflingClick}
-        onStepBackClick={onStepBackClick}
-        onStepForwardClick={onStepForwardClick}
+        onPlayClick={() => onPlay(track.id)}
+        onPauseClick={onPause}
+        progress={progress}
+        duration={duration}
         onSeekStart={onSeekStart}
         onSeek={onSeek}
         onSeekEnd={onSeekEnd}
+        isLooping={isLooping}
+        isShuffling={isShuffling}
+        onToggleLoopingClick={onToggleIsLooping}
+        onToggleShufflingClick={onToggleIsShuffling}
+        onStepBackClick={onStepBack}
+        onStepForwardClick={onStepForward}
       />
     )}
   </BottomBar>

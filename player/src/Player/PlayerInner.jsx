@@ -10,20 +10,20 @@ const formatDuration = (seconds) =>
 
 const PlayerInner = ({
   track,
-  duration,
-  progress,
   isPlaying,
-  isLooping,
-  isShuffling,
   onPlayClick,
   onPauseClick,
+  progress,
+  duration,
+  onSeekStart,
+  onSeek,
+  onSeekEnd,
+  isLooping,
+  isShuffling,
   onToggleLoopingClick,
   onToggleShufflingClick,
   onStepBackClick,
   onStepForwardClick,
-  onSeekStart,
-  onSeek,
-  onSeekEnd,
 }) => (
   <div
     className={`box-list ${track.beatType} ${isPlaying ? "playing" : "paused"}`}
