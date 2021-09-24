@@ -1,4 +1,5 @@
 import React from "react";
+import ReactSlider from "react-slider";
 
 const formatDuration = (seconds) =>
   Math.floor(seconds / 60) +
@@ -20,6 +21,9 @@ const PlayerInner = ({
   onToggleShufflingClick,
   onStepBackClick,
   onStepForwardClick,
+  onSeekStart,
+  onSeek,
+  onSeekEnd,
 }) => (
   <div
     className={`box-list ${track.beatType} ${isPlaying ? "playing" : "paused"}`}
@@ -55,11 +59,8 @@ const PlayerInner = ({
               </div>
             </div>
           </div>
-          <div className="col-8 col-sm-9 col-md-9 col-lg-10 box-meta-container">
-            <h5 className="box-title">
-              {track.name} ({formatDuration(progress)} /{" "}
-              {formatDuration(duration)})
-            </h5>
+          <div className="col-8 col-sm-9 col-md-7 col-lg-6 col-xl-5 box-meta-container">
+            <h5 className="box-title">{track.name}</h5>
             <div className="box-meta">
               <div className="box-meta-ele">
                 <span className="box-meta-author">by {track.author}</span>
@@ -74,6 +75,23 @@ const PlayerInner = ({
                   </span>
                 ))}
               </div>
+            </div>
+          </div>
+          <div className="col-md-2 col-lg-4 col-xl-5 box-player-progress">
+            <ReactSlider
+              min={0}
+              max={duration}
+              step={0.1}
+              value={progress}
+              onBeforeChange={onSeekStart}
+              onChange={onSeek}
+              onAfterChange={onSeekEnd}
+              className="box-player-progress-bar"
+              trackClassName="box-player-progress-bar-track"
+              thumbClassName="box-player-progress-bar-thumb"
+            />
+            <div className="box-player-progress-text">
+              {formatDuration(progress)} / {formatDuration(duration)}
             </div>
           </div>
         </div>

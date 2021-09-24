@@ -44,4 +44,31 @@
       margin-bottom: 0;
     }
   }
+  .box-player-progress {
+    display: flex;
+    align-items: center;
+  }
+  .box-player-progress-bar {
+    height: $space-small;
+    background-color: $color-white;
+    flex: 1 0 0;
+  }
+  .box-player-progress-bar-track {
+    height: 100%;
+
+    &-0 {
+      background-color: $color-gold;
+    }
+    &-1 {
+      background-color: transparent;
+    }
+  }
+  .box-player-progress-bar-thumb {
+    display: none;
+  }
+  .box-player-progress-text {
+    color: $color-black-0;
+    @extend .t-14;
+    margin-left: $space-x;
+  }
 }

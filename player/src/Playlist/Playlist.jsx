@@ -1,7 +1,11 @@
 import React from "react";
 import Track from "./Track";
 
-const Playlist = ({ tracks, currentTrackId, isPlaying, onPlay, onPause }) => {
+const Playlist = ({
+  tracks,
+  currentTrackId,
+  playingState: { isPlaying, onPlay, onPause },
+}) => {
   return (
     <section className="block block-section block-resources">
       <div className="container">

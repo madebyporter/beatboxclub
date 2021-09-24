@@ -6,7 +6,7 @@ import useStepCallbacks from "./useStepCallbacks";
 const usePlaybackOrderFunctionality = (
   tracks,
   setCurrentTrackId,
-  playerRef
+  playbackProgress
 ) => {
   const { isLooping, onToggleIsLooping } = useIsLooping();
   const { isShuffling, onToggleIsShuffling } = useIsShuffling();
@@ -16,7 +16,7 @@ const usePlaybackOrderFunctionality = (
   const { onStepBack, onStepForward } = useStepCallbacks(
     trackOrder,
     setCurrentTrackId,
-    playerRef
+    playbackProgress
   );
 
   return {

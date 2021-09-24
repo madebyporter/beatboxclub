@@ -1,65 +1,55 @@
-import React, { useRef } from "react";
+import React from "react";
 import usePlaylistFunctionality from "./hooks/usePlaylistFunctionality";
 import Playlist from "./Playlist/Playlist";
 import PlayerPortal from "./Player/PlayerPortal";
 import Player from "./Player/Player";
 import PlayerInternals from "./Player/PlayerInternals";
-import useSeekInfo from "./hooks/useSeekInfo";
 
 const App = ({ tracks: unsortedTracks }) => {
-  const playerRef = useRef();
-
   const {
+    playerRef,
     tracks,
     currentTrack,
-    isPlaying,
-    isLooping,
-    isShuffling,
-    onPlay,
-    onPause,
-    onToggleIsLooping,
-    onToggleIsShuffling,
-    onStepBack,
-    onStepForward,
-  } = usePlaylistFunctionality(unsortedTracks, playerRef);
+    playingState,
+    playbackProgress,
+    playbackOrder,
+  } = usePlaylistFunctionality(unsortedTracks);
 
-  const { duration, progress, onDurationChanged, onProgressChanged } =
-    useSeekInfo(currentTrack);
+  // TODO: Player instantiation is unnecessarily long
 
   return (
     <>
       <Playlist
         tracks={tracks}
         currentTrackId={currentTrack?.id}
-        isPlaying={isPlaying}
-        onPlay={onPlay}
-        onPause={onPause}
+        playingState={playingState}
       />
       <PlayerPortal>
         <Player
           track={currentTrack}
-          duration={duration}
-          progress={progress}
-          isPlaying={isPlaying}
-          isLooping={isLooping}
-          isShuffling={isShuffling}
-          onPlayClick={() => onPlay(currentTrack.id)}
-          onPauseClick={onPause}
-          onToggleLoopingClick={onToggleIsLooping}
-          onToggleShufflingClick={onToggleIsShuffling}
-          onStepBackClick={onStepBack}
-          onStepForwardClick={onStepForward}
+          isPlaying={playingState.isPlaying}
+          onPlayClick={() => playingState.onPlay(currentTrack.id)}
+          onPauseClick={playingState.onPause}
+          duration={playbackProgress.duration}
+          progress={playbackProgress.progress}
+          onSeekStart={playbackProgress.onSeekStart}
+          onSeek={playbackProgress.onSeek}
+          onSeekEnd={playbackProgress.onSeekEnd}
+          isLooping={playbackOrder.isLooping}
+          isShuffling={playbackOrder.isShuffling}
+          onToggleLoopingClick={playbackOrder.onToggleIsLooping}
+          onToggleShufflingClick={playbackOrder.onToggleIsShuffling}
+          onStepBackClick={playbackOrder.onStepBack}
+          onStepForwardClick={playbackOrder.onStepForward}
         />
       </PlayerPortal>
       {!!currentTrack && (
         <PlayerInternals
           ref={playerRef}
           currentTrack={currentTrack}
-          isPlaying={isPlaying}
-          isLooping={isLooping}
-          onPlayNext={onStepForward}
-          onDurationChanged={onDurationChanged}
-          onProgressChanged={onProgressChanged}
+          playingState={playingState}
+          playbackProgress={playbackProgress}
+          playbackOrder={playbackOrder}
         />
       )}
     </>

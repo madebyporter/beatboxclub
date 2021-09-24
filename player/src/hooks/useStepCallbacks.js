@@ -13,12 +13,10 @@ const getNextTrackId = (trackId, trackOrder) => {
   return trackOrder[nextIndex];
 };
 
-const useStepCallbacks = (trackOrder, setCurrentTrackId, playerRef) => {
+const useStepCallbacks = (trackOrder, setCurrentTrackId, playbackProgress) => {
   const onStepBack = () => {
-    const player = playerRef.current;
-
-    if (player && player.getCurrentTime() > 3) {
-      player.seekTo(0);
+    if (playbackProgress.progress > 3) {
+      playbackProgress.onSeekEnd(0);
     } else {
       setCurrentTrackId((currentId) =>
         getPreviousTrackId(currentId, trackOrder)

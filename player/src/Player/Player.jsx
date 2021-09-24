@@ -15,6 +15,9 @@ const Player = ({
   onToggleShufflingClick,
   onStepBackClick,
   onStepForwardClick,
+  onSeekStart,
+  onSeek,
+  onSeekEnd,
 }) => (
   <BottomBar isOpen={!!track}>
     {!!track && (
@@ -31,6 +34,9 @@ const Player = ({
         onToggleShufflingClick={onToggleShufflingClick}
         onStepBackClick={onStepBackClick}
         onStepForwardClick={onStepForwardClick}
+        onSeekStart={onSeekStart}
+        onSeek={onSeek}
+        onSeekEnd={onSeekEnd}
       />
     )}
   </BottomBar>
