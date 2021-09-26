@@ -22,8 +22,7 @@ module.exports = {
   },
   devServer: {
     allowedHosts: [
-      'thebeatboxclub.com',
-      'localhost'
+      'all'
     ],
     port: 8081,
   },
