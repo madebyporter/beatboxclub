@@ -21,7 +21,10 @@ module.exports = {
     ],
   },
   devServer: {
-    allowedHosts: "all",
+    allowedHosts: [
+      'thebeatboxclub.com',
+      'localhost'
+    ],
     port: 8081,
   },
   ...(process.env.NODE_ENV === "development"
