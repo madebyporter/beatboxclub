@@ -7,8 +7,8 @@ const Playlist = ({
   playingState: { isPlaying, onPlay, onPause },
 }) => {
   return (
-    <section className="block block-section block-resources">
-      <div className="container">
+    <section className="block block-section">
+      <div className="container-fluid">
         <div className="row">
           <div className="col-12">
             <div className="box-tracks">

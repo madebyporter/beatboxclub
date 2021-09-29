@@ -233,7 +233,7 @@
       width: auto;
     }
     &:hover {
-      color: $color-white;
+      color: $color-yellow;
     }
   }
   .partners {
@@ -282,6 +282,21 @@
     position: static;
     margin-top: 7px;
   }
+  .footer-credits {
+    color: $color-gray;
+    @extend .t-14;
+    font-weight: 700;
+    padding: $space-small 0 0;
+    text-align: center;
+    width: 100%;
+    a {
+      color: $color-black-200;
+      &:hover {
+        color: $color-yellow;
+      }
+    }
+  }
+
 
   .card-plan {
     background: rgba(30,30,30,0.4);
@@ -598,3 +613,4 @@
   .featured {
     top: 0;
   }
+

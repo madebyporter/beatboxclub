@@ -28,73 +28,67 @@ const PlayerInner = ({
   <div
     className={`box-list ${track.beatType} ${isPlaying ? "playing" : "paused"}`}
   >
-    <div className="row">
-      <div className="col-12">
-        <div className="row box-main">
-          <div className="col-4 col-sm-3 col-md-3 col-lg-2 box-player-container">
-            <div className="box-player">
-              <div onClick={onStepBackClick}>
-                <i className="fas fa-backward" />
-              </div>
-              <div className="box-player-play" onClick={onPlayClick}>
-                <i className="fas fa-play" />
-              </div>
-              <div className="box-player-pause" onClick={onPauseClick}>
-                <i className="fas fa-pause" />
-              </div>
-              <div onClick={onStepForwardClick}>
-                <i className="fas fa-forward" />
-              </div>
-              <div
-                className={`box-player-loop ${isLooping ? "active" : ""}`}
-                onClick={onToggleLoopingClick}
-              >
-                <i className="fas fa-redo" />
-              </div>
-              <div
-                className={`box-player-shuffle ${isShuffling ? "active" : ""}`}
-                onClick={onToggleShufflingClick}
-              >
-                <i className="fas fa-random" />
-              </div>
-            </div>
-          </div>
-          <div className="col-8 col-sm-9 col-md-7 col-lg-6 col-xl-5 box-meta-container">
-            <h5 className="box-title">{track.name}</h5>
-            <div className="box-meta">
-              <div className="box-meta-ele">
-                <span className="box-meta-author">by {track.author}</span>
-              </div>
-              <div className="box-meta-ele">
-                <span className="box-meta-bpm">BPM {track.bpm}</span>
-              </div>
-              <div className="box-meta-ele">
-                {track.vibe.map((vibe) => (
-                  <span className="box-meta-tag" key={vibe}>
-                    {vibe}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="col-md-2 col-lg-4 col-xl-5 box-player-progress">
-            <ReactSlider
-              min={0}
-              max={duration}
-              step={0.1}
-              value={progress}
-              onBeforeChange={onSeekStart}
-              onChange={onSeek}
-              onAfterChange={onSeekEnd}
-              className="box-player-progress-bar"
-              trackClassName="box-player-progress-bar-track"
-              thumbClassName="box-player-progress-bar-thumb"
-            />
-            <div className="box-player-progress-text">
-              {formatDuration(progress)} / {formatDuration(duration)}
-            </div>
-          </div>
-        </div>
+    <div className="box-player-controls">
+      <div onClick={onStepBackClick} className="box-player-prev box-player-control-direction">
+        <i className="fas fa-step-backward" />
+      </div>
+      <div className="box-player-play box-player-control-activate" onClick={onPlayClick}>
+        <i className="fas fa-play" />
+      </div>
+      <div className="box-player-pause box-player-control-activate" onClick={onPauseClick}>
+        <i className="fas fa-pause" />
+      </div>
+      <div onClick={onStepForwardClick} className="box-player-next box-player-control-direction">
+        <i className="fas fa-step-forward" />
+      </div>
+    </div>
+    <div className="box-meta">
+      <div className="box-meta-ele box-meta-main">
+        <h4 className="box-meta-name">{track.name}</h4>
+        <span className="box-meta-author">by {track.author}</span>
+      </div>
+      <div className="box-meta-ele">
+        <span className="box-meta-bpm">BPM {track.bpm}</span>
+      </div>
+      <div className="box-meta-ele">
+        {track.vibe.map((vibe) => (
+          <span className="box-meta-tag" key={vibe}>
+            {vibe}
+          </span>
+        ))}
+      </div>
+    </div>
+    <div className="box-player-progress-container">
+      <div className="box-player-progress">
+        <ReactSlider
+          min={0}
+          max={duration}
+          step={0.1}
+          value={progress}
+          onBeforeChange={onSeekStart}
+          onChange={onSeek}
+          onAfterChange={onSeekEnd}
+          className="box-player-progress-bar"
+          trackClassName="box-player-progress-bar-track"
+          thumbClassName="box-player-progress-bar-thumb"
+        />
+      </div>
+    </div>
+    <div className="box-player-progress-text">
+      {formatDuration(progress)} / {formatDuration(duration)}
+    </div>
+    <div className="box-player-tools">
+      <div
+        className={`box-player-loop ${isLooping ? "active" : ""}`}
+        onClick={onToggleLoopingClick}
+      >
+        <i className="fas fa-redo" />
+      </div>
+      <div
+        className={`box-player-shuffle ${isShuffling ? "active" : ""}`}
+        onClick={onToggleShufflingClick}
+      >
+        <i className="fas fa-random" />
       </div>
     </div>
   </div>

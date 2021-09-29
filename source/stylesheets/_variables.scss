@@ -7,8 +7,8 @@
     $color-black-50:    #E4E4E4;
     $color-black-100:   #BCBCBC;
     $color-black-200:   #909090;
-    $color-black-300:   #646464;
-    $color-black-400:   #424242;
+    $color-black-300:   #545454;
+    $color-black-400:   #333333;
     $color-black-500:   #212121;
     $color-black-600:   #1D1D1D;
     $color-black-700:   #181818;
@@ -39,7 +39,7 @@
     $color-yellow-200:     #F3CC80;
     $color-yellow-300:     #EEB84D;
     $color-yellow-400:     #EAA827;
-    $color-yellow-500:     #E69901;
+    $color-yellow-500:     #E6B85B;
     $color-yellow-600:     #E39101;
     $color-yellow-700:     #DF8601;
     $color-yellow-800:     #DB7C01;
@@ -66,6 +66,7 @@
 
   // Spacing
     $space-x:           1rem;
+    $space-xsr1:        $space-x / 2;
     $space-small:       $space-x * 2; // 2rem
     $space-medium:      $space-small * 2; // 4rem
     $space-large:       $space-medium * 2; // 16rem

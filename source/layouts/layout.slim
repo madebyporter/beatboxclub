@@ -110,12 +110,14 @@ html
                             span.partners-list-icon &#43; 
 
           .row
-            .col-12
+            .col-12.col-lg-8.offset-lg-2
               nav.nav-footer
                 = link_to "Producer Tapes", "tapes", :class => "nav-footer-link"
                 = link_to "Privacy Policy", "privacy", :class => "nav-footer-link"
                 = link_to "Terms of Service", "terms", :class => "nav-footer-link"
                 = link_to "Contact", "contact", :class => "nav-footer-link"
+              div.footer-credits
+                | Player & database developed using <a href="https://reactjs.org/">ReactJS</a> by <a href="https://www.nikwen.de/">Niklas Wenzel</a>. <br />Website designed & developed using <a href="https://middlemanapp.com/">Middleman App</a> by <a href="https://www.madebyporter.com">Chris Porter</a>. 
 
     - if current_page.data.include_react_player
       #beatbox-player
