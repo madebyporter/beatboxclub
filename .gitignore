@@ -3,5 +3,9 @@
 .DS_Store
 .sass-cache
 build/
+dist/
 .env
 node_modules
+
+# Jetbrains IDEs
+/.idea/

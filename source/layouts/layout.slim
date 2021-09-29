@@ -4,7 +4,6 @@ html
     meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"
     meta charset="utf-8"
     meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"
-    meta name="description" content="The Beatbox Club allows you access to instrumental songs under the Creative Commons. You pay for the updates, you get unlimited usage rap beats for your next project."
 
     link[rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png"]
     link[rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png"]
@@ -17,6 +16,7 @@ html
     meta[name="theme-color" content="#ffffff"]
 
     = display_meta_tags site: 'The Beatbox Club'
+    = auto_display_meta_tags
 
     == stylesheet_link_tag :site
     == javascript_include_tag  "jquery", "parsley.min", "all"
@@ -112,9 +112,14 @@ html
           .row
             .col-12
               nav.nav-footer
-                = link_to "Producer Tapes", "/", :class => "nav-footer-link"
-                = link_to "Resources", "/source", :class => "nav-footer-link"
+                = link_to "Producer Tapes", "tapes", :class => "nav-footer-link"
                 = link_to "Privacy Policy", "privacy", :class => "nav-footer-link"
                 = link_to "Terms of Service", "terms", :class => "nav-footer-link"
                 = link_to "Contact", "contact", :class => "nav-footer-link"
-          
+
+    - if current_page.data.include_react_player
+      #beatbox-player
+      - if environment == :development
+        script type="text/javascript" src="#{ENV['WEBPACK_DEVELOPMENT_SERVER_URL']}/beatbox-player.bundle.js"
+      - else
+        script type="text/javascript" src="/javascripts/beatbox-player/beatbox-player.bundle.js"
