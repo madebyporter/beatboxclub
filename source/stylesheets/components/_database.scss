@@ -9,6 +9,9 @@
   &:last-child {
     border-bottom: 1px solid $color-black-400;
   }
+  &:hover {
+   background: $color-black-400; 
+  }
 }
 
 // Box Player Controls
@@ -103,7 +106,7 @@ h4.box-meta-name {
 .bbx-musicplayer {
   background: $color-black;
   bottom: 0;
-  box-shadow: 0 -20px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 -20px 20px rgba(0,0,0,0.4);
   height: auto;
   left: 0;
   position: fixed;
@@ -125,6 +128,9 @@ h4.box-meta-name {
     border-bottom: 0;
     cursor: default;
     padding: $space-x;
+    &:hover {
+      background: $color-black; 
+    }
     &.playing {
       .box-player-pause {
         display: flex;
