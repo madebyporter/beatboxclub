@@ -26,6 +26,9 @@
   }
   .box-player-control-activate {
     color: $color-black-300;
+    &:hover {
+      color: $color-black-200;
+    }
   }
 }
 
@@ -64,14 +67,14 @@
   }
 }
 .box-meta-value {
-  color: $color-yellow;
+  color: $color-white;
   font-weight: 700;
 }
 .box-meta-vibe {
   min-width: 30%;
 }
 h4.box-meta-name {
-  color: $color-yellow;
+  color: $color-white;
   @extend .t-18;
 }
 .box-meta-title {
@@ -155,7 +158,7 @@ h4.box-meta-name {
       }
     }
     .box-player-control-activate {
-      background: $color-yellow-500;
+      background: $color-yellow;
       color: $color-white;
       &:hover {
         background: $color-yellow-600;
@@ -271,280 +274,3 @@ h4.box-meta-name {
     }
   }
 }
-
-// .box-song-player--artwork { 
-//   width: 100%;
-// }
-// .box-song-player--controls-wrapper {
-//   $s: 24px;
-//   $s2: $s * 2;
-//   background: $color-black-200;
-//   border-radius: $s2;
-//   content: "";
-//   height: $s2;
-//   width: $s2;
-//   @include absolute-center;
-//   &:hover {
-//     background: $color-gold;
-//     height: $s2 - 3;
-//     width: $s2 - 3;
-//   }
-//   &.playing {
-//     background: $color-red;
-//     .box-song-player--controls {
-//       background: url(../images/icon-pause.svg) no-repeat center;
-//       background-size: 12px auto;
-//       &:hover {
-//         background-size: 14px auto;
-//       }
-//     } 
-//   }
-//   &.paused, &.unloaded {
-//     .box-song-player--controls {
-//       background: url(../images/icon-play.svg) no-repeat center;
-//       background-size: 12px auto;
-//       &:hover {
-//         background-size: 14px auto;
-//       }
-//     }
-//   }
-// }
-// .box-song-player--controls {
-//   $s: 24px;
-//   $s2: $s * 2;
-//   @include absolute-center;
-//   cursor: pointer;
-//   height: $s2;
-//   width: $s2;
-//   @include text-hide; 
-// }
-// .box-song-meta {
-//   flex: 1 1;
-//   height: inherit;
-//   padding: 0 $space-small;
-//   position: relative;
-//   @media (min-width: $mq-laptop) {
-//     // padding: 0 $space-medium;
-//   }
-// }
-// .box-song-meta--producer, .box-song-meta--mood {
-//   display: block;
-//   margin: 0 0 2px 0;
-// }
-// .box-song-meta--mood {
-//   font-style: oblique;
-// }
-// .box-song-meta--download {
-//   display: block;
-//   margin: $space-small 0 0;
-// }
-
-// // Box List Styles
-// .source-submit-link {
-//   display: block;
-//   margin-bottom: $space-small;
-//   @media (min-width: $mq-phonexl) {
-//     float: left;
-//     margin-bottom: 0;
-//   }
-// }
-// .block-resources-grid {
-//   @include flexbox;
-//   @include flex-wrap(wrap);
-// }
-// .block-resources-controller {
-//   margin: 0 0 $space-small 0;
-// }
-// .block-resources-sortfilter {
-//   list-style-type: none;
-//   display: flex;
-//   margin: 0;
-//   padding: 0;
-//   float: right;
-//   @media (min-width: $mq-phonexl) {
-//   }
-//   li {
-//     color: $color-black-300;
-//     cursor: pointer;
-//     @extend .t-18;
-//     @extend .t-strong;
-//     flex-wrap: wrap;
-//     margin-right: $space-small;
-//     @media (min-width: $mq-phonexl) {
-//       margin-bottom: 0;
-//       margin-left: $space-small;
-//     }
-//     &:hover {
-//       color: $color-black-200;
-//     }
-//     &.selected {
-//       color: $color-gold;
-//     }
-//   }
-// }
-
-// .box-list {
-  
-//   position: relative;
-//   width: 100%;
-
-//   .box-progress {
-//     display: block;
-//   }
-//   &:hover {
-//     background: lighten($color-black-500,6%);
-//     @media (min-width: $mq-tablet) {
-//       box-shadow: inset $space-small 0 0 lighten($color-black-500,10%);
-//     }
-//   }
-//   &.featured {
-//     // background: darken($color-yellow,35%);
-//     box-shadow: inset $space-small 0 0 $color-yellow;
-//     order: 1;
-//   }
-//   &.playing {
-//     background: lighten($color-black-500,6%);
-//     .box-player-play {
-//       display: none;
-//     }
-//     .box-player-pause {
-//       display: flex;
-//       & > * {
-//         color: $color-gold;
-//       }
-//     }
-//     .box-cta {
-//       background: $color-gold;
-//       color: $color-white;
-//     }
-//   }
-//   &.paused {
-//     .box-player-pause {
-//       display: none;
-//     }
-//     .box-player-play {
-//       display: flex;
-//       & > * {
-//         color: $color-gold;
-//       }
-//     }
-//     .box-cta {
-//       background: $color-gold;
-//       color: $color-white;
-//     }
-//   }
-// }
-// .box-main {
-
-// }
-// .box-action {
-//   align-items: center;
-//   display: flex;
-//   height: 100%;
-// }
-// .box-title {
-//   margin-bottom: $space-xsr1;
-// }
-// .box-meta {
-//   @extend .t-14;
-//   color: $color-black-200;
-//   font-weight: 700;
-//   @include flexbox;
-//   @include flex-wrap(wrap);
-//   span {
-//     @extend .t-14;
-//   }
-// }
-// .box-meta-ele {
-//   @include flexbox();
-//   flex-wrap: wrap;
-//   margin-right: $space-x;
-//   @media (max-width: $mq-tablet) {
-//     &:nth-child(2), &:nth-child(3) {
-//       display: none;
-//     }
-//     &:after {
-//       display: none;
-//     }
-//   }
-//   &:after {
-//     content: "\00B7";
-//     padding-left: $space-x;
-//   }
-//   &:last-child {
-//     &:after {
-//       display: none;
-//     }
-//   }
-//   & > * {
-//     margin-bottom: 5px;
-//   }
-// }
-// .box-meta-tag {
-//   text-transform: capitalize;
-//   margin-right: $space-x;
-//   &:after {
-//     content: "/";
-//     padding-left: $space-x;
-//   }
-//   &:last-child {
-//     margin-right: 0;
-//     &:after {
-//       display: none;
-//     }
-//   }
-// }
-// .source-author {
-//   margin-bottom: 5px;
-//   width: 100%;
-//   @media (min-width: $mq-phonexl) {
-//     margin-bottom: 0;
-//     width: auto;
-//   }
-// }
-
-// .box-player-controls {
-//   height: 100%;
-//   & > * {
-//     // align-items: center;
-//     // display: flex;
-//     // height: inherit;
-//     // justify-content: center;
-//     & > * {
-//       color: $color-white;
-//       // cursor: pointer;
-//       @include font-size(18);
-//       &:hover {
-//         color: $color-gold;
-//       }
-//     }
-//   }
-//   .box-player-pause {
-//     display: none;
-//   }
-// }
-
-// .box-cta {
-//   margin-top: $space-x;
-//   @media (min-width: $mq-phonexl) {
-//     margin-top: 0;
-//   }
-// }
-
-// .box-progress {
-//   background: $color-black-900;
-//   bottom: 0;
-//   display: none;
-//   height: 80px;
-//   left: 21px;
-//   right: 0;
-//   position: absolute;
-//   @media (min-width: $mq-tablet) {
-//     height: 20px;
-//   }
-// }
-// .box-progress-inner {
-//   background: $color-yellow;
-//   height: 100%;
-//   width: 0%;
-// }
