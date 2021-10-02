@@ -211,8 +211,14 @@ h4.box-meta-name {
     & > * {
       color: $color-white;
       cursor: pointer;
-      &:hover {
-        color: $color-yellow;
+
+      /** How to prevent sticky hover effects for buttons on touch devices
+      https://stackoverflow.com/questions/17233804/how-to-prevent-sticky-hover-effects-for-buttons-on-touch-devices **/
+
+      @media (hover: hover) {
+        &:hover {
+          color: $color-yellow;
+        }
       }
     }
     .box-player-loop,
