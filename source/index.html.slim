@@ -31,3 +31,8 @@ section.block.block-section
                 p.catalog-producer
                   | by&nbsp;
                   = link_to "#{tapes.producer}","#{tapes.producer_url}", :class => "", :onclick => "gtag('event', 'click', {'event_category' : '#{tapes.producer}', 'event_label' : out_producer, 'value' : 0});"
+section.block.block-newsletter
+  .container-fluid
+    .row
+      .col-12
+        = partial "partials/cta-newslettersignup"

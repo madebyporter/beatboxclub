@@ -11,7 +11,7 @@ section.block.block-section.block-hero.block-border-bottom
         .row
           .col-lg-10
             h1.bottom-margin-small
-              | Latest Beats from Made by Porter
+              | Made by Porter
         .row
           .col-lg-8
             p.content Below are my latest beats for streaming. If you're interested in using any of these beats for songs, livestreams, commercials, etc, please <a href="mailto: general@madebyporter.com">email me</a>.
@@ -32,3 +32,8 @@ script type="text/javascript"
     |   url: "#{track.beat.url}",
     | },
   | ];
+section.block.block-newsletter
+  .container-fluid
+    .row
+      .col-12
+        = partial "partials/cta-produceremail"
