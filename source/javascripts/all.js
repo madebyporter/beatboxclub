@@ -6,7 +6,7 @@ js.main = {
   init: function () {
     this.externalLinks();
     this.modal();
-    this.resourceSort();
+    // this.resourceSort();
     this.externalLinkTracking();
     this.mailchimpAJAX();
     this.validateForm();

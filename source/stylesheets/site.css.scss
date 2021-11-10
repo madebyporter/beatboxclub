@@ -154,8 +154,10 @@
     @include flexbox;
     align-items: center;
     justify-content: flex-end;
+    flex-wrap: wrap;
     @media (min-width: $mq-laptop) {
       float: right;
+      flex-wrap: no-wrap;
       margin: 0;
     }
   }
