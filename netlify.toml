@@ -4,4 +4,5 @@
 [[headers]]
   for = "/producers/*"
   [headers.values]
+    Content-type = "audio/mpeg"
     Content-Disposition = "attachment"
