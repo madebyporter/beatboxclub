@@ -284,3 +284,17 @@ h4.box-meta-name {
 .box-player-download {
   padding: $space-small;
 }
+.box-player-download-link {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  span {
+    margin: 0;
+  }
+}
+.box-player-download-button {
+  display: block;
+}
+.box-player-download-icon {
+  color: $color-red;
+}
