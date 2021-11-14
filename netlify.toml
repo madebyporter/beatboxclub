@@ -2,7 +2,7 @@
   functions = "functions/"
 
 [[headers]]
-  for = "/producers/*"
+  for = "/producers/madebyporter/*"
   [headers.values]
     Content-type = "audio/mpeg"
     Content-Disposition = "attachment"
