@@ -1,2 +1,7 @@
 [build]
   functions = "functions/"
+
+[[headers]]
+  for = "/producers/*"
+  [headers.values]
+    Content-Disposition = "attachment"

@@ -1,4 +1,14 @@
 import React from "react";
+import ReactGA from 'react-ga';
+
+const eventTrack = (category, action, label) => {
+  console.log("GA event:", category, ":", action, ":", label);
+  ReactGA.event({
+    category: category,
+    action: action,
+    label: label,
+  })
+}
 
 const Track = ({ track, isCurrentTrack, isPlaying, onPlay, onPause }) => (
   <div
@@ -34,6 +44,10 @@ const Track = ({ track, isCurrentTrack, isPlaying, onPlay, onPause }) => (
         <h5 className="box-meta-title">BPM</h5>
         <span className="box-meta-bpm box-meta-value">{track.bpm}</span>
       </div>
+    </div>
+
+    <div className="box-player-download">
+      <a className="box-player-download-link btn btn-primary btn-small" href={track.url} onClick={eventTrack.bind(this, "Tracks", "MBP Download Button", track.name)}>Download</a>
     </div>
   </div>
 );

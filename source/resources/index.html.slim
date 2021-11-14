@@ -3,9 +3,6 @@ title: Find helpful resources on The Beatbox Source
 shortname: Beatbox Source
 ---
 
-// Isotope for Grid Sorting
-/ == javascript_include_tag  "isotope.pkgd.min"
-
 section.block.block-section.block-hero.block-border-bottom
   .container
     .row
@@ -21,25 +18,27 @@ section.block.block-section.block-hero.block-border-bottom
             
 section.block.block-section.block-resources
   .container
-    / .row
-    /   .col-12
-    /     .block-resources-controller
-    /       .row
-    /         .col-12.col-sm-6
-    /           = link_to "Submit a Resource", "source-submit", :class => "source-submit-link"
-    /         .col-12.col-sm-6
-    /           .block-resources-sortfilter onclick="gtag('event', 'click', {'event_category' : 'Feature Click', 'event_label' : 'Resource Filter Sort Click', 'value' : 0});"
-    /             | Sort & Filter coming soon
+    .row
+      .col-12
+        .block-resources-controller
+          .row
+            .col-12.col-sm-6
+              / = link_to "Submit a Resource", "source-submit", :class => "source-submit-link"
+            .col-12.col-sm-6
+              .block-resources-sortfilter
+                .block-resources-sortfilter-ele.filter-type Education
+                .block-resources-sortfilter-ele.filter-type Software
+                .block-resources-sortfilter-ele.filter-type Hardware
     .row
       .col-12
         .block-resources-grid
           - data.site.source.each do |id, source|
-            .box-list data-date="#{source._meta.created_at}" data-weight="#{source.link_featured}" class="#{source.link_featured}"
+            .box-list data-date="#{source._meta.created_at}" data-weight="#{source.link_featured}" class="#{source.link_type}"
               h5.box-title
                 = link_to "#{source.link_title}", "#{source.link_url}", :class => "source-link", :onclick => "gtag('event', 'click', {'event_category' : 'Link Click', 'event_label' : '#{source.link_title}', 'value' : 0});"
               .box-meta
                 / .box-meta-ele.source-author
                 /   span.box-meta-author #{source.link_owner} &nbsp;
                 /   = link_to "#{source.author_name}", "#{source.author_website}", :class => "source-author-link", :onclick => "gtag('event', 'click', {'event_category' : 'Author Click', 'event_label' : '#{source.author_name}', 'value' : 0});"
-                .box-meta-ele.source-type = source.link_type
+                .box-meta-ele.type = source.link_type
                 / .box-meta-ele.source-type = Date.parse(source._meta.created_at).strftime("%m/%d/%Y")

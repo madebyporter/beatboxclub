@@ -6,7 +6,7 @@ js.main = {
   init: function () {
     this.externalLinks();
     this.modal();
-    // this.resourceSort();
+    this.resourceSort();
     this.externalLinkTracking();
     this.mailchimpAJAX();
     this.validateForm();
@@ -124,19 +124,22 @@ js.main = {
     });
   },
   resourceSort: function() {
-    $grid = $('.block-resources-grid');
-    $grid.each(function(index, el) {
-      $(this).isotope({
-        itemSelector : '.box-list',
-        transitionDuration: 0,
-        stamp: '.featured',
-        getSortData: {
-          date: '[data-date]',
-          weight: '[data-weight]'
-        },
-        sortBy : ['weight', 'date'],
-        sortAscending: false
-      });
+    var options = {
+      valueNames: [ 'type' ]
+    };
+    var resourceList = new List('block-resources-grid', options);
+
+    $('.filter-type').on('click',function(){
+      var $text = $(this).text();
+      if($(this).hasClass( 'selected' )){
+        resourceList.filter();
+        $(this).removeClass('selected');
+      } else {
+        resourceList.filter(function(item) {
+          return (item.values().type == $text);
+        });
+        $(this).addClass('selected');
+      }
     });
   },
   validateForm: function() {
