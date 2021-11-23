@@ -1,0 +1,44 @@
+---
+include_react_player: true
+---
+
+- set_meta_tags :title => "#{producer.producer}"
+
+section.block.block-section.block-hero.block-border-bottom
+  .container
+    .row
+      .col-12
+        .row
+          .col-lg-10
+            h1.bottom-margin-small
+              | #{producer.producer}
+        .row
+          .col-lg-8
+            p.content Below are my latest beats for stream &amp; download. For now, when you download, the track will appear in a new tab. In that tab, save the page.
+
+div#beatbox-playlist
+
+/ TODO: Replace track.author with track.producer.producer
+script type="text/javascript"
+  | var tracks = [
+  - data.site.track.each do |id, track|
+    - if track.author === producer.producer
+      | {
+      |   id: "#{id}",
+      |   name: "#{track.name}",
+      |   beatType: "#{track.beat_type}",
+      |   createdAt: new Date("#{track._meta.created_at}"),
+      |   author: "#{track.author}",
+      |   bpm: "#{track.bpm}",
+      |   vibe: #{track.vibe.to_json},
+      |   url: "#{track.beat.url}",
+      | },
+  | ];
+
+/ Display newsletter CTA for Made By Porter only
+- if producer.id === "2ysheqH4CtlypgfXHEZLXU"
+  section.block.block-newsletter
+    .container-fluid
+      .row
+        .col-12
+          = partial "partials/cta-produceremail"
