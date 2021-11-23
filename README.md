@@ -2,8 +2,8 @@
 
 ## Setting up the development environment
 
-Install Ruby + RubyGems.
-Install Node + Node.js.
+Install Ruby + RubyGems. \
+Install Node.js + npm.
 
 Then:
 
@@ -49,3 +49,9 @@ bundle exec middleman build
 ```
 
 This automatically builds the Webpack JS bundle, too.
+
+## Update the local data from Contentful
+
+```
+bundle exec middleman contentful
+```
