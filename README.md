@@ -55,3 +55,7 @@ This automatically builds the Webpack JS bundle, too.
 ```
 bundle exec middleman contentful
 ```
+
+## How to fix `ArgumentError: invalid byte sequence in US-ASCII` when running any `bundle` command on macOS
+
+[GitHub answer](https://github.com/gjtorikian/html-proofer/issues/476#issuecomment-391025176)
