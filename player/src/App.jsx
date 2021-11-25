@@ -5,7 +5,7 @@ import PlayerPortal from "./Player/PlayerPortal";
 import Player from "./Player/Player";
 import PlayerInternals from "./Player/PlayerInternals";
 
-import ReactGA from 'react-ga';
+import ReactGA from "react-ga";
 const trackingId = "UA-59805983-1";
 
 const App = ({ tracks: unsortedTracks }) => {
@@ -33,15 +33,13 @@ const App = ({ tracks: unsortedTracks }) => {
           playbackOrder={playbackOrder}
         />
       </PlayerPortal>
-      {!!currentTrack && (
-        <PlayerInternals
-          ref={playerRef}
-          currentTrack={currentTrack}
-          playingState={playingState}
-          playbackProgress={playbackProgress}
-          playbackOrder={playbackOrder}
-        />
-      )}
+      <PlayerInternals
+        ref={playerRef}
+        currentTrack={currentTrack || tracks[0]} // Reasoning: iOS Safari's autoplay prevention requires the <audio> element to be present on the page before the user clicks "play". Otherwise, the click event will not cause the audio to play. Therefore, we render the audio element with a dummy track when the page is initially loaded.
+        playingState={playingState}
+        playbackProgress={playbackProgress}
+        playbackOrder={playbackOrder}
+      />
     </>
   );
 };
