@@ -18,17 +18,16 @@ section.block.block-section.block-hero.block-border-bottom
 
 div#beatbox-playlist
 
-/ TODO: Replace track.author with track.producer.producer
 script type="text/javascript"
   | var tracks = [
   - data.site.track.each do |id, track|
-    - if track.author === producer.producer
+    - if track.producer and track.producer.find { |track_producer| track_producer.id === producer.id } != nil
       | {
       |   id: "#{id}",
       |   name: "#{track.name}",
       |   beatType: "#{track.beat_type}",
       |   createdAt: new Date("#{track._meta.created_at}"),
-      |   author: "#{track.author}",
+      |   author: "#{track.producer.map { |track_producer| track_producer.producer }.join(", ")}",
       |   bpm: "#{track.bpm}",
       |   vibe: #{track.vibe.to_json},
       |   url: "#{track.beat.url}",
