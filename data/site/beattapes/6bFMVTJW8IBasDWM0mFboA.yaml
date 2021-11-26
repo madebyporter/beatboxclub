@@ -2,14 +2,13 @@
 :id: 6bFMVTJW8IBasDWM0mFboA
 :_meta:
   :content_type_id: beattapes
-  :updated_at: '2021-05-22T21:10:44+00:00'
+  :updated_at: '2021-08-23T17:40:42+00:00'
   :created_at: '2021-05-22T21:10:44+00:00'
   :id: 6bFMVTJW8IBasDWM0mFboA
 :tape_id: friendsfullbeattape
 :title: friends [Full Beat Tape]
 :producer: neptune kid
 :producer_url: https://linktr.ee/neptunekiddd
-:tagline: hi... I like doing things xd
 :cover_art:
   :title: friends
   :description: 
@@ -21,3 +20,12 @@
 :soundcloud: https://soundcloud.com/neptunekidd/friends-full-beat-tape
 :spotify: https://open.spotify.com/artist/7GjoXTEjUzwT08uo4DRMRA
 :youtube: https://www.youtube.com/channel/UClAe3q1iqzLScc2vKjJvMig
+:player_embed: '<iframe width="100%" height="300" scrolling="no" frameborder="no"
+  allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1046634004&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div
+  style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow:
+  hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida
+  Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight:
+  100;"><a href="https://soundcloud.com/neptunekidd" title="neptune kid" target="_blank"
+  style="color: #cccccc; text-decoration: none;">neptune kid</a> · <a href="https://soundcloud.com/neptunekidd/friends-full-beat-tape"
+  title="friends [Full Beat Tape]" target="_blank" style="color: #cccccc; text-decoration:
+  none;">friends [Full Beat Tape]</a></div>'
