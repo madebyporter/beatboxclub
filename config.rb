@@ -63,6 +63,11 @@ if @app.data.try(:site).try(:beattapes)
   end
 end
 
+# Producer sites
+data.site.producer.each do |id, producer|
+  proxy "/producers/#{producer['producer_slug']}/index.html", "/producers/template.html", :locals => { :producer => producer }, :ignore => true
+end
+
 activate :directory_indexes
 activate :meta_tags
 
