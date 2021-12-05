@@ -17,6 +17,13 @@ $gridGap: 2rem;
   grid-gap: 0;
 }
 
+.nav-col {
+  border-right: 0;
+  @media (min-width: $mq-laptop) {
+    border-right: 1px solid $color-black-400;
+  }
+}
+
 .grid-col-20-80 {
   align-content: stretch;
   & > .grid-col:nth-child(1){grid-column: 1 / span 10;}
