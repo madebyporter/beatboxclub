@@ -124,23 +124,45 @@ js.main = {
     });
   },
   resourceSort: function() {
-    var options = {
-      valueNames: [ 'type' ]
-    };
-    var resourceList = new List('block-resources-grid', options);
 
-    $('.filter-type').on('click',function(){
-      var $text = $(this).text();
-      if($(this).hasClass( 'selected' )){
-        resourceList.filter();
+    var nav = $('#resource_nav');
+    var navItem = $('#resource_nav .sub-nav-item');
+    var list = $('#resource_list');
+    var listItem = $('#resource_list .box-list');
+
+    navItem.on('click', function(){
+      var navItemText = $(this).html();
+
+      if($(this).hasClass('selected')){
         $(this).removeClass('selected');
+        listItem.show();
       } else {
-        resourceList.filter(function(item) {
-          return (item.values().type == $text);
-        });
+        $(this).siblings().removeClass('selected');
         $(this).addClass('selected');
+        listItem.hide();
+        if(listItem.hasClass(navItemText)){
+          $('.' + navItemText).show();
+        }
       }
     });
+
+    // var options = {
+    //   valueNames: [ 'type' ]
+    // };
+    // var resourceList = new List('block-resources-grid', options);
+
+    // $('.filter-type').on('click',function(){
+    //   var $text = $(this).text();
+    //   if($(this).hasClass( 'selected' )){
+    //     resourceList.filter();
+    //     $(this).removeClass('selected');
+    //   } else {
+    //     resourceList.filter(function(item) {
+    //       return (item.values().type == $text);
+    //     });
+    //     $(this).addClass('selected');
+    //   }
+    // });
   },
   validateForm: function() {
     var form = document.getElementById("source_submit_form");

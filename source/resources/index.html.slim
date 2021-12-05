@@ -1,7 +1,9 @@
 ---
-title: Find helpful resources on The Beatbox Source
-shortname: Beatbox Source
+title: Audio &amp; Video Production Resources
+shortname: Audio &amp; Video Production Resources
 ---
+
+- set_meta_tags :title => "Audio &amp; Video Production Resources"
 
 section.block.block-section.block-hero.block-border-bottom
   .container
@@ -15,30 +17,25 @@ section.block.block-section.block-hero.block-border-bottom
           .col-lg-10
             p.content-large
               | Created &amp; curated music production resources. Help documentation, tutorials, sound kits, apps &amp; plugins. Great for producers, engineers, composers &amp; musicians.
-            
-section.block.block-section.block-resources
-  .container
-    .row
-      .col-12
-        .block-resources-controller
-          .row
-            .col-12.col-sm-6
-              / = link_to "Submit a Resource", "source-submit", :class => "source-submit-link"
-            .col-12.col-sm-6
-              / .block-resources-sortfilter
-              /   .block-resources-sortfilter-ele.filter-type Education
-              /   .block-resources-sortfilter-ele.filter-type Software
-              /   .block-resources-sortfilter-ele.filter-type Hardware
-    .row
-      .col-12
-        .block-resources-grid
-          - data.site.source.each do |id, source|
-            .box-list data-date="#{source._meta.created_at}" data-weight="#{source.link_featured}" class="#{source.link_type}"
-              h5.box-title
-                = link_to "#{source.link_title}", "#{source.link_url}", :class => "source-link", :onclick => "gtag('event', 'click', {'event_category' : 'Link Click', 'event_label' : '#{source.link_title}', 'value' : 0});"
-              .box-meta
-                / .box-meta-ele.source-author
-                /   span.box-meta-author #{source.link_owner} &nbsp;
-                /   = link_to "#{source.author_name}", "#{source.author_website}", :class => "source-author-link", :onclick => "gtag('event', 'click', {'event_category' : 'Author Click', 'event_label' : '#{source.author_name}', 'value' : 0});"
-                .box-meta-ele.type = source.link_type
-                / .box-meta-ele.source-type = Date.parse(source._meta.created_at).strftime("%m/%d/%Y")
+section.grid.grid-col-20-80.grid-nogap
+  .grid-col.border-right
+    .grid-item.padding-left-small.padding-y-medium
+      h5.margin-bottom-medium Filter
+      nav.sub-nav#resource_nav
+        .sub-nav-item Education
+        .sub-nav-item Software
+        .sub-nav-item Hardware
+
+  .grid-col
+    .grid-item.padding-small
+      #resource_list.block-resources-grid
+        - data.site.source.each do |id, source|
+          .box-list data-date="#{source._meta.created_at}" data-weight="#{source.link_featured}" class="#{source.link_type}"
+            h5.box-title
+              = link_to "#{source.link_title}", "#{source.link_url}", :class => "source-link", :onclick => "gtag('event', 'click', {'event_category' : 'Link Click', 'event_label' : '#{source.link_title}', 'value' : 0});"
+            .box-meta
+              / .box-meta-ele.source-author
+              /   span.box-meta-author #{source.link_owner} &nbsp;
+              /   = link_to "#{source.author_name}", "#{source.author_website}", :class => "source-author-link", :onclick => "gtag('event', 'click', {'event_category' : 'Author Click', 'event_label' : '#{source.author_name}', 'value' : 0});"
+              .box-meta-ele.type = source.link_type
+              / .box-meta-ele.source-type = Date.parse(source._meta.created_at).strftime("%m/%d/%Y")
