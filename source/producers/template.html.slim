@@ -14,7 +14,11 @@ section.block.block-section.block-hero.block-border-bottom
               | #{producer.producer}
         .row
           .col-lg-8
-            p.content Below are my latest beats for stream &amp; download. For now, when you download, the track will appear in a new tab. In that tab, save the page.
+            p.content
+              | #{producer.producer_description}
+            p.content-small
+              = link_to "#{producer.producer_link}", "#{producer.producer_link}", :class => "", :onclick => "gtag('event', 'click', {'event_category' : 'Producer Page', 'event_label' : 'Producer Link' : '#{producer.producer}'});"
+                
 
 div#beatbox-playlist
 
