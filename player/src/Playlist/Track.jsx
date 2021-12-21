@@ -20,7 +20,7 @@ const Track = ({ track, isCurrentTrack, isPlaying, onPlay, onPause }) => (
     
     <div className="box-player-controls">
       <div className="box-player-play box-player-control-activate" onClick={onPlay}>
-        <i className="fas fa-play" data-track-name={`${track.name}`} data-track-author={`${track.author}`} />
+        <i className="fas fa-play" data-trackName={`${track.name}`} data-trackAuthor={`${track.author}`} />
       </div>
       <div className="box-player-pause box-player-control-activate" onClick={onPause}>
         <i className="fas fa-pause" />
