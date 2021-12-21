@@ -47,7 +47,7 @@ const Track = ({ track, isCurrentTrack, isPlaying, onPlay, onPause }) => (
     </div>
 
     <div className="box-player-download">
-      <a className="box-player-download-link" href={track.url} onClick={eventTrack.bind(this, "Tracks", "MBP Download Button", track.name)}><span className="d-block d-sm-none"><i className="box-player-download-icon fas fa-cloud-download"></i></span><span className="box-player-download-btn d-none d-sm-block btn btn-primary btn-small">Download</span></a>
+      <a className="box-player-download-link" href={track.url}><span className="d-block d-sm-none"><i className="box-player-download-icon fas fa-cloud-download"></i></span><span className="box-player-download-btn d-none d-sm-block btn btn-primary btn-small" data-trackname={`${track.name}`} data-trackauthor={`${track.author}`}>Download</span></a>
     </div>
   </div>
 );
