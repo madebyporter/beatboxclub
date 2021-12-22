@@ -17,4 +17,4 @@ gem 'middleman-livereload'
 gem "middleman-blog", "~> 4.0"
 gem 'contentful_middleman'
 gem 'middleman-dotenv'
-gem 'middleman-meta-tags'
+gem 'middleman-meta-tags', '>= 0.6.0'
