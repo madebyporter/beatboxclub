@@ -11,10 +11,10 @@ gem 'wdm', '~> 0.1.0', platforms: [:mswin, :mingw]
 gem 'tzinfo-data', platforms: [:mswin, :mingw]
 
 # Middleman Gems
-gem 'middleman-sprockets', '>= 4.0.0'
-gem 'middleman', '>= 4.0.0'
-gem 'middleman-livereload'
-gem "middleman-blog", "~> 4.0"
-gem 'contentful_middleman'
-gem 'middleman-dotenv'
-gem 'middleman-meta-tags'
+gem 'middleman-sprockets', '>= 4.1.1'
+gem 'middleman', '>= 4.2.1'
+gem 'middleman-livereload', '>= 3.4.6'
+gem "middleman-blog", "~> 4.0", ">= 4.0.2"
+gem 'contentful_middleman', '>= 4.2.0'
+gem 'middleman-dotenv', '>= 2.0.0'
+gem 'middleman-meta-tags', '>= 0.6.0'
