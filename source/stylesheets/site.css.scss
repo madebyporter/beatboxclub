@@ -252,9 +252,14 @@
   }
   .partners-list-ele {
     margin: 0 $space-medium 0 0;
+    width: 123px;
   }
   .partners-list-link {
     display: block;
+    width: 100%;
+  }
+  .partners-list-logo {
+    width: 100%;
   }
   .partners-list-add {
     align-items: center;

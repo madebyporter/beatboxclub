@@ -21,6 +21,9 @@ html
     == stylesheet_link_tag :site
     == javascript_include_tag  "jquery", "list.min.js", "parsley.min", "all"
 
+    // Global site tag (gtag.js) - Google Analytics
+    script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-59805983-1"
+    
     // Google Tag Manager
     javascript:
       | (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -28,10 +31,6 @@ html
       | j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       | 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       | })(window,document,'script','dataLayer','GTM-MJGDRCN');
-
-
-    // Global site tag (gtag.js) - Google Analytics
-    script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-59805983-1"
 
     javascript:
       window.dataLayer = window.dataLayer || [];
@@ -91,6 +90,9 @@ html
                       .partners-list-ele
                         = link_to "https://www.voicetaggods.com", :class => "partners-list-link" do
                           = image_tag "logos/partners-voicetaggods.png", :alt => "Voice Tag Gods", :class => "partners-list-logo"
+                      .partners-list-ele
+                        = link_to "https://www.handclaps.app/thebeatboxclub", :class => "partners-list-link" do
+                          = image_tag "logos/partners-handclaps.png", :alt => "Handclaps Beat Video Maker - the easiest software to create hip hop beat videos", :class => "partners-list-logo"
                       .partners-list-ele
                         = link_to "mailto:connectbbx@gmail.com?subject=Partner with The Beatbox Club", :class => "partners-list-link" do
                           .partners-list-add
