@@ -52,9 +52,10 @@
   
 // Masthead
   .site-logo {
+    $logoSize: 50px;
     display: block;
-    height: 80px;
-    width: 180px;
+    height: $logoSize;
+    // width: 140px;
     @include flexbox;
     @include flex-wrap(nowrap);
     text-decoration: none;
@@ -62,7 +63,7 @@
       @include flexbox;
       @include flex-wrap(wrap);
       height: 100%;
-      width: 80px;
+      width: $logoSize;
       &:hover {
         .logo-block {
           &:nth-child(1), &:nth-child(16){
@@ -135,18 +136,21 @@
     }
     .logo-text {
       display: none;
-      margin: .4rem 0 0 $space-small;
+      margin: 0 0 0 $space-x;
       width: 80px;
       @media (min-width: $mq-laptop) {
-        display: block;
+        display: flex;
+        flex-wrap: wrap;
       }
     }
     .logo-text-word {
       color: $color-white;
-      @include font-size(18);
-      font-weight: 700;
+      @include font-size(14);
+      font-weight: 500;
       display: inline-block;
+      line-height: 1.2;
       margin: 0;
+      width: 100%;
     }
   }
   .site-nav {
@@ -171,12 +175,12 @@
 
   .block {
     margin: 0 auto;
-    padding: $space-medium $space-x;
+    padding: $space-small $space-small;
   }
   .block-header {
-    padding: $space-large $space-x $space-medium;
+    padding-top: $space-large;
     @media (min-width: $mq-tablet) {
-      padding: $space-large $space-medium $space-medium;
+      padding-top: $space-large;
     }
   }
   .block-content {

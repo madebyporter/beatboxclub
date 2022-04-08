@@ -1,6 +1,36 @@
 // _type.scss
 
   // System
+    .t-105 {
+      @include font-size(89);
+      @media (min-width: $mq-tablet) {
+        @include font-size(97);
+      }
+      @media (min-width: $mq-laptop) {
+        @include font-size(105);
+      }
+      @media (min-width: $mq-desktop) {
+        @include font-size(113);
+      }
+      @media (min-width: $mq-wide) {
+        @include font-size(121);
+      }
+    }
+    .t-81 {
+      @include font-size(64);
+      @media (min-width: $mq-tablet) {
+        @include font-size(72);
+      }
+      @media (min-width: $mq-laptop) {
+        @include font-size(81);
+      }
+      @media (min-width: $mq-desktop) {
+        @include font-size(89);
+      }
+      @media (min-width: $mq-wide) {
+        @include font-size(97);
+      }
+    }
     .t-72 {
       @include font-size(64);
       @media (min-width: $mq-tablet) {
@@ -10,10 +40,10 @@
         @include font-size(72);
       }
       @media (min-width: $mq-desktop) {
-        @include font-size(96);
+        @include font-size(80);
       }
       @media (min-width: $mq-wide) {
-        @include font-size(120);
+        @include font-size(88);
       }
     }
     .t-64 {
@@ -238,6 +268,12 @@
 
     p + h1, p + h2, p + h3, p + h4, p + h5, p + h6 {
       margin-top: $space-medium;
+    }
+
+    .headline {
+      @extend .t-105;
+      font-weight: 500;
+      line-height: 1;
     }
 
   // Blockquotes
