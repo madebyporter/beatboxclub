@@ -1,4 +1,5 @@
 - set_meta_tags :title => "Producer Tapes"
+== javascript_include_tag   "jquery.ajaxchimp.min", "list.min"
 
 section.block.block-section.block-hero
   .container-fluid
@@ -18,38 +19,28 @@ nav.block.block-nav
           li.nav-list-item
             == link_to 'Tapes', '/tapes/', class: "nav-link"
 
-section.block.block-section
+section#toolsList.block.block-section
   .container-fluid
     .row
       .col-12.col-lg-3
         #filterMenu.block-subnav.subnav-mobile-right
           ul.nav-list.nav-list-vert.nav-list-tight.nav-radio
-            li.nav-list-item.active
+            li.nav-list-item.active.tag.filter data-filter="All"
               span.nav-text.t-18 All
-            li.nav-list-item
+            li.nav-list-item.tag.filter data-filter="Business"
               span.nav-text.t-18 Business
-            li.nav-list-item
+            li.nav-list-item.tag.filter data-filter="DAWs"
               span.nav-text.t-18 DAWs
-            li.nav-list-item.active
-              span.nav-text.t-18 All
-            li.nav-list-item
-              span.nav-text.t-18 Business
-            li.nav-list-item
-              span.nav-text.t-18 DAWs
-            li.nav-list-item.active
-              span.nav-text.t-18 All
-            li.nav-list-item
-              span.nav-text.t-18 Business
-            li.nav-list-item
-              span.nav-text.t-18 DAWs
-            li.nav-list-item.active
-              span.nav-text.t-18 All
-            li.nav-list-item
-              span.nav-text.t-18 Business
-            li.nav-list-item
-              span.nav-text.t-18 DAWs
+            li.nav-list-item.tag.filter data-filter="Education"
+              span.nav-text.t-18 Education
+            li.nav-list-item.tag.filter data-filter="Effects VST"
+              span.nav-text.t-18 Effects VST
+            li.nav-list-item.tag.filter data-filter="Instrument VST"
+              span.nav-text.t-18 Instrument VST
+            li.nav-list-item.tag.filter data-filter="Platforms"
+              span.nav-text.t-18 Platforms
       .col-12.col-lg-9
-        .row
+        .row.list
           .col-12.col-sm-6.col-lg-6.col-xl-4
             .pattern-card
               .row
@@ -57,8 +48,8 @@ section.block.block-section
                   .component-icon
                     = image_tag "tools/tool-logo-abletonlive.png", :alt => "Ableton Live", :class => "token-image"
                 .col-7.d-flex.justify-content-end.align-items-start
-                  .component-tag
-                    | DAW
+                  .component-tag.tag
+                    | DAWs
               .pattern-content
                 h4.token-header.bottom-margin-small
                   | Ableton Live
@@ -72,11 +63,11 @@ section.block.block-section
                   .component-icon
                     = image_tag "tools/tool-logo-abletonlive.png", :alt => "Ableton Live", :class => "token-image"
                 .col-7.d-flex.justify-content-end.align-items-start
-                  .component-tag
+                  .component-tag.tag
                     | Business
               .pattern-content
                 h4.token-header.bottom-margin-small
-                  | Ableton Live
+                  | Business App
                 p.token-paragraph
                   | Live is fast, fluid and flexible software for music creation and performance. 
               == link_to 'Launch', 'https://www.ableton.com/live', class: "component-button component-button-secondary component-button-small"
@@ -87,11 +78,11 @@ section.block.block-section
                   .component-icon
                     = image_tag "tools/tool-logo-abletonlive.png", :alt => "Ableton Live", :class => "token-image"
                 .col-7.d-flex.justify-content-end.align-items-start
-                  .component-tag
+                  .component-tag.tag
                     | Platforms
               .pattern-content
                 h4.token-header.bottom-margin-small
-                  | Ableton Live
+                  | Platform App
                 p.token-paragraph
                   | Live is fast, fluid and flexible software for music creation and performance. 
               == link_to 'Launch', 'https://www.ableton.com/live', class: "component-button component-button-secondary component-button-small"
@@ -102,11 +93,11 @@ section.block.block-section
                   .component-icon
                     = image_tag "tools/tool-logo-abletonlive.png", :alt => "Ableton Live", :class => "token-image"
                 .col-7.d-flex.justify-content-end.align-items-start
-                  .component-tag
+                  .component-tag.tag
                     | Effects VST
               .pattern-content
                 h4.token-header.bottom-margin-small
-                  | Ableton Live
+                  | Effects VST App
                 p.token-paragraph
                   | Live is fast, fluid and flexible software for music creation and performance. 
               == link_to 'Launch', 'https://www.ableton.com/live', class: "component-button component-button-secondary component-button-small"
@@ -117,11 +108,11 @@ section.block.block-section
                   .component-icon
                     = image_tag "tools/tool-logo-abletonlive.png", :alt => "Ableton Live", :class => "token-image"
                 .col-7.d-flex.justify-content-end.align-items-start
-                  .component-tag
+                  .component-tag.tag
                     | Instrument VST
               .pattern-content
                 h4.token-header.bottom-margin-small
-                  | Ableton Live
+                  | Instrument VST App
                 p.token-paragraph
                   | Live is fast, fluid and flexible software for music creation and performance. 
               == link_to 'Launch', 'https://www.ableton.com/live', class: "component-button component-button-secondary component-button-small"
@@ -132,11 +123,11 @@ section.block.block-section
                   .component-icon
                     = image_tag "tools/tool-logo-abletonlive.png", :alt => "Ableton Live", :class => "token-image"
                 .col-7.d-flex.justify-content-end.align-items-start
-                  .component-tag
+                  .component-tag.tag
                     | Education
               .pattern-content
                 h4.token-header.bottom-margin-small
-                  | Ableton Live
+                  | Education App
                 p.token-paragraph
                   | Live is fast, fluid and flexible software for music creation and performance. 
               == link_to 'Launch', 'https://www.ableton.com/live', class: "component-button component-button-secondary component-button-small"

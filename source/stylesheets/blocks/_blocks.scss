@@ -41,7 +41,9 @@
   padding-top: $space-medium;
   padding-bottom: $space-medium;
   position: relative;
-  z-index: 1000000;
+  @media (min-width: $mq-laptop) {
+    z-index: 1000000;
+  }
   .form-input {
     background: $color-red-500;
     color: $color-white;
@@ -65,9 +67,9 @@
   padding-top: $space-medium;
   padding-bottom: $space-medium;
   position: relative;
-  z-index: 1000000;
   @media (min-width: $mq-laptop) {
     padding-top: $space-large;
     padding-bottom: $space-xl;
+    z-index: 1000000;
   }
 }

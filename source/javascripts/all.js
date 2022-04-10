@@ -6,6 +6,7 @@ js.main = {
   init: function () {
     this.externalLinks();
     this.mobileNavTrigger();
+    this.toolsFilterSort();
     this.modal();
     this.resourceSort();
     this.externalLinkTracking();
@@ -203,6 +204,53 @@ js.main = {
     //     $(this).addClass('selected');
     //   }
     // });
+  },
+  toolsFilterSort: function() {
+    var options = {
+      valueNames: [ 'name', 'tag' ]
+    };
+    
+    var toolsList = new List('toolsList', options);
+    var filterTag = document.getElementsByClassName('filter');
+    var all = document.querySelector('[data-filter="All"]');
+    
+    function activateToolFiltering(){
+      var q = this.getAttribute('data-filter');
+
+      function removeFilters() {
+        toolsList.filter();
+      }
+      function removeActiveClass() {
+        [].forEach.call(filterTag, function(el) {
+          el.classList.remove("active");
+        });
+      }
+      function addActiveClassAll() {
+        all.classList.add("active");
+      }
+
+      if(this.classList.contains('active')){
+        removeFilters();
+        removeActiveClass();
+        addActiveClassAll();
+      } 
+      else if((this.getAttribute('data-filter') === 'All') && (!this.classList.contains('active'))){
+        removeFilters();
+        removeActiveClass();
+        addActiveClassAll();
+      } 
+      else {
+        toolsList.filter(function(item) {
+          return (item.values().tag == q);
+        });
+        removeActiveClass();
+        this.classList.add("active");
+      }
+    }
+
+    for (var i = 0; i < filterTag.length; i++) {
+      filterTag[i].addEventListener("click", activateToolFiltering);
+    }
   },
   validateForm: function() {
     var form = document.getElementById("source_submit_form");
