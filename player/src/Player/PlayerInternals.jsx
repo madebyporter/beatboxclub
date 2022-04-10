@@ -8,6 +8,7 @@ const PlayerInternals = React.forwardRef(
       playingState: { isPlaying },
       playbackProgress: { onDurationChanged, onProgressChanged },
       playbackOrder: { isLooping, onStepForward },
+      volume: {useVolume}
     },
     ref
   ) => (
@@ -24,6 +25,7 @@ const PlayerInternals = React.forwardRef(
       onProgress={(progressInfo) =>
         onProgressChanged(progressInfo.playedSeconds)
       }
+      volume={useVolume}
     />
   )
 );

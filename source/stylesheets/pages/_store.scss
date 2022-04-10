@@ -89,7 +89,7 @@ div.snip-layout {
     }
   }
   .snip-btn {
-    @extend .btn;
+    @extend .component-button;
     @extend .t-16;
     line-height: 1.2;
     padding: $space-x;

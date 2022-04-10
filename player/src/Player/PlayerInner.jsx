@@ -24,6 +24,8 @@ const PlayerInner = ({
   onToggleShufflingClick,
   onStepBackClick,
   onStepForwardClick,
+  volume,
+  onVolumeChange,
 }) => (
   <div
     className={`box-list ${track.beatType} ${isPlaying ? "playing" : "paused"}`}
@@ -78,6 +80,20 @@ const PlayerInner = ({
       {formatDuration(progress)} / {formatDuration(duration)}
     </div>
     <div className="box-player-tools">
+      <div className={'box-player-volume'}>
+      <ReactSlider
+          min={0}
+          max={1}
+          step={0.1}
+          value={volume}
+          // onBeforeChange={volume}
+          onChange={onVolumeChange}
+          // onAfterChange={volume}
+          className="box-player-progress-bar"
+          trackClassName="box-player-progress-bar-track"
+          thumbClassName="box-player-progress-bar-thumb"
+        />
+      </div>
       <div
         className={`box-player-loop ${isLooping ? "active" : ""}`}
         onClick={onToggleLoopingClick}

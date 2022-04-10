@@ -1,0 +1,11 @@
+.pattern-card {
+  border: 1px solid $color-black-300;
+  display: flex;
+  flex-direction: column;
+  gap: $space-small;
+  margin: 0 0 $space-medium;
+  padding: $space-medium;
+  &:hover {
+    border-color: $color-black-200;
+  }
+}

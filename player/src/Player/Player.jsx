@@ -14,6 +14,7 @@ const Player = ({
     onStepBack,
     onStepForward,
   },
+  volume,
 }) => (
   <BottomBar isOpen={!!track}>
     {!!track && (
@@ -33,6 +34,8 @@ const Player = ({
         onToggleShufflingClick={onToggleIsShuffling}
         onStepBackClick={onStepBack}
         onStepForwardClick={onStepForward}
+        volume={volume}
+        onVolumeChange={volume}
       />
     )}
   </BottomBar>

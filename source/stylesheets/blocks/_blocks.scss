@@ -1,0 +1,73 @@
+.block {
+  // margin: 0 auto;
+  margin: $space-small $space-small;
+}
+.block-header {
+  padding-top: $space-large;
+  @media (min-width: $mq-tablet) {
+    padding-top: $space-large;
+  }
+}
+.block-content {
+  margin-bottom: $space-large;
+}
+.block-border-bottom {
+  border-bottom: 1px solid rgba(255,255,255,0.1);  
+}
+.block-cta {
+  background: lighten($color-black-500,2%);
+  border-bottom: 1px solid $color-black-400;
+  box-shadow: -600px 0 0 lighten($color-black-500,2%), 600px 0 0 lighten($color-black-500,2%);
+  margin-bottom: 0;
+  padding: $space-large $space-x;
+  @media (min-width: $mq-tablet) {
+    padding: $space-large 0;
+  }
+}
+.block-black {
+  background: rgba(33,33,33,0.5);
+}
+.cta-header {
+  @media (min-width: $mq-tablet) {
+    margin: 0;
+    text-align: left;
+  }
+}
+
+// Newsleter Signup Block
+.block-newsletter {
+  background: $color-red-400;
+  margin: 0;
+  padding-top: $space-medium;
+  padding-bottom: $space-medium;
+  position: relative;
+  z-index: 1000000;
+  .form-input {
+    background: $color-red-500;
+    color: $color-white;
+    &::-webkit-input-placeholder {
+      color: $color-red-200;
+    }
+    &:hover {
+      background: $color-red-300;
+    }
+    &:focus {
+      background: $color-red-300;
+    }
+  }
+}
+
+// Footer Block
+.block-footer {
+  background: lighten($color-black-500,2%);
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: $space-medium;
+  padding-bottom: $space-medium;
+  position: relative;
+  z-index: 1000000;
+  @media (min-width: $mq-laptop) {
+    padding-top: $space-large;
+    padding-bottom: $space-xl;
+  }
+}

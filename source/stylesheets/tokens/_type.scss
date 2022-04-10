@@ -1,21 +1,6 @@
 // _type.scss
 
   // System
-    .t-105 {
-      @include font-size(89);
-      @media (min-width: $mq-tablet) {
-        @include font-size(97);
-      }
-      @media (min-width: $mq-laptop) {
-        @include font-size(105);
-      }
-      @media (min-width: $mq-desktop) {
-        @include font-size(113);
-      }
-      @media (min-width: $mq-wide) {
-        @include font-size(121);
-      }
-    }
     .t-81 {
       @include font-size(64);
       @media (min-width: $mq-tablet) {
@@ -226,6 +211,10 @@
       }
     }
 
+    .token-paragraph {
+      @extend .t-18;
+    }
+
     strong {
       color: $color-white;
       font-weight: 700;
@@ -242,7 +231,7 @@
         margin: 0 0 0 0;
       }
       &.bottom-margin-small {
-        margin: 0 0 $space-small 0;
+        margin: 0 0 $space-x 0;
       }
     }
 
@@ -271,9 +260,22 @@
     }
 
     .headline {
-      @extend .t-105;
       font-weight: 500;
-      line-height: 1;
+      line-height: 1.1;
+      @include font-size(28);
+      @media (min-width: $mq-tablet) {
+        @include font-size(97);
+        line-height: 1;
+      }
+      @media (min-width: $mq-laptop) {
+        @include font-size(105);
+      }
+      @media (min-width: $mq-desktop) {
+        @include font-size(113);
+      }
+      @media (min-width: $mq-wide) {
+        @include font-size(121);
+      }
     }
 
   // Blockquotes

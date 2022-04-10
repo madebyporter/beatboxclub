@@ -1,0 +1,46 @@
+.pattern-navtrigger {
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: $space-small;
+  padding: $space-small;
+  position: fixed;
+  width: 100%;
+  z-index: 100000;
+  @media (min-width: $mq-laptop) {
+    display: none;
+  }
+  & > * {
+    cursor: pointer;
+  }
+  & > div:first-child {
+    padding-right: $space-medium;
+    visibility: hidden;
+    &:before {
+      content: "";
+      height: 7px;
+      width: 7px;
+      background: $color-white;
+      border-radius: 7px;
+      margin-right: $space-x;
+    }
+  }
+  & > div:last-child {
+    justify-content: flex-end;
+    padding-left: $space-medium;
+    &:after {
+      content: "";
+      height: 7px;
+      width: 7px;
+      background: $color-white;
+      border-radius: 7px;
+      margin-left: $space-x;
+    }
+    &.active {
+      color: $color-yellow;
+      &:after {
+        background: $color-yellow;
+      }
+    }
+  }
+}

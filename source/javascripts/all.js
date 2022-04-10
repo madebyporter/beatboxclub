@@ -5,6 +5,7 @@ var js = js || {},
 js.main = {
   init: function () {
     this.externalLinks();
+    this.mobileNavTrigger();
     this.modal();
     this.resourceSort();
     this.externalLinkTracking();
@@ -107,6 +108,45 @@ js.main = {
         callback: callbackFunction,
       });
     });
+  },
+  mobileNavTrigger: function() {
+    // Get trigger ID
+    var filterTrigger = document.getElementById('filterTrigger');
+
+    // Get menu ID
+    var filterMenu = document.getElementById('filterMenu');
+
+    // Group of rules when user clicks on filter trigger button
+    function activateFilterNav(){
+
+      // If the menu is active
+      if (filterMenu.classList.contains('active')){
+
+        // Remove active class from body so the page can scroll
+        document.body.classList.remove("mobileMenuActive");
+
+        // Remove active class from trigger button so text can turn white
+        filterTrigger.classList.remove("active");
+
+        // Remove active class from filter menu so menu can hide
+        filterMenu.classList.remove("active");
+      } 
+
+      // If the menu is not active
+      else {
+        // Add active class to body so the page cannot scroll
+        document.body.classList.add("mobileMenuActive");
+
+        // Add active class to trigger button so text can turn yellow
+        filterTrigger.classList.add("active");
+        
+        // Add active class to filter menu so menu can become visible
+        filterMenu.classList.add("active");
+      }
+    }
+
+    // If user clicks on filter button, execute rules above
+    filterTrigger.addEventListener("click", activateFilterNav);
   },
   modal: function (e) {
     var bd = $('body');

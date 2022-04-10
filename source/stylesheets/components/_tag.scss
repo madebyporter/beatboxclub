@@ -1,0 +1,14 @@
+.component-tag {
+  align-items: center;
+  border: 1px solid $color-black-300;
+  border-radius: 20px;
+  color: $color-white;
+  display: flex;
+  @extend .t-10;
+  font-weight: 700;
+  // min-height: 40px;
+  line-height: 1.1;
+  justify-content: center;
+  padding: $space-xsr1 $space-small;
+  text-align: center;
+}
