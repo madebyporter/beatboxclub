@@ -64,6 +64,12 @@
 }
 .nav-list-horz {
   flex-direction: row;
+  overflow-x: auto;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  .nav-link {
+    white-space: nowrap;
+  }
 }
 .nav-list-vert {
   flex-direction: column;

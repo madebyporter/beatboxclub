@@ -76,6 +76,10 @@
     &.mobileMenuActive {
       overflow: hidden;
     }
+    &.index {
+      .block-footer {display: none}
+      .block-nav {margin-bottom: 0;}
+    }
   }
 
   .site-wrapper {

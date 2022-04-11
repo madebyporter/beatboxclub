@@ -1,38 +1,20 @@
-- set_meta_tags :title => "Producer Tapes"
-
-script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js"
-script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"
+- set_meta_tags :title => "Welcome to The Beatbox Club"
 == javascript_include_tag  "jquery.ajaxchimp.min"
 
-section.block.block-section.block-hero.block-border-bottom
-  .container
+section.block.block-section.block-hero
+  .container-fluid
     .row
-      .col-12.col-md-7.col-lg-8.d-flex.align-items-center
-        .row
-          .col-md-12.col-lg-10
-            h1.bottom-margin-small
-              | Producer Tapes
-            p.content-large
-              | Curated beat & producer tapes from music producers all around the world.
-            p.content
-              = link_to "Submit Tape","/tapes/submit"
-section.block.block-section
-  .container
-    .row
-      .col-12
-        .row.d-flex.justify-content-start
-          - data.site.beattapes.each do |id, tapes|
-            .col-12.col-md-3
-              .catalog
-                .catalog-cover
-                  == link_to '/tapes/' + tapes.tape_id, class: "catalog-cover-link" do
-                    = image_tag "#{tapes.cover_art.url}", :alt => "#{tapes.title}", :class => "catalog-cover-img"
-                == link_to tapes.title, '/tapes/' + tapes.tape_id, class: "catalog-title"
-                p.catalog-producer
-                  | by&nbsp;
-                  = link_to "#{tapes.producer}","#{tapes.producer_url}", :class => "", :onclick => "gtag('event', 'click', {'event_category' : '#{tapes.producer}', 'event_label' : out_producer, 'value' : 0});"
-section.block.block-newsletter
+      .col-12.d-flex.align-items-center
+        h2.headline The individuals, projects & tools for people who make things with music.
+
+nav.block.block-nav
   .container-fluid
     .row
       .col-12
-        = partial "partials/cta-newslettersignup"
+        ul.nav-list.nav-list-horz
+          li.nav-list-item
+            == link_to 'Tools', '/tools/', class: "nav-link"
+          li.nav-list-item
+            == link_to 'Directory', '/directory/', class: "nav-link"
+          li.nav-list-item
+            == link_to 'Tapes', '/tapes/', class: "nav-link"
