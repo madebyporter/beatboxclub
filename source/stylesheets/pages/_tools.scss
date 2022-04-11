@@ -1,0 +1,15 @@
+.tools-header {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tools-desc {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 75px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}

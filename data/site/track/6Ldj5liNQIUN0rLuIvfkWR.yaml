@@ -1,0 +1,33 @@
+---
+:id: 6Ldj5liNQIUN0rLuIvfkWR
+:_meta:
+  :content_type_id: track
+  :updated_at: '2022-03-30T16:23:11+00:00'
+  :created_at: '2022-03-30T16:23:11+00:00'
+  :id: 6Ldj5liNQIUN0rLuIvfkWR
+:sound_type: Track
+:name: Acclaim
+:producer:
+- :id: 35EqVleFt7Bh1Sn4YDVnsG
+  :_meta:
+    :content_type_id: producer
+    :updated_at: '2022-01-03T16:19:44+00:00'
+    :created_at: '2022-01-03T16:19:44+00:00'
+    :id: 35EqVleFt7Bh1Sn4YDVnsG
+  :producer_id: 4
+  :producer: Luke Tyler
+  :producer_slug: luketyler
+:genre: Electronic
+:vibe:
+- House
+:bpm: 118.0
+:visitor_settings: Stream
+:member_settings: MP3 Download
+:beat:
+  :title: Acclaim
+  :description: ''
+  :url: "//assets.ctfassets.net/e1azyderdhks/12XlBAAF5C9zX9KEGoGQdO/2be2207ae687c2d1277bcbb1d68ae06b/Acclaim.mp3"
+  :_meta:
+    :updated_at: '2022-03-30T16:23:04+00:00'
+    :created_at: '2022-03-30T16:23:04+00:00'
+    :id: 12XlBAAF5C9zX9KEGoGQdO

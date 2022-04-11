@@ -1,12 +1,12 @@
 ---
-:id: 2jwwGc1iDcY60pXWMzOWoH
+:id: 4tGjVEUe9vSjPCCrAtzgx9
 :_meta:
   :content_type_id: track
-  :updated_at: '2021-12-30T21:21:56+00:00'
-  :created_at: '2021-12-17T04:09:17+00:00'
-  :id: 2jwwGc1iDcY60pXWMzOWoH
+  :updated_at: '2022-03-13T23:54:48+00:00'
+  :created_at: '2022-03-13T23:54:48+00:00'
+  :id: 4tGjVEUe9vSjPCCrAtzgx9
 :sound_type: Track
-:name: Superior
+:name: BNS
 :producer:
 - :id: 2ysheqH4CtlypgfXHEZLXU
   :_meta:
@@ -23,12 +23,15 @@
 :genre: Rap
 :vibe:
 - Dark
-:bpm: 154.0
+- Trap
+:bpm: 157.0
+:visitor_settings: Stream
+:member_settings: MP3 Download
 :beat:
-  :title: Superior - Master - 154
+  :title: BNS-Master-157
   :description: ''
-  :url: "//assets.ctfassets.net/e1azyderdhks/5tMXm7wUbwumyNqruF829g/3faf46bad4c0e7529f075270ceb29894/Superior_-_Master_-_154.mp3"
+  :url: "//assets.ctfassets.net/e1azyderdhks/5mwBxSM500PBIWDp2Ebrhc/a658feefd396503810b9e6c4997c90af/BNS-Master-157.mp3"
   :_meta:
-    :updated_at: '2021-12-17T04:09:11+00:00'
-    :created_at: '2021-12-17T04:09:11+00:00'
-    :id: 5tMXm7wUbwumyNqruF829g
+    :updated_at: '2022-03-13T23:54:36+00:00'
+    :created_at: '2022-03-13T23:54:36+00:00'
+    :id: 5mwBxSM500PBIWDp2Ebrhc

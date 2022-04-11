@@ -1,4 +1,4 @@
-- set_meta_tags :title => "Producer Tapes"
+- set_meta_tags :title => "Tools for Music Producers"
 == javascript_include_tag   "jquery.ajaxchimp.min", "list.min"
 
 section.block.block-section.block-hero
@@ -35,102 +35,33 @@ section#toolsList.block.block-section
               span.nav-text.t-18 Education
             li.nav-list-item.tag.filter data-filter="Effects VST"
               span.nav-text.t-18 Effects VST
+            li.nav-list-item.tag.filter data-filter="Hardware"
+              span.nav-text.t-18 Hardware
             li.nav-list-item.tag.filter data-filter="Instrument VST"
               span.nav-text.t-18 Instrument VST
             li.nav-list-item.tag.filter data-filter="Platforms"
               span.nav-text.t-18 Platforms
+            li.nav-list-item.tag.filter data-filter="Software"
+              span.nav-text.t-18 Software
+            li.nav-list-item.tag.filter data-filter="Sounds"
+              span.nav-text.t-18 Sounds
       .col-12.col-lg-9
         .row.list
-          .col-12.col-sm-6.col-lg-6.col-xl-4
-            .pattern-card
-              .row
-                .col-5
-                  .component-icon
-                    = image_tag "tools/tool-logo-abletonlive.png", :alt => "Ableton Live", :class => "token-image"
-                .col-7.d-flex.justify-content-end.align-items-start
-                  .component-tag.tag
-                    | DAWs
-              .pattern-content
-                h4.token-header.bottom-margin-small
-                  | Ableton Live
-                p.token-paragraph
-                  | Live is fast, fluid and flexible software for music creation and performance. 
-              == link_to 'Launch', 'https://www.ableton.com/live', class: "component-button component-button-secondary component-button-small"
-          .col-12.col-sm-6.col-lg-6.col-xl-4
-            .pattern-card
-              .row
-                .col-5
-                  .component-icon
-                    = image_tag "tools/tool-logo-abletonlive.png", :alt => "Ableton Live", :class => "token-image"
-                .col-7.d-flex.justify-content-end.align-items-start
-                  .component-tag.tag
-                    | Business
-              .pattern-content
-                h4.token-header.bottom-margin-small
-                  | Business App
-                p.token-paragraph
-                  | Live is fast, fluid and flexible software for music creation and performance. 
-              == link_to 'Launch', 'https://www.ableton.com/live', class: "component-button component-button-secondary component-button-small"
-          .col-12.col-sm-6.col-lg-6.col-xl-4
-            .pattern-card
-              .row
-                .col-5
-                  .component-icon
-                    = image_tag "tools/tool-logo-abletonlive.png", :alt => "Ableton Live", :class => "token-image"
-                .col-7.d-flex.justify-content-end.align-items-start
-                  .component-tag.tag
-                    | Platforms
-              .pattern-content
-                h4.token-header.bottom-margin-small
-                  | Platform App
-                p.token-paragraph
-                  | Live is fast, fluid and flexible software for music creation and performance. 
-              == link_to 'Launch', 'https://www.ableton.com/live', class: "component-button component-button-secondary component-button-small"
-          .col-12.col-sm-6.col-lg-6.col-xl-4
-            .pattern-card
-              .row
-                .col-5
-                  .component-icon
-                    = image_tag "tools/tool-logo-abletonlive.png", :alt => "Ableton Live", :class => "token-image"
-                .col-7.d-flex.justify-content-end.align-items-start
-                  .component-tag.tag
-                    | Effects VST
-              .pattern-content
-                h4.token-header.bottom-margin-small
-                  | Effects VST App
-                p.token-paragraph
-                  | Live is fast, fluid and flexible software for music creation and performance. 
-              == link_to 'Launch', 'https://www.ableton.com/live', class: "component-button component-button-secondary component-button-small"
-          .col-12.col-sm-6.col-lg-6.col-xl-4
-            .pattern-card
-              .row
-                .col-5
-                  .component-icon
-                    = image_tag "tools/tool-logo-abletonlive.png", :alt => "Ableton Live", :class => "token-image"
-                .col-7.d-flex.justify-content-end.align-items-start
-                  .component-tag.tag
-                    | Instrument VST
-              .pattern-content
-                h4.token-header.bottom-margin-small
-                  | Instrument VST App
-                p.token-paragraph
-                  | Live is fast, fluid and flexible software for music creation and performance. 
-              == link_to 'Launch', 'https://www.ableton.com/live', class: "component-button component-button-secondary component-button-small"
-          .col-12.col-sm-6.col-lg-6.col-xl-4
-            .pattern-card
-              .row
-                .col-5
-                  .component-icon
-                    = image_tag "tools/tool-logo-abletonlive.png", :alt => "Ableton Live", :class => "token-image"
-                .col-7.d-flex.justify-content-end.align-items-start
-                  .component-tag.tag
-                    | Education
-              .pattern-content
-                h4.token-header.bottom-margin-small
-                  | Education App
-                p.token-paragraph
-                  | Live is fast, fluid and flexible software for music creation and performance. 
-              == link_to 'Launch', 'https://www.ableton.com/live', class: "component-button component-button-secondary component-button-small"
+          - data.site.tools.each do |id, tool|
+            .col-12.col-sm-6.col-lg-6.col-xl-4
+              .pattern-card
+                .row
+                  .col-5
+                    .component-icon
+                      = image_tag tool.cover, :alt => tool.title, :class => "token-image"
+                  .col-7.d-flex.justify-content-end.align-items-start
+                    .component-tag.tag = tool.tag
+                .pattern-content
+                  h4.token-header.bottom-margin-small.tools-header
+                    = tool.title
+                  p.token-paragraph.tools-desc
+                    = tool.description
+                == link_to 'Launch', tool.link, class: "component-button component-button-secondary component-button-small"
 
 section.block.block-newsletter
   .container-fluid

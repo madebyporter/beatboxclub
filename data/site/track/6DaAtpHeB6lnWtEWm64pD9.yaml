@@ -1,0 +1,33 @@
+---
+:id: 6DaAtpHeB6lnWtEWm64pD9
+:_meta:
+  :content_type_id: track
+  :updated_at: '2022-03-30T16:25:47+00:00'
+  :created_at: '2022-03-30T16:25:42+00:00'
+  :id: 6DaAtpHeB6lnWtEWm64pD9
+:sound_type: Track
+:name: Shimmering Caves
+:producer:
+- :id: 35EqVleFt7Bh1Sn4YDVnsG
+  :_meta:
+    :content_type_id: producer
+    :updated_at: '2022-01-03T16:19:44+00:00'
+    :created_at: '2022-01-03T16:19:44+00:00'
+    :id: 35EqVleFt7Bh1Sn4YDVnsG
+  :producer_id: 4
+  :producer: Luke Tyler
+  :producer_slug: luketyler
+:genre: Electronic
+:vibe:
+- House
+:bpm: 120.0
+:visitor_settings: Stream
+:member_settings: MP3 Download
+:beat:
+  :title: Shimmering Caves
+  :description: ''
+  :url: "//assets.ctfassets.net/e1azyderdhks/3IVMV4dfgWpt2iEHJGal6J/d73df5f53509de61b6142cab593e59d2/ShimmeringCaves.mp3"
+  :_meta:
+    :updated_at: '2022-03-30T16:25:17+00:00'
+    :created_at: '2022-03-30T16:25:17+00:00'
+    :id: 3IVMV4dfgWpt2iEHJGal6J

@@ -1,0 +1,33 @@
+---
+:id: 38sdf3pQkGWDJA7od1k5FW
+:_meta:
+  :content_type_id: track
+  :updated_at: '2022-03-30T18:26:30+00:00'
+  :created_at: '2022-03-30T18:26:30+00:00'
+  :id: 38sdf3pQkGWDJA7od1k5FW
+:sound_type: Track
+:name: Roncevaux Terra
+:producer:
+- :id: 35EqVleFt7Bh1Sn4YDVnsG
+  :_meta:
+    :content_type_id: producer
+    :updated_at: '2022-01-03T16:19:44+00:00'
+    :created_at: '2022-01-03T16:19:44+00:00'
+    :id: 35EqVleFt7Bh1Sn4YDVnsG
+  :producer_id: 4
+  :producer: Luke Tyler
+  :producer_slug: luketyler
+:genre: Electronic
+:vibe:
+- Chill
+:bpm: 108.0
+:visitor_settings: Stream
+:member_settings: MP3 Download
+:beat:
+  :title: Roncevaux Terra
+  :description: ''
+  :url: "//assets.ctfassets.net/e1azyderdhks/2EAbZuTuJHcNZxZMeBS2kz/5031817592ed98c4466b06998b8a6c99/RoncevauxTerraMSTR.mp3"
+  :_meta:
+    :updated_at: '2022-03-30T18:26:24+00:00'
+    :created_at: '2022-03-30T18:26:24+00:00'
+    :id: 2EAbZuTuJHcNZxZMeBS2kz

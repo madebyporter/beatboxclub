@@ -1,12 +1,12 @@
 ---
-:id: 2jwwGc1iDcY60pXWMzOWoH
+:id: 3JEgvLWEb6L43A44X1NhZw
 :_meta:
   :content_type_id: track
-  :updated_at: '2021-12-30T21:21:56+00:00'
-  :created_at: '2021-12-17T04:09:17+00:00'
-  :id: 2jwwGc1iDcY60pXWMzOWoH
+  :updated_at: '2022-02-28T17:12:26+00:00'
+  :created_at: '2022-02-28T17:12:26+00:00'
+  :id: 3JEgvLWEb6L43A44X1NhZw
 :sound_type: Track
-:name: Superior
+:name: Hello
 :producer:
 - :id: 2ysheqH4CtlypgfXHEZLXU
   :_meta:
@@ -20,15 +20,18 @@
   :producer_description: Design & Music Producer, digital nomad, founder of The Beatbox
     Club. Focuses on dark, cinematic hiphop productions.
   :producer_link: https://www.madebyporter.com
-:genre: Rap
+:genre: RnB
 :vibe:
-- Dark
-:bpm: 154.0
+- Chill
+- Harp
+:bpm: 120.0
+:visitor_settings: Stream
+:member_settings: MP3 Download
 :beat:
-  :title: Superior - Master - 154
+  :title: Hello (Beat)
   :description: ''
-  :url: "//assets.ctfassets.net/e1azyderdhks/5tMXm7wUbwumyNqruF829g/3faf46bad4c0e7529f075270ceb29894/Superior_-_Master_-_154.mp3"
+  :url: "//assets.ctfassets.net/e1azyderdhks/4uBUV05GXYniwf6guK80wo/957f2302d12b67bb3fb5cd1641068be6/Hello__Beat_.mp3"
   :_meta:
-    :updated_at: '2021-12-17T04:09:11+00:00'
-    :created_at: '2021-12-17T04:09:11+00:00'
-    :id: 5tMXm7wUbwumyNqruF829g
+    :updated_at: '2022-02-28T17:12:17+00:00'
+    :created_at: '2022-02-28T17:12:17+00:00'
+    :id: 4uBUV05GXYniwf6guK80wo

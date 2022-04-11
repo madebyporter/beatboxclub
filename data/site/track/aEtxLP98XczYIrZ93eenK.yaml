@@ -1,0 +1,33 @@
+---
+:id: aEtxLP98XczYIrZ93eenK
+:_meta:
+  :content_type_id: track
+  :updated_at: '2022-03-30T18:15:26+00:00'
+  :created_at: '2022-03-30T18:15:26+00:00'
+  :id: aEtxLP98XczYIrZ93eenK
+:sound_type: Track
+:name: Be Enough
+:producer:
+- :id: 35EqVleFt7Bh1Sn4YDVnsG
+  :_meta:
+    :content_type_id: producer
+    :updated_at: '2022-01-03T16:19:44+00:00'
+    :created_at: '2022-01-03T16:19:44+00:00'
+    :id: 35EqVleFt7Bh1Sn4YDVnsG
+  :producer_id: 4
+  :producer: Luke Tyler
+  :producer_slug: luketyler
+:genre: Electronic
+:vibe:
+- Chill
+:bpm: 83.0
+:visitor_settings: Stream
+:member_settings: MP3 Download
+:beat:
+  :title: Be Enough
+  :description: ''
+  :url: "//assets.ctfassets.net/e1azyderdhks/53bMsMMP66GMmGom7ZIvFp/43c46a92cc4a0e91c315b445bb476734/BeEnough28.02.mp3"
+  :_meta:
+    :updated_at: '2022-03-30T18:15:14+00:00'
+    :created_at: '2022-03-30T18:15:14+00:00'
+    :id: 53bMsMMP66GMmGom7ZIvFp

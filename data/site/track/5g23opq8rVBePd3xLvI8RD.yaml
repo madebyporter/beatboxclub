@@ -1,0 +1,33 @@
+---
+:id: 5g23opq8rVBePd3xLvI8RD
+:_meta:
+  :content_type_id: track
+  :updated_at: '2022-03-30T18:21:05+00:00'
+  :created_at: '2022-03-30T18:21:05+00:00'
+  :id: 5g23opq8rVBePd3xLvI8RD
+:sound_type: Track
+:name: Coconut Water
+:producer:
+- :id: 35EqVleFt7Bh1Sn4YDVnsG
+  :_meta:
+    :content_type_id: producer
+    :updated_at: '2022-01-03T16:19:44+00:00'
+    :created_at: '2022-01-03T16:19:44+00:00'
+    :id: 35EqVleFt7Bh1Sn4YDVnsG
+  :producer_id: 4
+  :producer: Luke Tyler
+  :producer_slug: luketyler
+:genre: Electronic
+:vibe:
+- Chill
+:bpm: 98.0
+:visitor_settings: Stream
+:member_settings: MP3 Download
+:beat:
+  :title: Coconut Water
+  :description: ''
+  :url: "//assets.ctfassets.net/e1azyderdhks/6ej5mKWlrCRyG5aYJFauDL/9ba60ac9c4ecb5b20cf1906533926037/CoconutWater28.02.mp3"
+  :_meta:
+    :updated_at: '2022-03-30T18:20:52+00:00'
+    :created_at: '2022-03-30T18:20:52+00:00'
+    :id: 6ej5mKWlrCRyG5aYJFauDL

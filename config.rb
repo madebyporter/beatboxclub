@@ -53,7 +53,7 @@ end
 activate :contentful do |f|
   f.space         = { site: ENV['CONTENTFUL_SPACE_ID'] }
   f.access_token  = ENV['CONTENTFUL_ACCESS_TOKEN']
-  f.content_types = { source: 'source', track: 'track', beattapes: 'beattapes', producer: 'producer'}
+  f.content_types = { tools: 'tools', track: 'track', beattapes: 'beattapes', producer: 'producer'}
   f.cda_query = { order: 'sys.createdAt' }
   f.all_entries = true
 end

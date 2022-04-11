@@ -1,0 +1,33 @@
+---
+:id: 1vu7nE367gY1iGGw10uVit
+:_meta:
+  :content_type_id: track
+  :updated_at: '2022-03-30T18:17:38+00:00'
+  :created_at: '2022-03-30T18:17:38+00:00'
+  :id: 1vu7nE367gY1iGGw10uVit
+:sound_type: Track
+:name: A Few Lagoons
+:producer:
+- :id: 35EqVleFt7Bh1Sn4YDVnsG
+  :_meta:
+    :content_type_id: producer
+    :updated_at: '2022-01-03T16:19:44+00:00'
+    :created_at: '2022-01-03T16:19:44+00:00'
+    :id: 35EqVleFt7Bh1Sn4YDVnsG
+  :producer_id: 4
+  :producer: Luke Tyler
+  :producer_slug: luketyler
+:genre: Electronic
+:vibe:
+- Melodic
+:bpm: 80.0
+:visitor_settings: Stream
+:member_settings: MP3 Download
+:beat:
+  :title: Be Enough
+  :description: ''
+  :url: "//assets.ctfassets.net/e1azyderdhks/7j6XxRwM0fHRYToB7fA3UB/875a4468d07676ccad46e68a20bb9467/BeEnough28.02.mp3"
+  :_meta:
+    :updated_at: '2022-03-30T18:16:58+00:00'
+    :created_at: '2022-03-30T18:16:58+00:00'
+    :id: 7j6XxRwM0fHRYToB7fA3UB

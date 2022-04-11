@@ -1,0 +1,33 @@
+---
+:id: n0dhxyNiSCMdlbFPTFjFf
+:_meta:
+  :content_type_id: track
+  :updated_at: '2022-03-16T17:36:47+00:00'
+  :created_at: '2022-03-16T17:36:47+00:00'
+  :id: n0dhxyNiSCMdlbFPTFjFf
+:sound_type: Track
+:name: Avenue
+:producer:
+- :id: 35EqVleFt7Bh1Sn4YDVnsG
+  :_meta:
+    :content_type_id: producer
+    :updated_at: '2022-01-03T16:19:44+00:00'
+    :created_at: '2022-01-03T16:19:44+00:00'
+    :id: 35EqVleFt7Bh1Sn4YDVnsG
+  :producer_id: 4
+  :producer: Luke Tyler
+  :producer_slug: luketyler
+:genre: Electronic
+:vibe:
+- Epic
+:bpm: 122.0
+:visitor_settings: Stream
+:member_settings: MP3 Download
+:beat:
+  :title: Avenue
+  :description: ''
+  :url: "//assets.ctfassets.net/e1azyderdhks/2GgJkzDfown9u5smE8c6Cy/532176b949f135394b8f2c30d0db9499/Avenue.mp3"
+  :_meta:
+    :updated_at: '2022-03-16T17:36:32+00:00'
+    :created_at: '2022-03-16T17:36:32+00:00'
+    :id: 2GgJkzDfown9u5smE8c6Cy

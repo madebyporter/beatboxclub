@@ -1,0 +1,33 @@
+---
+:id: 4rSWF9WSWQnOVpPfdGoisJ
+:_meta:
+  :content_type_id: track
+  :updated_at: '2022-03-30T16:43:36+00:00'
+  :created_at: '2022-03-30T16:43:36+00:00'
+  :id: 4rSWF9WSWQnOVpPfdGoisJ
+:sound_type: Track
+:name: Capital
+:producer:
+- :id: 35EqVleFt7Bh1Sn4YDVnsG
+  :_meta:
+    :content_type_id: producer
+    :updated_at: '2022-01-03T16:19:44+00:00'
+    :created_at: '2022-01-03T16:19:44+00:00'
+    :id: 35EqVleFt7Bh1Sn4YDVnsG
+  :producer_id: 4
+  :producer: Luke Tyler
+  :producer_slug: luketyler
+:genre: Electronic
+:vibe:
+- House
+:bpm: 120.0
+:visitor_settings: Stream
+:member_settings: MP3 Download
+:beat:
+  :title: Capital
+  :description: ''
+  :url: "//assets.ctfassets.net/e1azyderdhks/5WMv4s8jzHBqrQhjEIOltW/cc3f81536d0c7cbb9449bb968d8d68a7/Capitalx.mp3"
+  :_meta:
+    :updated_at: '2022-03-30T16:43:12+00:00'
+    :created_at: '2022-03-30T16:43:12+00:00'
+    :id: 5WMv4s8jzHBqrQhjEIOltW
