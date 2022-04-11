@@ -34,8 +34,6 @@ const Player = ({
         onToggleShufflingClick={onToggleIsShuffling}
         onStepBackClick={onStepBack}
         onStepForwardClick={onStepForward}
-        volume={volume}
-        onVolumeChange={volume}
       />
     )}
   </BottomBar>
