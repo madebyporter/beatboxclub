@@ -146,8 +146,10 @@ js.main = {
       }
     }
 
-    // If user clicks on filter button, execute rules above
-    filterTrigger.addEventListener("click", activateFilterNav);
+    if (document.body.classList.contains('tools_index')){
+      // If user clicks on filter button, execute rules above
+      filterTrigger.addEventListener("click", activateFilterNav);
+    }
   },
   modal: function (e) {
     var bd = $('body');
