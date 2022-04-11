@@ -4,20 +4,29 @@ include_react_player: true
 
 - set_meta_tags :title => "#{producer.producer}"
 
-section.block.block-section.block-hero.block-border-bottom
-  .container
+section.block.block-section.block-hero
+  .container-fluid
+    .row
+      .col-12.col-lg-8
+        h2.headline #{producer.producer}
+        p.content-large
+          | #{producer.producer_description}
+        p.content
+          = link_to "#{producer.producer_link}", "#{producer.producer_link}", :class => "", :onclick => "gtag('event', 'click', {'event_category' : 'Producer Page', 'event_label' : 'Producer Link' : '#{producer.producer}'});"
+        
+nav.block.block-nav
+  .container-fluid
     .row
       .col-12
-        .row
-          .col-lg-10
-            h1.bottom-margin-small
-              | #{producer.producer}
-        .row
-          .col-lg-8
-            p.content
-              | #{producer.producer_description}
-            p.content-small
-              = link_to "#{producer.producer_link}", "#{producer.producer_link}", :class => "", :onclick => "gtag('event', 'click', {'event_category' : 'Producer Page', 'event_label' : 'Producer Link' : '#{producer.producer}'});"
+        ul.nav-list.nav-list-horz
+          li.nav-list-item
+            == link_to 'Tools', '/tools/', class: "nav-link"
+          li.nav-list-item
+            == link_to 'Directory', '/directory/', class: "nav-link"
+          li.nav-list-item
+            == link_to 'Tapes', '/tapes/', class: "nav-link"
+          li.nav-list-item.active
+            == link_to producer.producer, "/producers/#{producer.producer_slug}", class: "nav-link"
                 
 
 div#beatbox-playlist

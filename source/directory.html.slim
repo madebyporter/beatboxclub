@@ -1,0 +1,48 @@
+- set_meta_tags :title => "The Beatbox Club Directory"
+== javascript_include_tag   "jquery.ajaxchimp.min", "list.min"
+
+section.block.block-section.block-hero
+  .container-fluid
+    .row
+      .col-12.d-flex.align-items-center
+        h2.headline The individuals, projects & tools for people who make things with music.
+
+nav.block.block-nav
+  .container-fluid
+    .row
+      .col-12
+        ul.nav-list.nav-list-horz
+          li.nav-list-item
+            == link_to 'Tools', '/tools/', class: "nav-link"
+          li.nav-list-item.active
+            == link_to 'Directory', '/directory/', class: "nav-link"
+          li.nav-list-item
+            == link_to 'Tapes', '/tapes/', class: "nav-link"
+
+section#toolsList.block.block-section
+  .container-fluid
+    .row
+      .col-12
+        .row.list
+          - data.site.producer.each do |id, p|
+            .col-12.col-sm-6.col-lg-6.col-xl-3
+              .pattern-card
+                / .row
+                /   .col-5
+                /     .component-icon
+                /       = image_tag tool.cover, :alt => tool.title, :class => "token-image"
+                .pattern-content
+                  h4.token-header.bottom-margin-small.tools-header
+                    = p.producer
+                  p.token-paragraph.tools-desc
+                    = p.producer_description
+                == link_to 'View', "/producers/#{p.producer_slug}", class: "component-button component-button-secondary component-button-small"
+
+section.block.block-newsletter
+  .container-fluid
+    .row
+      .col-12
+        = partial "partials/cta-newslettersignup"
+.pattern-navtrigger
+  #menuTrigger.component-button.component-button-small.component-button-hug.component-button-rounded Menu
+  #filterTrigger.component-button.component-button-small.component-button-hug.component-button-rounded Filter
