@@ -114,7 +114,7 @@ h4.box-meta-name {
   left: 0;
   position: fixed;
   width: 100%;
-  z-index: 10;
+  z-index: 100000000;
   @include transition();
   @media (min-width: $mq-tablet) {
     display: block;
