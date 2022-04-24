@@ -69,6 +69,14 @@
     //     background-size: cover;
     //   }
     // }
+    &.tapes {
+      .block-footer, .block-black, .block-nav {
+        margin: 0;
+      }
+      .block-black {
+        padding-top: $space-medium;
+      }
+    }
     &.signup {
       background: url('../images/site-bg-video.jpg') no-repeat scroll center 30% $color-black;
       background-size: cover;

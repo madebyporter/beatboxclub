@@ -1,8 +1,0 @@
-- name: The Beatbox Club Subscription
-  id: 1
-  price: 10.00
-  max_quantity: 1
-  path: signup
-  description: Uncontested, delightful classic.
-  payment_interval: month
-  payment_interval_count: 1

@@ -15,9 +15,8 @@ html
     meta[name="msapplication-config" content="/images/favicons/browserconfig.xml"]
     meta[name="theme-color" content="#ffffff"]
 
-    = display_meta_tags site: 'The Beatbox Club'
+   
     = auto_display_meta_tags
-    = set_meta_tags thumbnail: 'images/bbx-og-image.jpg'
 
     == stylesheet_link_tag :site
     == javascript_include_tag  "jquery", "list.min.js", "parsley.min", "all"
@@ -36,7 +35,6 @@ html
     script src="https://kit.fontawesome.com/c2696167d3.js" crossorigin="anonymous"
       
   body class="#{page_classes}"
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJGDRCN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     main.site-wrapper
       header.block.block-header
         .container-fluid
