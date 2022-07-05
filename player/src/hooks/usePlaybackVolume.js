@@ -7,9 +7,8 @@ const usePlaybackVolume = () => {
   const [cachedVolume, setCachedVolume] = useState(1);
 
   const onChangeVolumeStart = (value) => {
-    if (isMuted) {
-      setIsMuted(false);
-    }
+    isMuted && setIsMuted(false);
+
     setCachedVolume(value);
   };
 
@@ -22,9 +21,7 @@ const usePlaybackVolume = () => {
   };
 
   const onMute = () => {
-    if (isMuted) {
-      setVolume(cachedVolume);
-    }
+    isMuted && setVolume(cachedVolume);
 
     setIsMuted(!isMuted);
   };
