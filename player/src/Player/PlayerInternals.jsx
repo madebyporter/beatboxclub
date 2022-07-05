@@ -7,7 +7,8 @@ const PlayerInternals = React.forwardRef(
       currentTrack,
       playingState: { isPlaying },
       playbackProgress: { onDurationChanged, onProgressChanged },
-      playbackOrder: { isLooping, onStepForward }
+      playbackOrder: { isLooping, onStepForward },
+      playbackVolume: { volume, isMuted },
     },
     ref
   ) => (
@@ -17,6 +18,8 @@ const PlayerInternals = React.forwardRef(
       ref={ref}
       url={currentTrack.url}
       playing={isPlaying}
+      volume={volume}
+      muted={isMuted}
       loop={isLooping}
       onEnded={onStepForward}
       onDuration={onDurationChanged}

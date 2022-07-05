@@ -4,6 +4,7 @@ import usePlaybackOrder from "./usePlaybackOrder";
 import useSortedTracks from "./useSortedTracks";
 import useCurrentTrack from "./useCurrentTrack";
 import usePlaybackProgress from "./usePlaybackProgress";
+import usePlaybackVolume from "./usePlaybackVolume";
 
 const usePlaylistFunctionality = (unsortedTracks) => {
   const playerRef = useRef();
@@ -18,6 +19,7 @@ const usePlaylistFunctionality = (unsortedTracks) => {
     setCurrentTrackId,
     playbackProgress
   );
+  const playbackVolume = usePlaybackVolume();
 
   return {
     playerRef,
@@ -26,6 +28,7 @@ const usePlaylistFunctionality = (unsortedTracks) => {
     playingState,
     playbackProgress,
     playbackOrder,
+    playbackVolume,
   };
 };
 
