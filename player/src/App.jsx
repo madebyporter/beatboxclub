@@ -16,6 +16,7 @@ const App = ({ tracks: unsortedTracks }) => {
     playingState,
     playbackProgress,
     playbackOrder,
+    playbackVolume,
   } = usePlaylistFunctionality(unsortedTracks);
 
   return (
@@ -31,6 +32,7 @@ const App = ({ tracks: unsortedTracks }) => {
           playingState={playingState}
           playbackProgress={playbackProgress}
           playbackOrder={playbackOrder}
+          playbackVolume={playbackVolume}
         />
       </PlayerPortal>
       <PlayerInternals
@@ -39,6 +41,7 @@ const App = ({ tracks: unsortedTracks }) => {
         playingState={playingState}
         playbackProgress={playbackProgress}
         playbackOrder={playbackOrder}
+        playbackVolume={playbackVolume}
       />
     </>
   );

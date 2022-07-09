@@ -14,7 +14,14 @@ const Player = ({
     onStepBack,
     onStepForward,
   },
-  volume,
+  playbackVolume: {
+    volume,
+    isMuted,
+    onChangeVolumeStart,
+    onChangeVolume,
+    onChangeVolumeEnd,
+    onMute,
+  },
 }) => (
   <BottomBar isOpen={!!track}>
     {!!track && (
@@ -25,11 +32,17 @@ const Player = ({
         onPauseClick={onPause}
         progress={progress}
         duration={duration}
+        volume={volume}
         onSeekStart={onSeekStart}
         onSeek={onSeek}
         onSeekEnd={onSeekEnd}
+        onChangeVolumeStart={onChangeVolumeStart}
+        onChangeVolume={onChangeVolume}
+        onChangeVolumeEnd={onChangeVolumeEnd}
+        onMute={onMute}
         isLooping={isLooping}
         isShuffling={isShuffling}
+        isMuted={isMuted}
         onToggleLoopingClick={onToggleIsLooping}
         onToggleShufflingClick={onToggleIsShuffling}
         onStepBackClick={onStepBack}

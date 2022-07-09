@@ -15,11 +15,17 @@ const PlayerInner = ({
   onPauseClick,
   progress,
   duration,
+  volume,
   onSeekStart,
   onSeek,
   onSeekEnd,
+  onChangeVolumeStart,
+  onChangeVolume,
+  onChangeVolumeEnd,
+  onMute,
   isLooping,
   isShuffling,
+  isMuted,
   onToggleLoopingClick,
   onToggleShufflingClick,
   onStepBackClick,
@@ -29,16 +35,28 @@ const PlayerInner = ({
     className={`box-list ${track.beatType} ${isPlaying ? "playing" : "paused"}`}
   >
     <div className="box-player-controls">
-      <div onClick={onStepBackClick} className="box-player-prev box-player-control-direction">
+      <div
+        onClick={onStepBackClick}
+        className="box-player-prev box-player-control-direction"
+      >
         <i className="fas fa-step-backward" />
       </div>
-      <div className="box-player-play box-player-control-activate" onClick={onPlayClick}>
+      <div
+        className="box-player-play box-player-control-activate"
+        onClick={onPlayClick}
+      >
         <i className="fas fa-play" />
       </div>
-      <div className="box-player-pause box-player-control-activate" onClick={onPauseClick}>
+      <div
+        className="box-player-pause box-player-control-activate"
+        onClick={onPauseClick}
+      >
         <i className="fas fa-pause" />
       </div>
-      <div onClick={onStepForwardClick} className="box-player-next box-player-control-direction">
+      <div
+        onClick={onStepForwardClick}
+        className="box-player-next box-player-control-direction"
+      >
         <i className="fas fa-step-forward" />
       </div>
     </div>
@@ -89,6 +107,28 @@ const PlayerInner = ({
         onClick={onToggleShufflingClick}
       >
         <i className="fas fa-random" />
+      </div>
+    
+      <div className="box-player-volume">
+        <i
+          className={`box-player-volume-icon fas ${isMuted ? "fa-volume-slash" : "fa-volume"}`}
+          onClick={onMute}
+        />
+        <div class="box-player-progress-container">
+          <ReactSlider
+            min={0}
+            max={1}
+            step={0.01}
+            value={isMuted ? 0 : volume}
+            onBeforeChange={onChangeVolumeStart}
+            onChange={onChangeVolume}
+            onAfterChange={onChangeVolumeEnd}
+            style={{ width: 100 }}
+            className="box-player-progress-bar"
+            trackClassName="box-player-progress-bar-track"
+            thumbClassName="box-player-progress-bar-thumb"
+          />
+        </div>
       </div>
     </div>
   </div>
