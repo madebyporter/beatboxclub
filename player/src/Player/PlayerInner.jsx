@@ -108,28 +108,27 @@ const PlayerInner = ({
       >
         <i className="fas fa-random" />
       </div>
-    </div>
-
-    <i
-      className={`fas ${isMuted ? "fa-volume-slash" : "fa-volume"}`}
-      onClick={onMute}
-    />
-
-    <div className="box-player-volume-container">
+    
       <div className="box-player-volume">
-        <ReactSlider
-          min={0}
-          max={1}
-          step={0.01}
-          value={isMuted ? 0 : volume}
-          onBeforeChange={onChangeVolumeStart}
-          onChange={onChangeVolume}
-          onAfterChange={onChangeVolumeEnd}
-          style={{ width: 100 }}
-          className="box-player-progress-bar"
-          trackClassName="box-player-progress-bar-track"
-          thumbClassName="box-player-progress-bar-thumb"
+        <i
+          className={`box-player-volume-icon fas ${isMuted ? "fa-volume-slash" : "fa-volume"}`}
+          onClick={onMute}
         />
+        <div class="box-player-progress-container">
+          <ReactSlider
+            min={0}
+            max={1}
+            step={0.01}
+            value={isMuted ? 0 : volume}
+            onBeforeChange={onChangeVolumeStart}
+            onChange={onChangeVolume}
+            onAfterChange={onChangeVolumeEnd}
+            style={{ width: 100 }}
+            className="box-player-progress-bar"
+            trackClassName="box-player-progress-bar-track"
+            thumbClassName="box-player-progress-bar-thumb"
+          />
+        </div>
       </div>
     </div>
   </div>
