@@ -8,7 +8,7 @@ import PlayerInternals from "./Player/PlayerInternals";
 import ReactGA from "react-ga";
 const trackingId = "UA-59805983-1";
 
-const App = ({ tracks: unsortedTracks }) => {
+const App = ({ tracks: unsortedTracks, netlifyIdentity }) => {
   const {
     playerRef,
     tracks,
@@ -19,9 +19,12 @@ const App = ({ tracks: unsortedTracks }) => {
     playbackVolume,
   } = usePlaylistFunctionality(unsortedTracks);
 
+  const user = netlifyIdentity.currentUser();
+
   return (
     <>
       <Playlist
+        user={user}
         tracks={tracks}
         currentTrackId={currentTrack?.id}
         playingState={playingState}

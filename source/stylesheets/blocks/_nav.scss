@@ -5,7 +5,7 @@
   margin-bottom: $space-medium;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 98;
 }
 .block-subnav {
   align-items: flex-end;
@@ -65,8 +65,8 @@
 .nav-list-horz {
   flex-direction: row;
   overflow-x: auto;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
   .nav-link {
     white-space: nowrap;
   }
@@ -101,7 +101,8 @@
     }
   }
   &.active {
-    .nav-text, .nav-link {
+    .nav-text,
+    .nav-link {
       color: $color-white;
     }
     &:before {

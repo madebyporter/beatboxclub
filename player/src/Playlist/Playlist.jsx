@@ -2,6 +2,7 @@ import React from "react";
 import Track from "./Track";
 
 const Playlist = ({
+  user,
   tracks,
   currentTrackId,
   playingState: { isPlaying, onPlay, onPause },
@@ -19,6 +20,7 @@ const Playlist = ({
                 return (
                   <Track
                     key={track.id}
+                    user={user}
                     track={track}
                     isCurrentTrack={isCurrentTrack}
                     isPlaying={isTrackPlaying}
