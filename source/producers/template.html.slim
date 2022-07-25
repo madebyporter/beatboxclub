@@ -4,6 +4,10 @@ include_react_player: true
 
 - set_meta_tags :title => "#{producer.producer}"
 
+script type="text/javascript"
+  | var currentProducer = "#{producer.producer}"
+script type="text/javascript" src="../javascripts/auth.js" defer="defer"
+
 section.block.block-section.block-hero
   .container-fluid
     .row
@@ -27,7 +31,8 @@ nav.block.block-nav
             == link_to 'Tapes', '/tapes/', class: "nav-link"
           li.nav-list-item.active
             == link_to producer.producer, "/producers/#{producer.producer_slug}", class: "nav-link"
-          .user-auth-button data-netlify-identity-button=""
+          .user-auth-button
+            p
 
 div#beatbox-playlist
 
