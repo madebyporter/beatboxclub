@@ -15,9 +15,12 @@ const Playlist = ({
           <div className="col-12">
             <div className="box-tracks">
               {tracks.map((track) => {
-                const visibilitySettings = user
-                  ? track.memberSettings
-                  : track.visitorSettings;
+                const visibilitySettings =
+                  user &&
+                  user.app_metadata.roles.some((role) => role === track.author)
+                    ? track.memberSettings
+                    : track.visitorSettings;
+
                 const isCurrentTrack = currentTrackId === track.id;
                 const isTrackPlaying = isCurrentTrack && isPlaying;
 

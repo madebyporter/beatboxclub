@@ -8,6 +8,11 @@ const useAuth = (netlifyIdentity) => {
 
     netlifyIdentity.on("login", (u) => setUser(u));
     netlifyIdentity.on("logout", () => setUser(null));
+
+    () => {
+      netlifyIdentity.off("login");
+      netlifyIdentity.off("logout");
+    };
   }, []);
 
   return user;
