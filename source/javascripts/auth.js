@@ -3,6 +3,7 @@ const LOGOUT_TEXT = "Logout Library";
 
 (handleAuth = () => {
   netlifyIdentity.init();
+  netlifyIdentity.gotrue.setCookie = true;
 
   const button = document.querySelector(".user-auth-button");
   if (!button) return;
