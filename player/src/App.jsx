@@ -1,4 +1,5 @@
 import React from "react";
+import useAuth from "./hooks/useAuth";
 import usePlaylistFunctionality from "./hooks/usePlaylistFunctionality";
 import Playlist from "./Playlist/Playlist";
 import PlayerPortal from "./Player/PlayerPortal";
@@ -19,7 +20,7 @@ const App = ({ tracks: unsortedTracks, netlifyIdentity }) => {
     playbackVolume,
   } = usePlaylistFunctionality(unsortedTracks);
 
-  const user = netlifyIdentity.currentUser();
+  const user = useAuth(netlifyIdentity);
 
   return (
     <>

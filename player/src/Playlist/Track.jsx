@@ -1,5 +1,6 @@
 import React from "react";
 import ReactGA from "react-ga";
+import { trackVisibility } from "../hooks/util";
 
 const eventTrack = (category, action, label) => {
   console.log("GA event:", category, ":", action, ":", label);
@@ -10,7 +11,14 @@ const eventTrack = (category, action, label) => {
   });
 };
 
-const Track = ({ user, track, isCurrentTrack, isPlaying, onPlay, onPause }) => (
+const Track = ({
+  track,
+  isCurrentTrack,
+  isPlaying,
+  onPlay,
+  onPause,
+  visibilitySettings,
+}) => (
   <div
     className={`box-list ${track.beatType} ${
       isCurrentTrack ? (isPlaying ? "playing" : "paused") : ""
@@ -51,7 +59,7 @@ const Track = ({ user, track, isCurrentTrack, isPlaying, onPlay, onPause }) => (
       </div>
     </div>
 
-    {user && (
+    {visibilitySettings === trackVisibility.DOWNLOAD && (
       <div className="box-player-download">
         <a
           className="box-player-download-link"
