@@ -12,6 +12,7 @@ js.main = {
     this.externalLinkTracking();
     this.mailchimpAJAX();
     this.validateForm();
+    this.handleSignUpRedirect();
   },
   externalLinkTracking: function() {
     //Track Outbound Link Clicks
@@ -263,7 +264,38 @@ js.main = {
         $('.bs-callout-warning').toggleClass('hidden', ok);
       });
     }
-  }
+  },
+  handleSignUpRedirect: function () {
+    if (
+      window.location.hash &&
+      window.location.hash.indexOf("#invite_token=") === 0
+    ) {
+      const urlOrigin = window.location.origin;
+      let producerSlug = "";
+
+      netlifyIdentity.on("login", (user) => {
+        switch (user.app_metadata.roles?.[0]) {
+          case "Made by Porter":
+            producerSlug = "/producers/madebyporter";
+            break;
+          case "Shadrack Romero":
+            producerSlug = "/producers/hiimrack";
+            break;
+          case "Jaye Neutron":
+            producerSlug = "producers/jayeneutron";
+            break;
+          case "Luke Tyler":
+            producerSlug = "/producers/luketyler";
+            break;
+          default:
+            producerSlug = "/";
+        }
+
+        netlifyIdentity.close();
+        window.location.href = urlOrigin + producerSlug;
+      });
+    }
+  },
 };
 
 document.addEventListener('DOMContentLoaded', function(){

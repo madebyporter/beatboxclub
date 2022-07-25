@@ -8,7 +8,7 @@ const LOGOUT_TEXT = "Logout Library";
 
   const initialUser = netlifyIdentity.currentUser();
 
-  let userRole = initialUser ? initialUser.app_metadata.roles[0] : "";
+  let userRole = initialUser ? initialUser.app_metadata.roles?.[0] : "";
 
   const buttonText = button.children[0];
   buttonText.innerText =
@@ -25,7 +25,7 @@ const LOGOUT_TEXT = "Logout Library";
   });
 
   netlifyIdentity.on("login", (u) => {
-    userRole = u.app_metadata.roles[0];
+    userRole = u.app_metadata.roles?.[0];
     if (userRole === currentProducer) buttonText.innerText = LOGOUT_TEXT;
     netlifyIdentity.close();
   });

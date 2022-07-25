@@ -17,7 +17,7 @@ const Playlist = ({
               {tracks.map((track) => {
                 const visibilitySettings =
                   user &&
-                  user.app_metadata.roles.some((role) => role === track.author)
+                  user.app_metadata.roles?.some((role) => role === track.author)
                     ? track.memberSettings
                     : track.visitorSettings;
 
