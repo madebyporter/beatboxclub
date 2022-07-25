@@ -29,7 +29,7 @@ nav.block.block-nav
             == link_to 'Tapes', '/tapes/', class: "nav-link"
           li.nav-list-item.active
             == link_to producer.producer, "/producers/#{producer.producer_slug}", class: "nav-link"
-          div data-netlify-identity-button=""
+          .user-auth-button data-netlify-identity-button=""
 
 div#beatbox-playlist
 

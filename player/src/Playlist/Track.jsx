@@ -59,27 +59,33 @@ const Track = ({
       </div>
     </div>
 
-    {visibilitySettings === trackVisibility.DOWNLOAD && (
-      <div className="box-player-download">
-        <a
-          className="box-player-download-link"
-          href={track.url}
-          onClick={eventTrack.bind(
-            this,
-            "Tracks",
-            "MBP Download Button",
-            track.name
-          )}
-        >
-          <span className="d-block d-sm-none">
-            <i className="box-player-download-icon fas fa-cloud-download"></i>
-          </span>
-          <span className="box-player-download-btn d-none d-sm-block component-button component-button-primary component-button-small">
-            Download
-          </span>
-        </a>
-      </div>
-    )}
+    <div className="box-player-download">
+      <a
+        className="box-player-download-link"
+        href={
+          visibilitySettings === trackVisibility.DOWNLOAD ? track.url : null
+        }
+        onClick={eventTrack.bind(
+          this,
+          "Tracks",
+          "MBP Download Button",
+          track.name
+        )}
+        style={{
+          visibility:
+            visibilitySettings === trackVisibility.DOWNLOAD
+              ? "visible"
+              : "hidden",
+        }}
+      >
+        <span className="d-block d-sm-none">
+          <i className="box-player-download-icon fas fa-cloud-download"></i>
+        </span>
+        <span className="box-player-download-btn d-none d-sm-block component-button component-button-primary component-button-small">
+          Download
+        </span>
+      </a>
+    </div>
   </div>
 );
 

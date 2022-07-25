@@ -117,6 +117,19 @@
   font-weight: 500;
   padding: $space-small 0;
 }
+
+.user-auth-button {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  a {
+    color: $color-white;
+    font-size: 1.8rem;
+    border: 1px solid $color-white;
+    padding: 0.5rem 2.5rem;
+  }
+}
+
 .nav-text {
   margin: 0;
 }
