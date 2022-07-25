@@ -13,6 +13,7 @@ js.main = {
     this.mailchimpAJAX();
     this.validateForm();
     this.handleSignUpRedirect();
+    this.refreshJWTToken();
   },
   externalLinkTracking: function() {
     //Track Outbound Link Clicks
@@ -295,6 +296,11 @@ js.main = {
         window.location.href = urlOrigin + producerSlug;
       });
     }
+  },
+  refreshJWTToken: function () {
+    netlifyIdentity.on("login", () => {
+      netlifyIdentity.refresh().then((jwt) => {});
+    });
   },
 };
 
