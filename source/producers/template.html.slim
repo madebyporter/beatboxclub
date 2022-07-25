@@ -31,8 +31,11 @@ nav.block.block-nav
             == link_to 'Tapes', '/tapes/', class: "nav-link"
           li.nav-list-item.active
             == link_to producer.producer, "/producers/#{producer.producer_slug}", class: "nav-link"
-          .user-auth-button
-            p
+          .auth-buttons-container
+            .user-auth-button
+              p
+            .request-access-button
+              p Request Library Access
 
 div#beatbox-playlist
 
