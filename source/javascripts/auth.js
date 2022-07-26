@@ -11,10 +11,11 @@ const LOGOUT_TEXT = "Logout Library";
 
   
   const initialUser = netlifyIdentity.currentUser();
-  var userRole = initialUser.app_metadata.roles[0];
-
-
+  var userRole = "";
+  
+  
   if (initialUser) {
+    userRole = initialUser.app_metadata.roles[0];
     if (userRole === currentProducer) buttonText.innerText = LOGOUT_TEXT;
     else button.style.display = "none";
   } else {
