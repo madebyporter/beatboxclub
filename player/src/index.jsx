@@ -4,7 +4,7 @@ import App from "./App";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App tracks={tracks} />
+    <App tracks={tracks} netlifyIdentity={netlifyIdentity} />
   </React.StrictMode>,
   document.getElementById("beatbox-playlist")
 );

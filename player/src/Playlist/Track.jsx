@@ -1,5 +1,6 @@
 import React from "react";
-import ReactGA from 'react-ga';
+import ReactGA from "react-ga";
+import { trackVisibility } from "../hooks/util";
 
 const eventTrack = (category, action, label) => {
   console.log("GA event:", category, ":", action, ":", label);
@@ -7,22 +8,34 @@ const eventTrack = (category, action, label) => {
     category: category,
     action: action,
     label: label,
-  })
-}
+  });
+};
 
-const Track = ({ track, isCurrentTrack, isPlaying, onPlay, onPause }) => (
+const Track = ({
+  track,
+  isCurrentTrack,
+  isPlaying,
+  onPlay,
+  onPause,
+  visibilitySettings,
+}) => (
   <div
     className={`box-list ${track.beatType} ${
       isCurrentTrack ? (isPlaying ? "playing" : "paused") : ""
     }`}
     id={track.name}
   >
-    
     <div className="box-player-controls">
-      <div className="box-player-play box-player-control-activate" onClick={onPlay}>
+      <div
+        className="box-player-play box-player-control-activate"
+        onClick={onPlay}
+      >
         <i className="fas fa-play" />
       </div>
-      <div className="box-player-pause box-player-control-activate" onClick={onPause}>
+      <div
+        className="box-player-pause box-player-control-activate"
+        onClick={onPause}
+      >
         <i className="fas fa-pause" />
       </div>
     </div>
@@ -47,7 +60,31 @@ const Track = ({ track, isCurrentTrack, isPlaying, onPlay, onPause }) => (
     </div>
 
     <div className="box-player-download">
-      <a className="box-player-download-link" href={track.url} onClick={eventTrack.bind(this, "Tracks", "MBP Download Button", track.name)}><span className="d-block d-sm-none"><i className="box-player-download-icon fas fa-cloud-download"></i></span><span className="box-player-download-btn d-none d-sm-block component-button component-button-primary component-button-small">Download</span></a>
+      <a
+        className="box-player-download-link"
+        href={
+          visibilitySettings === trackVisibility.DOWNLOAD ? track.url : null
+        }
+        onClick={eventTrack.bind(
+          this,
+          "Tracks",
+          "MBP Download Button",
+          track.name
+        )}
+        style={{
+          visibility:
+            visibilitySettings === trackVisibility.DOWNLOAD
+              ? "visible"
+              : "hidden",
+        }}
+      >
+        <span className="d-block d-sm-none">
+          <i className="box-player-download-icon fas fa-cloud-download"></i>
+        </span>
+        <span className="box-player-download-btn d-none d-sm-block component-button component-button-primary component-button-small">
+          Download
+        </span>
+      </a>
     </div>
   </div>
 );
