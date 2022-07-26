@@ -2,9 +2,10 @@
 :id: 2WzGQT6FrgyoP6EyeD8SaL
 :_meta:
   :content_type_id: track
-  :updated_at: '2021-12-09T13:58:01+00:00'
+  :updated_at: '2022-07-26T00:58:01+00:00'
   :created_at: '2021-12-09T13:43:51+00:00'
   :id: 2WzGQT6FrgyoP6EyeD8SaL
+:sound_type: Instrumental
 :name: Fire Away Sounds (Beat)
 :producer:
 - :id: 2ysheqH4CtlypgfXHEZLXU
@@ -25,6 +26,8 @@
 - Trap
 - Soul
 :bpm: 92.0
+:public_settings: Stream
+:private_settings: MP3 Download
 :beat:
   :title: Fire Away Sounds (Beat)
   :description: ''

@@ -2,10 +2,10 @@
 :id: 5EMJ8NlKNJxg0mZdAGHTix
 :_meta:
   :content_type_id: track
-  :updated_at: '2022-01-11T18:44:34+00:00'
+  :updated_at: '2022-07-26T00:56:46+00:00'
   :created_at: '2022-01-11T18:44:34+00:00'
   :id: 5EMJ8NlKNJxg0mZdAGHTix
-:sound_type: Track
+:sound_type: Instrumental
 :name: Lost In Time
 :producer:
 - :id: 2ysheqH4CtlypgfXHEZLXU
@@ -25,8 +25,8 @@
 - Tribal
 - Grunge
 :bpm: 127.0
-:visitor_settings: Stream
-:member_settings: MP3 Download
+:public_settings: Stream
+:private_settings: MP3 Download
 :beat:
   :title: Lost In Time - 127 - Master
   :description: ''
