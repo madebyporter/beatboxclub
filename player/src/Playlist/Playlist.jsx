@@ -18,8 +18,8 @@ const Playlist = ({
                 const visibilitySettings =
                   user &&
                   user.app_metadata.roles?.some((role) => role === track.author)
-                    ? track.memberSettings
-                    : track.visitorSettings;
+                    ? track.privateSettings
+                    : track.publicSettings;
 
                 const isCurrentTrack = currentTrackId === track.id;
                 const isTrackPlaying = isCurrentTrack && isPlaying;

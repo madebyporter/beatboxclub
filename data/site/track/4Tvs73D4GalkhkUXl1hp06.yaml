@@ -2,10 +2,10 @@
 :id: 4Tvs73D4GalkhkUXl1hp06
 :_meta:
   :content_type_id: track
-  :updated_at: '2022-01-20T19:06:24+00:00'
+  :updated_at: '2022-07-26T00:56:35+00:00'
   :created_at: '2021-11-25T19:09:21+00:00'
   :id: 4Tvs73D4GalkhkUXl1hp06
-:sound_type: Track
+:sound_type: Instrumental
 :name: On Life
 :producer:
 - :id: 2ysheqH4CtlypgfXHEZLXU
@@ -24,8 +24,8 @@
 :vibe:
 - Chill
 :bpm: 117.0
-:visitor_settings: Stream
-:member_settings: MP3 Download
+:public_settings: Stream
+:private_settings: MP3 Download
 :beat:
   :title: On Life Master
   :description:

@@ -2,10 +2,10 @@
 :id: 6oiGEuCc0ESVJV3FJzvSEu
 :_meta:
   :content_type_id: track
-  :updated_at: '2022-04-14T23:06:15+00:00'
+  :updated_at: '2022-07-26T00:55:42+00:00'
   :created_at: '2022-04-14T23:06:15+00:00'
   :id: 6oiGEuCc0ESVJV3FJzvSEu
-:sound_type: Track
+:sound_type: Instrumental
 :name: Wanna Stay
 :producer:
 - :id: 2ysheqH4CtlypgfXHEZLXU
@@ -25,13 +25,13 @@
 - Airy
 - Violins
 :bpm: 132.0
-:visitor_settings: Stream
-:member_settings: MP3 Download
+:public_settings: Stream
+:private_settings: MP3 Download
 :beat:
   :title: Wanna Stay - 132 - Master
   :description: ''
-  :url: "//assets.ctfassets.net/e1azyderdhks/v24hRgOuwuOziTBVDq4g9/b1af9b853ea9de6f3917ce104f37be83/Wanna_Stay_-_132_-_Master.mp3"
+  :url: "//assets.ctfassets.net/e1azyderdhks/v24hRgOuwuOziTBVDq4g9/769b27c358d64b493b3bb07e86cf4697/Wanna_Stay_-_132_-_Master.mp3"
   :_meta:
-    :updated_at: '2022-04-14T23:06:10+00:00'
+    :updated_at: '2022-04-15T13:28:51+00:00'
     :created_at: '2022-04-14T23:06:10+00:00'
     :id: v24hRgOuwuOziTBVDq4g9
