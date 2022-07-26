@@ -1,0 +1,38 @@
+---
+:id: 4gI6dxe2fstUejxMfEN5Ix
+:_meta:
+  :content_type_id: track
+  :updated_at: '2022-07-26T00:54:03+00:00'
+  :created_at: '2022-06-29T15:41:58+00:00'
+  :id: 4gI6dxe2fstUejxMfEN5Ix
+:sound_type: Instrumental
+:name: Wanna Bang
+:producer:
+- :id: 2ysheqH4CtlypgfXHEZLXU
+  :_meta:
+    :content_type_id: producer
+    :updated_at: '2021-12-14T19:44:33+00:00'
+    :created_at: '2021-05-14T21:09:35+00:00'
+    :id: 2ysheqH4CtlypgfXHEZLXU
+  :producer_id: 1
+  :producer: Made by Porter
+  :producer_slug: madebyporter
+  :producer_description: Design & Music Producer, digital nomad, founder of The Beatbox
+    Club. Focuses on dark, cinematic hiphop productions.
+  :producer_link: https://www.madebyporter.com
+:genre: Rap
+:vibe:
+- Trap
+- Sampled
+- Dark
+:bpm: 129.0
+:public_settings: Stream
+:private_settings: MP3 Download
+:beat:
+  :title: Wanna Bang - BPM129 - Master
+  :description: ''
+  :url: "//assets.ctfassets.net/e1azyderdhks/016tF46tE7EHyOUMa3AevE/46f54ecde2e606d4af2ef320a1a4cea3/Wanna_Bang_-_BPM129_-_Master.mp3"
+  :_meta:
+    :updated_at: '2022-06-29T15:41:50+00:00'
+    :created_at: '2022-06-29T15:41:50+00:00'
+    :id: 016tF46tE7EHyOUMa3AevE

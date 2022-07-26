@@ -1,0 +1,32 @@
+---
+:id: 72L3G7rBZY6wxtRy1t4yhD
+:_meta:
+  :content_type_id: track
+  :updated_at: '2022-03-30T16:18:46+00:00'
+  :created_at: '2022-03-30T16:18:46+00:00'
+  :id: 72L3G7rBZY6wxtRy1t4yhD
+:sound_type: Track
+:name: Essentially Yours
+:producer:
+- :id: 35EqVleFt7Bh1Sn4YDVnsG
+  :_meta:
+    :content_type_id: producer
+    :updated_at: '2022-01-03T16:19:44+00:00'
+    :created_at: '2022-01-03T16:19:44+00:00'
+    :id: 35EqVleFt7Bh1Sn4YDVnsG
+  :producer_id: 4
+  :producer: Luke Tyler
+  :producer_slug: luketyler
+:genre: Electronic
+:vibe:
+- House
+- Chill
+:bpm: 120.0
+:beat:
+  :title: Essentially Yours
+  :description: ''
+  :url: "//assets.ctfassets.net/e1azyderdhks/3fySXehne30SBiecj6Hj7T/a5e11998a016eda7f46969971ee14c0e/EssentiallyYours.mp3"
+  :_meta:
+    :updated_at: '2022-03-30T16:18:42+00:00'
+    :created_at: '2022-03-30T16:18:42+00:00'
+    :id: 3fySXehne30SBiecj6Hj7T
