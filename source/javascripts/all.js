@@ -272,24 +272,24 @@ js.main = {
       window.location.hash.indexOf("#invite_token=") === 0
     ) {
       const urlOrigin = window.location.origin;
-      let producerSlug = "";
+      
+      netlifyIdentity.on("login", function (user) {
+        const producerSlug = getSlug(user.app_metadata.roles[0]);
 
-      netlifyIdentity.on("login", (user) => {
-        switch (user.app_metadata.roles?.[0]) {
-          case "Made by Porter":
-            producerSlug = "/producers/madebyporter";
-            break;
-          case "Shadrack Romero":
-            producerSlug = "/producers/hiimrack";
-            break;
-          case "Jaye Neutron":
-            producerSlug = "producers/jayeneutron";
-            break;
-          case "Luke Tyler":
-            producerSlug = "/producers/luketyler";
-            break;
-          default:
-            producerSlug = "/";
+
+        function getSlug (role) {
+          switch (role) {
+            case "Made by Porter":
+             return "/producers/madebyporter";
+            case "Shadrack Romero":
+              return "/producers/hiimrack";
+            case "Jaye Neutron":
+              return "producers/jayeneutron";
+            case "Luke Tyler":
+              return"/producers/luketyler";
+            default:
+              return "/";
+          }
         }
 
         netlifyIdentity.close();
@@ -298,8 +298,8 @@ js.main = {
     }
   },
   refreshJWTToken: function () {
-    netlifyIdentity.on("login", () => {
-      netlifyIdentity.refresh().then((jwt) => {});
+    netlifyIdentity.on("login", function() {
+      netlifyIdentity.refresh().then(function (jwt) {});
     });
   },
 };

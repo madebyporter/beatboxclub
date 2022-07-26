@@ -1,18 +1,18 @@
 const LOGIN_TEXT = "Log into Library";
 const LOGOUT_TEXT = "Logout Library";
 
-(handleAuth = () => {
+(function handleAuth () {
   netlifyIdentity.init();
   netlifyIdentity.gotrue.setCookie = true;
 
   const button = document.querySelector(".user-auth-button");
   if (!button) return;
-
-  const initialUser = netlifyIdentity.currentUser();
-
-  let userRole = initialUser?.app_metadata?.roles?.[0] ?? "";
-
   const buttonText = button.children[0];
+
+  
+  const initialUser = netlifyIdentity.currentUser();
+  var userRole = initialUser.app_metadata.roles[0];
+
 
   if (initialUser) {
     if (userRole === currentProducer) buttonText.innerText = LOGOUT_TEXT;
@@ -22,7 +22,7 @@ const LOGOUT_TEXT = "Logout Library";
     button.style.display = "flex";
   }
 
-  button.addEventListener("click", () => {
+  button.addEventListener("click", function() {
     const user = netlifyIdentity.currentUser();
     if (user && userRole === currentProducer) {
       netlifyIdentity.logout();
@@ -31,13 +31,13 @@ const LOGOUT_TEXT = "Logout Library";
     }
   });
 
-  netlifyIdentity.on("login", (u) => {
-    userRole = u.app_metadata.roles?.[0];
+  netlifyIdentity.on("login", function(u) {
+    userRole = u.app_metadata.roles[0];
     if (userRole === currentProducer) buttonText.innerText = LOGOUT_TEXT;
     else button.style.display = "none";
     netlifyIdentity.close();
   });
-  netlifyIdentity.on("logout", () => {
+  netlifyIdentity.on("logout", function() {
     buttonText.innerText = LOGIN_TEXT;
     button.style.display = "flex";
   });
