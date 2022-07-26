@@ -1,7 +1,9 @@
 import React from "react";
 import Track from "./Track";
+import { trackVisibility } from "../hooks/util";
 
 const Playlist = ({
+  user,
   tracks,
   currentTrackId,
   playingState: { isPlaying, onPlay, onPause },
@@ -13,8 +15,17 @@ const Playlist = ({
           <div className="col-12">
             <div className="box-tracks">
               {tracks.map((track) => {
+                const visibilitySettings =
+                  user &&
+                  user.app_metadata.roles?.some((role) => role === track.author)
+                    ? track.privateSettings
+                    : track.publicSettings;
+
                 const isCurrentTrack = currentTrackId === track.id;
                 const isTrackPlaying = isCurrentTrack && isPlaying;
+
+                if (visibilitySettings === trackVisibility.HIDDEN)
+                  return <React.Fragment key={track.id}></React.Fragment>;
 
                 return (
                   <Track
@@ -24,6 +35,7 @@ const Playlist = ({
                     isPlaying={isTrackPlaying}
                     onPlay={() => onPlay(track.id)}
                     onPause={onPause}
+                    visibilitySettings={visibilitySettings}
                   />
                 );
               })}

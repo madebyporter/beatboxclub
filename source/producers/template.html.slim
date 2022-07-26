@@ -4,6 +4,10 @@ include_react_player: true
 
 - set_meta_tags :title => "#{producer.producer}"
 
+script type="text/javascript"
+  | var currentProducer = "#{producer.producer}"
+script type="text/javascript" src="../javascripts/auth.js" defer="defer"
+
 section.block.block-section.block-hero
   .container-fluid
     .row
@@ -27,7 +31,11 @@ nav.block.block-nav
             == link_to 'Tapes', '/tapes/', class: "nav-link"
           li.nav-list-item.active
             == link_to producer.producer, "/producers/#{producer.producer_slug}", class: "nav-link"
-                
+          .auth-buttons-container
+            .user-auth-button
+              p
+            .request-access-button
+              p Request Library Access
 
 div#beatbox-playlist
 
@@ -44,8 +52,11 @@ script type="text/javascript"
       |   bpm: "#{track.bpm}",
       |   vibe: #{track.vibe.to_json},
       |   url: "#{track.beat.url}",
+      |   publicSettings: "#{track.public_settings}",
+      |   privateSettings: "#{track.private_settings}",
       | },
   | ];
+  | var netlifyIdentity = netlifyIdentity
 
 / Display newsletter CTA for Made By Porter only
 - if producer.id === "2ysheqH4CtlypgfXHEZLXU"
