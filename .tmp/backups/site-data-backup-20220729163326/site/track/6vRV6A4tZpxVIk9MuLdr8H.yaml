@@ -1,0 +1,31 @@
+---
+:id: 6vRV6A4tZpxVIk9MuLdr8H
+:_meta:
+  :content_type_id: track
+  :updated_at: '2022-03-16T17:29:17+00:00'
+  :created_at: '2022-03-16T17:29:17+00:00'
+  :id: 6vRV6A4tZpxVIk9MuLdr8H
+:sound_type: Track
+:name: Siachen Dream
+:producer:
+- :id: 35EqVleFt7Bh1Sn4YDVnsG
+  :_meta:
+    :content_type_id: producer
+    :updated_at: '2022-01-03T16:19:44+00:00'
+    :created_at: '2022-01-03T16:19:44+00:00'
+    :id: 35EqVleFt7Bh1Sn4YDVnsG
+  :producer_id: 4
+  :producer: Luke Tyler
+  :producer_slug: luketyler
+:genre: RnB
+:vibe:
+- Beats
+:bpm: 103.0
+:beat:
+  :title: Siachen Dream
+  :description: ''
+  :url: "//assets.ctfassets.net/e1azyderdhks/4oIdfSF2oABXrm8lSn6H7R/b4b6db09945b1da7f3d482fb9ce1ad91/SiachenDream.mp3"
+  :_meta:
+    :updated_at: '2022-03-16T17:29:05+00:00'
+    :created_at: '2022-03-16T17:29:05+00:00'
+    :id: 4oIdfSF2oABXrm8lSn6H7R

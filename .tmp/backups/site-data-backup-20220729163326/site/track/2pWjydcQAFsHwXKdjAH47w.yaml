@@ -1,0 +1,37 @@
+---
+:id: 2pWjydcQAFsHwXKdjAH47w
+:_meta:
+  :content_type_id: track
+  :updated_at: '2022-07-26T00:55:31+00:00'
+  :created_at: '2022-05-06T21:21:23+00:00'
+  :id: 2pWjydcQAFsHwXKdjAH47w
+:sound_type: Instrumental
+:name: Always Running
+:producer:
+- :id: 2ysheqH4CtlypgfXHEZLXU
+  :_meta:
+    :content_type_id: producer
+    :updated_at: '2021-12-14T19:44:33+00:00'
+    :created_at: '2021-05-14T21:09:35+00:00'
+    :id: 2ysheqH4CtlypgfXHEZLXU
+  :producer_id: 1
+  :producer: Made by Porter
+  :producer_slug: madebyporter
+  :producer_description: Design & Music Producer, digital nomad, founder of The Beatbox
+    Club. Focuses on dark, cinematic hiphop productions.
+  :producer_link: https://www.madebyporter.com
+:genre: Electronic
+:vibe:
+- Retro
+- Strings
+:bpm: 138.0
+:public_settings: Stream
+:private_settings: MP3 Download
+:beat:
+  :title: Always Running - BPM138 - B
+  :description: ''
+  :url: "//assets.ctfassets.net/e1azyderdhks/4Bt5ngZnH6Zqi0NlZDupSj/41d3044c6b5f620b4b13764157b5d7f3/Always_Running_-_BPM138_-_B.mp3"
+  :_meta:
+    :updated_at: '2022-05-06T21:21:11+00:00'
+    :created_at: '2022-05-06T21:21:11+00:00'
+    :id: 4Bt5ngZnH6Zqi0NlZDupSj

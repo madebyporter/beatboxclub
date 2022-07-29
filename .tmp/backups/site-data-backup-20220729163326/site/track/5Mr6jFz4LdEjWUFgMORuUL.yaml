@@ -1,0 +1,31 @@
+---
+:id: 5Mr6jFz4LdEjWUFgMORuUL
+:_meta:
+  :content_type_id: track
+  :updated_at: '2022-03-16T17:39:44+00:00'
+  :created_at: '2022-03-16T17:39:44+00:00'
+  :id: 5Mr6jFz4LdEjWUFgMORuUL
+:sound_type: Track
+:name: Lenina
+:producer:
+- :id: 35EqVleFt7Bh1Sn4YDVnsG
+  :_meta:
+    :content_type_id: producer
+    :updated_at: '2022-01-03T16:19:44+00:00'
+    :created_at: '2022-01-03T16:19:44+00:00'
+    :id: 35EqVleFt7Bh1Sn4YDVnsG
+  :producer_id: 4
+  :producer: Luke Tyler
+  :producer_slug: luketyler
+:genre: Electronic
+:vibe:
+- Deep
+:bpm: 118.0
+:beat:
+  :title: Lenina
+  :description: ''
+  :url: "//assets.ctfassets.net/e1azyderdhks/Gz63Ag0G7g2nUzMsayK5L/a15bf47149e275341bc82ede2cb21255/Lenina.mp3"
+  :_meta:
+    :updated_at: '2022-03-16T17:39:15+00:00'
+    :created_at: '2022-03-16T17:39:15+00:00'
+    :id: Gz63Ag0G7g2nUzMsayK5L

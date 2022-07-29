@@ -10,6 +10,7 @@ import ReactGA from "react-ga";
 const trackingId = "UA-59805983-1";
 
 const App = ({ tracks: unsortedTracks, netlifyIdentity }) => {
+  const user = useAuth(netlifyIdentity);
   const {
     playerRef,
     tracks,
@@ -18,9 +19,7 @@ const App = ({ tracks: unsortedTracks, netlifyIdentity }) => {
     playbackProgress,
     playbackOrder,
     playbackVolume,
-  } = usePlaylistFunctionality(unsortedTracks);
-
-  const user = useAuth(netlifyIdentity);
+  } = usePlaylistFunctionality(user, unsortedTracks);
 
   return (
     <>
