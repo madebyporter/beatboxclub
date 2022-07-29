@@ -15,20 +15,20 @@ const getNextTrackId = (trackId, trackOrder) => {
   return trackOrder[nextIndex];
 };
 
-const isHidden = (user, tracks, nextId) => {
-  const nextTrack = tracks.find((track) => track.id === nextId);
-  const visibility = user
-    ? nextTrack.privateSettings
-    : nextTrack.publicSettings;
-  return visibility === trackVisibility.HIDDEN;
-};
-
 const useStepCallbacks = (
   user,
   trackOrder,
   setCurrentTrackId,
   playbackProgress
 ) => {
+  const isHidden = (nextId) => {
+    const nextTrack = tracks.find((track) => track.id === nextId);
+    const visibility = user
+      ? nextTrack.privateSettings
+      : nextTrack.publicSettings;
+    return visibility === trackVisibility.HIDDEN;
+  };
+
   const onStepBack = () => {
     if (playbackProgress.progress > 3) {
       playbackProgress.onSeekEnd(0);
@@ -38,7 +38,7 @@ const useStepCallbacks = (
 
         while (true) {
           nextId = getPreviousTrackId(nextId, trackOrder);
-          if (!isHidden(user, tracks, nextId)) break;
+          if (!isHidden(nextId)) break;
         }
 
         return nextId;
@@ -52,7 +52,7 @@ const useStepCallbacks = (
 
       while (true) {
         nextId = getNextTrackId(nextId, trackOrder);
-        if (!isHidden(user, tracks, nextId)) break;
+        if (!isHidden(nextId)) break;
       }
 
       return nextId;
