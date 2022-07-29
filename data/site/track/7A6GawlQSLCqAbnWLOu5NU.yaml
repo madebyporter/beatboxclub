@@ -2,7 +2,7 @@
 :id: 7A6GawlQSLCqAbnWLOu5NU
 :_meta:
   :content_type_id: track
-  :updated_at: '2021-12-01T16:33:02+00:00'
+  :updated_at: '2022-07-29T19:08:29+00:00'
   :created_at: '2021-12-01T16:33:02+00:00'
   :id: 7A6GawlQSLCqAbnWLOu5NU
 :name: Fast Life
@@ -23,6 +23,8 @@
 :vibe:
 - Dystopian
 :bpm: 125.0
+:public_settings: Hide
+:private_settings: MP3 Download
 :beat:
   :title: 04-Fast Life
   :description: ''

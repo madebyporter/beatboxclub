@@ -2,7 +2,7 @@
 :id: 298c5e41UJJNTi4j7xUZIr
 :_meta:
   :content_type_id: track
-  :updated_at: '2021-11-25T18:50:37+00:00'
+  :updated_at: '2022-07-29T19:13:17+00:00'
   :created_at: '2021-11-25T18:41:32+00:00'
   :id: 298c5e41UJJNTi4j7xUZIr
 :name: You Got Me (Beat)
@@ -23,6 +23,8 @@
 :vibe:
 - Pop
 :bpm: 134.0
+:public_settings: Hide
+:private_settings: MP3 Download
 :beat:
   :title: You Got Me - 134 - Master
   :description: ''

@@ -2,7 +2,7 @@
 :id: 3mQ5RWwN3wR6IrXedSueri
 :_meta:
   :content_type_id: track
-  :updated_at: '2021-11-25T19:05:24+00:00'
+  :updated_at: '2022-07-29T19:11:12+00:00'
   :created_at: '2021-11-25T19:05:24+00:00'
   :id: 3mQ5RWwN3wR6IrXedSueri
 :name: Laser Focus
@@ -23,6 +23,8 @@
 :vibe:
 - Dark
 :bpm: 158.0
+:public_settings: Hide
+:private_settings: MP3 Download
 :beat:
   :title: Laser Focus-158-bbx
   :description:

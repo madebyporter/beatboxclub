@@ -2,7 +2,7 @@
 :id: 6BRjhCJMMRHCpE3lHYNDYO
 :_meta:
   :content_type_id: track
-  :updated_at: '2021-11-25T19:07:00+00:00'
+  :updated_at: '2022-07-29T19:10:23+00:00'
   :created_at: '2021-11-25T19:07:00+00:00'
   :id: 6BRjhCJMMRHCpE3lHYNDYO
 :name: Yeah Yeah
@@ -23,6 +23,8 @@
 :vibe:
 - Cinematic
 :bpm: 121.0
+:public_settings: Hide
+:private_settings: MP3 Download
 :beat:
   :title: Yeah Yeah
   :description:

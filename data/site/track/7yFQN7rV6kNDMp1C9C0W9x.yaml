@@ -2,7 +2,7 @@
 :id: 7yFQN7rV6kNDMp1C9C0W9x
 :_meta:
   :content_type_id: track
-  :updated_at: '2021-12-01T16:34:18+00:00'
+  :updated_at: '2022-07-29T19:08:14+00:00'
   :created_at: '2021-12-01T16:34:05+00:00'
   :id: 7yFQN7rV6kNDMp1C9C0W9x
 :name: Wait Here
@@ -23,6 +23,8 @@
 :vibe:
 - Chill
 :bpm: 136.0
+:public_settings: Hide
+:private_settings: MP3 Download
 :beat:
   :title: 06-Wait Here
   :description: ''

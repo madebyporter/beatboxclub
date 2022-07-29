@@ -2,9 +2,10 @@
 :id: K9YxTQlPmo2Ybk7auuGG3
 :_meta:
   :content_type_id: track
-  :updated_at: '2021-11-25T19:15:14+00:00'
+  :updated_at: '2022-07-29T19:09:35+00:00'
   :created_at: '2021-11-25T19:15:14+00:00'
   :id: K9YxTQlPmo2Ybk7auuGG3
+:sound_type: Instrumental
 :name: Flex (Beat)
 :producer:
 - :id: 2ysheqH4CtlypgfXHEZLXU
@@ -23,6 +24,8 @@
 :vibe:
 - Psychedelic
 :bpm: 139.0
+:public_settings: Hide
+:private_settings: MP3 Download
 :beat:
   :title: Flex-Beat
   :description:

@@ -2,7 +2,7 @@
 :id: 65FfhdmMLuJuSGtwANxe7x
 :_meta:
   :content_type_id: track
-  :updated_at: '2021-11-25T19:10:50+00:00'
+  :updated_at: '2022-07-29T19:10:00+00:00'
   :created_at: '2021-11-25T19:10:50+00:00'
   :id: 65FfhdmMLuJuSGtwANxe7x
 :name: Unlike You
@@ -23,6 +23,8 @@
 :vibe:
 - Chill
 :bpm: 120.0
+:public_settings: Hide
+:private_settings: MP3 Download
 :beat:
   :title: Unlike You-120
   :description:

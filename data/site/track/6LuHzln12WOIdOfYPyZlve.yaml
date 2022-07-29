@@ -2,7 +2,7 @@
 :id: 6LuHzln12WOIdOfYPyZlve
 :_meta:
   :content_type_id: track
-  :updated_at: '2021-12-01T16:43:46+00:00'
+  :updated_at: '2022-07-29T19:07:10+00:00'
   :created_at: '2021-12-01T16:43:46+00:00'
   :id: 6LuHzln12WOIdOfYPyZlve
 :name: This Weekend
@@ -23,6 +23,8 @@
 :vibe:
 - Cinematic
 :bpm: 125.0
+:public_settings: Hide
+:private_settings: MP3 Download
 :beat:
   :title: Sensory - Chris Porter - 10 - This Weekend
   :description: ''

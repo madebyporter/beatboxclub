@@ -2,7 +2,7 @@
 :id: SEfpdKc5ZZ6AkRODDIxnP
 :_meta:
   :content_type_id: track
-  :updated_at: '2021-12-01T16:36:19+00:00'
+  :updated_at: '2022-07-29T19:07:51+00:00'
   :created_at: '2021-12-01T16:36:19+00:00'
   :id: SEfpdKc5ZZ6AkRODDIxnP
 :name: Last Week
@@ -23,6 +23,8 @@
 :vibe:
 - Retro
 :bpm: 119.0
+:public_settings: Hide
+:private_settings: MP3 Download
 :beat:
   :title: '08-Last Week'
   :description: ''
