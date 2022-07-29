@@ -1,0 +1,37 @@
+---
+:id: 6oiGEuCc0ESVJV3FJzvSEu
+:_meta:
+  :content_type_id: track
+  :updated_at: '2022-07-26T00:55:42+00:00'
+  :created_at: '2022-04-14T23:06:15+00:00'
+  :id: 6oiGEuCc0ESVJV3FJzvSEu
+:sound_type: Instrumental
+:name: Wanna Stay
+:producer:
+- :id: 2ysheqH4CtlypgfXHEZLXU
+  :_meta:
+    :content_type_id: producer
+    :updated_at: '2021-12-14T19:44:33+00:00'
+    :created_at: '2021-05-14T21:09:35+00:00'
+    :id: 2ysheqH4CtlypgfXHEZLXU
+  :producer_id: 1
+  :producer: Made by Porter
+  :producer_slug: madebyporter
+  :producer_description: Design & Music Producer, digital nomad, founder of The Beatbox
+    Club. Focuses on dark, cinematic hiphop productions.
+  :producer_link: https://www.madebyporter.com
+:genre: RnB
+:vibe:
+- Airy
+- Violins
+:bpm: 132.0
+:public_settings: Stream
+:private_settings: MP3 Download
+:beat:
+  :title: Wanna Stay - 132 - Master
+  :description: ''
+  :url: "//assets.ctfassets.net/e1azyderdhks/v24hRgOuwuOziTBVDq4g9/769b27c358d64b493b3bb07e86cf4697/Wanna_Stay_-_132_-_Master.mp3"
+  :_meta:
+    :updated_at: '2022-04-15T13:28:51+00:00'
+    :created_at: '2022-04-14T23:06:10+00:00'
+    :id: v24hRgOuwuOziTBVDq4g9

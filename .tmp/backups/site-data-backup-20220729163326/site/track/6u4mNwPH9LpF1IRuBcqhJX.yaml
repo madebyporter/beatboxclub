@@ -1,0 +1,31 @@
+---
+:id: 6u4mNwPH9LpF1IRuBcqhJX
+:_meta:
+  :content_type_id: track
+  :updated_at: '2022-03-30T16:29:11+00:00'
+  :created_at: '2022-03-30T16:29:11+00:00'
+  :id: 6u4mNwPH9LpF1IRuBcqhJX
+:sound_type: Track
+:name: Second Silhouette
+:producer:
+- :id: 35EqVleFt7Bh1Sn4YDVnsG
+  :_meta:
+    :content_type_id: producer
+    :updated_at: '2022-01-03T16:19:44+00:00'
+    :created_at: '2022-01-03T16:19:44+00:00'
+    :id: 35EqVleFt7Bh1Sn4YDVnsG
+  :producer_id: 4
+  :producer: Luke Tyler
+  :producer_slug: luketyler
+:genre: Electronic
+:vibe:
+- House
+:bpm: 119.0
+:beat:
+  :title: Second Silhouette
+  :description: ''
+  :url: "//assets.ctfassets.net/e1azyderdhks/x5hNnP1kkoodQUbkYWpRl/70790405422f989264d37051eb2fe3a1/SecondSilhouetteMaster.mp3"
+  :_meta:
+    :updated_at: '2022-03-30T16:29:07+00:00'
+    :created_at: '2022-03-30T16:29:07+00:00'
+    :id: x5hNnP1kkoodQUbkYWpRl
