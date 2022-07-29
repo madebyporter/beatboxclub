@@ -15,6 +15,14 @@ const getNextTrackId = (trackId, trackOrder) => {
   return trackOrder[nextIndex];
 };
 
+const isHidden = (user, tracks, nextId) => {
+  const nextTrack = tracks.find((track) => track.id === nextId);
+  const visibility = user
+    ? nextTrack.privateSettings
+    : nextTrack.publicSettings;
+  return visibility === trackVisibility.HIDDEN;
+};
+
 const useStepCallbacks = (
   user,
   trackOrder,
@@ -30,11 +38,7 @@ const useStepCallbacks = (
 
         while (true) {
           nextId = getPreviousTrackId(nextId, trackOrder);
-          const nextTrack = tracks.find((track) => track.id === nextId);
-          const visibility = user
-            ? nextTrack.privateSettings
-            : nextTrack.publicSettings;
-          if (visibility !== trackVisibility.HIDDEN) break;
+          if (!isHidden(user, tracks, nextId)) break;
         }
 
         return nextId;
@@ -48,11 +52,7 @@ const useStepCallbacks = (
 
       while (true) {
         nextId = getNextTrackId(nextId, trackOrder);
-        const nextTrack = tracks.find((track) => track.id === nextId);
-        const visibility = user
-          ? nextTrack.privateSettings
-          : nextTrack.publicSettings;
-        if (visibility !== trackVisibility.HIDDEN) break;
+        if (!isHidden(user, tracks, nextId)) break;
       }
 
       return nextId;
