@@ -6,7 +6,7 @@ import useCurrentTrack from "./useCurrentTrack";
 import usePlaybackProgress from "./usePlaybackProgress";
 import usePlaybackVolume from "./usePlaybackVolume";
 
-const usePlaylistFunctionality = (unsortedTracks) => {
+const usePlaylistFunctionality = (user, unsortedTracks) => {
   const playerRef = useRef();
 
   const tracks = useSortedTracks(unsortedTracks);
@@ -15,6 +15,7 @@ const usePlaylistFunctionality = (unsortedTracks) => {
   const playingState = usePlayingState(currentTrack, setCurrentTrackId);
   const playbackProgress = usePlaybackProgress(currentTrack, playerRef);
   const playbackOrder = usePlaybackOrder(
+    user,
     tracks,
     setCurrentTrackId,
     playbackProgress
