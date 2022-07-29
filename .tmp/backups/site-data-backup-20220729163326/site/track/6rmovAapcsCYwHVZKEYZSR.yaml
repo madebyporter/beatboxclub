@@ -1,0 +1,35 @@
+---
+:id: 6rmovAapcsCYwHVZKEYZSR
+:_meta:
+  :content_type_id: track
+  :updated_at: '2022-07-29T19:12:25+00:00'
+  :created_at: '2021-11-25T18:32:00+00:00'
+  :id: 6rmovAapcsCYwHVZKEYZSR
+:name: Takeover
+:producer:
+- :id: 2ysheqH4CtlypgfXHEZLXU
+  :_meta:
+    :content_type_id: producer
+    :updated_at: '2021-12-14T19:44:33+00:00'
+    :created_at: '2021-05-14T21:09:35+00:00'
+    :id: 2ysheqH4CtlypgfXHEZLXU
+  :producer_id: 1
+  :producer: Made by Porter
+  :producer_slug: madebyporter
+  :producer_description: Design & Music Producer, digital nomad, founder of The Beatbox
+    Club. Focuses on dark, cinematic hiphop productions.
+  :producer_link: https://www.madebyporter.com
+:genre: Rap
+:vibe:
+- Hustle
+:bpm: 113.0
+:public_settings: Hide
+:private_settings: MP3 Download
+:beat:
+  :title: Takeover - Beat
+  :description: ''
+  :url: "//assets.ctfassets.net/e1azyderdhks/pwLRjJQRI87jFAxPr5bQS/c027b6677b0a35b7bb7cb915080c1de2/Takeover_-_Beat.mp3"
+  :_meta:
+    :updated_at: '2021-10-22T15:18:16+00:00'
+    :created_at: '2021-10-22T15:18:16+00:00'
+    :id: pwLRjJQRI87jFAxPr5bQS

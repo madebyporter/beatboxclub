@@ -1,0 +1,35 @@
+---
+:id: 66puRb3JcmE317FjPl1v2F
+:_meta:
+  :content_type_id: track
+  :updated_at: '2021-12-23T03:11:16+00:00'
+  :created_at: '2021-12-23T03:11:16+00:00'
+  :id: 66puRb3JcmE317FjPl1v2F
+:name: Adult Swim
+:producer:
+- :id: 1XYRElpgQrQedVHDdacWew
+  :_meta:
+    :content_type_id: producer
+    :updated_at: '2021-12-25T02:38:41+00:00'
+    :created_at: '2021-12-18T01:43:41+00:00'
+    :id: 1XYRElpgQrQedVHDdacWew
+  :producer_id: 3
+  :producer: Jaye Neutron
+  :producer_slug: jayeneutron
+  :producer_description: The Voice Tag Legend. Owner of @VoiceTagGods. Music Producer.
+    Been creating voice tags since 2007, making beats since 2005.
+  :producer_link: https://jayeneutron.com/
+:genre: Rap
+:vibe:
+- HipHop
+- Soul
+- Chill
+:bpm: 83.0
+:beat:
+  :title: Adult Swim
+  :description: ''
+  :url: "//assets.ctfassets.net/e1azyderdhks/zViS0pbGVzzfgibQRuhMn/5077d3c7a8781a4d4cefdf06754e1c7e/1444_-_Adult_Swim_-_83.mp3"
+  :_meta:
+    :updated_at: '2021-12-23T03:10:08+00:00'
+    :created_at: '2021-12-23T03:10:08+00:00'
+    :id: zViS0pbGVzzfgibQRuhMn
