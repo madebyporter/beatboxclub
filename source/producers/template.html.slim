@@ -8,26 +8,29 @@ script type="text/javascript"
   | var currentProducer = "#{producer.producer}"
 script type="text/javascript" src="../javascripts/auth.js" defer="defer"
 
-section.block.block-section.block-hero
+section.block.block-section.margin-bottom-none
   .container-fluid
     .row
+      .col-12.col-lg-3.col-xl-2
+        .block-image
+          = image_tag "#{producer.producer_avatar.url}", :alt => "#{producer.producer}", :class => ""
       .col-12.col-lg-8
-        h2.headline #{producer.producer}
-        p.content-large
-          | #{producer.producer_description}
-        p.content
-          = link_to "#{producer.producer_link}", "#{producer.producer_link}", :class => "", :onclick => "gtag('event', 'click', {'event_category' : 'Producer Page', 'event_label' : 'Producer Link' : '#{producer.producer}'});"
-        
-nav.block.block-nav
-  .container-fluid
+        .block-content.d-flex.align-items-center.align-content-center.flex-wrap
+          h2.headline 
+            | #{producer.producer}
+          p 
+            | #{producer.producer_description}
     .row
-      .col-12
-        .auth-buttons-container
-          .user-auth-button
-            p
-          .request-access-button
-            p Request Library Access
-
+      .col-12.offset-lg-3.col-lg-9.offset-xl-2.col-xl-10
+        .block-content.block-content-flex-between.block-content-border-top-gray
+          .producer-link
+            = link_to "Visit Website", "#{producer.producer_link}", :class => "", :onclick => "gtag('event', 'click', {'event_category' : 'Producer Page', 'event_label' : 'Producer Link' : '#{producer.producer}'});"
+          .auth-buttons-container
+            .user-auth-button
+              p.component-button.component-button-small.component-button-secondary
+            .request-access-button
+              p.component-button.component-button-small.component-button-primary
+                | Request Library Access
 div#beatbox-playlist
 
 script type="text/javascript"

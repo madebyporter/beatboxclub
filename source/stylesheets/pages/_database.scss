@@ -1,3 +1,11 @@
+.producers {
+  .block-image {
+    display: none;
+    @media (min-width: $mq-laptop) {
+      display: flex;
+    }
+  }
+}
 .box-list {
   align-items: center;
   border: 1px solid $color-black-400;

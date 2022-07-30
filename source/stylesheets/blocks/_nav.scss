@@ -89,36 +89,28 @@
 }
 
 
+.producer-link {
+  width: 100%;
+  @media (min-width: $mq-tablet) {
+    width: 20%;
+  }
+}
 .auth-buttons-container {
-  margin-left: auto;
   display: flex;
   align-items: center;
   gap: 2rem;
-}
-
-.user-auth-button {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  p {
-    color: $color-white;
-    font-size: 1.8rem;
-    border: 1px solid $color-white;
-    padding: 0.5rem 2.5rem;
-    margin: 0;
+  width: 100%;
+  flex-wrap: wrap;
+  @media (min-width: $mq-tablet) {
+    width: auto;
   }
-}
-
-.request-access-button {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  p {
-    background: $color-red;
-    color: $color-white;
-    font-size: 1.8rem;
-    padding: 0.5rem 2.5rem;
-    margin: 0;
+  & > * {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    @media (min-width: $mq-tablet) {
+      width: auto;
+    }
   }
 }
 

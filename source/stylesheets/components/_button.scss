@@ -6,11 +6,13 @@
     border: 0;
     border-radius: 0;
     color: $color-white;
+    cursor: pointer;
     display: flex;
     justify-content: center;
     @extend .t-24;
     font-weight: 700;
-    padding: $space-small;
+    margin: 0;
+    padding: $space-x $space-small;
     text-align: center;
     text-decoration: none;
     width: 100%;

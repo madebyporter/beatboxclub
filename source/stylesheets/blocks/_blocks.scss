@@ -23,8 +23,30 @@
 }
 
 .block-content {
-  margin-bottom: $space-large;
+  height: 100%;
 }
+.block-content-flex-between {
+  gap: $space-small;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.block-content-border-top-gray {
+  border-top: 1px solid $color-black-300;
+  padding: $space-small 0;
+}
+
+.block-image {
+  height: 100%;
+  width: 100%;
+  img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
 .block-border-bottom {
   border-bottom: 1px solid rgba(255,255,255,0.1);  
 }
