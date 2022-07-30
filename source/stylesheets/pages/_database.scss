@@ -10,6 +10,8 @@
   align-items: center;
   border: 1px solid $color-black-400;
   border-bottom: 0px;
+  border-left: 0px;
+  border-right: 0px;
   display: flex;
   justify-content: space-between;
   margin: 0;
@@ -28,9 +30,9 @@
     align-items: center;
     cursor: pointer;
     display: flex;
-    height: 80px;
+    height: 40px;
     justify-content: center;
-    width: 80px;
+    width: 40px;
   }
   .box-player-control-activate {
     color: $color-black-300;
@@ -75,20 +77,19 @@
   }
 }
 .box-meta-value {
-  color: $color-white;
-  font-weight: 700;
+  color: $color-black-100;
+  font-weight: 500;
+}
+.box-meta-genre {
+  min-width: 20%;
 }
 .box-meta-vibe {
   min-width: 30%;
 }
 h4.box-meta-name {
   color: $color-white;
-  @extend .t-18;
-}
-.box-meta-title {
-  color: $color-black-200;
-  font-weight: 400;
-  margin: 0;
+  font-weight: 500;
+  @extend .t-16;
 }
 .box-meta-author {
 }
@@ -103,7 +104,7 @@ h4.box-meta-name {
       display: none;
     }
     .box-player-pause {
-      background: $color-yellow;
+      background: $color-yellow-600;
       color: $color-white;
       display: flex;
     }
@@ -166,7 +167,7 @@ h4.box-meta-name {
       }
     }
     .box-player-control-activate {
-      background: $color-yellow;
+      background: $color-yellow-600;
       color: $color-white;
       &:hover {
         background: $color-yellow-600;
@@ -205,9 +206,6 @@ h4.box-meta-name {
     .box-meta-name {
       @extend .t-14;
     }
-    .box-meta-title {
-      width: 100%;
-    }
     .box-meta-author {
       @extend .t-12;
       margin-bottom: 0;
@@ -217,7 +215,7 @@ h4.box-meta-name {
     display: flex;
     gap: $space-small;
     align-items: center;
-    .fas {
+    .fa-light {
       color: $color-white;
       cursor: pointer;
 
@@ -226,14 +224,14 @@ h4.box-meta-name {
 
       @media (hover: hover) {
         &:hover {
-          color: $color-yellow;
+          color: $color-yellow-600;
         }
       }
     }
     .box-player-loop,
     .box-player-shuffle {
       &.active > * {
-        color: $color-yellow;
+        color: $color-yellow-600;
       }
     }
   }
@@ -270,7 +268,7 @@ h4.box-meta-name {
   .box-player-progress-bar-track {
     height: 100%;
     &-0 {
-      background-color: $color-yellow;
+      background-color: $color-yellow-600;
     }
     &-1 {
       background-color: transparent;
@@ -291,7 +289,7 @@ h4.box-meta-name {
 }
 
 .box-player-download {
-  padding: $space-small;
+  // padding: $space-small;
 }
 .box-player-download-link {
   display: flex;

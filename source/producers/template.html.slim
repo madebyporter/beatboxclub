@@ -32,7 +32,6 @@ section.block.block-section.margin-bottom-none
               p.component-button.component-button-small.component-button-primary
                 | Request Library Access
 div#beatbox-playlist
-
 script type="text/javascript"
   | var tracks = [
   - data.site.track.each do |id, track|
@@ -43,6 +42,7 @@ script type="text/javascript"
       |   beatType: "#{track.beat_type}",
       |   createdAt: new Date("#{track._meta.created_at}"),
       |   author: "#{track.producer.map { |track_producer| track_producer.producer }.join(", ")}",
+      |   genre: "#{track.genre}",
       |   bpm: "#{track.bpm}",
       |   vibe: #{track.vibe.to_json},
       |   url: "#{track.beat.url}",
@@ -52,10 +52,10 @@ script type="text/javascript"
   | ];
   | var netlifyIdentity = netlifyIdentity
 
-/ Display newsletter CTA for Made By Porter only
-- if producer.id === "2ysheqH4CtlypgfXHEZLXU"
-  section.block.block-newsletter
-    .container-fluid
-      .row
-        .col-12
-          = partial "partials/cta-produceremail"
+/ / Display newsletter CTA for Made By Porter only
+/ - if producer.id === "2ysheqH4CtlypgfXHEZLXU"
+/   section.block.block-newsletter
+/     .container-fluid
+/       .row
+/         .col-12
+/           = partial "partials/cta-produceremail"
