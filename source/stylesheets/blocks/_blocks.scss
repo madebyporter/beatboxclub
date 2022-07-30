@@ -1,13 +1,27 @@
 .block {
   // margin: 0 auto;
-  margin: $space-small $space-small;
+  margin: $space-medium;
 }
 .block-header {
-  padding-top: $space-large;
+  background: $color-black;
+  border-top: 2px solid $color-white;
+  border-bottom: 1px solid $color-white;
+  // padding-top: $space-large;
   @media (min-width: $mq-tablet) {
-    padding-top: $space-large;
+    // padding-top: $space-large;
   }
 }
+.block-header-cell {
+  height: 100%;
+  padding: $space-small 0;
+  @media (min-width: $mq-laptop) {
+    border-right: 1px solid $color-white;
+  }
+  &.last {
+    border-right: 0;
+  }
+}
+
 .block-content {
   margin-bottom: $space-large;
 }
