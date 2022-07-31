@@ -39,25 +39,25 @@ const PlayerInner = ({
         onClick={onStepBackClick}
         className="box-player-prev box-player-control-direction"
       >
-        <i className="fas fa-step-backward" />
+        <i className="fa-light fa-step-backward" />
       </div>
       <div
         className="box-player-play box-player-control-activate"
         onClick={onPlayClick}
       >
-        <i className="fas fa-play" />
+        <i className="fa-light fa-play" />
       </div>
       <div
         className="box-player-pause box-player-control-activate"
         onClick={onPauseClick}
       >
-        <i className="fas fa-pause" />
+        <i className="fa-light fa-pause" />
       </div>
       <div
         onClick={onStepForwardClick}
         className="box-player-next box-player-control-direction"
       >
-        <i className="fas fa-step-forward" />
+        <i className="fa-light fa-step-forward" />
       </div>
     </div>
     <div className="box-meta">
@@ -76,42 +76,46 @@ const PlayerInner = ({
         ))}
       </div>
     </div>
-    <div className="box-player-progress-container">
-      <div className="box-player-progress">
-        <ReactSlider
-          min={0}
-          max={duration}
-          step={0.1}
-          value={progress}
-          onBeforeChange={onSeekStart}
-          onChange={onSeek}
-          onAfterChange={onSeekEnd}
-          className="box-player-progress-bar"
-          trackClassName="box-player-progress-bar-track"
-          thumbClassName="box-player-progress-bar-thumb"
-        />
+
+    <div className="box-player-progress-system">
+      <div className="box-player-progress-container">
+        <div className="box-player-progress">
+          <ReactSlider
+            min={0}
+            max={duration}
+            step={0.1}
+            value={progress}
+            onBeforeChange={onSeekStart}
+            onChange={onSeek}
+            onAfterChange={onSeekEnd}
+            className="box-player-progress-bar"
+            trackClassName="box-player-progress-bar-track"
+            thumbClassName="box-player-progress-bar-thumb"
+          />
+        </div>
+      </div>
+      <div className="box-player-progress-text">
+        {formatDuration(progress)} / {formatDuration(duration)}
       </div>
     </div>
-    <div className="box-player-progress-text">
-      {formatDuration(progress)} / {formatDuration(duration)}
-    </div>
+    
     <div className="box-player-tools">
-      <div
-        className={`box-player-loop ${isLooping ? "active" : ""}`}
-        onClick={onToggleLoopingClick}
-      >
-        <i className="fas fa-redo" />
-      </div>
       <div
         className={`box-player-shuffle ${isShuffling ? "active" : ""}`}
         onClick={onToggleShufflingClick}
       >
-        <i className="fas fa-random" />
+        <i className="fa-light fa-repeat" />
+      </div>
+      <div
+        className={`box-player-loop ${isLooping ? "active" : ""}`}
+        onClick={onToggleLoopingClick}
+      >
+        <i className="fa-light fa-shuffle" />
       </div>
     
       <div className="box-player-volume">
         <i
-          className={`box-player-volume-icon fas ${isMuted ? "fa-volume-slash" : "fa-volume"}`}
+          className={`box-player-volume-icon fa-light ${isMuted ? "fa-volume-slash" : "fa-volume"}`}
           onClick={onMute}
         />
         <div class="box-player-progress-container">

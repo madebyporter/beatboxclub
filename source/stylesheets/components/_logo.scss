@@ -1,0 +1,102 @@
+.site-logo {
+  $logoSize: 50px;
+  display: block;
+  height: $logoSize;
+  // width: 140px;
+  @include flexbox;
+  @include flex-wrap(nowrap);
+  text-decoration: none;
+  .logo {
+    @include flexbox;
+    @include flex-wrap(wrap);
+    height: 100%;
+    min-width: $logoSize;
+    &:hover {
+      .logo-block {
+        &:nth-child(1), &:nth-child(16){
+          animation: pulse 600ms alternate infinite;
+        }
+        &:nth-child(2), &:nth-child(15){
+          animation: pulse2 600ms ease 200ms alternate infinite;
+        }
+        &:nth-child(3), &:nth-child(14){
+          animation: pulse3 600ms ease 300ms alternate infinite;
+        }
+        &:nth-child(4), &:nth-child(13){
+          animation: pulse4 600ms ease 400ms alternate infinite;
+        }
+        &:nth-child(5), &:nth-child(12){
+          animation: pulse6 600ms ease 500ms alternate infinite;
+        }
+        &:nth-child(6), &:nth-child(11){
+          animation: pulse8 600ms ease 600ms alternate infinite;
+        }
+        &:nth-child(7), &:nth-child(10){
+          animation: pulse8 600ms ease 700ms alternate infinite;
+        }
+        &:nth-child(8), &:nth-child(9){
+          animation: pulse6 600ms ease 800ms alternate infinite;
+        }
+      }
+    }
+  }
+  .logo-block {
+    background: #222;
+    box-shadow: 0 0 0 rgba(0,0,0,0.2);
+    flex: 0 1 25%;
+    height: 25% 25vh;
+    &:nth-child(1), &:nth-child(16){
+      background: #E52800;
+      z-index: 1;
+    }
+    &:nth-child(2), &:nth-child(15){
+      background: #E64D01;
+      z-index: 2;
+    }
+    &:nth-child(3), &:nth-child(14){
+      background: #E67300;
+      z-index: 3;
+    }
+    &:nth-child(4), &:nth-child(13){
+      background: #E79901;
+      z-index: 4;
+    }
+    &:nth-child(5), &:nth-child(12){
+      background: #E63917;
+      z-index: 5;
+    }
+    &:nth-child(6), &:nth-child(11){
+      background: #E76B2F;
+      z-index: 6;
+    }
+    &:nth-child(7), &:nth-child(10){
+      background: #E69544;
+      z-index: 7;
+    }
+    &:nth-child(8), &:nth-child(9){
+      background: #E6B75B;
+      z-index: 6;
+    }
+  }
+  img {
+    width: 100%;
+  }
+  .logo-text {
+    display: none;
+    margin: 0 0 0 $space-x;
+    width: 80px;
+    @media (min-width: $mq-laptop) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+  .logo-text-word {
+    color: $color-white;
+    @include font-size(14);
+    font-weight: 500;
+    display: inline-block;
+    line-height: 1.2;
+    margin: 0;
+    width: 100%;
+  }
+}
