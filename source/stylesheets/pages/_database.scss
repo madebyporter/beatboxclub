@@ -89,6 +89,12 @@ span.box-list-td-value {
     display: flex;
   }
 }
+.box-tracks-head {
+  background: $color-black;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
 
 // Box Player Controls
 .box-track-controls {
