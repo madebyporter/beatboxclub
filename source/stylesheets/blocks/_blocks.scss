@@ -5,7 +5,6 @@
   }
 }
 .block-header {
-  background: $color-black;
   border-top: 2px solid $color-white;
   border-bottom: 1px solid $color-white;
   // padding-top: $space-large;
@@ -102,11 +101,10 @@
   background: lighten($color-black-500,2%);
   margin-top: 0;
   margin-bottom: 0;
-  padding-top: $space-medium;
-  padding-bottom: $space-medium;
+  padding: $space-medium;
   position: relative;
   @media (min-width: $mq-laptop) {
-    padding-top: $space-large;
+    padding: $space-medium;
     padding-bottom: $space-xl;
     z-index: 1000000;
   }

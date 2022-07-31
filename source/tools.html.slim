@@ -1,23 +1,11 @@
 - set_meta_tags :title => "Tools for Music Producers"
 == javascript_include_tag   "jquery.ajaxchimp.min", "list.min"
 
-section.block.block-section.block-hero
+section.block.block-section.block-hero.border-bottom.padding-bottom-medium
   .container-fluid
     .row
       .col-12.d-flex.align-items-center
         h2.headline The tools for music producers, creators &amp; streamers alike.
-
-nav.block.block-nav
-  .container-fluid
-    .row
-      .col-12
-        ul.nav-list.nav-list-horz
-          li.nav-list-item.active
-            == link_to 'Tools', '/tools/', class: "nav-link"
-          li.nav-list-item
-            == link_to 'Directory', '/directory/', class: "nav-link"
-          li.nav-list-item
-            == link_to 'Tapes', '/tapes/', class: "nav-link"
 
 section#toolsList.block.block-section
   .container-fluid
@@ -63,11 +51,11 @@ section#toolsList.block.block-section
                     = tool.description
                 == link_to 'Launch', tool.link, class: "component-button component-button-secondary component-button-small"
 
-section.block.block-newsletter
-  .container-fluid
-    .row
-      .col-12
-        = partial "partials/cta-newslettersignup"
+/ section.block.block-newsletter
+/   .container-fluid
+/     .row
+/       .col-12
+/         = partial "partials/cta-newslettersignup"
 / .pattern-navtrigger
 /   #menuTrigger.component-button.component-button-small.component-button-hug.component-button-rounded Menu
 /   #filterTrigger.component-button.component-button-small.component-button-hug.component-button-rounded Filter
