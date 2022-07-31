@@ -44,29 +44,43 @@ html
       header.block.block-header
         .container-fluid
           .row
-            .col-4.col-md-6
-              = link_to "/", :class => "site-logo" do
-                .logo
-                  .logo-block
-                  .logo-block
-                  .logo-block
-                  .logo-block
-                  .logo-block
-                  .logo-block
-                  .logo-block
-                  .logo-block
-                  .logo-block
-                  .logo-block
-                  .logo-block
-                  .logo-block
-                  .logo-block
-                  .logo-block
-                  .logo-block
-                  .logo-block
-                .logo-text
-                  span.logo-text-word The
-                  span.logo-text-word Beatbox
-                  span.logo-text-word Club
+            .col-8.col-lg-3.col-xl-2
+              .block-header-cell
+                = link_to "/", :class => "site-logo" do
+                  .logo
+                    .logo-block
+                    .logo-block
+                    .logo-block
+                    .logo-block
+                    .logo-block
+                    .logo-block
+                    .logo-block
+                    .logo-block
+                    .logo-block
+                    .logo-block
+                    .logo-block
+                    .logo-block
+                    .logo-block
+                    .logo-block
+                    .logo-block
+                    .logo-block
+                  .logo-text
+                    span.logo-text-word The
+                    span.logo-text-word Beatbox
+                    span.logo-text-word Club
+            .col-4.col-lg-6.col-xl-6
+              .block-header-cell.last
+                #navTrigger.nav-trigger
+                  i.fa-light.fa-bars
+                #navClose.nav-close
+                  i.fa-light.fa-xmark
+                ul#navMenu.nav-header
+                  li.nav-list-item
+                    == link_to 'Tools', '/tools/', class: "nav-link"
+                  li.nav-list-item
+                    == link_to 'Directory', '/directory/', class: "nav-link"
+                  li.nav-list-item
+                    == link_to 'Tapes', '/tapes/', class: "nav-link"
       == yield
       footer.block.block-footer
         .container-fluid

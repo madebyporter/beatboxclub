@@ -1,33 +1,115 @@
-.box-list {
-  align-items: center;
-  border: 1px solid $color-black-400;
-  border-bottom: 0px;
-  display: flex;
-  justify-content: space-between;
-  margin: 0;
-  gap: $space-small;
-  &:last-child {
-    border-bottom: 1px solid $color-black-400;
-  }
-  &:hover {
-    background: $color-black-400;
+.producers {
+  .block-image {
+    display: none;
+    @media (min-width: $mq-laptop) {
+      display: flex;
+    }
   }
 }
 
+.box-tracks {
+  display: table;
+  width: 100%;
+  .playing {
+    background: $color-white;
+    &:hover {
+      background: $color-white;
+    }
+    .box-player-play {
+      display: none;
+    }
+    .box-player-pause {
+      background: $color-yellow-600;
+      color: $color-white;
+      display: flex;
+    }
+    .box-list-td-value {
+      color: $color-red;
+    }
+  }
+}
+
+.box-list-th,
+.box-list-tr {
+  display: flex;
+  width: 100%;
+  border: 1px solid $color-black-400;
+  border-bottom: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  &:hover {
+    background: $color-black-400;
+  }
+  & .box-track-controls {width: 40px; margin-right: $space-small;}
+  & .box-track-name {width: 70%;}
+  & .box-track-genre {width: 13%; display: none}
+  & .box-track-vibe {width: 30%; display: none}
+  & .box-track-bpm {width: 13%; display: none}
+  & .box-track-download {margin-left: auto;}
+  @media (min-width: $mq-laptop) {
+    & .box-track-name {width: 30%;}
+    & .box-track-genre {display: flex}
+    & .box-track-vibe {display: flex}
+    & .box-track-bpm {display: flex}
+  }
+}
+.box-list-th {
+  border-top: 2px solid $color-white;
+  &:hover {
+    background: none;
+  }
+}
+.box-list-td {
+  align-items: center;
+  display: flex;
+  height: 40px;
+}
+h4.box-list-td-value {
+  @extend .t-16;
+  font-weight: 500;
+  margin: 0;
+}
+span.box-list-td-value {
+  @extend .t-16;
+  margin: 0;
+}
+.box-track-vibe {
+  align-content: center;
+  align-items: center;
+  color: $color-black-400;
+  display: flex;
+  display: none;
+  flex-wrap: wrap;
+  gap: 0 $space-x;
+  & > * {
+    margin: 0;
+    width: 100%;
+  }
+  @media (min-width: $mq-tablet) {
+    display: flex;
+  }
+}
+.box-tracks-head {
+  background: $color-black;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
 // Box Player Controls
-.box-player-controls {
+.box-track-controls {
   & > * {
     align-items: center;
     cursor: pointer;
     display: flex;
-    height: 80px;
+    height: 40px;
     justify-content: center;
-    width: 80px;
+    width: 40px;
   }
   .box-player-control-activate {
-    color: $color-black-300;
+    color: $color-black-200;
     &:hover {
-      color: $color-black-200;
+      color: $color-black-100;
     }
   }
 }
@@ -67,44 +149,25 @@
   }
 }
 .box-meta-value {
-  color: $color-white;
-  font-weight: 700;
+  color: $color-black-100;
+  font-weight: 500;
+}
+.box-meta-genre {
+  min-width: 20%;
 }
 .box-meta-vibe {
   min-width: 30%;
 }
 h4.box-meta-name {
   color: $color-white;
-  @extend .t-18;
-}
-.box-meta-title {
-  color: $color-black-200;
-  font-weight: 400;
-  margin: 0;
-}
-.box-meta-author {
+  font-weight: 500;
+  @extend .t-16;
 }
 .box-meta-tag {
   width: auto;
 }
 
-.box-tracks {
-  .playing {
-    background: $color-white;
-    .box-player-play {
-      display: none;
-    }
-    .box-player-pause {
-      background: $color-yellow;
-      color: $color-white;
-      display: flex;
-    }
-    .box-meta-name,
-    .box-meta-value {
-      color: $color-red;
-    }
-  }
-}
+
 
 .bbx-musicplayer {
   background: $color-black;
@@ -126,10 +189,13 @@ h4.box-meta-name {
     @include translate(0, 92px);
   }
   .box-list {
+    align-items: center;
     border-left: 0;
     border-right: 0;
     border-bottom: 0;
     cursor: default;
+    display: flex;
+    gap: $space-small;
     padding: $space-x;
     &:hover {
       background: $color-black;
@@ -151,14 +217,14 @@ h4.box-meta-name {
       cursor: pointer;
       display: flex;
       justify-content: center;
-      height: 50px;
-      width: 50px;
+      height: 40px;
+      width: 40px;
       &:hover {
         background: $color-black-300;
       }
     }
     .box-player-control-activate {
-      background: $color-yellow;
+      background: $color-yellow-600;
       color: $color-white;
       &:hover {
         background: $color-yellow-600;
@@ -174,12 +240,16 @@ h4.box-meta-name {
     .box-player-pause {
       display: none;
     }
+    .box-player-prev,
+    .box-player-next {
+      width: 30px;
+    }
   }
   .box-meta {
     flex-grow: 4;
-    @media (min-width: $mq-desktop) {
+    @media (min-width: $mq-laptop) {
       flex-grow: 2;
-      width: 10%;
+      width: 8%;
     }
     .box-meta-ele {
       display: none;
@@ -197,9 +267,6 @@ h4.box-meta-name {
     .box-meta-name {
       @extend .t-14;
     }
-    .box-meta-title {
-      width: 100%;
-    }
     .box-meta-author {
       @extend .t-12;
       margin-bottom: 0;
@@ -209,7 +276,7 @@ h4.box-meta-name {
     display: flex;
     gap: $space-small;
     align-items: center;
-    .fas {
+    .fa-light {
       color: $color-white;
       cursor: pointer;
 
@@ -218,34 +285,47 @@ h4.box-meta-name {
 
       @media (hover: hover) {
         &:hover {
-          color: $color-yellow;
+          color: $color-yellow-600;
         }
       }
     }
     .box-player-loop,
     .box-player-shuffle {
       &.active > * {
-        color: $color-yellow;
+        color: $color-yellow-600;
       }
     }
   }
-  .box-player-progress-container {
-    background-color: $color-black-400;
-    cursor: pointer;
+  .box-player-progress-system {
+    align-items: center;
+    width: 100%;
     left: 0;
     right: 0;
     top: -40px;
     width: 100%;
     height: 40px;
     position: absolute;
-    @media (min-width: $mq-desktop) {
+    @media (min-width: $mq-laptop) {
+      display: flex;
       position: relative;
+      padding: 0 $space-small;
       top: auto;
       left: auto;
       right: auto;
       height: 10px;
       width: 40%;
       flex-grow: 4;
+    }
+  }
+  .box-player-progress-container {
+    background-color: $color-black-400;
+    cursor: pointer;
+    height: 100%; 
+    width: 100%;
+    position: absolute;
+    @media (min-width: $mq-laptop) {
+      height: 10px;
+      position: static;
     }
   }
   .box-player-progress {
@@ -262,7 +342,7 @@ h4.box-meta-name {
   .box-player-progress-bar-track {
     height: 100%;
     &-0 {
-      background-color: $color-yellow;
+      background-color: $color-yellow-600;
     }
     &-1 {
       background-color: transparent;
@@ -274,16 +354,23 @@ h4.box-meta-name {
   .box-player-progress-text {
     color: $color-black-0;
     @extend .t-14;
-    margin-left: $space-x;
-    display: none;
-    @media (min-width: $mq-phonexl) {
-      display: block;
+    position: absolute;
+    @include vertical-center;
+    right: $space-small;
+    text-align: right;
+    width: 100px;
+    @media (min-width: $mq-laptop) {  
+      margin-left: $space-x;
+      position: static;
+      right: auto;
+      top: auto;
+      @include translate(0,0);
     }
   }
 }
 
 .box-player-download {
-  padding: $space-small;
+  // padding: $space-small;
 }
 .box-player-download-link {
   display: flex;

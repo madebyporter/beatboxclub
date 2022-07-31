@@ -1,0 +1,31 @@
+---
+:id: 4ZnFM9QWqBOEegtIpTZL9S
+:_meta:
+  :content_type_id: track
+  :updated_at: '2022-03-15T17:50:53+00:00'
+  :created_at: '2022-03-15T17:50:53+00:00'
+  :id: 4ZnFM9QWqBOEegtIpTZL9S
+:sound_type: Track
+:name: The Grey Pyramid
+:producer:
+- :id: 35EqVleFt7Bh1Sn4YDVnsG
+  :_meta:
+    :content_type_id: producer
+    :updated_at: '2022-01-03T16:19:44+00:00'
+    :created_at: '2022-01-03T16:19:44+00:00'
+    :id: 35EqVleFt7Bh1Sn4YDVnsG
+  :producer_id: 4
+  :producer: Luke Tyler
+  :producer_slug: luketyler
+:genre: Electronic
+:vibe:
+- Chill
+:bpm: 96.0
+:beat:
+  :title: Luke Tyler - The Grey Pyramid
+  :description: ''
+  :url: "//assets.ctfassets.net/e1azyderdhks/5s1WCnfSV0SbAzYCRJ9jZz/7837241105e5df3219b1ce9c69a5b931/The_Grey_Pyramid.mp3"
+  :_meta:
+    :updated_at: '2022-03-15T17:46:53+00:00'
+    :created_at: '2022-03-15T17:46:53+00:00'
+    :id: 5s1WCnfSV0SbAzYCRJ9jZz
