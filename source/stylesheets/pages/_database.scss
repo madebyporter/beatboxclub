@@ -6,26 +6,93 @@
     }
   }
 }
-.box-list {
-  align-items: center;
+
+.box-tracks {
+  display: table;
+  width: 100%;
+  .playing {
+    background: $color-white;
+    &:hover {
+      background: $color-white;
+    }
+    .box-player-play {
+      display: none;
+    }
+    .box-player-pause {
+      background: $color-yellow-600;
+      color: $color-white;
+      display: flex;
+    }
+    .box-list-td-value {
+      color: $color-red;
+    }
+  }
+}
+
+.box-list-th,
+.box-list-tr {
+  display: flex;
+  width: 100%;
   border: 1px solid $color-black-400;
   border-bottom: 0px;
   border-left: 0px;
   border-right: 0px;
-  display: flex;
-  justify-content: space-between;
-  margin: 0;
-  gap: $space-small;
-  &:last-child {
-    border-bottom: 1px solid $color-black-400;
-  }
   &:hover {
     background: $color-black-400;
+  }
+  & .box-track-controls {width: 40px; margin-right: $space-small;}
+  & .box-track-name {width: 70%;}
+  & .box-track-genre {width: 13%; display: none}
+  & .box-track-vibe {width: 20%; display: none}
+  & .box-track-bpm {width: 13%; display: none}
+  & .box-track-download {margin-left: auto;}
+  @media (min-width: $mq-laptop) {
+    & .box-track-name {width: 30%;}
+    & .box-track-genre {display: flex}
+    & .box-track-vibe {display: flex}
+    & .box-track-bpm {display: flex}
+  }
+}
+.box-list-th {
+  border-top: 2px solid $color-white;
+  &:hover {
+    background: none;
+  }
+}
+.box-list-td {
+  align-items: center;
+  display: flex;
+  height: 40px;
+}
+h4.box-list-td-value {
+  @extend .t-16;
+  font-weight: 500;
+  margin: 0;
+}
+span.box-list-td-value {
+  @extend .t-16;
+  margin: 0;
+}
+
+.box-track-vibe {
+  align-content: center;
+  align-items: center;
+  color: $color-black-400;
+  display: flex;
+  display: none;
+  flex-wrap: wrap;
+  gap: 0 $space-x;
+  & > * {
+    margin: 0;
+    width: 100%;
+  }
+  @media (min-width: $mq-tablet) {
+    display: flex;
   }
 }
 
 // Box Player Controls
-.box-player-controls {
+.box-track-controls {
   & > * {
     align-items: center;
     cursor: pointer;
@@ -35,9 +102,9 @@
     width: 40px;
   }
   .box-player-control-activate {
-    color: $color-black-300;
+    color: $color-black-200;
     &:hover {
-      color: $color-black-200;
+      color: $color-black-100;
     }
   }
 }
@@ -97,23 +164,7 @@ h4.box-meta-name {
   width: auto;
 }
 
-.box-tracks {
-  .playing {
-    background: $color-white;
-    .box-player-play {
-      display: none;
-    }
-    .box-player-pause {
-      background: $color-yellow-600;
-      color: $color-white;
-      display: flex;
-    }
-    .box-meta-name,
-    .box-meta-value {
-      color: $color-red;
-    }
-  }
-}
+
 
 .bbx-musicplayer {
   background: $color-black;

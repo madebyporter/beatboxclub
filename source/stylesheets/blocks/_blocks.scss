@@ -1,6 +1,8 @@
 .block {
-  // margin: 0 auto;
-  margin: $space-medium;
+  margin: $space-small;
+  @media (min-width: $mq-laptop) {
+    margin: $space-medium;
+  }
 }
 .block-header {
   background: $color-black;

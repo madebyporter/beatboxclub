@@ -10,6 +10,7 @@
     display: flex;
     justify-content: center;
     @extend .t-24;
+    gap: 5px;
     font-weight: 700;
     margin: 0;
     padding: $space-x $space-small;
@@ -37,11 +38,11 @@
     }
   }
   .component-button-tertiary {
-    background: $color-yellow-400;
-    color: $color-yellow-50;
+    background: none;
+    color: $color-black-100;
     &:hover {
-      background: $color-yellow-500;
-      color: $color-yellow-50;
+      background: none;
+      color: $color-white;
     }
   }
   .component-button-white-red {

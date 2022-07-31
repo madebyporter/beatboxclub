@@ -20,12 +20,12 @@ const Track = ({
   visibilitySettings,
 }) => (
   <div
-    className={`box-list ${track.beatType} ${
+    className={`box-list box-list-tr ${track.beatType} ${
       isCurrentTrack ? (isPlaying ? "playing" : "paused") : ""
     }`}
     id={track.name}
   >
-    <div className="box-player-controls">
+    <div className="box-list-td box-track-controls">
       <div
         className="box-player-play box-player-control-activate"
         onClick={onPlay}
@@ -40,26 +40,27 @@ const Track = ({
       </div>
     </div>
 
-    <div className="box-player-meta">
-      <div className="box-meta-ele box-meta-main">
-        <h4 className="box-meta-name">{track.name}</h4>
-      </div>
-      <div className="box-meta-ele box-meta-genre">
-        <span className="box-meta-value">{track.genre}</span>
-      </div>
-      <div className="box-meta-ele box-meta-vibe">
-        {track.vibe.map((vibe) => (
-          <span className="box-meta-tag box-meta-value" key={vibe}>
-            {vibe}
-          </span>
-        ))}
-      </div>
-      <div className="box-meta-ele box-meta-bpm">
-        <span className="box-meta-value">{track.bpm}</span>
-      </div>
+    <div className="box-list-td box-track-name">
+      <h4 className="box-list-td-value">{track.name}</h4>
     </div>
 
-    <div className="box-player-download">
+    <div className="box-list-td box-track-genre">
+      <span className="box-list-td-value">{track.genre}</span>
+    </div>
+
+    <div className="box-list-td box-track-vibe">
+      {track.vibe.map((vibe) => (
+        <span className="box-meta-tag box-list-td-value" key={vibe}>
+          {vibe}
+        </span>
+      ))}
+    </div>
+
+    <div className="box-list-td box-track-bpm">
+      <span className="box-list-td-value">{track.bpm}</span>
+    </div>
+
+    <div className="box-list-td box-track-download">
       <a
         className="box-player-download-link"
         href={
@@ -78,11 +79,8 @@ const Track = ({
               : "hidden",
         }}
       >
-        <span className="d-block d-sm-none">
-          <i className="box-player-download-icon fas fa-cloud-download"></i>
-        </span>
-        <span className="box-player-download-btn d-none d-sm-block component-button component-button-primary component-button-small">
-          Download
+        <span className="box-player-download-btn component-button component-button-tertiary component-button-small">
+          <i class="fa-light fa-download"></i> MP3
         </span>
       </a>
     </div>
