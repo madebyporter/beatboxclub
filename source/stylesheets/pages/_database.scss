@@ -73,7 +73,6 @@ span.box-list-td-value {
   @extend .t-16;
   margin: 0;
 }
-
 .box-track-vibe {
   align-content: center;
   align-items: center;
@@ -158,8 +157,6 @@ h4.box-meta-name {
   font-weight: 500;
   @extend .t-16;
 }
-.box-meta-author {
-}
 .box-meta-tag {
   width: auto;
 }
@@ -186,10 +183,13 @@ h4.box-meta-name {
     @include translate(0, 92px);
   }
   .box-list {
+    align-items: center;
     border-left: 0;
     border-right: 0;
     border-bottom: 0;
     cursor: default;
+    display: flex;
+    gap: $space-small;
     padding: $space-x;
     &:hover {
       background: $color-black;
@@ -211,8 +211,8 @@ h4.box-meta-name {
       cursor: pointer;
       display: flex;
       justify-content: center;
-      height: 50px;
-      width: 50px;
+      height: 40px;
+      width: 40px;
       &:hover {
         background: $color-black-300;
       }
@@ -234,12 +234,16 @@ h4.box-meta-name {
     .box-player-pause {
       display: none;
     }
+    .box-player-prev,
+    .box-player-next {
+      width: 30px;
+    }
   }
   .box-meta {
     flex-grow: 4;
-    @media (min-width: $mq-desktop) {
+    @media (min-width: $mq-laptop) {
       flex-grow: 2;
-      width: 10%;
+      width: 8%;
     }
     .box-meta-ele {
       display: none;
@@ -286,23 +290,36 @@ h4.box-meta-name {
       }
     }
   }
-  .box-player-progress-container {
-    background-color: $color-black-400;
-    cursor: pointer;
+  .box-player-progress-system {
+    align-items: center;
+    width: 100%;
     left: 0;
     right: 0;
     top: -40px;
     width: 100%;
     height: 40px;
     position: absolute;
-    @media (min-width: $mq-desktop) {
+    @media (min-width: $mq-laptop) {
+      display: flex;
       position: relative;
+      padding: 0 $space-small;
       top: auto;
       left: auto;
       right: auto;
       height: 10px;
       width: 40%;
       flex-grow: 4;
+    }
+  }
+  .box-player-progress-container {
+    background-color: $color-black-400;
+    cursor: pointer;
+    height: 100%; 
+    width: 100%;
+    position: absolute;
+    @media (min-width: $mq-laptop) {
+      height: 10px;
+      position: static;
     }
   }
   .box-player-progress {
@@ -331,10 +348,17 @@ h4.box-meta-name {
   .box-player-progress-text {
     color: $color-black-0;
     @extend .t-14;
-    margin-left: $space-x;
-    display: none;
-    @media (min-width: $mq-phonexl) {
-      display: block;
+    position: absolute;
+    @include vertical-center;
+    right: $space-small;
+    text-align: right;
+    width: 100px;
+    @media (min-width: $mq-laptop) {  
+      margin-left: $space-x;
+      position: static;
+      right: auto;
+      top: auto;
+      @include translate(0,0);
     }
   }
 }

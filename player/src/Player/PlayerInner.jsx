@@ -76,25 +76,29 @@ const PlayerInner = ({
         ))}
       </div>
     </div>
-    <div className="box-player-progress-container">
-      <div className="box-player-progress">
-        <ReactSlider
-          min={0}
-          max={duration}
-          step={0.1}
-          value={progress}
-          onBeforeChange={onSeekStart}
-          onChange={onSeek}
-          onAfterChange={onSeekEnd}
-          className="box-player-progress-bar"
-          trackClassName="box-player-progress-bar-track"
-          thumbClassName="box-player-progress-bar-thumb"
-        />
+
+    <div className="box-player-progress-system">
+      <div className="box-player-progress-container">
+        <div className="box-player-progress">
+          <ReactSlider
+            min={0}
+            max={duration}
+            step={0.1}
+            value={progress}
+            onBeforeChange={onSeekStart}
+            onChange={onSeek}
+            onAfterChange={onSeekEnd}
+            className="box-player-progress-bar"
+            trackClassName="box-player-progress-bar-track"
+            thumbClassName="box-player-progress-bar-thumb"
+          />
+        </div>
+      </div>
+      <div className="box-player-progress-text">
+        {formatDuration(progress)} / {formatDuration(duration)}
       </div>
     </div>
-    <div className="box-player-progress-text">
-      {formatDuration(progress)} / {formatDuration(duration)}
-    </div>
+    
     <div className="box-player-tools">
       <div
         className={`box-player-shuffle ${isShuffling ? "active" : ""}`}
