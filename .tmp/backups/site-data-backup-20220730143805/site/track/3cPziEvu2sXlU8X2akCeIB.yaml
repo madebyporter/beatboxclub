@@ -1,0 +1,31 @@
+---
+:id: 3cPziEvu2sXlU8X2akCeIB
+:_meta:
+  :content_type_id: track
+  :updated_at: '2022-03-30T18:28:09+00:00'
+  :created_at: '2022-03-30T18:28:09+00:00'
+  :id: 3cPziEvu2sXlU8X2akCeIB
+:sound_type: Track
+:name: Sim Only
+:producer:
+- :id: 35EqVleFt7Bh1Sn4YDVnsG
+  :_meta:
+    :content_type_id: producer
+    :updated_at: '2022-01-03T16:19:44+00:00'
+    :created_at: '2022-01-03T16:19:44+00:00'
+    :id: 35EqVleFt7Bh1Sn4YDVnsG
+  :producer_id: 4
+  :producer: Luke Tyler
+  :producer_slug: luketyler
+:genre: Electronic
+:vibe:
+- Chill
+:bpm: 120.0
+:beat:
+  :title: Sim Only
+  :description: ''
+  :url: "//assets.ctfassets.net/e1azyderdhks/4s7zEcVgDvcp1Zw7D2EPZA/0a0f3117650e53cf779201ec40a40477/SimOnlyFinal.mp3"
+  :_meta:
+    :updated_at: '2022-03-30T18:28:05+00:00'
+    :created_at: '2022-03-30T18:28:05+00:00'
+    :id: 4s7zEcVgDvcp1Zw7D2EPZA

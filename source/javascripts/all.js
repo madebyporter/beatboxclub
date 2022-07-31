@@ -114,25 +114,28 @@ js.main = {
   },
   mobileNavTrigger: function() {
     // Get trigger ID
-    var filterTrigger = document.getElementById('filterTrigger');
+    var navTrigger = document.getElementById('navTrigger');
 
     // Get menu ID
-    var filterMenu = document.getElementById('filterMenu');
+    var navMenu = document.getElementById('navMenu');
+
+    // Get close ID
+    var navClose = document.getElementById('navClose');
 
     // Group of rules when user clicks on filter trigger button
-    function activateFilterNav(){
+    function activateNav(){
 
       // If the menu is active
-      if (filterMenu.classList.contains('active')){
+      if (navMenu.classList.contains('active')){
 
         // Remove active class from body so the page can scroll
         document.body.classList.remove("mobileMenuActive");
 
         // Remove active class from trigger button so text can turn white
-        filterTrigger.classList.remove("active");
+        navTrigger.classList.remove("active");
 
         // Remove active class from filter menu so menu can hide
-        filterMenu.classList.remove("active");
+        navMenu.classList.remove("active");
       } 
 
       // If the menu is not active
@@ -141,17 +144,30 @@ js.main = {
         document.body.classList.add("mobileMenuActive");
 
         // Add active class to trigger button so text can turn yellow
-        filterTrigger.classList.add("active");
+        navTrigger.classList.add("active");
         
         // Add active class to filter menu so menu can become visible
-        filterMenu.classList.add("active");
+        navMenu.classList.add("active");
       }
     }
+    function disactivateNav(){
 
-    if (document.body.classList.contains('tools_index')){
-      // If user clicks on filter button, execute rules above
-      filterTrigger.addEventListener("click", activateFilterNav);
+      // If the menu is active
+      if (navMenu.classList.contains('active')){
+
+        // Remove active class from body so the page can scroll
+        document.body.classList.remove("mobileMenuActive");
+
+        // Remove active class from trigger button so text can turn white
+        navTrigger.classList.remove("active");
+
+        // Remove active class from filter menu so menu can hide
+        navMenu.classList.remove("active");
+      } 
     }
+
+    navTrigger.addEventListener("click", activateNav);
+    navClose.addEventListener("click", disactivateNav);
   },
   modal: function (e) {
     var bd = $('body');
