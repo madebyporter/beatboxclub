@@ -15,7 +15,10 @@ const LOGOUT_TEXT = "Logout Library";
 
   if (initialUser) {
     userRole = initialUser.app_metadata.roles[0];
-    if (userRole === currentProducer) buttonText.innerText = LOGOUT_TEXT;
+    if (userRole === currentProducer) {
+      buttonText.innerText = LOGOUT_TEXT;
+      btnReq.style.display = "none";
+    }
     else button.style.display = "none";
   } 
   else {
