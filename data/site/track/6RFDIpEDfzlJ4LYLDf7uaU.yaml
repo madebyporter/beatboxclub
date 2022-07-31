@@ -10,12 +10,20 @@
 - :id: 1XYRElpgQrQedVHDdacWew
   :_meta:
     :content_type_id: producer
-    :updated_at: '2021-12-25T02:38:41+00:00'
+    :updated_at: '2022-07-31T20:48:02+00:00'
     :created_at: '2021-12-18T01:43:41+00:00'
     :id: 1XYRElpgQrQedVHDdacWew
   :producer_id: 3
   :producer: Jaye Neutron
   :producer_slug: jayeneutron
+  :producer_avatar:
+    :title: jayeneutron
+    :description: ''
+    :url: "//images.ctfassets.net/e1azyderdhks/4ceAntySlBQMaG5VaHf8zT/18b0a7b3235e0b6c32ea4d37a132bf91/jayeneutron.jpeg"
+    :_meta:
+      :updated_at: '2022-07-31T20:47:58+00:00'
+      :created_at: '2022-07-31T20:47:58+00:00'
+      :id: 4ceAntySlBQMaG5VaHf8zT
   :producer_description: The Voice Tag Legend. Owner of @VoiceTagGods. Music Producer.
     Been creating voice tags since 2007, making beats since 2005.
   :producer_link: https://jayeneutron.com/

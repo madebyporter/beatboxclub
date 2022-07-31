@@ -11,12 +11,24 @@
 - :id: 35EqVleFt7Bh1Sn4YDVnsG
   :_meta:
     :content_type_id: producer
-    :updated_at: '2022-01-03T16:19:44+00:00'
+    :updated_at: '2022-07-31T20:49:03+00:00'
     :created_at: '2022-01-03T16:19:44+00:00'
     :id: 35EqVleFt7Bh1Sn4YDVnsG
   :producer_id: 4
   :producer: Luke Tyler
   :producer_slug: luketyler
+  :producer_avatar:
+    :title: luketyler
+    :description: ''
+    :url: "//images.ctfassets.net/e1azyderdhks/64tJLwOCCZrJ8C7zw5QOLA/40602c83ae57dc00e4d61aec2091dc69/luketyler.jpeg"
+    :_meta:
+      :updated_at: '2022-07-31T20:47:43+00:00'
+      :created_at: '2022-07-31T20:47:43+00:00'
+      :id: 64tJLwOCCZrJ8C7zw5QOLA
+  :producer_description: |-
+    Building Melobleep: a place to get UI sounds for apps and more.
+    Tweeting about music, branding, design and creativity.
+  :producer_link: https://www.melobleep.com
 :genre: Electronic
 :vibe:
 - Dream House

@@ -13,7 +13,8 @@ section.block.block-section.margin-bottom-none
     .row
       .col-12.col-lg-3.col-xl-2
         .block-image
-          = image_tag "#{producer.producer_avatar.url}", :alt => "#{producer.producer}", :class => ""
+          - if producer.producer_avatar.url != nil
+            = image_tag "#{producer.producer_avatar.url}", :alt => "#{producer.producer}", :class => ""
       .col-12.col-lg-8
         .block-content.d-flex.align-items-center.align-content-center.flex-wrap
           h2.headline 
