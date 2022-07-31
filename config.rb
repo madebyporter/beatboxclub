@@ -82,6 +82,13 @@ configure :build do
   activate :minify_javascript
 end
 
+# Sprockets ES6
+# require 'sprockets/es6'
+# activate :sprockets do |s|
+#   s.supported_output_extensions << '.es6'
+# end
+
+
 # Webpack
 activate :external_pipeline,
   name: :webpack,
