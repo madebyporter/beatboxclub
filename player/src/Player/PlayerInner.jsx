@@ -104,13 +104,13 @@ const PlayerInner = ({
         className={`box-player-shuffle ${isShuffling ? "active" : ""}`}
         onClick={onToggleShufflingClick}
       >
-        <i className="fa-light fa-repeat" />
+        <i className="fa-light fa-shuffle" />
       </div>
       <div
         className={`box-player-loop ${isLooping ? "active" : ""}`}
         onClick={onToggleLoopingClick}
       >
-        <i className="fa-light fa-shuffle" />
+        <i className="fa-light fa-repeat" />
       </div>
     
       <div className="box-player-volume">

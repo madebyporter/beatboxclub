@@ -101,10 +101,10 @@
   background: lighten($color-black-500,2%);
   margin-top: 0;
   margin-bottom: 0;
-  padding: $space-medium;
+  padding: $space-small;
   position: relative;
   @media (min-width: $mq-laptop) {
-    padding: $space-medium;
+    padding: $space-small;
     padding-bottom: $space-xl;
     z-index: 1000000;
   }
